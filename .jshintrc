@@ -10,11 +10,12 @@
 	"quotmark": "single",
 	"sub":      true,
 	"undef":    true,
-	
+
 	"browser": true,
 	"jquery":  true,
 	"globals": {
 		"exports": true,
-		"module":  false
+		"module":  false,
+		"console": true
 	}
 }

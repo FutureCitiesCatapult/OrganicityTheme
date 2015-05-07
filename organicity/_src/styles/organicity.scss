@@ -1,0 +1,14 @@
+/**
+ * Theme Name:  Organicity
+ * Theme URI:   http://www.organicity.eu
+ * Description: WordPress theme for the Organicity website.
+ * Author:      Future Cities Catapult
+ * Version:     0.1.0
+ * Copyright (c) 2015 Future Cities Catapult
+ */
+@import 'fonts';
+
+body {
+  //set the default font family
+  font-family: $text__family--serif;
+}

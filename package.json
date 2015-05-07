@@ -19,5 +19,7 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-sass": "~0.8.0"
   },
-  "keywords": []
+  "keywords": [],
+  "src": "organicity/_src",
+  "dist": "organicity"
 }

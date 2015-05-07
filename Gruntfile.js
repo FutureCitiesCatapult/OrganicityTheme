@@ -6,28 +6,27 @@ module.exports = function( grunt ) {
 
 	// Project configuration
 	grunt.initConfig( {
-		pkg:    grunt.file.readJSON( 'package.json' ),
+		pkg: grunt.file.readJSON( 'package.json' ),
 		concat: {
 			options: {
 				stripBanners: true,
 				banner: '/*! <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
 					' * <%= pkg.homepage %>\n' +
-					' * Copyright (c) <%= grunt.template.today("yyyy") %>;' +
-					' * Licensed GPLv2+' +
+					' * Copyright (c) <%= grunt.template.today("yyyy") %> Future Cities Catapult' +
 					' */\n'
 			},
 			organicity: {
 				src: [
-					'assets/js/src/organicity.js'
+					'<%= pkg.src %>/js/organicity.js'
 				],
-				dest: 'assets/js/organicity.js'
+				dest: '<%= pkg.dist %>/js/organicity.js'
 			}
+
 		},
 		jshint: {
 			browser: {
 				all: [
-					'assets/js/src/**/*.js',
-					'assets/js/test/**/*.js'
+					'<%= pkg.src %>/js/*.js'
 				],
 				options: {
 					jshintrc: '.jshintrc'
@@ -40,18 +39,17 @@ module.exports = function( grunt ) {
 				options: {
 					jshintrc: '.gruntjshintrc'
 				}
-			}   
+			}
 		},
 		uglify: {
 			all: {
 				files: {
-					'assets/js/organicity.min.js': ['assets/js/organicity.js']
+					'<%= pkg.dist %>/js/organicity.min.js': ['<%= pkg.dist %>/js/organicity.js']
 				},
 				options: {
 					banner: '/*! <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
 						' * <%= pkg.homepage %>\n' +
-						' * Copyright (c) <%= grunt.template.today("yyyy") %>;' +
-						' * Licensed GPLv2+' +
+						' * Copyright (c) <%= grunt.template.today("yyyy") %> Future Cities Catapult' +
 						' */\n',
 					mangle: {
 						except: ['jQuery']
@@ -59,60 +57,69 @@ module.exports = function( grunt ) {
 				}
 			}
 		},
-		test:   {
-			files: ['assets/js/test/**/*.js']
-		},
-		
+
 		sass:   {
 			all: {
 				files: {
-					'assets/css/organicity.css': 'assets/css/sass/organicity.scss'
+					'<%= pkg.dist %>/style.css': '<%= pkg.src %>/styles/organicity.scss'
+				},
+				options: {
+					sourcemap: 'auto'
 				}
 			}
 		},
-		
+
 		cssmin: {
 			options: {
-				banner: '/*! <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-					' * <%= pkg.homepage %>\n' +
-					' * Copyright (c) <%= grunt.template.today("yyyy") %>;' +
-					' * Licensed GPLv2+' +
-					' */\n'
+				banner: '/**\n' +
+								' * Theme Name:  Organicity\n' +
+								' * Theme URI:   http://www.organicity.eu\n' +
+								' * Description: WordPress theme for the Organicity website.\n' +
+								' * Author:      Future Cities Catapult\n' +
+								' * Version:     <%= pkg.version %>\n' +
+								' * Copyright (c) <%= grunt.template.today("yyyy") %> Future Cities Catapult\n' +
+								' */'
 			},
 			minify: {
 				expand: true,
-				
-				cwd: 'assets/css/',
-				src: ['organicity.css'],
-				
-				dest: 'assets/css/',
+
+				cwd: '<%= pkg.dist %>/',
+				src: ['style.css'],
+
+				dest: '<%= pkg.dist %>/',
 				ext: '.min.css'
 			}
 		},
+
 		watch:  {
-			
+
 			sass: {
-				files: ['assets/css/sass/*.scss'],
+				files: ['<%= pkg.src %>/styles/organicity.scss'],
 				tasks: ['sass', 'cssmin'],
 				options: {
 					debounceDelay: 500
 				}
 			},
-			
+
 			scripts: {
-				files: ['assets/js/src/**/*.js', 'assets/js/vendor/**/*.js'],
+				files: ['<%= pkg.src %>/js/**/*.js'],
 				tasks: ['jshint', 'concat', 'uglify'],
 				options: {
 					debounceDelay: 500
 				}
-			}
+			},
+
+			livereload: {
+	      options: { livereload: true },
+	      files: ['<%= pkg.dist %>/style.css', '<%= pkg.dist %>/js/*.js', '<%= pkg.dist %>/*.php']
+    	}
 		}
 	} );
 
 	// Default task.
-	
+
 	grunt.registerTask( 'default', ['jshint', 'concat', 'uglify', 'sass', 'cssmin'] );
-	
+
 
 	grunt.util.linefeed = '\n';
 };
