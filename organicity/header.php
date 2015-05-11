@@ -46,6 +46,9 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <header>
+  <!-- this will become the main page header include -->
+  <h1><a href="/"><?php echo get_bloginfo('title') ?></a></h1>
   <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-  <h2><?php echo get_bloginfo('description'); ?><h2>
+  <h2><?php echo get_bloginfo('description'); ?></h2>
+  <a href="#">How does it work?</a>
 </header>

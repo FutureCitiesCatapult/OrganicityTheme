@@ -98,31 +98,62 @@ add_action('init', 'register_event_posttype');
 
 function register_city_taxonomy() {
   $labels = array(
-    'name'                       => 'Cities',
-    'singular_name'              => 'City'
+    'name'          => 'Cities',
+    'singular_name' => 'City'
   );
   $args = array(
     'labels'            => $labels,
     'hierarchical'      => false,
-    'public'            => true,
-    'rewrite'           => false,
-    'capabilities'      => array(
-      'manage_terms' => 'a_capability_the_user_doesnt_have',
-      'edit_terms'   => 'a_capability_the_user_doesnt_have',
-      'delete_terms' => 'a_capability_the_user_doesnt_have',
-      'assign_terms' => 'edit_post'
-    )
+    'public'            => false,
+    'rewrite'           => false
   );
   register_taxonomy('city', array('event', 'post'), $args);
 }
 add_action('init', 'register_city_taxonomy');
 
- /**
-  * Add humans.txt to the <head> element.
-  */
- function organicity_header_meta() {
-	$humans = '<link type="text/plain" rel="author" href="' . get_template_directory_uri() . '/humans.txt" />';
+/*
+ * Pre-populate the Organicity cities
+ */
+function populate_city_terms() {
+  $taxonomy = 'city';
+  $cities = array(
+    __('London', 'organicity'),
+    __('Santander', 'organicity'),
+    __('Aarhus', 'organicity')
+  );
 
-	echo apply_filters( 'organicity_humans', $humans );
- }
- add_action( 'wp_head', 'organicity_header_meta' );
+  foreach ($cities as $city) {
+    if (!term_exists($city, $taxonomy)) {
+      wp_insert_term( $city, $taxonomy);
+    }
+  }
+
+}
+add_action('init', 'populate_city_terms');
+
+/*
+ * Add custom meta box for selecting from City taxonomy
+ * @requires Meta Box plugin - http://metabox.io/
+ */
+function register_meta_boxes($meta_boxes) {
+
+  $prefix = 'organicity_';
+
+  $meta_boxes[] = array(
+    'title'  => 'City',
+    'pages'  => array( 'post', 'event' ),
+    'fields' => array(
+      array(
+        'name' => 'Select a city:',
+        'id'   => $prefix . 'city',
+        'type' => 'taxonomy',
+        'options' => array(
+          'taxonomy'  => 'city',
+          'type'      => 'checkbox_list'
+        )
+      )
+    )
+  );
+  return $meta_boxes;
+}
+add_filter('rwmb_meta_boxes', 'register_meta_boxes');
