@@ -86,7 +86,8 @@ function register_event_posttype() {
    'has_archive'   => true,
    'rewrite'       => array('slug' => __('events', 'organicity'), 'with_front'  => false),
    'menu_icon'     => 'dashicons-calendar-alt',
-   'menu_position' => 5
+   'menu_position' => 5,
+   'supports'      => array('title', 'editor', 'thumbnail')
   );
   register_post_type('event', $args);
 }
@@ -98,15 +99,19 @@ add_action('init', 'register_event_posttype');
 
 function register_city_taxonomy() {
   $labels = array(
-    'name'          => 'City',
+    'name' => 'Cities',
     'singular_name' => 'City'
+  );
+  $rewrite = array(
+    'slug' => 'cities',
+    'with_front' => false
   );
   $args = array(
     'labels'            => $labels,
     'hierarchical'      => false,
     'public'            => false,
-    'rewrite'           => false,
-    'show_admin_column' => true
+    'show_admin_column' => true,
+    'rewrite'           => $rewrite
   );
   register_taxonomy('city', array('event', 'post'), $args);
 }
@@ -158,3 +163,11 @@ function register_meta_boxes($meta_boxes) {
   return $meta_boxes;
 }
 add_filter('rwmb_meta_boxes', 'register_meta_boxes');
+
+/*
+ * Add theme support for Feature Image/Post thumbnails
+ */
+function add_post_thumbnail_support() {
+  add_theme_support('post-thumbnails');
+}
+add_filter('init', 'add_post_thumbnail_support');

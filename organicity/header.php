@@ -50,5 +50,5 @@
   <h1><a href="/"><?php echo get_bloginfo('title') ?></a></h1>
   <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
   <h2><?php echo get_bloginfo('description'); ?></h2>
-  <a href="#">How does it work?</a>
+  <a href="#">How does it work? //from the homepage header</a>
 </header>
