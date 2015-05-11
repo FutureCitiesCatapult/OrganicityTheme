@@ -23,7 +23,7 @@ define( 'SCRIPT_DEBUG', true );
   *
   * @since 0.1.0
   */
- function organicity_setup() {
+function organicity_setup() {
 	/**
 	 * Makes Organicity available for translation.
 	 *
@@ -31,8 +31,8 @@ define( 'SCRIPT_DEBUG', true );
 	 * If you're building a theme based on Organicity, use a find and replace
 	 * to change 'organicity' to the name of your theme in all template files.
 	 */
-	load_theme_textdomain( 'organicity', get_template_directory() . '/languages' );
- }
+   load_theme_textdomain( 'organicity', get_template_directory() . '/languages' );
+}
  add_action( 'after_setup_theme', 'organicity_setup' );
 
  /**
@@ -40,26 +40,27 @@ define( 'SCRIPT_DEBUG', true );
   *
   * @since 0.1.0
   */
- function organicity_scripts_styles() {
-	$postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
+function organicity_scripts_styles() {
 
-	wp_enqueue_script( 'organicity', get_template_directory_uri() . "/js/organicity{$postfix}.js", array(), ORGANICITY_VERSION, true );
+  $postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-	wp_enqueue_style( 'pure', get_template_directory_uri() . "/pure-min.css");
+  wp_enqueue_script( 'organicity', get_template_directory_uri() . "/js/organicity{$postfix}.js", array(), ORGANICITY_VERSION, true );
+
+  wp_enqueue_style( 'pure', get_template_directory_uri() . "/pure-min.css");
   wp_enqueue_style( 'pure-grid', get_template_directory_uri() . "/grids-responsive-min.css");
 
   wp_enqueue_style( 'organicity', get_template_directory_uri() . "/style{$postfix}.css", array(), ORGANICITY_VERSION );
 
- }
- add_action( 'wp_enqueue_scripts', 'organicity_scripts_styles' );
+}
+add_action( 'wp_enqueue_scripts', 'organicity_scripts_styles' );
 
- /*
-  * Register our header menu
-  */
-  function register_header_menu() {
-    register_nav_menu('header-menu',__( 'Header menu' ));
-  }
-  add_action( 'init', 'register_header_menu' );
+/*
+* Register our header menu
+*/
+function register_header_menu() {
+  register_nav_menu('header-menu',__( 'Header menu' ));
+}
+add_action( 'init', 'register_header_menu' );
 
 /*
  * Register a custom post type for Events

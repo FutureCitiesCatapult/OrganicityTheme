@@ -27,10 +27,23 @@ get_header(); ?>
   	<!-- the loop -->
   	<?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
       <a href="<?php echo get_permalink(get_option('page_for_posts' )); ?>">
-        <?php the_post_thumbnail(array(120,120)); ?>
-        <span class="date"><?php the_time('j M Y'); ?></span>
-  		  <h2><?php the_title(); ?></h2>
-        <div class="tags"></div>
+        <div class="">
+          <?php the_post_thumbnail(array(120,120)); ?>
+          <span class="date"><?php the_time('j M Y'); ?></span>
+    		  <h2><?php the_title(); ?></h2>
+          <div class="tags"></div>
+          <?php
+            /*
+             * Aggregate city and regular tags for the current post.
+             * If the post has regular tags then add a comma seperator
+             * after the cities list.
+             */
+             $seperator = ', ';
+             $sep_after = has_term(null, 'post_tag') ? $seperator : '';
+             echo get_the_term_list( $post->ID, 'city', '', $seperator, $sep_after);
+             echo get_the_term_list( $post->ID, 'post_tag', '', $seperator);
+          ?>
+        </div>
       </a>
   	<?php endwhile; ?>
   	<!-- end of the loop -->
