@@ -98,14 +98,15 @@ add_action('init', 'register_event_posttype');
 
 function register_city_taxonomy() {
   $labels = array(
-    'name'          => 'Cities',
+    'name'          => 'City',
     'singular_name' => 'City'
   );
   $args = array(
     'labels'            => $labels,
     'hierarchical'      => false,
     'public'            => false,
-    'rewrite'           => false
+    'rewrite'           => false,
+    'show_admin_column' => true
   );
   register_taxonomy('city', array('event', 'post'), $args);
 }
