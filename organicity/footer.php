@@ -19,7 +19,7 @@
   </div>
   <div class="pure-g">
     <div class="pure-u-1-4"></div>
-    <div class="pure-u-1-2">&copy; Organicity 2015</div>
+    <div class="pure-u-1-2 pure-u-lg-1-1">&copy; Organicity 2015</div>
     <div class="pure-u-1-4"></div>
   </div>
 </footer>

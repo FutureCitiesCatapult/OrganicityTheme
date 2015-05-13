@@ -11,35 +11,32 @@
  * @package Organicity
  * @since 0.1.0
  */
-
- // Useful global constants
 define( 'ORGANICITY_VERSION', '0.1.0' );
-//set false for production
+
+//TODO: set false for production
 define( 'SCRIPT_DEBUG', true );
- /**
-  * Set up theme defaults and register supported WordPress features.
-  *
-  * @uses load_theme_textdomain() For translation/localization support.
-  *
-  * @since 0.1.0
-  */
+
+/**
+ * Makes Organicity available for translation.
+ */
 function organicity_setup() {
-	/**
-	 * Makes Organicity available for translation.
-	 *
-	 * Translations can be added to the /lang directory.
-	 * If you're building a theme based on Organicity, use a find and replace
-	 * to change 'organicity' to the name of your theme in all template files.
-	 */
    load_theme_textdomain( 'organicity', get_template_directory() . '/languages' );
 }
- add_action( 'after_setup_theme', 'organicity_setup' );
+add_action( 'after_setup_theme', 'organicity_setup' );
 
- /**
-  * Enqueue scripts and styles for front-end.
-  *
-  * @since 0.1.0
-  */
+/*
+ * Add theme support for Feature Image/Post thumbnails
+ */
+function add_post_thumbnail_support() {
+  add_theme_support('post-thumbnails');
+}
+add_filter('init', 'add_post_thumbnail_support');
+
+/**
+ * Enqueue scripts and styles for front-end.
+ *
+ * @since 0.1.0
+ */
 function organicity_scripts_styles() {
 
   $postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
@@ -55,8 +52,8 @@ function organicity_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'organicity_scripts_styles' );
 
 /*
-* Register our header menu
-*/
+ * Register our header menu
+ */
 function register_header_menu() {
   register_nav_menu('header-menu',__( 'Header menu' ));
 }
@@ -65,7 +62,6 @@ add_action( 'init', 'register_header_menu' );
 /*
  * Register a custom post type for Events
  */
-
 function register_event_posttype() {
   $labels = array(
     'name'                => __('Events', 'organicity'),
@@ -95,9 +91,8 @@ function register_event_posttype() {
 add_action('init', 'register_event_posttype');
 
 /*
-* Register a custom taxonomy for the cities
-*/
-
+ * Register a custom taxonomy for the cities
+ */
 function register_city_taxonomy() {
   $labels = array(
     'name' => 'Cities',
@@ -138,22 +133,32 @@ function populate_city_terms() {
 }
 add_action('init', 'populate_city_terms');
 
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+/////////////// METABOXES ////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+
 /*
- * Add custom meta box for selecting from City taxonomy
+ * Register custom meta boxes
  * @requires Meta Box plugin - http://metabox.io/
  */
 function register_meta_boxes($meta_boxes) {
 
   $prefix = 'organicity_';
 
+  /*
+   * Select from City taxonomy
+   */
   $meta_boxes[] = array(
     'title'  => 'City',
     'pages'  => array( 'post', 'event' ),
     'fields' => array(
       array(
-        'name' => 'Select a city:',
-        'id'   => $prefix . 'city',
-        'type' => 'taxonomy',
+        'name'    => 'Select a city:',
+        'id'      => $prefix . 'city',
+        'type'    => 'taxonomy',
         'options' => array(
           'taxonomy'  => 'city',
           'type'      => 'checkbox_list'
@@ -161,14 +166,50 @@ function register_meta_boxes($meta_boxes) {
       )
     )
   );
+
+  /*
+   * Homepage specific features
+   */
+  $homepage_header_fields = array(
+    'title'   => 'Header anchor link',
+    'pages'   => 'page',
+    'fields'  => array(
+      array(
+        'name'  => 'Link text',
+        'id'    => $prefix . 'header_anchor_link_text',
+        'type'  => 'text',
+        'size'  => 50
+      ),
+      array(
+        'name'  => 'Link title attribute',
+        'id'    => $prefix . 'header_anchor_link_title',
+        'type'  => 'text',
+        'size'  => 50
+      ),
+      array(
+        'name'  => 'Visible',
+        'id'    => $prefix . 'header_anchor_link_visible',
+        'type'  => 'checkbox',
+        'std'   => 1
+      )
+    )
+  );
+
+  /*
+   * only show if editing homepage
+   */
+  $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+  $frontpage_id = get_option('page_on_front');
+
+  if ($post_id == $frontpage_id) {
+    $meta_boxes[] = $homepage_header_fields;
+  }
+
   return $meta_boxes;
 }
 add_filter('rwmb_meta_boxes', 'register_meta_boxes');
 
 /*
- * Add theme support for Feature Image/Post thumbnails
+ *
+ *
  */
-function add_post_thumbnail_support() {
-  add_theme_support('post-thumbnails');
-}
-add_filter('init', 'add_post_thumbnail_support');

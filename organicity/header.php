@@ -33,7 +33,11 @@
   <meta itemprop="description" content="Organicity - Co-creating the Cities of the Future">
   <meta itemprop="image" content="http://www.organicity.eu/social_image.png">
 
-  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <!-- For iPhone: -->
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+
   <!-- TypeKit - Freight Text -->
   <script src="//use.typekit.net/buo5xqw.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
@@ -45,10 +49,41 @@
 <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<header>
-  <!-- this will become the main page header include -->
-  <h1><a href="/"><?php echo get_bloginfo('title') ?></a></h1>
-  <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-  <h2><?php echo get_bloginfo('description'); ?></h2>
-  <a href="#">How does it work? //from the homepage header</a>
+<!-- this will become the main page header include -->
+<header role="banner" class="">
+  <div class="pure-g">
+    <div class="pure-u-1-2">
+      <a href="/" title="<?php _e('Organicity - link to homepage', 'organicity'); ?>">
+        <span class="offscreen"><?php echo get_bloginfo('title'); ?></span>
+        <img
+          class=""
+          src="<?php bloginfo('template_directory'); ?>/images/organicity_logo.png"
+          alt="<?php _e('Organicity logo', 'organicity'); ?>"
+        />
+      </a>
+    </div>
+    <div class="pure-u-1-2">
+      <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+    </div>
+  </div>
+  <div class="pure-g title">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-1-1 pure-u-sm-1-2">
+      <h2><?php echo get_bloginfo('description'); ?></h2>
+
+      <?php if (rwmb_meta('organicity_header_anchor_link_visible')) : ?>
+
+      <a
+        class="button button--bordered"
+        href="#"
+        title="<?php echo rwmb_meta('organicity_header_anchor_link_title'); ?>"
+      >
+        <?php echo rwmb_meta('organicity_header_anchor_link_text'); ?>
+      </a>
+
+      <?php endif; ?>
+
+    </div>
+    <div class="pure-u-1-4"></div>
+  </div>
 </header>

@@ -1,0 +1,44 @@
+/**
+ * Organicity
+ * http://www.organicity.eu
+ *
+ * _mixins.scss
+ * helper mixins
+ *
+ * Copyright (c) 2015 Future Cities Catapult
+ */
+
+//shorthand version inspired by
+//http://intuio.at/en/blog/an-improved-sass-rem-mixin-for-unitless-numbers/
+@mixin rem-fallback($property, $values...) {
+  $values_px: "";
+  $values_rem: "";
+  @each $value in $values {
+    @if $value != auto and $value != 0 {
+      $values_px: #{$values_px + " " + $value + px};
+      $values_rem: #{$values_rem + " " + ($value/10) + rem};
+    } @else {
+      $values_px: #{$values_px + " " + $value};
+      $values_rem: #{$values_rem + " " + $value};
+    }
+  }
+  #{$property}: $values_px;
+  #{$property}: $values_rem;
+}
+
+/* Calculate fluid ratio based on two dimensions (width/height) */
+@mixin fluid-ratio($large-size, $small-size) {
+  $width-large: nth($large-size, 1);
+  $width-small: nth($small-size, 1);
+  $height-large: nth($large-size, 2);
+  $height-small: nth($small-size, 2);
+  $slope: ($height-large - $height-small) / ($width-large - $width-small);
+  $height: $height-small - $width-small * $slope;
+
+  padding-top: $slope * 100% !important;
+  height: $height !important;
+
+  background-size: cover;
+  -moz-background-size: cover;  /* Firefox 3.6 */
+  background-position: center;  /* Internet Explorer 7/8 */
+}

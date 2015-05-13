@@ -6,9 +6,97 @@
  * Version:     0.1.0
  * Copyright (c) 2015 Future Cities Catapult
  */
-@import 'fonts';
+@import 'colours', 'fonts', 'text', 'mixins';
+
+/*
+ * @see http://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+ */
+.offscreen {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
 
 body {
-  //set the default font family
+  height: 100%;
+  //set the default body text font family
   font-family: $text__family--serif;
+}
+
+header {
+  background: url('images/site_header_desktop.jpg') center;
+  background-size: cover;
+  height: 70%;
+
+  h2 {
+    text-transform: uppercase;
+    margin: 0 auto;
+    color: white;
+    font-family: $text__family--sans-serif--semibold;
+    @include rem-fallback(max-width, 650);
+    @include rem-fallback(font-size, $text__xlarge);
+    @include rem-fallback(line-height, 70);
+  }
+
+  //site logo
+  img {
+    @include rem-fallback(width, 270);
+  }
+
+  .title div {
+    text-align: center;
+  }
+
+}
+
+//NOTE: this element is created by wp_nav_menu()
+.menu-header-container {
+  float: right;
+  @include rem-fallback(margin-right, 100);
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  li a {
+    color: $color__white;
+    font-family: $text__family--sans-serif--medium;
+    text-decoration: none;
+    @include rem-fallback(margin-right, 20);
+    @include rem-fallback(font-size, $text__small);
+    &:hover, &:active {
+      color: $color__black;
+    }
+  }
+}
+
+.button {
+  color: $color__white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: $text__family--sans-serif--medium;
+  @include rem-fallback(font-size, $text__small);
+  @include rem-fallback(padding, 15, 40, 10, 40);
+
+  &:hover, &:active{
+    background-color: $color__white;
+    color: $color__pink;
+  }
+
+  &--bordered {
+    border: 3px solid $color__white;
+  }
+}
+
+footer {
+  text-align: center;
 }

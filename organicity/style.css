@@ -10,6 +10,15 @@
  * Organicity
  * http://www.organicity.eu
  *
+ * _colours.scss
+ * site colours
+ *
+ * Copyright (c) 2015 Future Cities Catapult
+ */
+/**
+ * Organicity
+ * http://www.organicity.eu
+ *
  * _fonts.scss
  * font includes and related variables
  *
@@ -20,38 +29,137 @@
  */
 @font-face {
   font-family: 'CooperHewitt-Semibold';
-  src: url("../fonts/CooperHewitt-Semibold.eot");
+  src: url("fonts/CooperHewitt-Semibold.eot");
   /* IE9 Compat Modes */
-  src: url("../fonts/CooperHewitt-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/CooperHewitt-Semibold.woff") format("woff"), url("../fonts/CooperHewitt-Semibold.ttf") format("truetype"), url("../fonts/CooperHewitt-Semibold.svg#svgFontName") format("svg");
+  src: url("fonts/CooperHewitt-Semibold.eot?#iefix") format("embedded-opentype"), url("fonts/CooperHewitt-Semibold.woff") format("woff"), url("fonts/CooperHewitt-Semibold.ttf") format("truetype"), url("fonts/CooperHewitt-Semibold.svg#svgFontName") format("svg");
   /* Legacy iOS */ }
 @font-face {
   font-family: 'CooperHewitt-LightItalic';
-  src: url("../fonts/CooperHewitt-LightItalic.eot");
+  src: url("fonts/CooperHewitt-LightItalic.eot");
   /* IE9 Compat Modes */
-  src: url("../fonts/CooperHewitt-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/CooperHewitt-LightItalic.woff") format("woff"), url("../fonts/CooperHewitt-LightItalic.ttf") format("truetype"), url("../fonts/CooperHewitt-LightItalic.svg#svgFontName") format("svg");
+  src: url("fonts/CooperHewitt-LightItalic.eot?#iefix") format("embedded-opentype"), url("fonts/CooperHewitt-LightItalic.woff") format("woff"), url("fonts/CooperHewitt-LightItalic.ttf") format("truetype"), url("fonts/CooperHewitt-LightItalic.svg#svgFontName") format("svg");
   /* Legacy iOS */ }
 @font-face {
   font-family: 'CooperHewitt-BookItalic';
-  src: url("../fonts/CooperHewitt-BookItalic.eot");
+  src: url("fonts/CooperHewitt-BookItalic.eot");
   /* IE9 Compat Modes */
-  src: url("../fonts/CooperHewitt-BookItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/CooperHewitt-BookItalic.woff") format("woff"), url("../fonts/CooperHewitt-BookItalic.ttf") format("truetype"), url("../fonts/CooperHewitt-BookItalic.svg#svgFontName") format("svg");
+  src: url("fonts/CooperHewitt-BookItalic.eot?#iefix") format("embedded-opentype"), url("fonts/CooperHewitt-BookItalic.woff") format("woff"), url("fonts/CooperHewitt-BookItalic.ttf") format("truetype"), url("fonts/CooperHewitt-BookItalic.svg#svgFontName") format("svg");
   /* Legacy iOS */ }
 @font-face {
   font-family: 'CooperHewitt-Book';
-  src: url("../fonts/CooperHewitt-Book.eot");
+  src: url("fonts/CooperHewitt-Book.eot");
   /* IE9 Compat Modes */
-  src: url("../fonts/CooperHewitt-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/CooperHewitt-Book.woff") format("woff"), url("../fonts/CooperHewitt-Book.ttf") format("truetype"), url("../fonts/CooperHewitt-Book.svg#svgFontName") format("svg");
+  src: url("fonts/CooperHewitt-Book.eot?#iefix") format("embedded-opentype"), url("fonts/CooperHewitt-Book.woff") format("woff"), url("fonts/CooperHewitt-Book.ttf") format("truetype"), url("fonts/CooperHewitt-Book.svg#svgFontName") format("svg");
   /* Legacy iOS */ }
 @font-face {
   font-family: 'CooperHewitt-Light';
-  src: url("../fonts/CooperHewitt-Light.eot");
+  src: url("fonts/CooperHewitt-Light.eot");
   /* IE9 Compat Modes */
-  src: url("../fonts/CooperHewitt-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/CooperHewitt-Light.woff") format("woff"), url("../fonts/CooperHewitt-Light.ttf") format("truetype"), url("../fonts/CooperHewitt-Light.svg#svgFontName") format("svg");
+  src: url("fonts/CooperHewitt-Light.eot?#iefix") format("embedded-opentype"), url("fonts/CooperHewitt-Light.woff") format("woff"), url("fonts/CooperHewitt-Light.ttf") format("truetype"), url("fonts/CooperHewitt-Light.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+@font-face {
+  font-family: 'CooperHewitt-Medium';
+  src: url("fonts/CooperHewitt-Medium.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/CooperHewitt-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/CooperHewitt-Medium.woff") format("woff"), url("fonts/CooperHewitt-Medium.ttf") format("truetype"), url("fonts/CooperHewitt-Medium.svg#svgFontName") format("svg");
   /* Legacy iOS */ }
 /*
   Font famiy variables
  */
+/**
+ * Organicity
+ * http://www.organicity.eu
+ *
+ * _text.scss
+ * text variables and typography
+ *
+ * Copyright (c) 2015 Future Cities Catapult
+ */
+/**
+ * Organicity
+ * http://www.organicity.eu
+ *
+ * _mixins.scss
+ * helper mixins
+ *
+ * Copyright (c) 2015 Future Cities Catapult
+ */
+/* Calculate fluid ratio based on two dimensions (width/height) */
+/*
+ * @see http://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+ */
+.offscreen {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+
+html {
+  font-size: 62.5%;
+  height: 100%; }
+
 body {
+  height: 100%;
   font-family: "freight-text-pro", serif; }
+
+header {
+  background: url("images/site_header_desktop.jpg") center;
+  background-size: cover;
+  height: 70%; }
+  header h2 {
+    text-transform: uppercase;
+    margin: 0 auto;
+    color: white;
+    font-family: "CooperHewitt-Semibold", "Verdana", "Arial", sans-serif;
+    max-width:  650px;
+    max-width:  65rem;
+    font-size:  60px;
+    font-size:  6rem;
+    line-height:  70px;
+    line-height:  7rem; }
+  header img {
+    width:  270px;
+    width:  27rem; }
+  header .title div {
+    text-align: center; }
+
+.menu-header-container {
+  float: right;
+  margin-right:  100px;
+  margin-right:  10rem; }
+  .menu-header-container ul {
+    list-style: none; }
+  .menu-header-container li {
+    display: inline-block; }
+  .menu-header-container li a {
+    color: #ffffff;
+    font-family: "CooperHewitt-Medium", "Verdana", "Arial", sans-serif;
+    text-decoration: none;
+    margin-right:  20px;
+    margin-right:  2rem;
+    font-size:  18px;
+    font-size:  1.8rem; }
+    .menu-header-container li a:hover, .menu-header-container li a:active {
+      color: #191115; }
+
+.button {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "CooperHewitt-Medium", "Verdana", "Arial", sans-serif;
+  font-size:  18px;
+  font-size:  1.8rem;
+  padding:  15px 40px 10px 40px;
+  padding:  1.5rem 4rem 1rem 4rem; }
+  .button:hover, .button:active {
+    background-color: #ffffff;
+    color: #EF4070; }
+  .button--bordered {
+    border: 3px solid #ffffff; }
+
+footer {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
