@@ -96,13 +96,24 @@
   height: 1px;
   overflow: hidden; }
 
+/*
+When setting the primary font stack, apply it to the Pure grid units along
+with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
+specific font stacks to ensure the greatest OS/browser compatibility.
+*/
+html, button, input, select, textarea,
+.pure-g [class*="pure-u"] {
+  font-family: "CooperHewitt-Book", "Verdana", "Arial", sans-serif; }
+
 html {
   font-size: 62.5%;
   height: 100%; }
 
 body {
-  height: 100%;
-  font-family: "freight-text-pro", serif; }
+  height: 100%; }
+
+a {
+  text-decoration: none; }
 
 header {
   background: url("images/site_header_desktop.jpg") center;
@@ -118,17 +129,21 @@ header {
     font-size:  60px;
     font-size:  6rem;
     line-height:  70px;
-    line-height:  7rem; }
+    line-height:  7rem;
+    margin-bottom:  35px;
+    margin-bottom:  3.5rem; }
   header img {
-    width:  270px;
-    width:  27rem; }
+    width:  223px;
+    width:  22.3rem;
+    padding:  45px 95px;
+    padding:  4.5rem 9.5rem; }
   header .title div {
     text-align: center; }
 
 .menu-header-container {
   float: right;
-  margin-right:  100px;
-  margin-right:  10rem; }
+  margin:  45px 100px 0 0;
+  margin:  4.5rem 10rem 0 0; }
   .menu-header-container ul {
     list-style: none; }
   .menu-header-container li {
@@ -148,6 +163,7 @@ header {
   color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
   font-family: "CooperHewitt-Medium", "Verdana", "Arial", sans-serif;
   font-size:  18px;
   font-size:  1.8rem;
@@ -158,6 +174,87 @@ header {
     color: #EF4070; }
   .button--bordered {
     border: 3px solid #ffffff; }
+  .button--full {
+    display: block; }
+  .button--external {
+    background-color: #EF4070; }
+
+.section {
+  overflow: hidden; }
+  .section .pure-g {
+    margin:  0 auto 20px auto;
+    margin:  0 auto 2rem auto;
+    max-width:  1310px;
+    max-width:  131rem;
+    padding:  60 0px;
+    padding:  60 0/10rem; }
+  .section h2 {
+    text-align: center;
+    font-family: "CooperHewitt-Book", "Verdana", "Arial", sans-serif;
+    color: #EF4070;
+    font-size:  46px;
+    font-size:  4.6rem;
+    line-height:  46px;
+    line-height:  4.6rem; }
+  .section h3 {
+    text-align: center;
+    font-family: "CooperHewitt-Light", "Verdana", "Arial", sans-serif;
+    color: #EF4070;
+    font-size:  34px;
+    font-size:  3.4rem; }
+  .section--blog {
+    background-color: #EBEBEB; }
+    .section--blog .button {
+      margin:  0 5px;
+      margin:  0 0.5rem; }
+  .section--main hr {
+    border: 0;
+    border-bottom: 3px solid #f3f4f8; }
+  .section--main p {
+    color: #5D5D5D;
+    font-family: "freight-text-pro", serif;
+    font-size:  18px;
+    font-size:  1.8rem;
+    line-height:  30px;
+    line-height:  3rem;
+    margin-bottom:  40px;
+    margin-bottom:  4rem; }
+  .section--copyright {
+    background-color: #EF4070; }
+
+.feature {
+  height: 442px;
+  max-height: 442px;
+  overflow: hidden;
+  background-color: #ffffff;
+  position: relative;
+  margin:  0 5px;
+  margin:  0 0.5rem; }
+  .feature__meta {
+    font-size:  14px;
+    font-size:  1.4rem;
+    padding:  30px;
+    padding:  3rem;
+    color: #9B9B9B; }
+    .feature__meta a {
+      color: #EF4070; }
+      .feature__meta a:hover, .feature__meta a:active {
+        text-decoration: underline; }
+    .feature__meta .date {
+      padding-right:  8px;
+      padding-right:  0.8rem; }
+  .feature__description {
+    display: block;
+    color: #303030;
+    font-size:  24px;
+    font-size:  2.4rem;
+    padding:  0 30px;
+    padding:  0 3rem; }
+    .feature__description:hover, .feature__description:active {
+      color: #EF4070; }
+  .feature__image {
+    position: absolute;
+    bottom: 0; }
 
 footer {
   text-align: center; }

@@ -20,6 +20,16 @@
   overflow: hidden;
 }
 
+/*
+When setting the primary font stack, apply it to the Pure grid units along
+with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
+specific font stacks to ensure the greatest OS/browser compatibility.
+*/
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+  font-family: $text__family--sans-serif;
+}
+
 html {
   font-size: 62.5%;
   height: 100%;
@@ -27,11 +37,14 @@ html {
 
 body {
   height: 100%;
-  //set the default body text font family
-  font-family: $text__family--serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 header {
+
   background: url('images/site_header_desktop.jpg') center;
   background-size: cover;
   height: 70%;
@@ -44,15 +57,21 @@ header {
     @include rem-fallback(max-width, 650);
     @include rem-fallback(font-size, $text__xlarge);
     @include rem-fallback(line-height, 70);
+    @include rem-fallback(margin-bottom, 35);
   }
 
   //site logo
   img {
-    @include rem-fallback(width, 270);
+    @include rem-fallback(width, 223);
+    @include rem-fallback(padding, 45, 95);
   }
 
   .title div {
     text-align: center;
+  }
+
+  .pure-g {
+
   }
 
 }
@@ -60,7 +79,7 @@ header {
 //NOTE: this element is created by wp_nav_menu()
 .menu-header-container {
   float: right;
-  @include rem-fallback(margin-right, 100);
+  @include rem-fallback(margin, 45, 100, 0, 0);
   ul {
     list-style: none;
   }
@@ -83,6 +102,7 @@ header {
   color: $color__white;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
   font-family: $text__family--sans-serif--medium;
   @include rem-fallback(font-size, $text__small);
   @include rem-fallback(padding, 15, 40, 10, 40);
@@ -95,7 +115,118 @@ header {
   &--bordered {
     border: 3px solid $color__white;
   }
+
+  &--full {
+    display: block;
+  }
+
+  &--external {
+    background-color: $color__pink;
+  }
 }
+
+.section{
+
+  overflow: hidden;
+
+  .pure-g {
+    // margin: auto;
+    @include rem-fallback(margin, 0, auto, 20, auto);
+
+    //TODO: responsive
+    @include rem-fallback(max-width, 1310);
+    @include rem-fallback(padding, 60 0);
+  }
+
+  h2 {
+    text-align: center;
+    font-family: $text__family--sans-serif;
+    color: $color__pink;
+    @include rem-fallback(font-size, $text__large);
+    @include rem-fallback(line-height, 46);
+    // @include rem-fallback(margin-bottom,$grid__base--1);
+  }
+
+  h3 {
+    text-align: center;
+    font-family: $text__family--sans-serif--light;
+    color: $color__pink;
+    @include rem-fallback(font-size, 34);
+  }
+
+  &--blog {
+    background-color: $color__grey--light;
+    .button {
+      @include rem-fallback(margin, 0, 5);
+    }
+  }
+
+  &--main {
+    hr {
+      border: 0;
+      border-bottom: 3px solid #f3f4f8;
+    }
+
+    p {
+      color: $color__grey;
+      font-family: $text__family--serif;
+      @include rem-fallback(font-size, $text__small);
+      @include rem-fallback(line-height, 30);
+      @include rem-fallback(margin-bottom, 40);
+    }
+  }
+
+  &--copyright {
+    background-color: $color__pink;
+  }
+}
+
+.feature {
+
+  //TODO: responsive
+  height: 442px;
+  max-height: 442px;
+
+  overflow: hidden;
+  background-color: $color__white;
+
+  //allows the __image to be absolutely positioned within parent
+  position: relative;
+  @include rem-fallback(margin, 0, 5);
+
+  &__meta {
+    @include rem-fallback(font-size, 14);
+    @include rem-fallback(padding, 30);
+    color: $color__grey--mid;
+    a {
+      color: $color__pink;
+      &:hover, &:active {
+        // color: $color__black;
+        text-decoration: underline;
+      }
+    }
+    .date {
+      @include rem-fallback(padding-right, 8);
+    }
+  }
+
+  &__description {
+    display: block;
+    color: $color__grey--title;
+    @include rem-fallback(font-size, 24);
+    @include rem-fallback(padding, 0, 30);
+    &:hover, &:active {
+      color: $color__pink;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+  }
+
+}
+
 
 footer {
   text-align: center;

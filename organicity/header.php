@@ -75,7 +75,7 @@
 
       <a
         class="button button--bordered"
-        href="#"
+        href="#main"
         title="<?php echo rwmb_meta('organicity_header_anchor_link_title'); ?>"
       >
         <?php echo rwmb_meta('organicity_header_anchor_link_text'); ?>

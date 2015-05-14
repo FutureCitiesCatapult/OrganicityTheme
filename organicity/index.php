@@ -18,46 +18,75 @@ get_header(); ?>
 ?>
 
 <main role="main">
-  <h1><?php _e( 'Blog', 'organicity' ); ?></h1>
-  <?php //get_template_part('loop'); ?>
+  <div class="section section--blog">
 
-  <!-- custom loop to show latest 4 posts -->
-  <?php if ( $posts_query->have_posts() ) : ?>
+    <h2><?php _e( 'Blog', 'organicity' ); ?></h2>
 
-  	<!-- the loop -->
-  	<?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
-      <a href="<?php echo get_permalink(get_option('page_for_posts' )); ?>">
-        <div class="">
-          <?php the_post_thumbnail(array(120,120)); ?>
-          <span class="date"><?php the_time('j M Y'); ?></span>
-    		  <h2><?php the_title(); ?></h2>
-          <div class="tags"></div>
-          <?php
-            /*
-             * Aggregate city and regular tags for the current post.
-             * If the post has regular tags then add a comma seperator
-             * after the cities list.
-             */
-             $seperator = ', ';
-             $sep_after = has_term(null, 'post_tag') ? $seperator : '';
-             echo get_the_term_list( $post->ID, 'city', '', $seperator, $sep_after);
-             echo get_the_term_list( $post->ID, 'post_tag', '', $seperator);
-          ?>
+    <div class="pure-g">
+
+      <!-- custom loop to show latest 4 posts -->
+      <?php if ( $posts_query->have_posts() ) : ?>
+
+        <!-- the loop -->
+        <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+          <!-- TODO: work on responsive breakdown of article 4->2->1 -->
+          <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4">
+            <div class="feature">
+              <div class="feature__meta">
+                <span class="date"><?php the_time('j M Y'); ?></span>
+                <span class="tags">
+                  <?php
+                    /*
+                    * Pluck one city or regular tag for the current post
+                    */
+                    if (has_term(null, 'city')) {
+                      $first_term = wp_get_post_terms($post->ID, array('city'))[0];
+                    } elseif (has_term(null, 'post_tag')) {
+                      $first_term = wp_get_post_terms($post->ID, array('post_tag'))[0];
+                    }
+                  ?>
+                  <?php if ($first_term) : ?>
+                    <a href="<?php echo get_term_link($first_term); ?>">
+                      <?php echo $first_term->name; ?>
+                    </a>
+                  <?php endif; ?>
+                </span>
+              </div>
+              <a class="feature__description" href="<?php the_permalink(); ?>">
+                <?php the_title(); ?>
+              </a>
+              <a class="feature__image" href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail(null, array('class' => 'pure-img')); ?>
+              </a>
+            </div>
+          </div>
+
+        <?php endwhile; ?>
+        <!-- end of the loop -->
+        <?php wp_reset_postdata(); ?>
+
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1-3 pure-u-lg-1-4"></div>
+        <!-- link to blog -->
+        <div class="pure-u-1-1 pure-u-md-1-3 pure-u-lg-1-2">
+          <a class="button button--full button--external" href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e('Show more', 'organicity'); ?></a>
         </div>
-      </a>
-  	<?php endwhile; ?>
-  	<!-- end of the loop -->
+        <div class="pure-u-1-3 pure-u-lg-1-4"></div>
+        <?php else : ?>
+          <p><?php _e( 'No posts to show.', 'organicity' ); ?></p>
+        <?php endif; ?>
+      </div>
+  </div>
 
-    <!-- insert link to blog -->
-    <a href="<?php echo get_permalink(get_option('page_for_posts' )); ?>">show more</a>
-
-  <?php else : ?>
-  	<p><?php _e( 'No posts to show.' ); ?></p>
-  <?php endif; ?>
-
-  <?php wp_reset_postdata(); ?>
-
-  <?php the_content(); ?>
-
+  <div class="section section--main" id="main">
+    <div class="pure-g">
+      <div class="pure-u-1-4"></div>
+      <div class="pure-u-1-2">
+        <?php the_content(); ?>
+      </div>
+      <div class="pure-u-1-4"></div>
+    </div>
+  </div>
 </main>
 <?php get_footer(); ?>
