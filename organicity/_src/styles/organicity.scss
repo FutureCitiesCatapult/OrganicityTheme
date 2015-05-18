@@ -153,13 +153,11 @@ header {
   overflow: hidden;
 
   .pure-g {
-    // margin: auto;
     @include rem-fallback(margin, 0, auto, 20, auto);
-
-    //TODO: responsive
-    @include rem-fallback(max-width, 1310);
+    @include rem-fallback(max-width, 995);
     @include rem-fallback(padding, 60 0);
   }
+
 
   h2 {
     text-align: center;
@@ -190,6 +188,17 @@ header {
     background-color: $color__grey--background;
     .button {
       @include rem-fallback(margin, 0, 5);
+    }
+  }
+
+  &--wide {
+    .pure-g {
+      // margin: auto;
+      @include rem-fallback(margin, 0, auto, 20, auto);
+
+      //TODO: responsive
+      @include rem-fallback(max-width, 1310);
+      @include rem-fallback(padding, 60 0);
     }
   }
 

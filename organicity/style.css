@@ -202,8 +202,8 @@ header {
   .section .pure-g {
     margin:  0 auto 20px auto;
     margin:  0 auto 2rem auto;
-    max-width:  1310px;
-    max-width:  131rem;
+    max-width:  995px;
+    max-width:  99.5rem;
     padding:  60 0px;
     padding:  60 0/10rem; }
   .section h2 {
@@ -234,6 +234,13 @@ header {
     .section--blog .button {
       margin:  0 5px;
       margin:  0 0.5rem; }
+  .section--wide .pure-g {
+    margin:  0 auto 20px auto;
+    margin:  0 auto 2rem auto;
+    max-width:  1310px;
+    max-width:  131rem;
+    padding:  60 0px;
+    padding:  60 0/10rem; }
   .section--main hr {
     border: 0;
     border-bottom: 3px solid #f3f4f8; }

@@ -18,7 +18,7 @@ get_header(); ?>
 ?>
 
 <main role="main">
-  <div class="section section--blog">
+  <div class="section section--blog section--wide">
 
     <h2><?php _e( 'Blog', 'organicity' ); ?></h2>
 
