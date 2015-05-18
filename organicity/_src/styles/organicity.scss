@@ -152,13 +152,6 @@ header {
 
   overflow: hidden;
 
-  .pure-g {
-    @include rem-fallback(margin, 0, auto, 20, auto);
-    @include rem-fallback(max-width, 995);
-    @include rem-fallback(padding, 60 0);
-  }
-
-
   h2 {
     text-align: center;
     font-family: $text__family--sans-serif;
@@ -181,6 +174,12 @@ header {
     @include rem-fallback(font-size, $text__small);
     @include rem-fallback(line-height, 30);
     @include rem-fallback(margin-bottom, 40);
+  }
+
+  .pure-g {
+    @include rem-fallback(margin, 0, auto, 20, auto);
+    @include rem-fallback(max-width, 995);
+    @include rem-fallback(padding, 60 0);
   }
 
   //TODO: responsive - remove 4th article (:last-child) < large

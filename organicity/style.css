@@ -199,13 +199,6 @@ header {
 
 .section {
   overflow: hidden; }
-  .section .pure-g {
-    margin:  0 auto 20px auto;
-    margin:  0 auto 2rem auto;
-    max-width:  995px;
-    max-width:  99.5rem;
-    padding:  60 0px;
-    padding:  60 0/10rem; }
   .section h2 {
     text-align: center;
     font-family: "CooperHewitt-Book", "Verdana", "Arial", sans-serif;
@@ -229,6 +222,13 @@ header {
     line-height:  3rem;
     margin-bottom:  40px;
     margin-bottom:  4rem; }
+  .section .pure-g {
+    margin:  0 auto 20px auto;
+    margin:  0 auto 2rem auto;
+    max-width:  995px;
+    max-width:  99.5rem;
+    padding:  60 0px;
+    padding:  60 0/10rem; }
   .section--blog {
     background-color: #F3F4F8; }
     .section--blog .button {
