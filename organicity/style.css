@@ -161,6 +161,7 @@ header {
 
 .button {
   color: #ffffff;
+  background-color: transparent;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -176,6 +177,9 @@ header {
     border: 3px solid #ffffff; }
   .button--full {
     display: block; }
+  .button--internal {
+    color: #EF4070;
+    background-color: #ffffff; }
   .button--external {
     background-color: #EF4070; }
 
@@ -202,15 +206,7 @@ header {
     color: #EF4070;
     font-size:  34px;
     font-size:  3.4rem; }
-  .section--blog {
-    background-color: #EBEBEB; }
-    .section--blog .button {
-      margin:  0 5px;
-      margin:  0 0.5rem; }
-  .section--main hr {
-    border: 0;
-    border-bottom: 3px solid #f3f4f8; }
-  .section--main p {
+  .section p {
     color: #5D5D5D;
     font-family: "freight-text-pro", serif;
     font-size:  18px;
@@ -219,8 +215,25 @@ header {
     line-height:  3rem;
     margin-bottom:  40px;
     margin-bottom:  4rem; }
-  .section--copyright {
+  .section--blog {
+    background-color: #F3F4F8; }
+    .section--blog .button {
+      margin:  0 5px;
+      margin:  0 0.5rem; }
+  .section--main hr {
+    border: 0;
+    border-bottom: 3px solid #f3f4f8; }
+  .section--events {
+    background-color: #F3F4F8; }
+  .section--signup p {
+    text-align: center; }
+  .section--signup form {
+    text-align: center; }
+  .section--copyright, .section--signup {
+    color: #ffffff;
     background-color: #EF4070; }
+    .section--copyright h3, .section--copyright p, .section--signup h3, .section--signup p {
+      color: #ffffff; }
 
 .feature {
   height: 442px;

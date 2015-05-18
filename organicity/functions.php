@@ -195,6 +195,74 @@ function register_meta_boxes($meta_boxes) {
     )
   );
 
+  $homepage_event_fields = array(
+    'title'   => 'Events section',
+    'pages'   => 'page',
+    'fields'  => array(
+      array(
+        'name'  => 'Title',
+        'id'    => $prefix . 'homepage_events_section_title',
+        'type'  => 'text',
+        'size'  => 80
+      ),
+      array(
+        'name'  => 'Show section',
+        'id'    => $prefix . 'homepage_events_section_visible',
+        'type'  => 'checkbox',
+        'std'   => 1
+      ),
+      array(
+        'name'    => 'Content',
+        'id'      => $prefix . 'homepage_events_section_content',
+        'type'    => 'wysiwyg',
+        'options' => array('textarea_rows'=>10)
+      ),
+      array(
+        'name'  => 'Link text',
+        'id'    => $prefix . 'homepage_events_link_text',
+        'type'  => 'text',
+        'size'  => 50
+      )
+    )
+  );
+
+  $homepage_signup_fields = array(
+    'title'   => 'Signup section',
+    'pages'   => 'page',
+    'fields'  => array(
+      array(
+        'name'  => 'Title',
+        'id'    => $prefix . 'homepage_signup_section_title',
+        'type'  => 'text',
+        'size'  => 80
+      ),
+      array(
+        'name'  => 'Show section',
+        'id'    => $prefix . 'homepage_signup_section_visible',
+        'type'  => 'checkbox',
+        'std'   => 1
+      ),
+      array(
+        'name'    => 'Content',
+        'id'      => $prefix . 'homepage_signup_section_content',
+        'type'    => 'wysiwyg',
+        'options' => array('textarea_rows'=>10)
+      ),
+      array(
+        'name'  => 'Signup field placeholder text',
+        'id'    => $prefix . 'homepage_signup_placeholder_text',
+        'type'  => 'text',
+        'size'  => 50
+      ),
+      array(
+        'name'  => 'Signup button text',
+        'id'    => $prefix . 'homepage_signup_button_text',
+        'type'  => 'text',
+        'size'  => 50
+      )
+    )
+  );
+
   /*
    * only show if editing homepage
    */
@@ -203,6 +271,8 @@ function register_meta_boxes($meta_boxes) {
 
   if ($post_id == $frontpage_id) {
     $meta_boxes[] = $homepage_header_fields;
+    $meta_boxes[] = $homepage_event_fields;
+    $meta_boxes[] = $homepage_signup_fields;
   }
 
   return $meta_boxes;

@@ -79,7 +79,7 @@ get_header(); ?>
       </div>
   </div>
 
-  <div class="section section--main" id="main">
+  <div id="main" class="section section--main">
     <div class="pure-g">
       <div class="pure-u-1-4"></div>
       <div class="pure-u-1-2">
@@ -88,5 +88,43 @@ get_header(); ?>
       <div class="pure-u-1-4"></div>
     </div>
   </div>
+
+  <?php if (rwmb_meta('organicity_homepage_events_section_visible')) : ?>
+  <div class="section section--events">
+    <div class="pure-g">
+      <div class="pure-u-1-4"></div>
+      <div class="pure-u-1-2">
+        <h3><?php echo rwmb_meta('organicity_homepage_events_section_title'); ?></h3>
+        <?php echo rwmb_meta('organicity_homepage_events_section_content'); ?>
+        <a class="button button--full button--external" href="<?php echo get_post_type_archive_link('event'); ?>">
+          <?php echo rwmb_meta('organicity_homepage_events_link_text'); ?>
+        </a>
+      </div>
+      <div class="pure-u-1-4"></div>
+    </div>
+  </div>
+  <?php endif; ?>
+
+  <?php if (rwmb_meta('organicity_homepage_signup_section_visible')) : ?>
+  <div class="section section--signup">
+    <div class="pure-g">
+      <div class="pure-u-1-4"></div>
+      <div class="pure-u-1-2">
+        <h3><?php echo rwmb_meta('organicity_homepage_signup_section_title'); ?></h3>
+        <?php echo rwmb_meta('organicity_homepage_signup_section_content'); ?>
+        <form class="pure-form">
+          <fieldset>
+            <input class="" type="email" placeholder="<?php echo rwmb_meta('organicity_homepage_signup_field_placeholder_text'); ?>">
+            <button type="submit" class="button button--bordered button--internal">
+              <?php echo rwmb_meta('organicity_homepage_signup_button_text'); ?>
+            </button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="pure-u-1-4"></div>
+    </div>
+  </div>
+  <?php endif; ?>
+
 </main>
 <?php get_footer(); ?>
