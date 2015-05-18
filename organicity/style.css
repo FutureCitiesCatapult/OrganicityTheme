@@ -158,6 +158,8 @@ header {
     font-size:  1.8rem; }
     .menu-header-container li a:hover, .menu-header-container li a:active {
       color: #191115; }
+  .menu-header-container li.current-menu-item a {
+    border-bottom: 2px solid #ffffff; }
 
 .button {
   color: #ffffff;

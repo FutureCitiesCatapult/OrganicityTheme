@@ -96,6 +96,9 @@ header {
       color: $color__black;
     }
   }
+  li.current-menu-item a {
+    border-bottom: 2px solid $color__white;
+  }
 }
 
 .button {
