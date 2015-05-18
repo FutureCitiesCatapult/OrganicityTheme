@@ -14,6 +14,17 @@
 
       <h2>Follow us</h2>
 
+        <div class="socialMedia">
+            <a href=""><i class="icon-facebook-squared"></i></a>
+            <a href=""><i class="icon-twitter"></i></a>
+            <a href=""><i class="icon-slideshare"></i></a>
+            <a href=""><i class="icon-linkedin-squared"></i></a>
+            <a href=""><i class="icon-instagramm"></i></a>
+            <a href=""><i class="icon-youtube-play"></i></a>
+        </div>
+
+        <hr/>
+
     </div>
     <div class="pure-u-1-4"></div>
   </div>
