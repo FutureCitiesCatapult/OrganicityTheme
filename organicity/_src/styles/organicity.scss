@@ -45,9 +45,18 @@ a {
 
 header {
 
-  background: url('images/site_header_desktop.jpg') center;
-  background-size: cover;
-  height: 70%;
+  background-color: $color__pink;
+  @include rem-fallback(height, 85);
+
+  &.home {
+    background: url('images/site_header_desktop.jpg') center;
+    background-size: cover;
+    height: 70%;
+    img {
+      @include rem-fallback(width, 223);
+      @include rem-fallback(padding, 45, 95);
+    }
+  }
 
   h2 {
     text-transform: uppercase;
@@ -62,8 +71,8 @@ header {
 
   //site logo
   img {
-    @include rem-fallback(width, 223);
-    @include rem-fallback(padding, 45, 95);
+    @include rem-fallback(width, 126);
+    @include rem-fallback(padding, 10, 95);
   }
 
   .title div {
@@ -79,7 +88,12 @@ header {
 //NOTE: this element is created by wp_nav_menu()
 .menu-header-container {
   float: right;
-  @include rem-fallback(margin, 45, 100, 0, 0);
+  @include rem-fallback(margin, 22, 100, 0, 0);
+
+  .home & {
+    @include rem-fallback(margin-top, 45);
+  }
+
   ul {
     list-style: none;
   }

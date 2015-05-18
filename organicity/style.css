@@ -116,9 +116,18 @@ a {
   text-decoration: none; }
 
 header {
-  background: url("images/site_header_desktop.jpg") center;
-  background-size: cover;
-  height: 70%; }
+  background-color: #EF4070;
+  height:  85px;
+  height:  8.5rem; }
+  header.home {
+    background: url("images/site_header_desktop.jpg") center;
+    background-size: cover;
+    height: 70%; }
+    header.home img {
+      width:  223px;
+      width:  22.3rem;
+      padding:  45px 95px;
+      padding:  4.5rem 9.5rem; }
   header h2 {
     text-transform: uppercase;
     margin: 0 auto;
@@ -133,17 +142,20 @@ header {
     margin-bottom:  35px;
     margin-bottom:  3.5rem; }
   header img {
-    width:  223px;
-    width:  22.3rem;
-    padding:  45px 95px;
-    padding:  4.5rem 9.5rem; }
+    width:  126px;
+    width:  12.6rem;
+    padding:  10px 95px;
+    padding:  1rem 9.5rem; }
   header .title div {
     text-align: center; }
 
 .menu-header-container {
   float: right;
-  margin:  45px 100px 0 0;
-  margin:  4.5rem 10rem 0 0; }
+  margin:  22px 100px 0 0;
+  margin:  2.2rem 10rem 0 0; }
+  .home .menu-header-container {
+    margin-top:  45px;
+    margin-top:  4.5rem; }
   .menu-header-container ul {
     list-style: none; }
   .menu-header-container li {
