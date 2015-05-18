@@ -5,6 +5,9 @@
  * @package Organicity
  * @since 0.1.0
  */
+ $is_home = is_front_page();
+ $header_class = $is_home ? 'home' : '';
+
  ?><!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +53,7 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <!-- this will become the main page header include -->
-<header role="banner" class="">
+<header role="banner" class="<?php echo $header_class; ?>">
   <div class="pure-g">
     <div class="pure-u-1-2">
       <a href="/" title="<?php _e('Organicity - link to homepage', 'organicity'); ?>">
@@ -66,6 +69,7 @@
       <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
     </div>
   </div>
+  <?php if ($is_home) : ?>
   <div class="pure-g title">
     <div class="pure-u-1-4"></div>
     <div class="pure-u-1-1 pure-u-sm-1-2">
@@ -86,4 +90,5 @@
     </div>
     <div class="pure-u-1-4"></div>
   </div>
+  <?php endif; ?>
 </header>
