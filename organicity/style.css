@@ -270,7 +270,11 @@ header {
     background-color: #EF4070; }
 
 .section {
-  overflow: hidden; }
+  overflow: hidden;
+  padding-top:  60px;
+  padding-top:  6rem;
+  padding-bottom:  60px;
+  padding-bottom:  6rem; }
   .section h2 {
     text-align: center;
     font-family: "CooperHewitt-Book", "Verdana", "Arial", sans-serif;
@@ -327,6 +331,49 @@ header {
     background-color: #EF4070; }
     .section--copyright h3, .section--copyright p, .section--signup h3, .section--signup p {
       color: #ffffff; }
+  .section--copyright {
+    padding-top:  40px;
+    padding-top:  4rem;
+    padding-bottom:  40px;
+    padding-bottom:  4rem;
+    font-family: "CooperHewitt-Book", "Verdana", "Arial", sans-serif;
+    font-size:  18px;
+    font-size:  1.8rem; }
+    .section--copyright .pure-g {
+      margin-bottom:  0;
+      margin-bottom:  0; }
+  .section--footer {
+    text-align: center; }
+    .section--footer hr {
+      border: 0;
+      border-bottom: 3px solid #f3f4f8;
+      padding-top:  10px;
+      padding-top:  1rem;
+      padding-bottom:  10px;
+      padding-bottom:  1rem; }
+    .section--footer .socialMedia {
+      padding-top:  10px;
+      padding-top:  1rem;
+      padding-bottom:  10px;
+      padding-bottom:  1rem; }
+      .section--footer .socialMedia i {
+        font-size:  35px;
+        font-size:  3.5rem;
+        padding:  15px;
+        padding:  1.5rem; }
+      .section--footer .socialMedia a {
+        color: #5D5D5D; }
+        .section--footer .socialMedia a:hover, .section--footer .socialMedia a:active {
+          color: #191115; }
+    .section--footer .logos {
+      text-align: center; }
+      .section--footer .logos img {
+        display: inline-block;
+        max-height:  84px;
+        max-height:  8.4rem;
+        width: auto;
+        margin:  30px;
+        margin:  3rem; }
 
 .feature {
   height: 442px;
@@ -364,14 +411,5 @@ header {
 
 footer {
   text-align: center; }
-  footer .socialMedia i {
-    font-size:  40px;
-    font-size:  4rem;
-    padding:  10px;
-    padding:  1rem; }
-  footer .socialMedia a {
-    color: #5D5D5D; }
-    footer .socialMedia a:hover, footer .socialMedia a:active {
-      color: #191115; }
 
 /*# sourceMappingURL=style.css.map */
