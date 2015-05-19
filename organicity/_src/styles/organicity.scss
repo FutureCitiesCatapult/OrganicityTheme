@@ -6,7 +6,7 @@
  * Version:     0.1.0
  * Copyright (c) 2015 Future Cities Catapult
  */
-@import 'colours', 'fonts', 'text', 'mixins';
+@import 'colours', 'fonts', 'text', 'mixins','socialmedia';
 
 /*
  * @see http://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
@@ -151,6 +151,10 @@ header {
 .section{
 
   overflow: hidden;
+  @include rem-fallback(padding-top,60);
+  @include rem-fallback(padding-bottom,60);
+
+
 
   h2 {
     text-align: center;
@@ -224,6 +228,59 @@ header {
     background-color: $color__pink;
     h3, p { color: $color__white; }
   }
+
+  &--copyright{
+    @include rem-fallback(padding-top,40);
+    @include rem-fallback(padding-bottom,40);
+    .pure-g{
+      @include rem-fallback(margin-bottom, 0);
+    }
+    font-family: $text__family--sans-serif;
+    @include rem-fallback(font-size,18);
+  }
+
+
+  &--footer {
+    hr {
+      border: 0;
+      border-bottom: 3px solid #f3f4f8;
+      @include rem-fallback(padding-top, 10);
+      @include rem-fallback(padding-bottom, 10);
+    }
+
+    text-align: center;
+
+    .socialMedia {
+      @include rem-fallback(padding-top, 10);
+      @include rem-fallback(padding-bottom, 10);
+      i {
+        @include rem-fallback(font-size, 35);
+        @include rem-fallback(padding, 15);
+
+      }
+
+      a {
+        color: $color__grey;
+
+        &:hover, &:active {
+          color: $color__black;
+        }
+
+      }
+    }
+    .logos {
+      img {
+        display: inline-block;
+        @include rem-fallback(max-height, 84);
+        width: auto;
+        @include rem-fallback(margin, 30);
+      }
+      text-align: center;
+
+    }
+  }
+
+
 }
 
 .feature {
@@ -274,5 +331,7 @@ header {
 
 
 footer {
+
   text-align: center;
+
 }
