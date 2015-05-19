@@ -133,6 +133,51 @@ function populate_city_terms() {
 }
 add_action('init', 'populate_city_terms');
 
+/*
+ * add social media settings menu to admin
+ */
+$social_media_sites = array(
+  'organicity_url_facebook'    => 'Facebook',
+  'organicity_url_twitter'     => 'Twitter',
+  'organicity_url_slideshare'  => 'SlideShare',
+  'organicity_url_linkedin'    => 'LinkedIn',
+  'organicity_url_instagram'   => 'Instagram',
+  'organicity_url_youtube'     => 'YouTube'
+);
+
+function add_organicity_social_menu() {
+	add_options_page('Social media settings', 'Social media', 'manage_options', 'organicity_social_menu', 'render_organicity_settings_page');
+}
+add_action('admin_menu', 'add_organicity_social_menu');
+
+function register_organicity_settings() {
+  global $social_media_sites;
+  foreach ($social_media_sites as $key => $name) {
+    register_setting('organicity-options', $key);
+  }
+}
+add_action('admin_init', 'register_organicity_settings');
+
+function render_organicity_settings_page() {
+  global $social_media_sites; ?>
+  <div class="wrap">
+    <h2>Organicity social media URLs</h2>
+    <form method="post" action="options.php">
+        <?php settings_fields('organicity-options'); ?>
+        <?php do_settings_sections('organicity-options'); ?>
+        <?php foreach ($social_media_sites as $key => $name) { ?>
+        <table class="form-table">
+          <tr valign="top">
+          <th scope="row"><?php echo $name; ?></th>
+          <td><input type="text" name="<?php echo $key; ?>" value="<?php echo esc_attr(get_option($key)); ?>" size=50/></td>
+          </tr>
+        </table>
+        <?php }; ?>
+        <?php submit_button(); ?>
+    </form>
+  </div>
+<?php
+}
 
 //////////////////////////////////////////////
 //////////////////////////////////////////////
@@ -278,8 +323,3 @@ function register_meta_boxes($meta_boxes) {
   return $meta_boxes;
 }
 add_filter('rwmb_meta_boxes', 'register_meta_boxes');
-
-/*
- *
- *
- */
