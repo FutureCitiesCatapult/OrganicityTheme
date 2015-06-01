@@ -17,6 +17,6 @@
 7. Create 4 pages named 'About', 'Blog', 'Contact' and 'Home'. Navigate to `Settings > Reading` and select the 'A static page' option for the 'Front page displays' setting. In the dropdowns set 'Front page' to the 'Home' page you created and 'Posts page' to 'Blog'.
 
 8. In `Appearance > Menus` create a new menu called 'header' and assign the following pages (and a custom link to `/events`) in the order shown below and select 'Header menu' for the 'Theme locations' setting at the bottom of the panel.
-![menus](/organicity_readme_menus.png)
+![menu setup screenshot](/organicity_readme_menus.png)
 
 9. The Organicity theme adds a custom settings panel in `Settings > Social media`. Here you can add the URLs to the different social media pages for the project. The icon links in the site footer will use these settings.
