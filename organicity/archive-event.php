@@ -29,7 +29,7 @@ get_header(); ?>
         <div class="feature">
           <div class="feature__meta">
 
-            <span class="date"><?php echo date("d.m.Y", strtotime(rwmb_meta('organicity_event_date')); ?></span>
+            <span class="date"><?php echo date("d.m.Y", strtotime(rwmb_meta('organicity_event_date'))); ?></span>
 
           </div>
           <a class="feature__description" href="<?php the_permalink(); ?>">
