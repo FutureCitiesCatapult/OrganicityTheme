@@ -126,7 +126,7 @@ function populate_city_terms() {
 
   foreach ($cities as $city) {
     if (!term_exists($city, $taxonomy)) {
-      wp_insert_term( $city, $taxonomy);
+      wp_insert_term($city, $taxonomy);
     }
   }
 
@@ -195,6 +195,7 @@ function register_meta_boxes($meta_boxes) {
 
   /*
    * Select from City taxonomy
+   * on posts and events
    */
   $meta_boxes[] = array(
     'title'  => 'City',
@@ -208,6 +209,35 @@ function register_meta_boxes($meta_boxes) {
           'taxonomy'  => 'city',
           'type'      => 'checkbox_list'
         )
+      )
+    )
+  );
+
+  /*
+   * Fields for the Event posttype
+   */
+  $meta_boxes[] = array(
+    'title'   => 'Event details',
+    'pages'   => 'event',
+    'fields'  => array(
+      array(
+        'name'        => 'Event location',
+        'id'          => $prefix . 'event_location',
+        'type'        => 'text',
+        'size'        => 50
+      ),
+      array(
+        'name'        => 'Event date',
+        'id'          => $prefix . 'event_date',
+        'type'        => 'date',
+        'js_options'  => array(
+          'dateFormat' => 'dd-mm-yy'
+        )
+      ),
+      array(
+        'name'        => 'Event URL',
+        'id'          => $prefix . 'event_url',
+        'type'        => 'url'
       )
     )
   );
