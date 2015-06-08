@@ -41,7 +41,7 @@ function organicity_scripts_styles() {
 
   $postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-  wp_enqueue_script( 'organicity', get_template_directory_uri() . "/js/organicity{$postfix}.js", array(), ORGANICITY_VERSION, true );
+  wp_enqueue_script( 'organicity', get_template_directory_uri() . "/js/organicity{$postfix}.js", array('jquery'), ORGANICITY_VERSION, true );
   //wp_enqueue_script( 'ajax-filter', get_template_directory_uri() . "/js/ajax-filter-post{$postfix}.js", array('jquery'), ORGANICITY_VERSION, true );
 
 
