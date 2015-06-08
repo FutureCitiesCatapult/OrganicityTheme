@@ -42,6 +42,8 @@ function organicity_scripts_styles() {
   $postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
   wp_enqueue_script( 'organicity', get_template_directory_uri() . "/js/organicity{$postfix}.js", array(), ORGANICITY_VERSION, true );
+  //wp_enqueue_script( 'ajax-filter', get_template_directory_uri() . "/js/ajax-filter-post{$postfix}.js", array('jquery'), ORGANICITY_VERSION, true );
+
 
   wp_enqueue_style( 'pure', get_template_directory_uri() . "/pure-min.css");
   wp_enqueue_style( 'pure-grid', get_template_directory_uri() . "/grids-responsive-min.css");
@@ -353,3 +355,114 @@ function register_meta_boxes($meta_boxes) {
   return $meta_boxes;
 }
 add_filter('rwmb_meta_boxes', 'register_meta_boxes');
+
+
+
+
+
+
+
+function tags_filter() {
+    $tax = 'post_tag';
+    $terms = get_terms( $tax );
+    $count = count( $terms );
+
+    if ( $count > 0 ): ?>
+        <div class="post-tags">
+            <?php
+            foreach ( $terms as $term ) {
+                $term_link = get_term_link( $term, $tax );
+                echo '<a href="' . $term_link . '" class="tax-filter" title="' . $term->slug . '">' . $term->name . '</a> ';
+            } ?>
+        </div>
+    <?php endif;
+}
+
+function ajax_filter_posts_scripts() {
+    // Enqueue script
+//    wp_register_script('afp_script', get_template_directory_uri() . '/js/ajax-filter-post.js', false, null, false);
+//    wp_enqueue_script('afp_script');
+
+    wp_enqueue_script( 'afp_script', get_template_directory_uri() . "/js/ajax-filter-post{$postfix}.js", array('jquery'), ORGANICITY_VERSION, true );
+
+
+    wp_localize_script( 'afp_script', 'afp_vars', array(
+            'afp_nonce' => wp_create_nonce( 'afp_nonce' ), // Create nonce which we later will use to verify AJAX request
+            'afp_ajax_url' => admin_url( 'admin-ajax.php' ),
+        )
+    );
+}
+add_action('wp_enqueue_scripts', 'ajax_filter_posts_scripts', 100);
+
+
+// Script for getting posts
+function ajax_filter_get_posts( $taxonomy ) {
+
+    // Verify nonce
+    if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
+        die('Permission denied');
+
+    $taxonomy = $_POST['taxonomy'];
+
+    // WP Query
+    $args = array(
+        'tag' => $taxonomy,
+        'post_type' => 'post',
+        'posts_per_page' => 10,
+    );
+
+    // If taxonomy is not set, remove key from array and get all posts
+    if( !$taxonomy ) {
+        unset( $args['tag'] );
+    }
+
+    $query = new WP_Query( $args );
+
+    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+<!--        <h2><a href="--><?php //the_permalink(); ?><!--">--><?php //the_title(); ?><!--</a></h2>-->
+<!--        --><?php //the_excerpt(); ?>
+
+        <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4">
+            <div class="feature">
+                <div class="feature__meta">
+                    <span class="date"><?php the_time('j M Y'); ?></span>
+            <span class="tags">
+              <?php
+              /*
+              * Pluck one city or regular tag for the current post
+              */
+              if (has_term(null, 'city')) {
+                  $first_term = wp_get_post_terms($post->ID, array('city'))[0];
+              } elseif (has_term(null, 'post_tag')) {
+                  $first_term = wp_get_post_terms($post->ID, array('post_tag'))[0];
+              }
+              ?>
+                <?php if ($first_term) : ?>
+                    <a href="<?php echo get_term_link($first_term); ?>">
+                        <?php echo $first_term->name; ?>
+                    </a>
+                <?php endif; ?>
+            </span>
+                </div>
+                <a class="feature__description" href="<?php the_permalink(); ?>">
+                    <?php the_title(); ?>
+                </a>
+                <a class="feature__image" href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail(null, array('class' => 'pure-img')); ?>
+                </a>
+            </div>
+        </div>
+
+
+
+    <?php endwhile; ?>
+    <?php else: ?>
+        <h2>No posts found</h2>
+    <?php endif;
+
+    die();
+}
+
+add_action('wp_ajax_filter_posts', 'ajax_filter_get_posts');
+add_action('wp_ajax_nopriv_filter_posts', 'ajax_filter_get_posts');
