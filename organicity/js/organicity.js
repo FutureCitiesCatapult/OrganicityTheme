@@ -1,4 +1,4 @@
-/*! Organicity - v0.1.0 - 2015-06-08
+/*! Organicity - v0.1.0 - 2015-06-12
  * http://www.organicity.eu
  * Copyright (c) 2015 Future Cities Catapult */
 // ( function( window, undefined ) {
@@ -21,4 +21,17 @@ jQuery(document).ready(function($) {
             }, 1000);
         }
     });
+
+
+//    $(function() {
+      $("a[href=#menuExpand]").click(function(e) {
+      //$("button[class=cmn-toggle-switch]").click(function(e) {
+          $(".menu").toggleClass("menuOpen");
+          $(".menu-wrapper").toggleClass("active");
+
+            //$(".cmn-toggle-switch").toggleClass("active");
+           // $(".menuIcon").toggleClass("active");
+            e.preventDefault();
+        });
+//    });
 });

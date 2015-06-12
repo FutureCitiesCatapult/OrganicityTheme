@@ -6,7 +6,7 @@
  * Version:     0.1.0
  * Copyright (c) 2015 Future Cities Catapult
  */
-@import 'colours', 'fonts', 'text', 'mixins','socialmedia';
+@import 'colours', 'fonts', 'text', 'mixins','socialmedia','bourbon/bourbon','hamburger';
 
 /*
  * @see http://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
@@ -43,77 +43,11 @@ a {
   text-decoration: none;
 }
 
-header {
 
-  background-color: $color__pink;
-  @include rem-fallback(height, 85);
+@import 'header';
 
-  &.home {
-    background: url('images/site_header_desktop.jpg') center;
-    background-size: cover;
-    height: 70%;
-    img {
-      @include rem-fallback(width, 223);
-      @include rem-fallback(padding, 45, 95);
-    }
-  }
 
-  h2 {
-    text-transform: uppercase;
-    margin: 0 auto;
-    color: white;
-    font-family: $text__family--sans-serif--semibold;
-    @include rem-fallback(max-width, 650);
-    @include rem-fallback(font-size, $text__xlarge);
-    @include rem-fallback(line-height, 70);
-    @include rem-fallback(margin-bottom, 35);
-  }
 
-  //site logo
-  img {
-    @include rem-fallback(width, 126);
-    @include rem-fallback(padding, 10, 95);
-  }
-
-  .title div {
-    text-align: center;
-  }
-
-  .pure-g {
-
-  }
-
-}
-
-//NOTE: this element is created by wp_nav_menu()
-.menu-header-container {
-  float: right;
-  @include rem-fallback(margin, 22, 100, 0, 0);
-
-  .home & {
-    @include rem-fallback(margin-top, 45);
-  }
-
-  ul {
-    list-style: none;
-  }
-  li {
-    display: inline-block;
-  }
-  li a {
-    color: $color__white;
-    font-family: $text__family--sans-serif--medium;
-    text-decoration: none;
-    @include rem-fallback(margin-right, 20);
-    @include rem-fallback(font-size, $text__small);
-    &:hover, &:active {
-      color: $color__black;
-    }
-  }
-  li.current-menu-item a {
-    border-bottom: 2px solid $color__white;
-  }
-}
 
 .button {
   color: $color__white;
@@ -335,3 +269,27 @@ footer {
   text-align: center;
 
 }
+
+
+//
+//// Hamburger menu
+//#nav-toggle span { position: absolute; left: 50%; top: 50%; }
+//
+//#nav-toggle span,
+//#nav-toggle span:before,
+//#nav-toggle span:after {
+//  cursor: pointer;
+//  border-radius: 1px;
+//  height: 5px;
+//  width: 35px;
+//  background: white;
+//  position: absolute;
+//  display: block;
+//  content: '';
+//}
+//#nav-toggle span:before {
+//  top: -10px;
+//}
+//#nav-toggle span:after {
+//  bottom: -10px;
+//}

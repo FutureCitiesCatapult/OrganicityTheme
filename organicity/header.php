@@ -54,25 +54,48 @@
 <![endif]-->
 <!-- this will become the main page header include -->
 <header role="banner" class="<?php echo $header_class; ?>">
-  <div class="pure-g">
-    <div class="pure-u-1-2">
+  <div class="header-bar">
+<!--    <div class="pure-u-1-2">-->
       <a href="/" title="<?php _e('Organicity - link to homepage', 'organicity'); ?>">
         <span class="offscreen"><?php echo get_bloginfo('title'); ?></span>
         <img
-          class=""
+          class="logo"
           src="<?php bloginfo('template_directory'); ?>/images/organicity_logo.png"
           alt="<?php _e('Organicity logo', 'organicity'); ?>"
         />
       </a>
+<!--    </div>-->
+<!--    <div class="pure-u-1 pure-u-md-1-2">-->
+<!--      <a id="nav-toggle" href="#"><span></span></a>-->
+
+<!--      <div class="menuIcon">-->
+<!--          <a href="#menuExpand">Menu</a>-->
+<!--      </div>-->
+<!--      <div class="menu">-->
+<!--          <ul>-->
+<!--              <li><a href="#">Menu Option 1</a></li>-->
+<!--              <li><a href="#">Menu Option 2</a></li>-->
+<!--              <li><a href="#">Menu Option 3</a></li>-->
+<!--              <li><a href="#">Menu Option 4</a></li>-->
+<!--          </ul>-->
+<!--      </div>-->
+
+
+<div class="menu-wrapper">
+
+    <div class="menuIcon">
+        <a href="#menuExpand"><span> toggle menu</span></a>
     </div>
-    <div class="pure-u-1-2">
-      <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+      <div class="menu">
+        <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+<!--      </div>-->
+      </div>
     </div>
   </div>
   <?php if ($is_home) : ?>
-  <div class="pure-g title">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-1-1 pure-u-sm-1-2">
+  <div class=" title">
+<!--    <div class="pure-u-1-4"></div>-->
+<!--    <div class="pure-u-1-1 pure-u-sm-1-2">-->
       <h2><?php echo get_bloginfo('description'); ?></h2>
 
       <?php if (rwmb_meta('organicity_header_anchor_link_visible')) : ?>
@@ -87,8 +110,10 @@
 
       <?php endif; ?>
 
-    </div>
-    <div class="pure-u-1-4"></div>
+<!--    </div>-->
+<!--    <div class="pure-u-1-4"></div>-->
   </div>
   <?php endif; ?>
+
+
 </header>

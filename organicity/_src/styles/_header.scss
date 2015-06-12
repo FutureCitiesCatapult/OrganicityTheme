@@ -1,0 +1,209 @@
+
+header {
+  background-color: $color__pink;
+
+  .header-bar{
+    @include rem-fallback(padding,45,90,45,90);
+  }
+
+  //site logo
+  img.logo {
+    @include rem-fallback(width, 126);
+    float:left;
+  }
+
+  .menu {
+    ul {
+      padding:0;
+      margin:0;
+      li {
+        display: inline-block;
+        float: left;
+        list-style: none;
+        padding: 0 0 0 5px;
+        margin: 0;
+      }
+    }
+  }
+
+  .menuIcon {
+    display: none;
+    background: $color__pink;
+    float:right;
+    &:hover {
+      background: $color__pink;
+      color: $color__black;
+    }
+    a {
+      padding:50px;
+      float:right;
+    }
+  }
+
+  &.home {
+    .title {
+      clear:both;
+      text-align: center;
+    }
+    background: url('images/site_header_desktop.jpg') center;
+    background-size: cover;
+    img.logo {
+      @include rem-fallback(width, 223);
+    }
+    @include rem-fallback(padding-bottom, 45);
+    h2 {
+      text-transform: uppercase;
+      margin: 0 auto;
+      color: white;
+      font-family: $text__family--sans-serif--semibold;
+      @include rem-fallback(max-width, 650);
+      @include rem-fallback(font-size, $text__xlarge);
+      @include rem-fallback(line-height, 70);
+      @include rem-fallback(margin-bottom, 35);
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  header {
+    &.home {
+      .header-bar{
+        @include rem-fallback(padding,0);
+      }
+      img.logo {
+        @include rem-fallback(padding,45,0,0,45);
+      }
+      .menu-header-container{
+        @include rem-fallback(padding-top,45);
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  header {
+
+    .menu-wrapper{
+      background-color: $color__pink;
+    }
+
+    .menu {
+      max-height: 0;
+      overflow: hidden;
+      float: none;
+      text-align: center;
+      width: 100%;
+      @include transition(max-height 0.5s);
+      &.menuOpen {
+        max-height: 1000px;
+        @include transition(max-height 0.5s);
+      }
+      ul {
+        li {
+          display: block;
+          width: 100%;
+          background: $color__pink;
+          border-top:1px solid $color__pink;
+          &:hover {
+            background: $color__black;
+          }
+          a {
+            color: #fff;
+            //text-shadow: #848484 0px 1px 2px;
+            padding: 10px 0;
+            width: 100%;
+            &:hover {
+              color: $color__white;
+            }
+          }
+        }
+      }
+    }
+
+    .menuIcon {
+      display: inline-block;
+    }
+
+
+  &.home {
+    img.logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      @include rem-fallback(padding, 65,0,0,0);
+    }
+
+    .menu-wrapper{
+      background-color: transparent;
+      transition: background 0.5s ease-in-out;
+      &.active{
+        background-color: $color__pink;
+        transition: background 0s ease-in-out;
+
+      }
+    }
+
+    .menu ul {
+      padding-top: 125px;
+    }
+
+    h2 {
+      @include rem-fallback(margin-top, 125);
+      @include rem-fallback(padding, 10);
+      @include rem-fallback(font-size,45);
+    }
+
+    .menuIcon {
+      background-color: transparent;
+      &:hover, &:active, &:focus {
+        background-color: transparent;
+      }
+    }
+    }
+  }
+}
+
+
+
+
+//NOTE: this element is created by wp_nav_menu()
+.menu-header-container {
+  float: right;
+  @include rem-fallback(margin, 0, 0, 0, 0);
+
+  ul {
+    list-style: none;
+    letter-spacing: 0px;
+  }
+  li {
+    display: inline-block;
+    padding:5px;
+  }
+  li a {
+    color: $color__white;
+    font-family: $text__family--sans-serif--medium;
+    text-decoration: none;
+    padding:1px;
+    @include rem-fallback(margin-right, 20);
+    @include rem-fallback(font-size, $text__small);
+
+    &:hover, &:active {
+      color: $color__black;
+    }
+  }
+  li.current-menu-item a {
+    border-bottom: 2px solid $color__white;
+    &:hover, &:active {
+      color: $color__white;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .menu-header-container {
+    float: none;
+  }
+}

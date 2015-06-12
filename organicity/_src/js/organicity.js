@@ -25,4 +25,17 @@ jQuery(document).ready(function($) {
             }, 1000);
         }
     });
+
+
+//    $(function() {
+      $("a[href=#menuExpand]").click(function(e) {
+      //$("button[class=cmn-toggle-switch]").click(function(e) {
+          $(".menu").toggleClass("menuOpen");
+          $(".menu-wrapper").toggleClass("active");
+
+            //$(".cmn-toggle-switch").toggleClass("active");
+           // $(".menuIcon").toggleClass("active");
+            e.preventDefault();
+        });
+//    });
 });

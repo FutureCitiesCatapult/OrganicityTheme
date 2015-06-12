@@ -157,6 +157,100 @@
   content: '\e806'; }
 
 /* '' */
+.menuIcon {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 53px;
+  height: 53px;
+  font-size: 0;
+  text-indent: -9999px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s; }
+
+.menuIcon:focus {
+  outline: none; }
+
+.menuIcon span {
+  display: block;
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  right: 10px;
+  height: 5px;
+  background: white; }
+
+.menuIcon span::before,
+.menuIcon span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  content: ""; }
+
+.menuIcon span::before {
+  top: -10px; }
+
+.menuIcon span::after {
+  bottom: -10px; }
+
+/**
+* Style 2
+*
+* Hamburger to "x" (htx). Takes on a hamburger shape, bars slide
+* down to center and transform into an "x".
+*/
+.menuIcon span {
+  -webkit-transition: background 0 0.3s;
+  transition: background 0 0.3s; }
+
+.menuIcon span::before,
+.menuIcon span::after {
+  -webkit-transition-duration: 0.3s, 0.3s;
+  transition-duration: 0.3s, 0.3s;
+  -webkit-transition-delay: 0.3s, 0;
+  transition-delay: 0.3s, 0; }
+
+.menuIcon span::before {
+  -webkit-transition-property: top, -webkit-transform;
+  transition-property: top, transform; }
+
+.menuIcon span::after {
+  -webkit-transition-property: bottom, -webkit-transform;
+  transition-property: bottom, transform; }
+
+/* active state, i.e. menu open */
+.active .menuIcon span {
+  background: none; }
+
+.active .menuIcon span::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.active .menuIcon span::after {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.active .menuIcon span::before,
+.active .menuIcon span::after {
+  -webkit-transition-delay: 0, 0.3s;
+  transition-delay: 0, 0.3s; }
+
 /*
  * @see http://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
  */
@@ -188,54 +282,142 @@ a {
   text-decoration: none; }
 
 header {
-  background-color: #EF4070;
-  height:  85px;
-  height:  8.5rem; }
+  background-color: #EF4070; }
+  header .header-bar {
+    padding:  45px 90px 45px 90px;
+    padding:  4.5rem 9rem 4.5rem 9rem; }
+  header img.logo {
+    width:  126px;
+    width:  12.6rem;
+    float: left; }
+  header .menu ul {
+    padding: 0;
+    margin: 0; }
+    header .menu ul li {
+      display: inline-block;
+      float: left;
+      list-style: none;
+      padding: 0 0 0 5px;
+      margin: 0; }
+  header .menuIcon {
+    display: none;
+    background: #EF4070;
+    float: right; }
+    header .menuIcon:hover {
+      background: #EF4070;
+      color: #191115; }
+    header .menuIcon a {
+      padding: 50px;
+      float: right; }
   header.home {
     background: url("images/site_header_desktop.jpg") center;
     background-size: cover;
-    height: 70%; }
-    header.home img {
+    padding-bottom:  45px;
+    padding-bottom:  4.5rem; }
+    header.home .title {
+      clear: both;
+      text-align: center; }
+    header.home img.logo {
       width:  223px;
-      width:  22.3rem;
-      padding:  45px 95px;
-      padding:  4.5rem 9.5rem; }
-  header h2 {
-    text-transform: uppercase;
-    margin: 0 auto;
-    color: white;
-    font-family: "CooperHewitt-Semibold", "Verdana", "Arial", sans-serif;
-    max-width:  650px;
-    max-width:  65rem;
-    font-size:  60px;
-    font-size:  6rem;
-    line-height:  70px;
-    line-height:  7rem;
-    margin-bottom:  35px;
-    margin-bottom:  3.5rem; }
-  header img {
-    width:  126px;
-    width:  12.6rem;
-    padding:  10px 95px;
-    padding:  1rem 9.5rem; }
-  header .title div {
-    text-align: center; }
+      width:  22.3rem; }
+    header.home h2 {
+      text-transform: uppercase;
+      margin: 0 auto;
+      color: white;
+      font-family: "CooperHewitt-Semibold", "Verdana", "Arial", sans-serif;
+      max-width:  650px;
+      max-width:  65rem;
+      font-size:  60px;
+      font-size:  6rem;
+      line-height:  70px;
+      line-height:  7rem;
+      margin-bottom:  35px;
+      margin-bottom:  3.5rem; }
 
+@media only screen and (max-width: 900px) {
+  header.home .header-bar {
+    padding:  0;
+    padding:  0; }
+  header.home img.logo {
+    padding:  45px 0 0 45px;
+    padding:  4.5rem 0 0 4.5rem; }
+  header.home .menu-header-container {
+    padding-top:  45px;
+    padding-top:  4.5rem; } }
+@media only screen and (max-width: 767px) {
+  header .menu-wrapper {
+    background-color: #EF4070; }
+  header .menu {
+    max-height: 0;
+    overflow: hidden;
+    float: none;
+    text-align: center;
+    width: 100%;
+    -webkit-transition: max-height 0.5s;
+    -moz-transition: max-height 0.5s;
+    transition: max-height 0.5s; }
+    header .menu.menuOpen {
+      max-height: 1000px;
+      -webkit-transition: max-height 0.5s;
+      -moz-transition: max-height 0.5s;
+      transition: max-height 0.5s; }
+    header .menu ul li {
+      display: block;
+      width: 100%;
+      background: #EF4070;
+      border-top: 1px solid #EF4070; }
+      header .menu ul li:hover {
+        background: #191115; }
+      header .menu ul li a {
+        color: #fff;
+        padding: 10px 0;
+        width: 100%; }
+        header .menu ul li a:hover {
+          color: #ffffff; }
+  header .menuIcon {
+    display: inline-block; }
+  header.home img.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding:  65px 0 0 0;
+    padding:  6.5rem 0 0 0; }
+  header.home .menu-wrapper {
+    background-color: transparent;
+    transition: background 0.5s ease-in-out; }
+    header.home .menu-wrapper.active {
+      background-color: #EF4070;
+      transition: background 0s ease-in-out; }
+  header.home .menu ul {
+    padding-top: 125px; }
+  header.home h2 {
+    margin-top:  125px;
+    margin-top:  12.5rem;
+    padding:  10px;
+    padding:  1rem;
+    font-size:  45px;
+    font-size:  4.5rem; }
+  header.home .menuIcon {
+    background-color: transparent; }
+    header.home .menuIcon:hover, header.home .menuIcon:active, header.home .menuIcon:focus {
+      background-color: transparent; } }
 .menu-header-container {
   float: right;
-  margin:  22px 100px 0 0;
-  margin:  2.2rem 10rem 0 0; }
-  .home .menu-header-container {
-    margin-top:  45px;
-    margin-top:  4.5rem; }
+  margin:  0 0 0 0;
+  margin:  0 0 0 0; }
   .menu-header-container ul {
-    list-style: none; }
+    list-style: none;
+    letter-spacing: 0px; }
   .menu-header-container li {
-    display: inline-block; }
+    display: inline-block;
+    padding: 5px; }
   .menu-header-container li a {
     color: #ffffff;
     font-family: "CooperHewitt-Medium", "Verdana", "Arial", sans-serif;
     text-decoration: none;
+    padding: 1px;
     margin-right:  20px;
     margin-right:  2rem;
     font-size:  18px;
@@ -244,7 +426,12 @@ header {
       color: #191115; }
   .menu-header-container li.current-menu-item a {
     border-bottom: 2px solid #ffffff; }
+    .menu-header-container li.current-menu-item a:hover, .menu-header-container li.current-menu-item a:active {
+      color: #ffffff; }
 
+@media only screen and (max-width: 767px) {
+  .menu-header-container {
+    float: none; } }
 .button {
   color: #ffffff;
   background-color: transparent;
