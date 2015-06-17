@@ -316,7 +316,14 @@ header {
     padding-bottom:  4.5rem; }
     header.home .title {
       clear: both;
-      text-align: center; }
+      text-align: center;
+      padding-top:  65px;
+      padding-top:  6.5rem;
+      padding-bottom:  145px;
+      padding-bottom:  14.5rem; }
+    header.home .menu-wrapper {
+      padding-top:  45px;
+      padding-top:  4.5rem; }
     header.home img.logo {
       width:  223px;
       width:  22.3rem; }
@@ -352,10 +359,7 @@ header {
     overflow: hidden;
     float: none;
     text-align: center;
-    width: 100%;
-    -webkit-transition: max-height 0.5s;
-    -moz-transition: max-height 0.5s;
-    transition: max-height 0.5s; }
+    width: 100%; }
     header .menu.menuOpen {
       max-height: 1000px;
       -webkit-transition: max-height 0.5s;
@@ -378,29 +382,44 @@ header {
     display: inline-block; }
   header.home img.logo {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    padding:  65px 0 0 0;
-    padding:  6.5rem 0 0 0; }
+    padding:  15px 0 0 40px;
+    padding:  1.5rem 0 0 4rem; }
+  header.home .title {
+    padding:  100px 40px 200px 40px;
+    padding:  10rem 4rem 20rem 4rem; }
   header.home .menu-wrapper {
     background-color: transparent;
-    transition: background 0.5s ease-in-out; }
+    padding:  0;
+    padding:  0; }
     header.home .menu-wrapper.active {
-      background-color: #EF4070;
-      transition: background 0s ease-in-out; }
-  header.home .menu ul {
-    padding-top: 125px; }
+      background-color: #EF4070; }
+  header.home ul#menu-header {
+    display: none; }
+  header.home .active ul#menu-header {
+    display: block; }
+  header.home .menuOpen ul {
+    padding-bottom:  45px;
+    padding-bottom:  4.5rem; }
+  header.home .menuOpen li {
+    padding:  25px 0 25px 0;
+    padding:  2.5rem 0 2.5rem 0; }
+    header.home .menuOpen li a {
+      font-size:  32px;
+      font-size:  3.2rem;
+      font-family: 'CooperHewitt-Book';
+      display: block;
+      border-bottom: none;
+      padding:  0;
+      padding:  0; }
   header.home h2 {
-    margin-top:  125px;
-    margin-top:  12.5rem;
-    padding:  10px;
-    padding:  1rem;
-    font-size:  45px;
-    font-size:  4.5rem; }
+    font-size:  60px;
+    font-size:  6rem;
+    line-height:  70px;
+    line-height:  7rem; }
   header.home .menuIcon {
-    background-color: transparent; }
+    background-color: transparent;
+    margin:  30px;
+    margin:  3rem; }
     header.home .menuIcon:hover, header.home .menuIcon:active, header.home .menuIcon:focus {
       background-color: transparent; } }
 .menu-header-container {
@@ -425,13 +444,26 @@ header {
     .menu-header-container li a:hover, .menu-header-container li a:active {
       color: #191115; }
   .menu-header-container li.current-menu-item a {
-    border-bottom: 2px solid #ffffff; }
+    border-bottom: 3px solid #ffffff; }
     .menu-header-container li.current-menu-item a:hover, .menu-header-container li.current-menu-item a:active {
       color: #ffffff; }
 
 @media only screen and (max-width: 767px) {
   .menu-header-container {
     float: none; } }
+@media only screen and (max-width: 567px) {
+  header.home img.logo {
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding:  40px 0 0 0;
+    padding:  4rem 0 0 0; }
+  header.home .title {
+    padding:  115px 40px 100px 40px;
+    padding:  11.5rem 4rem 10rem 4rem; }
+    header.home .title .button {
+      display: block; } }
 .button {
   color: #ffffff;
   background-color: transparent;

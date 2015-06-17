@@ -44,6 +44,11 @@ header {
     .title {
       clear:both;
       text-align: center;
+      @include rem-fallback(padding-top, 65);
+      @include rem-fallback(padding-bottom, 145);
+    }
+    .menu-wrapper{
+      @include rem-fallback(padding-top, 45);
     }
     background: url('images/site_header_desktop.jpg') center;
     background-size: cover;
@@ -95,7 +100,7 @@ header {
       float: none;
       text-align: center;
       width: 100%;
-      @include transition(max-height 0.5s);
+      //@include transition(max-height 0.5s);
       &.menuOpen {
         max-height: 1000px;
         @include transition(max-height 0.5s);
@@ -130,35 +135,73 @@ header {
   &.home {
     img.logo {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      @include rem-fallback(padding, 65,0,0,0);
+      @include rem-fallback(padding,15,0,0,40);
+//      top: 0;
+//      left: 0;
+//      right: 0;
+//      margin: 0 auto;
+//      @include rem-fallback(padding, 65,0,0,0);
+    }
+
+    .title{
+      @include rem-fallback(padding,100,40,200,40);
+     // @include rem-fallback(padding-bottom,200);
     }
 
     .menu-wrapper{
       background-color: transparent;
-      transition: background 0.5s ease-in-out;
+      //transition: background 0.5s ease-in-out;
+      @include rem-fallback(padding, 0);
+      //@include rem-fallback(padding, 30);
       &.active{
         background-color: $color__pink;
-        transition: background 0s ease-in-out;
+        //transition: background 0s ease-in-out;
 
       }
     }
 
-    .menu ul {
-      padding-top: 125px;
+    ul#menu-header{
+
+      display:none;
     }
 
+    .active{
+      ul#menu-header{
+        display:block;
+      }
+    }
+
+    .menuOpen{
+      ul{
+        @include rem-fallback(padding-bottom, 45);
+      }
+      li{
+        @include rem-fallback(padding, 25,0,25,0);
+        a {
+          @include rem-fallback(font-size, 32);
+          font-family: 'CooperHewitt-Book';
+          //width:100%;
+          //margin:auto;
+          display:block;
+          border-bottom: none;
+          @include rem-fallback(padding, 0);
+        }
+      }
+    }
+//    .menu ul {
+//      padding-top: 125px;
+//    }
+
     h2 {
-      @include rem-fallback(margin-top, 125);
-      @include rem-fallback(padding, 10);
-      @include rem-fallback(font-size,45);
+     // @include rem-fallback(margin-top, 125);
+      //@include rem-fallback(padding, 10);
+      @include rem-fallback(font-size,60);
+      @include rem-fallback(line-height, 70);
     }
 
     .menuIcon {
       background-color: transparent;
+      @include rem-fallback(margin, 30);
       &:hover, &:active, &:focus {
         background-color: transparent;
       }
@@ -196,7 +239,7 @@ header {
     }
   }
   li.current-menu-item a {
-    border-bottom: 2px solid $color__white;
+    border-bottom: 3px solid $color__white;
     &:hover, &:active {
       color: $color__white;
     }
@@ -206,5 +249,26 @@ header {
 @media only screen and (max-width: 767px) {
   .menu-header-container {
     float: none;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  header {
+    &.home {
+      img.logo {
+        //position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        @include rem-fallback(padding, 40, 0, 0, 0);
+      }
+      .title{
+        @include rem-fallback(padding,115,40,100,40);
+        .button{
+          display:block;
+        }
+      }
+    }
   }
 }
