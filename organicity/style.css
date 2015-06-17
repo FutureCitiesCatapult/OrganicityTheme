@@ -284,12 +284,15 @@ a {
 header {
   background-color: #EF4070; }
   header .header-bar {
-    padding:  45px 90px 45px 90px;
-    padding:  4.5rem 9rem 4.5rem 9rem; }
+    padding:  15px 90px 90px 90px;
+    padding:  1.5rem 9rem 9rem 9rem; }
   header img.logo {
     width:  126px;
     width:  12.6rem;
     float: left; }
+  header .menu-header-container {
+    padding-top:  30px;
+    padding-top:  3rem; }
   header .menu ul {
     padding: 0;
     margin: 0; }
@@ -314,6 +317,9 @@ header {
     background-size: cover;
     padding-bottom:  45px;
     padding-bottom:  4.5rem; }
+    header.home .header-bar {
+      padding:  45px 90px 45px 90px;
+      padding:  4.5rem 9rem 4.5rem 9rem; }
     header.home .title {
       clear: both;
       text-align: center;
@@ -342,6 +348,14 @@ header {
       margin-bottom:  3.5rem; }
 
 @media only screen and (max-width: 900px) {
+  header .header-bar {
+    padding-left:  0;
+    padding-left:  0;
+    padding-right:  0;
+    padding-right:  0; }
+  header img.logo {
+    padding-left:  45px;
+    padding-left:  4.5rem; }
   header.home .header-bar {
     padding:  0;
     padding:  0; }
@@ -380,6 +394,28 @@ header {
           color: #ffffff; }
   header .menuIcon {
     display: inline-block; }
+  header .menuOpen ul {
+    padding-bottom:  45px;
+    padding-bottom:  4.5rem; }
+  header .menuOpen li {
+    padding:  25px 0 25px 0;
+    padding:  2.5rem 0 2.5rem 0; }
+    header .menuOpen li a {
+      font-size:  32px;
+      font-size:  3.2rem;
+      font-family: 'CooperHewitt-Book';
+      display: block;
+      border-bottom: none;
+      padding:  0;
+      padding:  0; }
+  header .menuOpen li.current-menu-item a {
+    border-bottom: none; }
+  header .header-bar {
+    padding-bottom:  15px;
+    padding-bottom:  1.5rem; }
+  header .menuIcon {
+    margin-right:  20px;
+    margin-right:  2rem; }
   header.home img.logo {
     position: absolute;
     padding:  15px 0 0 40px;
@@ -397,20 +433,6 @@ header {
     display: none; }
   header.home .active ul#menu-header {
     display: block; }
-  header.home .menuOpen ul {
-    padding-bottom:  45px;
-    padding-bottom:  4.5rem; }
-  header.home .menuOpen li {
-    padding:  25px 0 25px 0;
-    padding:  2.5rem 0 2.5rem 0; }
-    header.home .menuOpen li a {
-      font-size:  32px;
-      font-size:  3.2rem;
-      font-family: 'CooperHewitt-Book';
-      display: block;
-      border-bottom: none;
-      padding:  0;
-      padding:  0; }
   header.home h2 {
     font-size:  60px;
     font-size:  6rem;
@@ -444,7 +466,7 @@ header {
     .menu-header-container li a:hover, .menu-header-container li a:active {
       color: #191115; }
   .menu-header-container li.current-menu-item a {
-    border-bottom: 3px solid #ffffff; }
+    border-bottom: 2px solid #ffffff; }
     .menu-header-container li.current-menu-item a:hover, .menu-header-container li.current-menu-item a:active {
       color: #ffffff; }
 
@@ -452,6 +474,9 @@ header {
   .menu-header-container {
     float: none; } }
 @media only screen and (max-width: 567px) {
+  header img.logo {
+    padding-left:  30px;
+    padding-left:  3rem; }
   header.home img.logo {
     top: 0;
     left: 0;
