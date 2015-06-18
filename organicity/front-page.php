@@ -18,19 +18,111 @@ get_header(); ?>
 ?>
 
 <main role="main">
+
+<!--    <div class="gallery items-3">-->
+<!--        <div id="item-1" class="control-operator"></div>-->
+<!--        <div id="item-2" class="control-operator"></div>-->
+<!--        <div id="item-3" class="control-operator"></div>-->
+<!---->
+<!--        <figure class="item">-->
+<!--            <h1>1</h1>-->
+<!--        </figure>-->
+<!---->
+<!--        <figure class="item">-->
+<!--            <h1>2</h1>-->
+<!--        </figure>-->
+<!---->
+<!--        <figure class="item">-->
+<!--            <h1>3</h1>-->
+<!--        </figure>-->
+<!---->
+<!--        <div class="controls">-->
+<!--            <a href="#item-1" class="control-button">•</a>-->
+<!--            <a href="#item-2" class="control-button">•</a>-->
+<!--            <a href="#item-3" class="control-button">•</a>-->
+<!--        </div>-->
+<!--    </div>-->
+
   <div class="section section--blog section--wide">
 
     <h2><?php _e( 'Blog', 'organicity' ); ?></h2>
 
-    <div class="pure-g">
+<!--      <div >-->
+<!---->
+<!--          <div class="item"><img src="assets/fullimage4.jpg"></div>-->
+<!--          <div class="item"><img src="assets/fullimage5.jpg"></div>-->
+<!--          <div class="item"><img src="assets/fullimage6.jpg"></div>-->
+<!--          <div class="item"><img src="assets/fullimage7.jpg"></div>-->
+<!--          <div class="item"><img src="assets/fullimage1.jpg"></div>-->
+<!--          <div class="item"><img src="assets/fullimage2.jpg"></div>-->
+<!--          <div class="item"><img src="assets/fullimage3.jpg"></div>-->
+<!---->
+<!--      </div>-->
+
+    <div class="pure-g"> <!-- owl-carousel" id="owl-example">-->
+
+
 
       <!-- custom loop to show latest 4 posts -->
       <?php if ( $posts_query->have_posts() ) : ?>
 
+
+
+
+
+
         <!-- the loop -->
+      <div class="owl-carousel owl-theme" id="owl-demo">
+            <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+                <!-- TODO: work on responsive breakdown of article 4->2->1 -->
+
+
+
+                <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-4 item">
+                    <div class="feature">
+                        <div class="feature__meta">
+                            <span class="date"><?php the_time('j M Y'); ?></span>
+                <span class="tags">
+                  <?php
+                  /*
+                  * Pluck one city or regular tag for the current post
+                  */
+                  if (has_term(null, 'city')) {
+                      $first_term = wp_get_post_terms($post->ID, array('city'))[0];
+                  } elseif (has_term(null, 'post_tag')) {
+                      $first_term = wp_get_post_terms($post->ID, array('post_tag'))[0];
+                  }
+                  ?>
+                    <?php if ($first_term) : ?>
+                        <a href="<?php echo get_term_link($first_term); ?>">
+                            <?php echo $first_term->name; ?>
+                        </a>
+                    <?php endif; ?>
+                </span>
+                        </div>
+                        <a class="feature__description" href="<?php the_permalink(); ?>">
+                            <!--                <div class="feature__description__wrapper">-->
+                            <?php the_title(); ?>
+                            <!--                    </div>-->
+                        </a>
+                        <a class="feature__image" href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail(null, array('class' => 'pure-img')); ?>
+                        </a>
+                    </div>
+                </div>
+
+            <?php endwhile; ?>
+        </div>
+        <!-- end of the loop -->
+        <?php wp_reset_postdata(); ?>
+        <!-- the loop -->
+        <div class="blog-large home">
         <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
           <!-- TODO: work on responsive breakdown of article 4->2->1 -->
-          <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4">
+
+
+
+          <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-4 item">
             <div class="feature">
               <div class="feature__meta">
                 <span class="date"><?php the_time('j M Y'); ?></span>
@@ -53,7 +145,9 @@ get_header(); ?>
                 </span>
               </div>
               <a class="feature__description" href="<?php the_permalink(); ?>">
-                <?php the_title(); ?>
+<!--                <div class="feature__description__wrapper">-->
+                    <?php the_title(); ?>
+<!--                    </div>-->
               </a>
               <a class="feature__image" href="<?php the_permalink(); ?>">
                 <?php the_post_thumbnail(null, array('class' => 'pure-img')); ?>
@@ -62,6 +156,7 @@ get_header(); ?>
           </div>
 
         <?php endwhile; ?>
+            </div>
         <!-- end of the loop -->
         <?php wp_reset_postdata(); ?>
 
@@ -69,7 +164,7 @@ get_header(); ?>
       <div class="pure-g">
         <div class="pure-u-1-3 pure-u-lg-1-4"></div>
         <!-- link to blog -->
-        <div class="pure-u-1-1 pure-u-md-1-3 pure-u-lg-1-2">
+        <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-2">
           <a class="button button--full button--external" href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e('Show more', 'organicity'); ?></a>
         </div>
         <div class="pure-u-1-3 pure-u-lg-1-4"></div>

@@ -6,7 +6,8 @@
  * Version:     0.1.0
  * Copyright (c) 2015 Future Cities Catapult
  */
-@import 'colours', 'fonts', 'text', 'mixins','socialmedia','bourbon/bourbon','hamburger';
+@import  'colours', 'fonts', 'text', 'mixins','socialmedia','bourbon/bourbon','hamburger';
+
 
 /*
  * @see http://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
@@ -126,9 +127,19 @@ a {
     .button {
       @include rem-fallback(margin, 0, 5);
     }
+
+    .feature{
+      @include rem-fallback(margin-bottom, 30);
+      .feature__meta{
+        @include rem-fallback(padding-bottom, 20);
+      }
+    }
   }
 
   &--wide {
+    @include rem-fallback(padding-left, 70);
+    @include rem-fallback(padding-right, 70);
+
     .pure-g {
       // margin: auto;
       @include rem-fallback(margin, 0, auto, 20, auto);
@@ -295,4 +306,71 @@ footer {
 //}
 //#nav-toggle span:after {
 //  bottom: -10px;
+//}
+
+#owl-demo{
+  display:none !important;
+}
+
+.owl-theme .owl-page.active{
+  span{
+    background: $color__pink;
+  }
+}
+
+
+@media only screen and (max-width: 1023px) {
+
+  .blog-large.home{
+    .item:nth-of-type(1n+3) {
+      display:none;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  .section {
+    &--wide {
+      @include rem-fallback(padding-left, 30);
+      @include rem-fallback(padding-right, 30);
+      //      .feature__description__wrapper{
+      //        @include rem-fallback(padding-bottom,50);
+      //      }
+    }
+
+  }
+
+
+
+}
+
+@media only screen and (max-width: 567px) {
+
+  .blog-large{
+    display:none;
+  }
+  #owl-demo{
+    display:block !important;
+  }
+
+//  .blog-large.home{
+//    .item:nth-of-type(1n+2) {
+//      display:none;
+//    }
+//  }
+
+}
+
+
+
+
+
+
+
+
+//#owl-demo .item img{
+//  display: block;
+//  width: 100%;
+//  height: auto;
 //}

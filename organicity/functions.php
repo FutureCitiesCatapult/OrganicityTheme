@@ -40,13 +40,16 @@ add_filter('init', 'add_post_thumbnail_support');
 function organicity_scripts_styles() {
 
   $postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
-
-  wp_enqueue_script( 'organicity', get_template_directory_uri() . "/js/organicity{$postfix}.js", array('jquery'), ORGANICITY_VERSION, true );
+    wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . "/js/owl.carousel.js", array('jquery'), ORGANICITY_VERSION);
+    wp_enqueue_script( 'organicity', get_template_directory_uri() . "/js/organicity{$postfix}.js", array('jquery'), ORGANICITY_VERSION, true );
   //wp_enqueue_script( 'ajax-filter', get_template_directory_uri() . "/js/ajax-filter-post{$postfix}.js", array('jquery'), ORGANICITY_VERSION, true );
 
 
   wp_enqueue_style( 'pure', get_template_directory_uri() . "/pure-min.css");
   wp_enqueue_style( 'pure-grid', get_template_directory_uri() . "/grids-responsive-min.css");
+
+  wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . "/owl.carousel.css");
+  wp_enqueue_style( 'owl-theme', get_template_directory_uri() . "/owl.theme.css");
 
   wp_enqueue_style( 'organicity', get_template_directory_uri() . "/style{$postfix}.css", array(), ORGANICITY_VERSION );
 

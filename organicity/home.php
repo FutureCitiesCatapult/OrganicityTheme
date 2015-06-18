@@ -30,14 +30,14 @@ get_header(); ?>
         </div>
     </div>
 
-    <div class="section section--blog">
+    <div class="section section--blog section--wide">
 
         <div class="pure-g tagged-posts">
 
             <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
                 <!-- TODO: work on responsive breakdown of article 4->2->1 -->
-                <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4">
+                <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3">
                     <div class="feature">
                         <div class="feature__meta">
                             <span class="date"><?php the_time('j M Y'); ?></span>
