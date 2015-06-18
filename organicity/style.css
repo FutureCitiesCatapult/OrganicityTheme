@@ -599,14 +599,17 @@ header {
       padding-top:  10px;
       padding-top:  1rem;
       padding-bottom:  10px;
-      padding-bottom:  1rem; }
+      padding-bottom:  1rem;
+      text-align: center; }
       .section--footer .socialMedia i {
-        font-size:  35px;
-        font-size:  3.5rem;
-        padding:  15px;
-        padding:  1.5rem; }
+        font-size:  40px;
+        font-size:  4rem;
+        padding:  0;
+        padding:  0; }
       .section--footer .socialMedia a {
-        color: #5D5D5D; }
+        color: #5D5D5D;
+        margin:  10px;
+        margin:  1rem; }
         .section--footer .socialMedia a:hover, .section--footer .socialMedia a:active {
           color: #191115; }
     .section--footer .logos {

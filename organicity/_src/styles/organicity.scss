@@ -44,7 +44,7 @@ a {
 }
 
 
-@import 'header';
+@import 'header','footer';
 
 
 
@@ -180,6 +180,7 @@ a {
       border-bottom: 3px solid #f3f4f8;
       @include rem-fallback(padding-top, 10);
       @include rem-fallback(padding-bottom, 10);
+
     }
 
     text-align: center;
@@ -187,15 +188,17 @@ a {
     .socialMedia {
       @include rem-fallback(padding-top, 10);
       @include rem-fallback(padding-bottom, 10);
+      text-align: center;
       i {
-        @include rem-fallback(font-size, 35);
-        @include rem-fallback(padding, 15);
+        @include rem-fallback(font-size, 40);
+        @include rem-fallback(padding, 0);
+
 
       }
 
       a {
         color: $color__grey;
-
+        @include rem-fallback(margin, 10);
         &:hover, &:active {
           color: $color__black;
         }
