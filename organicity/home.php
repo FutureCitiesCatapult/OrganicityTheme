@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <main role="main">
-    <div class="section">
+    <div class="section section--title">
         <div class="pure-g">
             <div class="pure-u-1-4"></div>
             <div class="pure-u-1-2">
@@ -17,13 +17,13 @@ get_header(); ?>
             <div class="pure-u-1-4"></div>
         </div>
     </div>
-    <div class="section">
+    <div class="section section--filter">
         <div class="pure-g">
             <div class="pure-u-1-4"></div>
             <div class="pure-u-1-2">
-                <p><?php _e( 'Filter', 'organicity' ); ?></p>
+                <button href="" id="filter-menu-button"><?php _e( 'Filter', 'organicity' ); ?></button>
                 <!--                --><?php //wp_tag_cloud('number=50&format=list&orderby=count'); ?>
-                <?php tags_filter() ?>
+                <div id="filter-menu"><?php tags_filter() ?></div>
                 <!--                <div class="tagged-posts"></div>-->
             </div>
             <div class="pure-u-1-4"></div>

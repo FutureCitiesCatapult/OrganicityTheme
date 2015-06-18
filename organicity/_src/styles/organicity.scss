@@ -168,6 +168,41 @@ a {
     }
   }
 
+  &--title {
+    @include rem-fallback(padding-top,20);
+    @include rem-fallback(padding-bottom,0);
+  }
+
+
+  &--filter {
+    border-top: 2px solid #F3F4F8;
+    text-align: center;
+
+    @include rem-fallback(padding-top,25);
+    @include rem-fallback(padding-bottom,10);
+
+    #filter-menu-button{
+      border:none;
+      background:transparent;
+      @include rem-fallback(font-size,18);
+      font-family: $text__family--sans-serif--medium;
+      color:#7E7E7E;
+      text-transform: uppercase;
+
+    }
+    #filter-menu-button:focus{
+      outline:0;
+    }
+
+    #filter-menu{
+      display:none;
+    }
+    #filter-menu.active{
+      display:block;
+    }
+
+  }
+
   &--copyright, &--signup {
     color: $color__white;
     background-color: $color__pink;

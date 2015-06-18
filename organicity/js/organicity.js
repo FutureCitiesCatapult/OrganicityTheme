@@ -42,6 +42,14 @@ jQuery(document).ready(function($) {
     });
 
 
+    //$( "#filter-menu-button" ).toggleClass( " active");
+
+    $("#filter-menu-button").click(function(e) {
+
+        $("#filter-menu").toggleClass("active");
+    });
+
+
 //    $(function() {
       $("a[href=#menuExpand]").click(function(e) {
       //$("button[class=cmn-toggle-switch]").click(function(e) {

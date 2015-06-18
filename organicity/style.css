@@ -581,6 +581,32 @@ header {
     text-align: center; }
   .section--signup form {
     text-align: center; }
+  .section--title {
+    padding-top:  20px;
+    padding-top:  2rem;
+    padding-bottom:  0;
+    padding-bottom:  0; }
+  .section--filter {
+    border-top: 2px solid #F3F4F8;
+    text-align: center;
+    padding-top:  25px;
+    padding-top:  2.5rem;
+    padding-bottom:  10px;
+    padding-bottom:  1rem; }
+    .section--filter #filter-menu-button {
+      border: none;
+      background: transparent;
+      font-size:  18px;
+      font-size:  1.8rem;
+      font-family: "CooperHewitt-Medium", "Verdana", "Arial", sans-serif;
+      color: #7E7E7E;
+      text-transform: uppercase; }
+    .section--filter #filter-menu-button:focus {
+      outline: 0; }
+    .section--filter #filter-menu {
+      display: none; }
+    .section--filter #filter-menu.active {
+      display: block; }
   .section--copyright, .section--signup {
     color: #ffffff;
     background-color: #EF4070; }
