@@ -21,7 +21,7 @@ get_header(); ?>
         <div class="pure-g">
             <div class="pure-u-1-4"></div>
             <div class="pure-u-1-2">
-                <button href="" id="filter-menu-button"><?php _e( 'Filter', 'organicity' ); ?></button>
+                <button href="" id="filter-menu-button"><?php _e( 'Filter', 'organicity' ); ?></button><!--<div id="filter-arrow" class="arrow-down"></div>-->
                 <!--                --><?php //wp_tag_cloud('number=50&format=list&orderby=count'); ?>
                 <div id="filter-menu"><?php tags_filter() ?></div>
                 <!--                <div class="tagged-posts"></div>-->

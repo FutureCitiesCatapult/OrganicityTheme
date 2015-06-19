@@ -5,32 +5,24 @@
  * Copyright (c) 2015 Future Cities Catapult
  */
 
-// ( function( window, undefined ) {
-//	'use strict';
-//
-//  console.log('Organicity!');
-//
-// } )( this );
-
 
 jQuery(document).ready(function($) {
 
-   // $("#owl-example").owlCarousel();
+
+    Object.size = function(obj) {
+        var size = 0, key;
+        for (key in obj) {
+            if (obj.hasOwnProperty(key)) size++;
+        }
+        return size;
+    };
+
+    var selectedTags = {};
 
     $("#owl-demo").owlCarousel({
-
-        //navigation : true, // Show next and prev buttons
         slideSpeed : 300,
         paginationSpeed : 400,
         singleItem:true
-
-        // "singleItem:true" is a shortcut for:
-        // items : 1,
-        // itemsDesktop : false,
-        // itemsDesktopSmall : false,
-        // itemsTablet: false,
-        // itemsMobile : false
-
     });
 
     $('a[href^="#"]').on('click', function (event) {
@@ -46,27 +38,94 @@ jQuery(document).ready(function($) {
     });
 
 
-    //$( "#filter-menu-button" ).toggleClass( " active");
-
     $("#filter-menu-button").click(function(e) {
+        $("#filter-menu-button").html($("#filter-menu-button").html() == 'Filter' ? 'Reset':'Filter');
 
+        if($("#filter-menu").hasClass("active")){
+            //selectedTags = {"all":true};
+            get_blog_posts(e);
+            $(".tax-filter").removeClass("highlight");
+
+        }
         $("#filter-menu").toggleClass("active");
+        $("#filter-menu-button").toggleClass("active");
+
+
     });
 
 
-//    $(function() {
-      $("a[href=#menuExpand]").click(function(e) {
-      //$("button[class=cmn-toggle-switch]").click(function(e) {
-          $(".menu").toggleClass("menuOpen");
-          $(".menu-wrapper").toggleClass("active");
+    $("a[href=#menuExpand]").click(function(e) {
+        $(".menu").toggleClass("menuOpen");
+        $(".menu-wrapper").toggleClass("active");
+        e.preventDefault();
+    });
 
-            //$(".cmn-toggle-switch").toggleClass("active");
 
-           // $(".menuIcon").toggleClass("active");
-            e.preventDefault();
+
+    function get_blog_posts(event) {
+    console.log("GET BLOG POSTS");
+        // Prevent default action - opening tag page
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+
+
+
+        var tagClicked = $(this).attr('title');
+        $(this).toggleClass('highlight');
+
+        if (typeof tagClicked !== typeof undefined && tagClicked !== false) {
+
+            if (tagClicked in selectedTags) {
+                delete selectedTags[tagClicked];
+            }
+            else {
+                selectedTags[tagClicked] = true;
+            }
+
+
+            var selected_taxonomy = "";
+            var count = 0;
+
+            for (tag in selectedTags) {
+                if (count == 0) {
+                    selected_taxonomy = tag;
+                } else {
+                    selected_taxonomy = selected_taxonomy + ',' + tag;
+                }
+                count = count + 1;
+            }
+        }else{
+            selectedTags = {};
+        }
+
+        // Get tag slug from title attirbute
+
+        // After user click on tag, fade out list of posts
+        $('.tagged-posts').fadeOut();
+
+        data = {
+            action: 'filter_posts', // function to execute
+            afp_nonce: afp_vars.afp_nonce, // wp_nonce
+            taxonomy: selected_taxonomy, // selected tag
+        };
+
+        $.post( afp_vars.afp_ajax_url, data, function(response) {
+
+            if( response ) {
+                // Display posts on page
+                $('.tagged-posts').html( response );
+                // Restore div visibility
+                $('.tagged-posts').fadeIn();
+            };
         });
-//    });
- //$("#owl-example").owlCarousel();
+    }
+
+
+    $('.tax-filter').click(get_blog_posts);
+
 
 });
 

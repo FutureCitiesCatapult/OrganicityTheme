@@ -123,6 +123,9 @@ a {
 
   //TODO: responsive - remove 4th article (:last-child) < large
   &--blog {
+
+    @include rem-fallback(min-height,200);
+
     background-color: $color__grey--background;
     .button {
       @include rem-fallback(margin, 0, 5);
@@ -188,17 +191,51 @@ a {
       font-family: $text__family--sans-serif--medium;
       color:#7E7E7E;
       text-transform: uppercase;
-
+  &:hover{
+    color: $color__black;
+  }
     }
     #filter-menu-button:focus{
       outline:0;
     }
 
     #filter-menu{
-      display:none;
+
+      max-height:0;
+      overflow: hidden;
+      transition: max-height 0.15s ease-out;
+
+      .post-tags {
+
+        width:100%;
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+
+
+        a {
+          display: block;
+          @include rem-fallback(font-size, 18);
+          font-family: $text__family--sans-serif--medium;
+          color: #7E7E7E;
+          text-transform: uppercase;
+          @include rem-fallback(padding, 20);
+          &:hover{
+            color:$color__black;
+          }
+          &.highlight{
+            color:$color__pink;
+          }
+        }
+      }
     }
     #filter-menu.active{
-      display:block;
+
+      transition-delay:0s;
+      max-height:1000px;
+      transition: max-height 0.25s ease-in;
+
+
     }
 
   }
@@ -365,6 +402,9 @@ footer {
 
 @media only screen and (max-width: 767px) {
 
+
+
+
   .section {
     &--wide {
       @include rem-fallback(padding-left, 30);
@@ -374,8 +414,18 @@ footer {
       //      }
     }
 
-  }
+    &--filter {
+      #filter-menu{
+        .post-tags{
+          columns: 1;
+          -webkit-columns: 1;
+          -moz-columns: 1;
+        }
+      }
 
+    }
+
+  }
 
 
 }
@@ -398,6 +448,36 @@ footer {
 }
 
 
+
+
+
+
+
+#filter-menu-button.active::after {
+  content:"";
+  display:inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: none;
+  border-bottom: 7px solid #7E7E7E;
+  @include rem-fallback(margin,4,9,4,9);
+}
+
+//#filter-arrow
+
+#filter-menu-button::after{ //down
+  content:"";
+  display:inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: none;
+  border-top: 7px solid #7E7E7E;
+  @include rem-fallback(margin,4,9,4,9);
+}
 
 
 

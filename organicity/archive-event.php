@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <main role="main">
-  <div class="section">
+  <div class="section section--title">
     <div class="pure-g">
       <div class="pure-u-1-4"></div>
       <div class="pure-u-1-2">

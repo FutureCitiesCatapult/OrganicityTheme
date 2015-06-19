@@ -426,7 +426,7 @@ function ajax_filter_get_posts( $taxonomy ) {
 <!--        <h2><a href="--><?php //the_permalink(); ?><!--">--><?php //the_title(); ?><!--</a></h2>-->
 <!--        --><?php //the_excerpt(); ?>
 
-        <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4">
+        <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3">
             <div class="feature">
                 <div class="feature__meta">
                     <span class="date"><?php the_time('j M Y'); ?></span>
