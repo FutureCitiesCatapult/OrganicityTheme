@@ -3,27 +3,18 @@
  * Copyright (c) 2015 Future Cities Catapult */
 jQuery(document).ready(function($) {
 
-
-    Object.size = function(obj) {
-        var size = 0, key;
-        for (key in obj) {
-            if (obj.hasOwnProperty(key)) size++;
-        }
-        return size;
-    };
-
-    var selectedTags = {};
-
+// settings for the carousel on the home page
     $("#owl-demo").owlCarousel({
         slideSpeed : 300,
         paginationSpeed : 400,
         singleItem:true
     });
 
+
+
+// scrolls the page to hot links within that page
     $('a[href^="#"]').on('click', function (event) {
-
         var target = $($(this).attr('href'));
-
         if (target.length) {
             event.preventDefault();
             $('html, body').animate({
@@ -33,22 +24,7 @@ jQuery(document).ready(function($) {
     });
 
 
-    $("#filter-menu-button").click(function(e) {
-        $("#filter-menu-button").html($("#filter-menu-button").html() == 'Filter' ? 'Reset':'Filter');
-
-        if($("#filter-menu").hasClass("active")){
-            //selectedTags = {"all":true};
-            get_blog_posts(e);
-            $(".tax-filter").removeClass("highlight");
-
-        }
-        $("#filter-menu").toggleClass("active");
-        $("#filter-menu-button").toggleClass("active");
-
-
-    });
-
-
+    // Opens the hamburger menu
     $("a[href=#menuExpand]").click(function(e) {
         $(".menu").toggleClass("menuOpen");
         $(".menu-wrapper").toggleClass("active");
@@ -57,19 +33,77 @@ jQuery(document).ready(function($) {
 
 
 
+
+// to return the size of an object (dictionary)
+    Object.size = function(obj) {
+        var size = 0, key;
+        for (key in obj) {
+            if (obj.hasOwnProperty(key)) size++;
+        }
+        return size;
+    };
+
+
+
+
+
+// current selected tags
+    var selectedTags = {};
+
+
+    function opencloseFilterMenu(event) {
+        //if(!$("#filter-menu").hasClass("active")) {
+        $("#filter-menu").toggleClass("active");
+        $("#filter-menu-button").toggleClass("active");
+        //}
+    }
+
+
+// Setting up the filter menu
+    $("#filter-menu-button").click(function(e) {
+        $("#filter-menu-button").html($("#filter-menu-button").html() == 'Filter' ? 'Reset':'Filter');
+
+        // if currently open, upon clicking the filter/reset it removes all the highlights
+        if($("#filter-menu").hasClass("active")){
+            //selectedTags = {"all":true};
+            get_blog_posts(e);
+            $(".tax-filter").removeClass("highlight");
+
+        }
+        opencloseFilterMenu(event);
+       // $("#filter-menu").toggleClass("active");
+       // $("#filter-menu-button").toggleClass("active");
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
     function get_blog_posts(event) {
-    console.log("GET BLOG POSTS");
+   // console.log("GET BLOG POSTS");
+
         // Prevent default action - opening tag page
         if (event.preventDefault) {
             event.preventDefault();
         } else {
             event.returnValue = false;
         }
-
+       // console.log(event.data);
 
 
         var tagClicked = $(this).attr('title');
         $(this).toggleClass('highlight');
+
+        //$(".menu-tax-filter[title='" + tagClicked + "']").toggleClass("highlight");
+
 
         if (typeof tagClicked !== typeof undefined && tagClicked !== false) {
 
@@ -79,6 +113,9 @@ jQuery(document).ready(function($) {
             else {
                 selectedTags[tagClicked] = true;
             }
+
+//            $(".menu-tax-filter[title='" + tagClicked + "']").toggleClass("highlight");
+//            openFilterMenu(event);
 
 
             var selected_taxonomy = "";
@@ -97,6 +134,8 @@ jQuery(document).ready(function($) {
         }
 
         // Get tag slug from title attirbute
+
+
 
         // After user click on tag, fade out list of posts
         $('.tagged-posts').fadeOut();
@@ -120,6 +159,7 @@ jQuery(document).ready(function($) {
 
 
     $('.tax-filter').click(get_blog_posts);
+    //$('.menu-tax-filter').click(get_blog_posts);
 
 
 });
