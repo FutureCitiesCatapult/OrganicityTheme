@@ -436,9 +436,9 @@ function ajax_filter_get_posts( $taxonomy ) {
               * Pluck one city or regular tag for the current post
               */
               if (has_term(null, 'city')) {
-                  $first_term = wp_get_post_terms($post->ID, array('city'))[0];
+                  $first_term = wp_get_post_terms($query->post->ID, array('city'))[0];
               } elseif (has_term(null, 'post_tag')) {
-                  $first_term = wp_get_post_terms($post->ID, array('post_tag'))[0];
+                  $first_term = wp_get_post_terms($query->post->ID, array('post_tag'))[0];
               }
               ?>
                 <?php if ($first_term) : ?>
