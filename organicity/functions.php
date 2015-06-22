@@ -308,7 +308,8 @@ function register_meta_boxes($meta_boxes) {
 
   $homepage_signup_fields = array(
     'title'   => 'Signup section',
-    'pages'   => 'page',
+//    'post_types' => ['page','post'],
+      'pages'   => 'page',
     'fields'  => array(
       array(
         'name'  => 'Title',
@@ -354,6 +355,8 @@ function register_meta_boxes($meta_boxes) {
     $meta_boxes[] = $homepage_event_fields;
     $meta_boxes[] = $homepage_signup_fields;
   }
+
+   // $meta_boxes[] = $homepage_signup_fields;
 
   return $meta_boxes;
 }

@@ -49,6 +49,15 @@ a {
 
 
 
+//p{
+// font-family:$text__family--serif;
+//  @include rem-fallback(font-size,18);
+//  text-align: left;
+//  color: #5D5D5D;
+//  @include rem-fallback(line-height,30);
+//  @include rem-fallback(margin-bottom,20);
+//}
+
 
 .button {
   color: $color__white;
@@ -113,6 +122,7 @@ a {
     @include rem-fallback(font-size, $text__small);
     @include rem-fallback(line-height, 30);
     @include rem-fallback(margin-bottom, 40);
+    text-align: left;
   }
 
   .pure-g {
@@ -254,6 +264,83 @@ a {
     }
     font-family: $text__family--sans-serif;
     @include rem-fallback(font-size,18);
+  }
+
+  &--article{
+    background-color: $color__grey--background;
+
+    font-family: 'CooperHewitt-Book';
+    .section--article--content{
+      letter-spacing:0;
+      background-color: $color__white;
+      .section--article--content-wrapper{
+       //@include rem-fallback(padding,45,90,45,90);
+        @include rem-fallback(padding,55,180,65,180);
+      }
+    }
+    hr{
+      @include rem-fallback(margin-top,10);
+      @include rem-fallback(margin-bottom,10);
+      border: 2px solid #F3F4F8;
+    }
+
+    .blogtags{
+      @include rem-fallback(margin-top,10);
+      @include rem-fallback(margin-bottom,25);
+      a{
+        font-family: 'CooperHewitt-Book';
+        @include rem-fallback(font-size,18);
+        color:#303030;
+
+        &:hover,&:active{
+          color:$color__pink;
+        }
+
+      }
+    }
+
+    p{
+//      font-family:$text__family--serif;
+//      @include rem-fallback(font-size,17);
+//      text-align: left;
+//      color: #5D5D5D;
+//      @include rem-fallback(line-height,30);
+    //  @include rem-fallback(margin-bottom,20);
+    }
+
+    .date{
+      font-family: 'CooperHewitt-Book';
+      @include rem-fallback(font-size,18);
+      color: rgba(48,48,48,0.5);
+    }
+
+    h1,h2,h3,h4,h5,h6{
+      @include rem-fallback(margin,60,0,15,0);
+      text-align: left;
+      font-family: 'CooperHewitt-Book';
+      color: #4A4A4A;
+    }
+    h1{
+      @include rem-fallback(margin,15,0,15,0);
+      @include rem-fallback(font-size,46);
+    }
+
+    h2{
+      @include rem-fallback(font-size,34);
+    }
+    h3{
+      @include rem-fallback(font-size,24);
+    }
+    h4,h5,h6{
+      @include rem-fallback(font-size,18);
+    }
+
+  img{
+    width: 100%;
+    height:auto;
+    @include rem-fallback(margin,5,0,20,0);
+  }
+
   }
 
 
@@ -425,7 +512,19 @@ footer {
 
     }
 
+  &--article{
+    @include rem-fallback(padding-top,50);
+    .section--article--content .section--article--content-wrapper{
+      @include rem-fallback(padding,50,60,100,60);
+    }
   }
+
+  }
+
+
+
+
+
 
 
 }
@@ -444,6 +543,58 @@ footer {
 //      display:none;
 //    }
 //  }
+
+
+
+  .section {
+    &--article{
+      @include rem-fallback(padding,0);
+
+      .section--article--content .section--article--content-wrapper{
+        @include rem-fallback(padding,25,30,50,30);
+      }
+      .date{
+        @include rem-fallback(font-size,15);
+      }
+      h1,h2,h3,h4,h5,h6{
+        @include rem-fallback(margin,30,0,10,0);
+      }
+
+      h1{
+       // @include rem-fallback(margin,15,0,15,0);
+        @include rem-fallback(font-size,30);
+      }
+
+      .blogtags{
+        @include rem-fallback(margin-top,10);
+        @include rem-fallback(margin-bottom,10);
+        a{
+
+          @include rem-fallback(font-size,15);
+
+
+        }
+      }
+      h2{
+        @include rem-fallback(font-size,24);
+      }
+      h3{
+        @include rem-fallback(font-size,18);
+      }
+      h4,h5,h6{
+        @include rem-fallback(font-size,17);
+      }
+    p{
+      @include rem-fallback(font-size,17);
+      @include rem-fallback(line-height,24);
+    }
+
+
+
+
+
+    }
+  }
 
 }
 

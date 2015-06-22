@@ -541,7 +541,8 @@ header {
     line-height:  30px;
     line-height:  3rem;
     margin-bottom:  40px;
-    margin-bottom:  4rem; }
+    margin-bottom:  4rem;
+    text-align: left; }
   .section .pure-g {
     margin:  0 auto 20px auto;
     margin:  0 auto 2rem auto;
@@ -649,6 +650,63 @@ header {
     .section--copyright .pure-g {
       margin-bottom:  0;
       margin-bottom:  0; }
+  .section--article {
+    background-color: #F3F4F8;
+    font-family: 'CooperHewitt-Book'; }
+    .section--article .section--article--content {
+      letter-spacing: 0;
+      background-color: #ffffff; }
+      .section--article .section--article--content .section--article--content-wrapper {
+        padding:  55px 180px 65px 180px;
+        padding:  5.5rem 18rem 6.5rem 18rem; }
+    .section--article hr {
+      margin-top:  10px;
+      margin-top:  1rem;
+      margin-bottom:  10px;
+      margin-bottom:  1rem;
+      border: 2px solid #F3F4F8; }
+    .section--article .blogtags {
+      margin-top:  10px;
+      margin-top:  1rem;
+      margin-bottom:  25px;
+      margin-bottom:  2.5rem; }
+      .section--article .blogtags a {
+        font-family: 'CooperHewitt-Book';
+        font-size:  18px;
+        font-size:  1.8rem;
+        color: #303030; }
+        .section--article .blogtags a:hover, .section--article .blogtags a:active {
+          color: #EF4070; }
+    .section--article .date {
+      font-family: 'CooperHewitt-Book';
+      font-size:  18px;
+      font-size:  1.8rem;
+      color: rgba(48, 48, 48, 0.5); }
+    .section--article h1, .section--article h2, .section--article h3, .section--article h4, .section--article h5, .section--article h6 {
+      margin:  60px 0 15px 0;
+      margin:  6rem 0 1.5rem 0;
+      text-align: left;
+      font-family: 'CooperHewitt-Book';
+      color: #4A4A4A; }
+    .section--article h1 {
+      margin:  15px 0 15px 0;
+      margin:  1.5rem 0 1.5rem 0;
+      font-size:  46px;
+      font-size:  4.6rem; }
+    .section--article h2 {
+      font-size:  34px;
+      font-size:  3.4rem; }
+    .section--article h3 {
+      font-size:  24px;
+      font-size:  2.4rem; }
+    .section--article h4, .section--article h5, .section--article h6 {
+      font-size:  18px;
+      font-size:  1.8rem; }
+    .section--article img {
+      width: 100%;
+      height: auto;
+      margin:  5px 0 20px 0;
+      margin:  0.5rem 0 2rem 0; }
   .section--footer {
     text-align: center; }
     .section--footer hr {
@@ -740,13 +798,57 @@ footer {
   .section--filter #filter-menu .post-tags {
     columns: 1;
     -webkit-columns: 1;
-    -moz-columns: 1; } }
+    -moz-columns: 1; }
+  .section--article {
+    padding-top:  50px;
+    padding-top:  5rem; }
+    .section--article .section--article--content .section--article--content-wrapper {
+      padding:  50px 60px 100px 60px;
+      padding:  5rem 6rem 10rem 6rem; } }
 @media only screen and (max-width: 567px) {
   .blog-large {
     display: none; }
 
   #owl-demo {
-    display: block !important; } }
+    display: block !important; }
+
+  .section--article {
+    padding:  0;
+    padding:  0; }
+    .section--article .section--article--content .section--article--content-wrapper {
+      padding:  25px 30px 50px 30px;
+      padding:  2.5rem 3rem 5rem 3rem; }
+    .section--article .date {
+      font-size:  15px;
+      font-size:  1.5rem; }
+    .section--article h1, .section--article h2, .section--article h3, .section--article h4, .section--article h5, .section--article h6 {
+      margin:  30px 0 10px 0;
+      margin:  3rem 0 1rem 0; }
+    .section--article h1 {
+      font-size:  30px;
+      font-size:  3rem; }
+    .section--article .blogtags {
+      margin-top:  10px;
+      margin-top:  1rem;
+      margin-bottom:  10px;
+      margin-bottom:  1rem; }
+      .section--article .blogtags a {
+        font-size:  15px;
+        font-size:  1.5rem; }
+    .section--article h2 {
+      font-size:  24px;
+      font-size:  2.4rem; }
+    .section--article h3 {
+      font-size:  18px;
+      font-size:  1.8rem; }
+    .section--article h4, .section--article h5, .section--article h6 {
+      font-size:  17px;
+      font-size:  1.7rem; }
+    .section--article p {
+      font-size:  17px;
+      font-size:  1.7rem;
+      line-height:  24px;
+      line-height:  2.4rem; } }
 #filter-menu-button.active::after {
   content: "";
   display: inline-block;
