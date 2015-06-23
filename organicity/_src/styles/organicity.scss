@@ -131,6 +131,15 @@ a {
     @include rem-fallback(padding, 60 0);
   }
 
+  &--jumbo {
+    background-color: $color__grey--background;
+    img{
+      width:100%;
+      height:50px;
+
+    }
+  }
+
   //TODO: responsive - remove 4th article (:last-child) < large
   &--blog {
 
@@ -170,14 +179,124 @@ a {
     }
   }
 
-  &--events {
+  &--events--city-filter{
+    //padding:0;
+    @include rem-fallback(padding-bottom,0);
     background-color: $color__grey--background;
+
+//    ul{
+//      list-style-type: none;
+//      width:100%;
+//      li{
+    .pure-g{
+      @include rem-fallback(margin-bottom,0);
+    }
+
+    .city-filter-tab{
+//        display:inline-block;
+        //width:100%;
+        background-color: $color__white;
+//        min-width: 25%;
+      text-align: center;
+      font-family: $text__family--sans-serif--light;
+    color:rgba(74,74,74,0.8);
+      @include rem-fallback(font-size,24);
+      @include rem-fallback(padding-top,30);
+      @include rem-fallback(padding-bottom,30);
+      @include rem-fallback(margin,0,4,4,0);
+
+      a{
+        &:hover,&:active{
+        color:$color__pink;
+      }
+      }
+    }
+//    }
+  }
+
+
+  &--events {
+//    padding:0;
+    @include rem-fallback(padding-top,0);
+    background-color: $color__grey--background;
+
+    .event{
+      background-color: $color__white;
+      @include rem-fallback(padding,50,40,50,40);
+      height:auto;
+      max-height:auto;
+      overflow:hidden;
+      font-family: $text__family--sans-serif;
+    .event__meta{
+      padding:0;
+      display:inline-block;
+      width:20%;
+      float:left;
+
+      color:rgba(93,93,93,0.7);
+      @include rem-fallback(font-size,20);
+    }
+      .event__content{
+        display:inline-block;
+        width:60%;
+        float:left;
+        h4{
+          color:#4A4A4A;
+          @include rem-fallback(font-size,24);
+          text-align: left;
+          @include rem-fallback(margin,0,0,5,0);
+        }
+        h5{
+          color:rgba(93,93,93,0.7);
+          @include rem-fallback(font-size,16);
+          text-align: left;
+          @include rem-fallback(margin,0);
+        }
+        p{
+          @include rem-fallback(margin-top,10);
+          @include rem-fallback(margin-bottom,10);
+          @include rem-fallback(font-size,17);
+          @include rem-fallback(line-height,24);
+        }
+    }
+
+      .event__right{
+        display:inline-block;
+        width:20%;
+        float:left;
+        .button{
+          background-color: $color__pink;
+          @include rem-fallback(font-size,11);
+          text-transform: uppercase;
+          &:hover{
+            background-color: $color__black;
+            color: $color__white;
+          }
+        }
+      }
+      @include rem-fallback(margin-bottom,5);
+    }
+
   }
 
   &--signup {
     p { text-align: center; }
     form {
       text-align: center;
+      input[type='email']{
+        background:transparent;
+        box-shadow: none;
+        border-radius:0px;
+        @include rem-fallback(padding,15,15,10,15);
+        border:2px solid $color__white;
+        color:$color__white;
+        width:60%;
+        font-family: $text__family--sans-serif--light;
+        @include rem-fallback(font-size,18);
+      }
+      button{
+
+      }
     }
   }
 
@@ -336,12 +455,25 @@ a {
     }
 
   img{
-    width: 100%;
+    max-width: 100%;
     height:auto;
     @include rem-fallback(margin,5,0,20,0);
   }
 
   }
+  &--page {
+    h1,h2,h3{
+      text-align: center;
+
+    };
+    img.alignnone{
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+      //text-align: center;
+    }
+  }
+
 
 
   &--footer {
@@ -519,6 +651,28 @@ footer {
     }
   }
 
+
+    &--events {
+      .event {
+        .event__meta, .event__content, .event__right {
+          display: block;
+          width: 100%;
+
+          h4{
+            @include rem-fallback(margin,10,0,5,0);
+          }
+
+
+
+        }
+        .event__right{
+          @include rem-fallback(padding-top,30);
+        }
+      }
+
+    }
+
+
   }
 
 
@@ -554,6 +708,11 @@ footer {
       &--page {
         @include rem-fallback(padding, 4,0,0,0);
       }
+
+    &--events--city-filter{
+      @include rem-fallback(margin-top, 4);
+      @include rem-fallback(margin-bottom, 25);
+    }
 
     &--article,&--page{
      // @include rem-fallback(padding,0);
@@ -598,10 +757,10 @@ footer {
     }
 
 
-
-
-
     }
+
+
+
   }
 
 }

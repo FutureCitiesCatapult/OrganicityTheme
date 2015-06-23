@@ -15,10 +15,34 @@ get_header(); ?>
 ?>
 
 <main role="main">
-<h2><?php echo $city_name; ?></h2>
+    <div class="section section--title">
+        <div class="pure-g">
+            <div class="pure-u-1-4"></div>
+            <div class="pure-u-1-2">
+                <h2><?php echo $city_name; ?></h2>
+            </div>
+            <div class="pure-u-1-4"></div>
+        </div>
+    </div>
+<!--<h2>--><?php //echo $city_name; ?><!--</h2>-->
 
-Posts and events from <?php echo $city_name; ?>:
-<?php get_template_part('loop'); ?>
+    <div class="section section--jumbo">
+<!--        <img src="" alt=""/>-->
+        </div>
+    <div class="section">
+
+    </div>
+
+    <div class="section section--events--city-filter">
+        <div class="pure-g">
+<!--            Posts and events from --><?php //echo $city_name; ?><!--:-->
+            <?php get_template_part('loop'); ?>
+            </div>
+        </div>
+
+
+
+
 
 </main>
 <?php get_footer(); ?>

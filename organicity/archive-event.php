@@ -7,6 +7,16 @@
  */
 get_header(); ?>
 
+<?php
+
+$query_args = array(
+    'post_type'      => 'post',
+    'posts_per_page' => 4
+);
+$posts_query = new WP_Query( $query_args );
+
+?>
+
 <main role="main">
   <div class="section section--title">
     <div class="pure-g">
@@ -18,25 +28,64 @@ get_header(); ?>
     </div>
   </div>
 
-  <div class="section section--blog">
 
+<!--    <a href="">All</a>-->
+
+    <div class="section section--events--city-filter">
+        <div class="pure-g">
+            <div class="pure-u-1-1 pure-u-md-1-4">
+                <div class="city-filter-tab">
+                    <a href="">All</a>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-1-4">
+                <div class="city-filter-tab">
+                    <a href="">Aarhus</a>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-1-4">
+                <div class="city-filter-tab">
+                    <a href="">London</a>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-1-4">
+                <div class="city-filter-tab">
+                    <a href="">Santander</a>
+                </div>
+            </div>
+<!--            </div>-->
+        </div>
+    </div>
+
+
+  <div class="section section--events">
     <div class="pure-g">
-
     <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
       <!-- TODO: work on responsive breakdown of article 4->2->1 -->
-      <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4">
-        <div class="feature">
-          <div class="feature__meta">
+      <div class="pure-u-1-1">
+        <div class="event">
+          <div class="event__meta">
             <span class="date"><?php echo date("d.m.Y", strtotime(rwmb_meta('organicity_event_date'))); ?></span>
 
           </div>
-          <a class="feature__description" href="<?php the_permalink(); ?>">
-            <?php the_title(); ?>
-          </a>
-          <a class="feature__image" href="<?php the_permalink(); ?>">
-            <?php the_post_thumbnail(null, array('class' => 'pure-img')); ?>
-          </a>
+            <div class="event__content">
+<!--          <a class="feature__description" href="--><?php //the_permalink(); ?><!--">-->
+            <h4><?php the_title(); ?></h4>
+<!--          </a>-->
+            <h5><?php echo rwmb_meta('organicity_event_location')?></h5>
+
+<!--          <a class="feature__image" href="--><?php //the_permalink(); ?><!--">-->
+<!--            --><?php //the_post_thumbnail(null, array('class' => 'pure-img')); ?>
+<!--          </a>-->
+
+            <?php the_content(__('Read more'));?>
+                </div>
+            <div class="event__right">
+            <a class="button " href="<?php echo rwmb_meta('organicity_event_url'); ?>" target="_blank">
+               Event Details
+            </a>
+                </div>
         </div>
       </div>
 

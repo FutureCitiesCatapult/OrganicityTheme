@@ -34,9 +34,9 @@ get_header(); ?>
     </div>
   </div>
 
-  <div class="section">
-    <div class="pure-g"></div>
-  </div>
+<!--  <div class="section">-->
+<!--    <div class="pure-g"></div>-->
+<!--  </div>-->
 
 </main>
 <?php get_footer(); ?>
