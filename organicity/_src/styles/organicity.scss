@@ -266,14 +266,14 @@ a {
     @include rem-fallback(font-size,18);
   }
 
-  &--article{
+  &--article,&--page{
     background-color: $color__grey--background;
 
     font-family: 'CooperHewitt-Book';
-    .section--article--content{
+    .section--article--content,.section--page--content{
       letter-spacing:0;
       background-color: $color__white;
-      .section--article--content-wrapper{
+      .section--article--content-wrapper,.section--page--content-wrapper{
        //@include rem-fallback(padding,45,90,45,90);
         @include rem-fallback(padding,55,180,65,180);
       }
@@ -512,9 +512,9 @@ footer {
 
     }
 
-  &--article{
+  &--article,&--page{
     @include rem-fallback(padding-top,50);
-    .section--article--content .section--article--content-wrapper{
+    .section--article--content .section--article--content-wrapper,.section--page--content .section--page--content-wrapper{
       @include rem-fallback(padding,50,60,100,60);
     }
   }
@@ -547,10 +547,18 @@ footer {
 
 
   .section {
-    &--article{
-      @include rem-fallback(padding,0);
 
-      .section--article--content .section--article--content-wrapper{
+    &--article {
+      @include rem-fallback(padding, 0);
+    }
+      &--page {
+        @include rem-fallback(padding, 4,0,0,0);
+      }
+
+    &--article,&--page{
+     // @include rem-fallback(padding,0);
+
+      .section--article--content .section--article--content-wrapper,.section--page--content .section--page--content-wrapper{
         @include rem-fallback(padding,25,30,50,30);
       }
       .date{

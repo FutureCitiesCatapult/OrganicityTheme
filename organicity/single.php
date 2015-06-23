@@ -5,7 +5,8 @@
  * @package Organicity
  * @since 0.1.0
  */
-get_header(); ?>
+get_header();
+?>
 
     <main role="main">
         <div class="section section--article">
@@ -65,34 +66,48 @@ get_header(); ?>
             </div>
         </div>
 
-<!--        <div class="section">-->
-<!--            <div class="pure-g">-->
-<!--                <div class="pure-u-1-4"></div>-->
-<!--                <div class="pure-u-1-2"></div>-->
-<!--                <div class="pure-u-1-4"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--        --><?php //if (rwmb_meta('organicity_homepage_signup_section_visible')) : ?>
-<!--            <div class="section section--signup">-->
-<!--                <div class="pure-g">-->
-<!--                    <div class="pure-u-1-4"></div>-->
-<!--                    <div class="pure-u-1-2">-->
-<!--                        <h3>--><?php //echo rwmb_meta('organicity_homepage_signup_section_title'); ?><!--</h3>-->
-<!--                        --><?php //echo rwmb_meta('organicity_homepage_signup_section_content'); ?>
-<!--                        <form class="pure-form">-->
-<!--                            <fieldset>-->
-<!--                                <input class="" type="email" placeholder="--><?php //echo rwmb_meta('organicity_homepage_signup_field_placeholder_text'); ?><!--">-->
-<!--                                <button type="submit" class="button button--bordered button--internal">-->
-<!--                                    --><?php //echo rwmb_meta('organicity_homepage_signup_button_text'); ?>
-<!--                                </button>-->
-<!--                            </fieldset>-->
-<!--                        </form>-->
-<!--                    </div>-->
-<!--                    <div class="pure-u-1-4"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        --><?php //endif; ?>
+        <div class="section">
+            <div class="pure-g">
+                <div class="pure-u-1-4"></div>
+                <div class="pure-u-1-2"></div>
+                <div class="pure-u-1-4"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="pure-g">
+                <div class="pure-u-1-4"></div>
+                <div class="pure-u-1-2"></div>
+                <div class="pure-u-1-4"></div>
+            </div>
+        </div>
+
+
+        <?php
+        $frontpage_id = get_option('page_on_front');
+
+        if (rwmb_meta('organicity_homepage_signup_section_visible',[],$frontpage_id)) : ?>
+            <div class="section section--signup">
+                <div class="pure-g">
+                    <div class="pure-u-1-4"></div>
+                    <div class="pure-u-1-2">
+                        <h3><?php echo rwmb_meta('organicity_homepage_signup_section_title',[],$frontpage_id); ?></h3>
+                        <?php echo rwmb_meta('organicity_homepage_signup_section_content',[],$frontpage_id); ?>
+                        <form class="pure-form">
+                            <fieldset>
+                                <input class="" type="email" placeholder="<?php echo rwmb_meta('organicity_homepage_signup_field_placeholder_text',[],$frontpage_id); ?>">
+                                <button type="submit" class="button button--bordered button--internal">
+                                    <?php echo rwmb_meta('organicity_homepage_signup_button_text',[],$frontpage_id); ?>
+                                </button>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="pure-u-1-4"></div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+
 
     </main>
 <?php get_footer(); ?>
