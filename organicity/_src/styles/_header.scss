@@ -174,11 +174,9 @@ header {
     }
 
     .menuIcon {
-      //background-color: transparent;
+
       @include rem-fallback(margin-right, 20);
-      //&:hover, &:active, &:focus {
-      //  background-color: transparent;
-     // }
+
     }
 
     &.home {
@@ -278,7 +276,7 @@ header {
 
     &.home {
       img.logo {
-        //position: absolute;
+
         top: 0;
         left: 0;
         right: 0;

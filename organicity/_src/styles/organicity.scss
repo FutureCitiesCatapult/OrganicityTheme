@@ -49,14 +49,6 @@ a {
 
 
 
-//p{
-// font-family:$text__family--serif;
-//  @include rem-fallback(font-size,18);
-//  text-align: left;
-//  color: #5D5D5D;
-//  @include rem-fallback(line-height,30);
-//  @include rem-fallback(margin-bottom,20);
-//}
 
 
 .button {
@@ -184,19 +176,13 @@ a {
     @include rem-fallback(padding-bottom,0);
     background-color: $color__grey--background;
 
-//    ul{
-//      list-style-type: none;
-//      width:100%;
-//      li{
+
     .pure-g{
       @include rem-fallback(margin-bottom,0);
     }
 
     .city-filter-tab{
-//        display:inline-block;
-        //width:100%;
         background-color: $color__white;
-//        min-width: 25%;
       text-align: center;
       font-family: $text__family--sans-serif--light;
     color:rgba(74,74,74,0.8);
@@ -211,12 +197,10 @@ a {
       }
       }
     }
-//    }
   }
 
 
   &--events {
-//    padding:0;
     @include rem-fallback(padding-top,0);
     background-color: $color__grey--background;
 
@@ -393,7 +377,6 @@ a {
       letter-spacing:0;
       background-color: $color__white;
       .section--article--content-wrapper,.section--page--content-wrapper{
-       //@include rem-fallback(padding,45,90,45,90);
         @include rem-fallback(padding,55,180,65,180);
       }
     }
@@ -418,14 +401,7 @@ a {
       }
     }
 
-    p{
-//      font-family:$text__family--serif;
-//      @include rem-fallback(font-size,17);
-//      text-align: left;
-//      color: #5D5D5D;
-//      @include rem-fallback(line-height,30);
-    //  @include rem-fallback(margin-bottom,20);
-    }
+
 
     .date{
       font-family: 'CooperHewitt-Book';
@@ -542,7 +518,6 @@ a {
     a {
       color: $color__pink;
       &:hover, &:active {
-        // color: $color__black;
         text-decoration: underline;
       }
     }
@@ -576,28 +551,7 @@ footer {
 }
 
 
-//
-//// Hamburger menu
-//#nav-toggle span { position: absolute; left: 50%; top: 50%; }
-//
-//#nav-toggle span,
-//#nav-toggle span:before,
-//#nav-toggle span:after {
-//  cursor: pointer;
-//  border-radius: 1px;
-//  height: 5px;
-//  width: 35px;
-//  background: white;
-//  position: absolute;
-//  display: block;
-//  content: '';
-//}
-//#nav-toggle span:before {
-//  top: -10px;
-//}
-//#nav-toggle span:after {
-//  bottom: -10px;
-//}
+
 
 #owl-demo{
   display:none !important;
@@ -628,9 +582,6 @@ footer {
     &--wide {
       @include rem-fallback(padding-left, 30);
       @include rem-fallback(padding-right, 30);
-      //      .feature__description__wrapper{
-      //        @include rem-fallback(padding-bottom,50);
-      //      }
     }
 
     &--filter {
@@ -692,11 +643,6 @@ footer {
     display:block !important;
   }
 
-//  .blog-large.home{
-//    .item:nth-of-type(1n+2) {
-//      display:none;
-//    }
-//  }
 
 
 
@@ -715,7 +661,6 @@ footer {
     }
 
     &--article,&--page{
-     // @include rem-fallback(padding,0);
 
       .section--article--content .section--article--content-wrapper,.section--page--content .section--page--content-wrapper{
         @include rem-fallback(padding,25,30,50,30);
@@ -728,7 +673,6 @@ footer {
       }
 
       h1{
-       // @include rem-fallback(margin,15,0,15,0);
         @include rem-fallback(font-size,30);
       }
 
@@ -799,11 +743,3 @@ footer {
 
 
 
-
-
-
-//#owl-demo .item img{
-//  display: block;
-//  width: 100%;
-//  height: auto;
-//}

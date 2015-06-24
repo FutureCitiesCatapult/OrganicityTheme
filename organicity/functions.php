@@ -51,7 +51,7 @@ function organicity_scripts_styles() {
   wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . "/owl.carousel.css");
   wp_enqueue_style( 'owl-theme', get_template_directory_uri() . "/owl.theme.css");
 
-  wp_enqueue_style( 'organicity', get_template_directory_uri() . "/style{$postfix}.css", array(), ORGANICITY_VERSION );
+  wp_enqueue_style( 'organicity-style', get_template_directory_uri() . "/style{$postfix}.css", array(), ORGANICITY_VERSION );
 
 }
 add_action( 'wp_enqueue_scripts', 'organicity_scripts_styles' );
@@ -389,10 +389,11 @@ function ajax_filter_posts_scripts() {
 //    wp_register_script('afp_script', get_template_directory_uri() . '/js/ajax-filter-post.js', false, null, false);
 //    wp_enqueue_script('afp_script');
 
-    wp_enqueue_script( 'afp_script', get_template_directory_uri() . "/js/ajax-filter-post{$postfix}.js", array('jquery'), ORGANICITY_VERSION, true );
+    //wp_enqueue_script( 'afp_script', get_template_directory_uri() . "/js/ajax-filter-post{$postfix}.js", array('jquery'), ORGANICITY_VERSION, true );
 
 
-    wp_localize_script( 'afp_script', 'afp_vars', array(
+   // wp_localize_script( 'afp_script', 'afp_vars', array(
+        wp_localize_script( 'organicity', 'afp_vars', array(
             'afp_nonce' => wp_create_nonce( 'afp_nonce' ), // Create nonce which we later will use to verify AJAX request
             'afp_ajax_url' => admin_url( 'admin-ajax.php' ),
         )

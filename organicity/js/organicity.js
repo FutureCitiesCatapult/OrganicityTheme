@@ -1,3 +1,6 @@
+/*! Organicity - v0.1.0 - 2015-06-24
+ * http://www.organicity.eu
+ * Copyright (c) 2015 Future Cities Catapult */
 /*! Organicity - v0.1.0 - 2015-06-23
  * http://www.organicity.eu
  * Copyright (c) 2015 Future Cities Catapult */
@@ -52,10 +55,10 @@ jQuery(document).ready(function($) {
 
 
     function opencloseFilterMenu(event) {
-        //if(!$("#filter-menu").hasClass("active")) {
+
         $("#filter-menu").toggleClass("active");
         $("#filter-menu-button").toggleClass("active");
-        //}
+
     }
 
 
@@ -65,14 +68,13 @@ jQuery(document).ready(function($) {
 
         // if currently open, upon clicking the filter/reset it removes all the highlights
         if($("#filter-menu").hasClass("active")){
-            //selectedTags = {"all":true};
+
             get_blog_posts(e);
             $(".tax-filter").removeClass("highlight");
 
         }
         opencloseFilterMenu(event);
-       // $("#filter-menu").toggleClass("active");
-       // $("#filter-menu-button").toggleClass("active");
+
     });
 
 
@@ -84,11 +86,11 @@ jQuery(document).ready(function($) {
 
 
 
-
+// AJAX filter for blog posts
 
 
     function get_blog_posts(event) {
-   // console.log("GET BLOG POSTS");
+
 
         // Prevent default action - opening tag page
         if (event.preventDefault) {
@@ -96,13 +98,12 @@ jQuery(document).ready(function($) {
         } else {
             event.returnValue = false;
         }
-       // console.log(event.data);
+
 
 
         var tagClicked = $(this).attr('title');
         $(this).toggleClass('highlight');
 
-        //$(".menu-tax-filter[title='" + tagClicked + "']").toggleClass("highlight");
 
 
         if (typeof tagClicked !== typeof undefined && tagClicked !== false) {
@@ -114,8 +115,6 @@ jQuery(document).ready(function($) {
                 selectedTags[tagClicked] = true;
             }
 
-//            $(".menu-tax-filter[title='" + tagClicked + "']").toggleClass("highlight");
-//            openFilterMenu(event);
 
 
             var selected_taxonomy = "";
@@ -159,8 +158,6 @@ jQuery(document).ready(function($) {
 
 
     $('.tax-filter').click(get_blog_posts);
-    //$('.menu-tax-filter').click(get_blog_posts);
 
 
 });
-

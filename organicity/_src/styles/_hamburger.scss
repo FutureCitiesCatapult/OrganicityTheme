@@ -58,9 +58,7 @@
 * Hamburger to "x" (htx). Takes on a hamburger shape, bars slide
 * down to center and transform into an "x".
 */
-.menuIcon {
- // background-color: #ff3264;
-}
+
 
 .menuIcon span {
   -webkit-transition: background 0 0.3s;
@@ -86,9 +84,7 @@
 }
 
 /* active state, i.e. menu open */
-.active .menuIcon {
-  //background-color: #cb0032;
-}
+
 
 .active .menuIcon span {
   background: none;
