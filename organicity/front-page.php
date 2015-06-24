@@ -19,63 +19,20 @@ get_header(); ?>
 
 <main role="main">
 
-<!--    <div class="gallery items-3">-->
-<!--        <div id="item-1" class="control-operator"></div>-->
-<!--        <div id="item-2" class="control-operator"></div>-->
-<!--        <div id="item-3" class="control-operator"></div>-->
-<!---->
-<!--        <figure class="item">-->
-<!--            <h1>1</h1>-->
-<!--        </figure>-->
-<!---->
-<!--        <figure class="item">-->
-<!--            <h1>2</h1>-->
-<!--        </figure>-->
-<!---->
-<!--        <figure class="item">-->
-<!--            <h1>3</h1>-->
-<!--        </figure>-->
-<!---->
-<!--        <div class="controls">-->
-<!--            <a href="#item-1" class="control-button">•</a>-->
-<!--            <a href="#item-2" class="control-button">•</a>-->
-<!--            <a href="#item-3" class="control-button">•</a>-->
-<!--        </div>-->
-<!--    </div>-->
-
   <div class="section section--blog section--wide">
 
     <h2><?php _e( 'Blog', 'organicity' ); ?></h2>
 
-<!--      <div >-->
-<!---->
-<!--          <div class="item"><img src="assets/fullimage4.jpg"></div>-->
-<!--          <div class="item"><img src="assets/fullimage5.jpg"></div>-->
-<!--          <div class="item"><img src="assets/fullimage6.jpg"></div>-->
-<!--          <div class="item"><img src="assets/fullimage7.jpg"></div>-->
-<!--          <div class="item"><img src="assets/fullimage1.jpg"></div>-->
-<!--          <div class="item"><img src="assets/fullimage2.jpg"></div>-->
-<!--          <div class="item"><img src="assets/fullimage3.jpg"></div>-->
-<!---->
-<!--      </div>-->
-
-    <div class="pure-g"> <!-- owl-carousel" id="owl-example">-->
-
-
+    <div class="pure-g">
 
       <!-- custom loop to show latest 4 posts -->
       <?php if ( $posts_query->have_posts() ) : ?>
-
-
-
-
 
 
         <!-- the loop -->
       <div class="owl-carousel owl-theme" id="owl-demo">
             <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
                 <!-- TODO: work on responsive breakdown of article 4->2->1 -->
-
 
 
                 <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-4 item">
@@ -145,9 +102,9 @@ get_header(); ?>
                 </span>
               </div>
               <a class="feature__description" href="<?php the_permalink(); ?>">
-<!--                <div class="feature__description__wrapper">-->
+
                     <?php the_title(); ?>
-<!--                    </div>-->
+
               </a>
               <a class="feature__image" href="<?php the_permalink(); ?>">
                 <?php the_post_thumbnail(null, array('class' => 'pure-img')); ?>

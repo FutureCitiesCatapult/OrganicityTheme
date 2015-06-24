@@ -12,56 +12,48 @@ get_header();
         <div class="section section--article">
             <div class="pure-g">
                 <div class="pure-u-1-8"></div>
-<!--                <span class="section--article--content">-->
-<!--                <div class="pure-u-1-8"></div>-->
                 <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-6-8 section--article--content">
                     <div class="section--article--content-wrapper">
-<!--                    <div class="pure-u-1-4"></div>-->
-                    <!-- WordPress Loop -->
-                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <!-- WordPress Loop -->
+                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
                         <div class="entry <?php if(is_home() && $post==$posts[0] && !is_paged()) echo ' firstpost';?>">
                             <span class="date"><?php the_time('j M Y'); ?></span>
-                        <h1><?php the_title(); ?></h1>
-                        <hr/>
-                        <p class="blogtags">
-                        <?php if (has_term(null, 'city')) {
-                                                 $city_terms = wp_get_post_terms($post->ID, array('city'));
-                                              }
-                        if ($city_terms) :
-                            foreach( $city_terms as $thisslug ):?>
-                            <?php echo $thisslug->slug . ', ';?>
-                            <?php endforeach; ?>
-                            <?php endif;
-                             the_tags('',', '); ?> </p>
+                            <h1><?php the_title(); ?></h1>
+                            <hr/>
+                            <p class="blogtags">
+                                <?php if (has_term(null, 'city')) {
+                                    $city_terms = wp_get_post_terms($post->ID, array('city'));
+                                }
+                                if ($city_terms) :
+                                    foreach( $city_terms as $thisslug ):?>
+                                        <?php echo $thisslug->slug . ', ';?>
+                                    <?php endforeach; ?>
+                                <?php endif;
+                                the_tags('',', '); ?> </p>
 
                             <?php
-                                if(has_post_thumbnail()){
-                                    the_post_thumbnail( 'instance-name' );
-                                }else{
+                            if(has_post_thumbnail()){
+                                the_post_thumbnail( 'instance-name' );
+                            }else{
 
-                                }
+                            }
                             ?>
 
-                                <?php the_content(__('Read more'));?>
+                            <?php the_content(__('Read more'));?>
                             <hr/>
 
 
-               <?php endwhile; else: ?>
+                            <?php endwhile; else: ?>
 
-                    <p> <?php _e('Sorry, no posts matched your criteria.'); ?> </p>
-                <?php endif; ?>
-<!--                <ul class="navigationarrows">-->
-<!--                    <li class="previous">--><?php //previous_post_link(' Previous post:<br /> &laquo; %link'); ?><!-- --><?php //if(!get_adjacent_post(false, '', true)) { echo '<span>&laquo;Previous</span>'; } // if there are no older articles ?><!--</li>-->
-<!--                    <li class="next">--><?php //next_post_link('Next post: <br /> %link &raquo;'); ?><!-- --><?php //if(!get_adjacent_post(false, '', false)) { echo '<span>Next post:</span>'; } // if there are no newer articles ?><!-- </li>-->
-<!--                </ul>-->
-                            </div>
+                                <p> <?php _e('Sorry, no posts matched your criteria.'); ?> </p>
+                            <?php endif; ?>
                         </div>
-                <!-- End WordPress Loop -->
-<!--                    <div class="pure-u-1-4"></div>-->
+                    </div>
+                    <!-- End WordPress Loop -->
+
                 </div>
-<!--                    <div class="pure-u-1-8"></div>-->
-<!--                    </span>-->
+
                 <div class="pure-u-1-8"></div>
             </div>
         </div>

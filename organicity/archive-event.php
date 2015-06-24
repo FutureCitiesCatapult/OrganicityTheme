@@ -18,18 +18,16 @@ $posts_query = new WP_Query( $query_args );
 ?>
 
 <main role="main">
-  <div class="section section--title">
-    <div class="pure-g">
-      <div class="pure-u-1-4"></div>
-      <div class="pure-u-1-2">
-        <h2><?php _e( 'Events', 'organicity' ); ?></h2>
-      </div>
-      <div class="pure-u-1-4"></div>
+    <div class="section section--title">
+        <div class="pure-g">
+            <div class="pure-u-1-4"></div>
+            <div class="pure-u-1-2">
+                <h2><?php _e( 'Events', 'organicity' ); ?></h2>
+            </div>
+            <div class="pure-u-1-4"></div>
+        </div>
     </div>
-  </div>
 
-
-<!--    <a href="">All</a>-->
 
     <div class="section section--events--city-filter">
         <div class="pure-g">
@@ -53,46 +51,42 @@ $posts_query = new WP_Query( $query_args );
                     <a href="">Santander</a>
                 </div>
             </div>
-<!--            </div>-->
         </div>
     </div>
 
 
-  <div class="section section--events">
-    <div class="pure-g">
-    <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+    <div class="section section--events">
+        <div class="pure-g">
+            <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-      <!-- TODO: work on responsive breakdown of article 4->2->1 -->
-      <div class="pure-u-1-1">
-        <div class="event">
-          <div class="event__meta">
-            <span class="date"><?php echo date("d.m.Y", strtotime(rwmb_meta('organicity_event_date'))); ?></span>
+                <!-- TODO: work on responsive breakdown of article 4->2->1 -->
+                <div class="pure-u-1-1">
+                    <div class="event">
+                        <div class="event__meta">
+                            <span class="date"><?php echo date("d.m.Y", strtotime(rwmb_meta('organicity_event_date'))); ?></span>
 
-          </div>
-            <div class="event__content">
-<!--          <a class="feature__description" href="--><?php //the_permalink(); ?><!--">-->
-            <h4><?php the_title(); ?></h4>
-<!--          </a>-->
-            <h5><?php echo rwmb_meta('organicity_event_location')?></h5>
+                        </div>
+                        <div class="event__content">
 
-<!--          <a class="feature__image" href="--><?php //the_permalink(); ?><!--">-->
-<!--            --><?php //the_post_thumbnail(null, array('class' => 'pure-img')); ?>
-<!--          </a>-->
+                            <h4><?php the_title(); ?></h4>
 
-            <?php the_content(__('Read more'));?>
+                            <h5><?php echo rwmb_meta('organicity_event_location')?></h5>
+
+
+                            <?php the_content(__('Read more'));?>
+                        </div>
+                        <div class="event__right">
+                            <a class="button " href="<?php echo rwmb_meta('organicity_event_url'); ?>" target="_blank">
+                                Event Details
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            <div class="event__right">
-            <a class="button " href="<?php echo rwmb_meta('organicity_event_url'); ?>" target="_blank">
-               Event Details
-            </a>
-                </div>
+
+            <?php endwhile; endif; ?>
+            <!-- end of the loop -->
         </div>
-      </div>
-
-    <?php endwhile; endif; ?>
-    <!-- end of the loop -->
     </div>
-  </div>
 
     <?php
     $frontpage_id = get_option('page_on_front');

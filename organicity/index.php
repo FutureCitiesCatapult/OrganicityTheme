@@ -17,7 +17,7 @@ $posts_query = new WP_Query( $query_args );
 
 ?>
 
-<main role="main">
+    <main role="main">
 
-</main>
+    </main>
 <?php get_footer(); ?>

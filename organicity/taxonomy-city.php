@@ -9,8 +9,8 @@
  */
 get_header(); ?>
 <?php
-  
-  $city_name = get_queried_object()->name;
+
+$city_name = get_queried_object()->name;
 
 ?>
 
@@ -24,23 +24,69 @@ get_header(); ?>
             <div class="pure-u-1-4"></div>
         </div>
     </div>
-<!--<h2>--><?php //echo $city_name; ?><!--</h2>-->
+
 
     <div class="section section--jumbo">
-<!--        <img src="" alt=""/>-->
-        </div>
+
+    </div>
     <div class="section">
 
     </div>
 
-    <div class="section section--events--city-filter">
+
+
+    <div class="section section--events">
+        <h2><?php echo $city_name; _e(' Events', 'organicity' ); ?></h2>
         <div class="pure-g">
-<!--            Posts and events from --><?php //echo $city_name; ?><!--:-->
-            <?php get_template_part('loop'); ?>
-            </div>
+            <?php if (have_posts()): while (have_posts()) : the_post();
+                if ( 'event' == get_post_type() ):?>
+
+
+                <!-- TODO: work on responsive breakdown of article 4->2->1 -->
+                <div class="pure-u-1-1">
+                    <div class="event">
+                        <div class="event__meta">
+                            <span class="date"><?php echo date("d.m.Y", strtotime(rwmb_meta('organicity_event_date'))); ?></span>
+
+                        </div>
+                        <div class="event__content">
+
+                            <h4><?php the_title(); ?></h4>
+
+                            <h5><?php echo rwmb_meta('organicity_event_location')?></h5>
+
+
+                            <?php the_content(__('Read more'));?>
+                        </div>
+                        <div class="event__right">
+                            <a class="button " href="<?php echo rwmb_meta('organicity_event_url'); ?>" target="_blank">
+                                Event Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php endif?>
+            <?php endwhile; endif; ?>
+            <!-- end of the loop -->
         </div>
+    </div>
 
 
+
+
+
+
+
+
+
+    <div class="section section--blog section--wide">
+        <h2><?php _e('Blog', 'organicity' ); ?></h2>
+        <div class="pure-g tagged-posts">
+
+            <?php get_template_part('loop'); ?>
+
+        </div>
+    </div>
 
 
 

@@ -21,10 +21,10 @@ get_header(); ?>
         <div class="pure-g">
             <div class="pure-u-1-4"></div>
             <div class="pure-u-1-2">
-                <button href="" id="filter-menu-button"><?php _e( 'Filter', 'organicity' ); ?></button><!--<div id="filter-arrow" class="arrow-down"></div>-->
-                <!--                --><?php //wp_tag_cloud('number=50&format=list&orderby=count'); ?>
+                <button href="" id="filter-menu-button"><?php _e( 'Filter', 'organicity' ); ?></button>
+
                 <div id="filter-menu"><?php tags_filter() ?></div>
-                <!--                <div class="tagged-posts"></div>-->
+
             </div>
             <div class="pure-u-1-4"></div>
         </div>
@@ -56,11 +56,11 @@ get_header(); ?>
 
               } elseif (has_term(null, 'post_tag')) {
                   $first_term = wp_get_post_terms($post->ID, array('post_tag'))[0];
-                     if ($first_term) : ?>
-                         <a href="" class="tax-filter" title="<?php echo $first_term->slug; ?>">
-                             <?php echo $first_term->name; ?>
-                         </a>
-                     <?php endif;
+                  if ($first_term) : ?>
+                      <a href="" class="tax-filter" title="<?php echo $first_term->slug; ?>">
+                          <?php echo $first_term->name; ?>
+                      </a>
+                  <?php endif;
               }
               ?>
             </span>
@@ -84,7 +84,7 @@ get_header(); ?>
                 <a class="button button--full button--external" href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e('Show more', 'organicity'); ?></a>
             </div>
             <div class="pure-u-1-3 pure-u-lg-1-4"></div>
-            <!--            --><?php //endwhile; endif; ?>
+
             <?php else : ?>
                 <p><?php _e( 'No posts to show.', 'organicity' ); ?></p>
             <?php endif; ?>

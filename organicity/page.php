@@ -18,25 +18,22 @@ get_header(); ?>
         </div>
     </div>
 
-  <div class="section section--page">
-    <div class="pure-g">
-      <div class="pure-u-1-8"></div>
-        <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-6-8 section--page--content">
-            <div class="section--page--content-wrapper">
-<!--        <h2>--><?php //the_title(); ?><!--</h2>-->
-          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <?php the_content(); ?>
-            <?php endwhile; endif; ?>
-                </div>
-      </div>
-      <div class="pure-u-1-8">
- </div>
-    </div>
-  </div>
+    <div class="section section--page">
+        <div class="pure-g">
+            <div class="pure-u-1-8"></div>
+            <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-6-8 section--page--content">
+                <div class="section--page--content-wrapper">
 
-<!--  <div class="section">-->
-<!--    <div class="pure-g"></div>-->
-<!--  </div>-->
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <?php the_content(); ?>
+                    <?php endwhile; endif; ?>
+                </div>
+            </div>
+            <div class="pure-u-1-8">
+            </div>
+        </div>
+    </div>
+
 
 </main>
 <?php get_footer(); ?>
