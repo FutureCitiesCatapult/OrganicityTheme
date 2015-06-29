@@ -119,7 +119,7 @@ a {
 
   .pure-g {
     @include rem-fallback(margin, 0, auto, 20, auto);
-    @include rem-fallback(max-width, 995);
+    @include rem-fallback(max-width, 1200); //995);
     @include rem-fallback(padding, 60 0);
   }
 
@@ -169,6 +169,12 @@ a {
       border: 0;
       border-bottom: 3px solid #f3f4f8;
     }
+    .pure-g {
+
+    //  @include rem-fallback(max-width, 1200);
+    }
+
+
   }
 
   &--events--city-filter{
@@ -179,6 +185,7 @@ a {
 
     .pure-g{
       @include rem-fallback(margin-bottom,0);
+      @include rem-fallback(max-width, 995);
     }
 
     .city-filter-tab{
@@ -199,8 +206,17 @@ a {
     }
   }
 
+  &--findevents{
+    background-color: $color__grey--background;
+  }
 
   &--events {
+
+    .pure-g{
+
+      @include rem-fallback(max-width, 995);
+    }
+
     @include rem-fallback(padding-top,0);
     background-color: $color__grey--background;
 
@@ -268,18 +284,24 @@ a {
     form {
       text-align: center;
       input[type='email']{
+        width:100%;
         background:transparent;
         box-shadow: none;
         border-radius:0px;
         @include rem-fallback(padding,15,15,10,15);
         border:2px solid $color__white;
         color:$color__white;
-        width:60%;
+        //width:60%;
         font-family: $text__family--sans-serif--light;
         @include rem-fallback(font-size,18);
       }
       button{
-
+          width:100%;
+        text-align: center;
+        padding:0;
+        @include rem-fallback(padding-top,15);
+        @include rem-fallback(padding-bottom,10);
+        border:2px solid $color__white;
       }
     }
   }
@@ -370,6 +392,10 @@ a {
   }
 
   &--article,&--page{
+    .pure-g{
+        @include rem-fallback(max-width, 995);
+    }
+
     background-color: $color__grey--background;
 
     font-family: 'CooperHewitt-Book';

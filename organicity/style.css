@@ -546,8 +546,8 @@ header {
   .section .pure-g {
     margin:  0 auto 20px auto;
     margin:  0 auto 2rem auto;
-    max-width:  995px;
-    max-width:  99.5rem;
+    max-width:  1200px;
+    max-width:  120rem;
     padding:  60 0px;
     padding:  60 0/10rem; }
   .section--jumbo {
@@ -589,7 +589,9 @@ header {
     background-color: #F3F4F8; }
     .section--events--city-filter .pure-g {
       margin-bottom:  0;
-      margin-bottom:  0; }
+      margin-bottom:  0;
+      max-width:  995px;
+      max-width:  99.5rem; }
     .section--events--city-filter .city-filter-tab {
       background-color: #ffffff;
       text-align: center;
@@ -605,10 +607,15 @@ header {
       margin:  0 0.4rem 0.4rem 0; }
       .section--events--city-filter .city-filter-tab a:hover, .section--events--city-filter .city-filter-tab a:active {
         color: #EF4070; }
+  .section--findevents {
+    background-color: #F3F4F8; }
   .section--events {
     padding-top:  0;
     padding-top:  0;
     background-color: #F3F4F8; }
+    .section--events .pure-g {
+      max-width:  995px;
+      max-width:  99.5rem; }
     .section--events .event {
       background-color: #ffffff;
       padding:  50px 40px 50px 40px;
@@ -671,6 +678,7 @@ header {
   .section--signup form {
     text-align: center; }
     .section--signup form input[type='email'] {
+      width: 100%;
       background: transparent;
       box-shadow: none;
       border-radius: 0px;
@@ -678,10 +686,18 @@ header {
       padding:  1.5rem 1.5rem 1rem 1.5rem;
       border: 2px solid #ffffff;
       color: #ffffff;
-      width: 60%;
       font-family: "CooperHewitt-Light", "Verdana", "Arial", sans-serif;
       font-size:  18px;
       font-size:  1.8rem; }
+    .section--signup form button {
+      width: 100%;
+      text-align: center;
+      padding: 0;
+      padding-top:  15px;
+      padding-top:  1.5rem;
+      padding-bottom:  10px;
+      padding-bottom:  1rem;
+      border: 2px solid #ffffff; }
   .section--title {
     padding-top:  20px;
     padding-top:  2rem;
@@ -751,6 +767,9 @@ header {
   .section--article, .section--page {
     background-color: #F3F4F8;
     font-family: 'CooperHewitt-Book'; }
+    .section--article .pure-g, .section--page .pure-g {
+      max-width:  995px;
+      max-width:  99.5rem; }
     .section--article .section--article--content, .section--article .section--page--content, .section--page .section--article--content, .section--page .section--page--content {
       letter-spacing: 0;
       background-color: #ffffff; }
