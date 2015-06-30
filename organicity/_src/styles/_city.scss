@@ -1,0 +1,10 @@
+.section {
+
+  &--jumbo {
+    background-color: $color__grey--background;
+    img {
+      width: 100%;
+      height: 50px;
+    }
+  }
+}

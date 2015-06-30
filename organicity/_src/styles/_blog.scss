@@ -1,0 +1,104 @@
+
+// Feature card
+.feature {
+
+  //TODO: responsive
+  height: 442px;
+  max-height: 442px;
+
+  overflow: hidden;
+  background-color: $color__white;
+
+  //allows the __image to be absolutely positioned within parent
+  position: relative;
+  @include rem-fallback(margin, 0, 5);
+
+  &__meta {
+    @include rem-fallback(font-size, 14);
+    @include rem-fallback(padding, 30);
+    color: $color__grey--mid;
+    a {
+      color: $color__pink;
+      &:hover, &:active {
+        text-decoration: underline;
+      }
+    }
+    .date {
+      @include rem-fallback(padding-right, 8);
+    }
+  }
+
+  &__description {
+    display: block;
+    color: $color__grey--title;
+    @include rem-fallback(font-size, 24);
+    @include rem-fallback(padding, 0, 30);
+    &:hover, &:active {
+      color: $color__pink;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+  }
+
+}
+
+.section{
+  //TODO: responsive - remove 4th article (:last-child) < large
+  &--blog {
+
+    .pure-g {
+      @include rem-fallback(padding-left, 0);
+      @include rem-fallback(padding-right, 0);
+    }
+
+    @include rem-fallback(min-height,200);
+
+    background-color: $color__grey--background;
+
+    .button {
+      @include rem-fallback(margin, 0, 5);
+    }
+
+    .feature{
+      @include rem-fallback(margin-bottom, 30);
+      .feature__meta{
+        @include rem-fallback(padding-bottom, 20);
+      }
+    }
+  }
+}
+
+
+// Owl Carousel for featured blog posts on the home page
+#owl-demo{
+  display:none !important;
+}
+
+.owl-theme .owl-page.active{
+  span{
+    background: $color__pink;
+  }
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .blog-large.home{
+    .item:nth-of-type(1n+3) {
+      display:none;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 567px) {
+
+  .blog-large {
+    display: none;
+  }
+  #owl-demo {
+    display: block !important;
+  }
+}

@@ -1,0 +1,102 @@
+/**
+ * Organicity
+ * http://www.organicity.eu
+ *
+ * _variables.scss
+ * font includes, colour settings and variables
+ *
+ * Heading font - CooperHewitt - included locally below
+ * Body font - Freight Text Pro - loaded from TypeKit in header.php
+ *
+ * Copyright (c) 2015 Future Cities Catapult
+ */
+@font-face {
+  font-family: 'CooperHewitt-Semibold';
+  src: url('fonts/CooperHewitt-Semibold.eot'); /* IE9 Compat Modes */
+  src: url('fonts/CooperHewitt-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/CooperHewitt-Semibold.woff') format('woff'), /* Pretty Modern Browsers */
+  url('fonts/CooperHewitt-Semibold.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('fonts/CooperHewitt-Semibold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'CooperHewitt-LightItalic';
+  src: url('fonts/CooperHewitt-LightItalic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/CooperHewitt-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/CooperHewitt-LightItalic.woff') format('woff'), /* Pretty Modern Browsers */
+  url('fonts/CooperHewitt-LightItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('fonts/CooperHewitt-LightItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'CooperHewitt-BookItalic';
+  src: url('fonts/CooperHewitt-BookItalic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/CooperHewitt-BookItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/CooperHewitt-BookItalic.woff') format('woff'), /* Pretty Modern Browsers */
+  url('fonts/CooperHewitt-BookItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('fonts/CooperHewitt-BookItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'CooperHewitt-Book';
+  src: url('fonts/CooperHewitt-Book.eot'); /* IE9 Compat Modes */
+  src: url('fonts/CooperHewitt-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/CooperHewitt-Book.woff') format('woff'), /* Pretty Modern Browsers */
+  url('fonts/CooperHewitt-Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('fonts/CooperHewitt-Book.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'CooperHewitt-Light';
+  src: url('fonts/CooperHewitt-Light.eot'); /* IE9 Compat Modes */
+  src: url('fonts/CooperHewitt-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/CooperHewitt-Light.woff') format('woff'), /* Pretty Modern Browsers */
+  url('fonts/CooperHewitt-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('fonts/CooperHewitt-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'CooperHewitt-Medium';
+  src: url('fonts/CooperHewitt-Medium.eot'); /* IE9 Compat Modes */
+  src: url('fonts/CooperHewitt-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/CooperHewitt-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+  url('fonts/CooperHewitt-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('fonts/CooperHewitt-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+/*
+  Font famiy variables
+ */
+$text__family--sans-serif: "CooperHewitt-Book", 'Verdana', 'Arial', sans-serif;
+$text__family--sans-serif--semibold: "CooperHewitt-Semibold", 'Verdana', 'Arial', sans-serif;
+$text__family--sans-serif--light: "CooperHewitt-Light", 'Verdana', 'Arial', sans-serif;
+$text__family--sans-serif--lightitalic: "CooperHewitt-LightItalic", 'Verdana', 'Arial', sans-serif;
+$text__family--sans-serif--italic: "CooperHewitt-BookItalic", 'Verdana', 'Arial', sans-serif;
+$text__family--sans-serif--medium: "CooperHewitt-Medium", 'Verdana', 'Arial', sans-serif;
+
+$text__family--serif: "freight-text-pro", serif;
+
+
+
+// Site text size
+$text__xlarge: 60;
+$text__large: 46;
+$text__medium: 26;
+$text__small: 18;
+$text__xsmall: 16;
+
+
+
+
+// Site colours
+$color__white: #ffffff;
+$color__black: #191115;
+$color__grey: #5D5D5D;
+$color__grey--light: #EBEBEB;
+$color__grey--mid: #9B9B9B;
+$color__grey--pale: #898989;
+$color__pink: #EF4070;
+$color__grey--border: #C9C9C9;
+$color__grey--background: #F3F4F8;
+$color__grey--imgplaceholder: #D8D8D8;
+$color__grey--title: #303030;

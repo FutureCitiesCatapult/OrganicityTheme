@@ -6,7 +6,7 @@
  * Version:     0.1.0
  * Copyright (c) 2015 Future Cities Catapult
  */
-@import  'colours', 'fonts', 'text', 'mixins','socialmedia','bourbon/bourbon','hamburger';
+@import  'variables', 'mixins','socialmedia','bourbon/bourbon','hamburger';
 
 
 /*
@@ -40,269 +40,45 @@ body {
   height: 100%;
 }
 
-a {
-  text-decoration: none;
+
+hr {
+  border: 0;
+  border-bottom: 3px solid #f3f4f8;
 }
 
-
-@import 'header','footer';
-
-
-
-
-
-.button {
-  color: $color__white;
-  background-color: transparent;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  font-family: $text__family--sans-serif--medium;
-  @include rem-fallback(font-size, $text__small);
-  @include rem-fallback(padding, 15, 40, 10, 40);
-
-  &:hover, &:active{
-    background-color: $color__white;
-    color: $color__pink;
-  }
-
-  &--bordered {
-    border: 3px solid $color__white;
-  }
-
-  &--full {
-    display: block;
-  }
-
-  &--internal {
-    color: $color__pink;
-    background-color: $color__white;
-  }
-
-  &--external {
-    background-color: $color__pink;
-  }
-}
-
-.section{
+.section {
 
   overflow: hidden;
-  @include rem-fallback(padding-top,60);
-  @include rem-fallback(padding-bottom,60);
-
-
-
-  h2 {
-    text-align: center;
-    font-family: $text__family--sans-serif;
-    color: $color__pink;
-    @include rem-fallback(font-size, $text__large);
-    @include rem-fallback(line-height, 46);
-    // @include rem-fallback(margin-bottom,$grid__base--1);
-  }
-
-  h3 {
-    text-align: center;
-    font-family: $text__family--sans-serif--light;
-    color: $color__pink;
-    @include rem-fallback(font-size, 34);
-  }
-
-  p {
-    color: $color__grey;
-    font-family: $text__family--serif;
-    @include rem-fallback(font-size, $text__small);
-    @include rem-fallback(line-height, 30);
-    @include rem-fallback(margin-bottom, 40);
-    text-align: left;
-  }
+  @include rem-fallback(padding-top, 60);
+  @include rem-fallback(padding-bottom, 60);
 
   .pure-g {
     @include rem-fallback(margin, 0, auto, 20, auto);
     @include rem-fallback(max-width, 1200); //995);
     @include rem-fallback(padding, 60 0);
   }
+}
 
-  &--jumbo {
-    background-color: $color__grey--background;
-    img{
-      width:100%;
-      height:50px;
 
-    }
-  }
 
-  //TODO: responsive - remove 4th article (:last-child) < large
-  &--blog {
-
-    @include rem-fallback(min-height,200);
-
-    background-color: $color__grey--background;
-    .button {
-      @include rem-fallback(margin, 0, 5);
-    }
-
-    .feature{
-      @include rem-fallback(margin-bottom, 30);
-      .feature__meta{
-        @include rem-fallback(padding-bottom, 20);
-      }
-    }
-  }
+.section{
 
   &--wide {
+    //    .pure-g {
+    //      @include rem-fallback(padding-left, 0);
+    //      @include rem-fallback(padding-right, 0);
+    //    }
     @include rem-fallback(padding-left, 70);
     @include rem-fallback(padding-right, 70);
 
     .pure-g {
-      // margin: auto;
-      @include rem-fallback(margin, 0, auto, 20, auto);
+      margin: auto;
+      @include rem-fallback(margin-top,0);
+      @include rem-fallback(margin-bottom,20);
 
       //TODO: responsive
       @include rem-fallback(max-width, 1310);
-      @include rem-fallback(padding, 60 0);
-    }
-  }
-
-  &--main {
-    hr {
-      border: 0;
-      border-bottom: 3px solid #f3f4f8;
-    }
-    .pure-g {
-
-    //  @include rem-fallback(max-width, 1200);
-    }
-
-
-  }
-
-  &--events--city-filter{
-    //padding:0;
-    @include rem-fallback(padding-bottom,0);
-    background-color: $color__grey--background;
-
-
-    .pure-g{
-      @include rem-fallback(margin-bottom,0);
-      @include rem-fallback(max-width, 995);
-    }
-
-    .city-filter-tab{
-        background-color: $color__white;
-      text-align: center;
-      font-family: $text__family--sans-serif--light;
-    color:rgba(74,74,74,0.8);
-      @include rem-fallback(font-size,24);
-      @include rem-fallback(padding-top,30);
-      @include rem-fallback(padding-bottom,30);
-      @include rem-fallback(margin,0,4,4,0);
-
-      a{
-        &:hover,&:active{
-        color:$color__pink;
-      }
-      }
-    }
-  }
-
-  &--findevents{
-    background-color: $color__grey--background;
-  }
-
-  &--events {
-
-    .pure-g{
-
-      @include rem-fallback(max-width, 995);
-    }
-
-    @include rem-fallback(padding-top,0);
-    background-color: $color__grey--background;
-
-    .event{
-      background-color: $color__white;
-      @include rem-fallback(padding,50,40,50,40);
-      height:auto;
-      max-height:auto;
-      overflow:hidden;
-      font-family: $text__family--sans-serif;
-    .event__meta{
-      padding:0;
-      display:inline-block;
-      width:20%;
-      float:left;
-
-      color:rgba(93,93,93,0.7);
-      @include rem-fallback(font-size,20);
-    }
-      .event__content{
-        display:inline-block;
-        width:60%;
-        float:left;
-        h4{
-          color:#4A4A4A;
-          @include rem-fallback(font-size,24);
-          text-align: left;
-          @include rem-fallback(margin,0,0,5,0);
-        }
-        h5{
-          color:rgba(93,93,93,0.7);
-          @include rem-fallback(font-size,16);
-          text-align: left;
-          @include rem-fallback(margin,0);
-        }
-        p{
-          @include rem-fallback(margin-top,10);
-          @include rem-fallback(margin-bottom,10);
-          @include rem-fallback(font-size,17);
-          @include rem-fallback(line-height,24);
-        }
-    }
-
-      .event__right{
-        display:inline-block;
-        width:20%;
-        float:left;
-        .button{
-          background-color: $color__pink;
-          @include rem-fallback(font-size,11);
-          text-transform: uppercase;
-          &:hover{
-            background-color: $color__black;
-            color: $color__white;
-          }
-        }
-      }
-      @include rem-fallback(margin-bottom,5);
-    }
-
-  }
-
-  &--signup {
-    p { text-align: center; }
-    form {
-      text-align: center;
-      input[type='email']{
-        width:100%;
-        background:transparent;
-        box-shadow: none;
-        border-radius:0px;
-        @include rem-fallback(padding,15,15,10,15);
-        border:2px solid $color__white;
-        color:$color__white;
-        //width:60%;
-        font-family: $text__family--sans-serif--light;
-        @include rem-fallback(font-size,18);
-      }
-      button{
-          width:100%;
-        text-align: center;
-        padding:0;
-        @include rem-fallback(padding-top,15);
-        @include rem-fallback(padding-bottom,10);
-        border:2px solid $color__white;
-      }
+      // @include rem-fallback(padding, 60, 0);
     }
   }
 
@@ -311,461 +87,32 @@ a {
     @include rem-fallback(padding-bottom,0);
   }
 
-
-  &--filter {
-    border-top: 2px solid #F3F4F8;
-    text-align: center;
-
-    @include rem-fallback(padding-top,25);
-    @include rem-fallback(padding-bottom,10);
-
-    #filter-menu-button{
-      border:none;
-      background:transparent;
-      @include rem-fallback(font-size,18);
-      font-family: $text__family--sans-serif--medium;
-      color:#7E7E7E;
-      text-transform: uppercase;
-  &:hover{
-    color: $color__black;
-  }
-    }
-    #filter-menu-button:focus{
-      outline:0;
-    }
-
-    #filter-menu{
-
-      max-height:0;
-      overflow: hidden;
-      transition: max-height 0.15s ease-out;
-
-      .post-tags {
-
-        width:100%;
-        columns: 2;
-        -webkit-columns: 2;
-        -moz-columns: 2;
-
-
-        a {
-          display: block;
-          @include rem-fallback(font-size, 18);
-          font-family: $text__family--sans-serif--medium;
-          color: #7E7E7E;
-          text-transform: uppercase;
-          @include rem-fallback(padding, 20);
-          &:hover{
-            color:$color__black;
-          }
-          &.highlight{
-            color:$color__pink;
-          }
-        }
-      }
-    }
-    #filter-menu.active{
-
-      transition-delay:0s;
-      max-height:1000px;
-      transition: max-height 0.25s ease-in;
-
-
-    }
-
-  }
-
-  &--copyright, &--signup {
-    color: $color__white;
-    background-color: $color__pink;
-    h3, p { color: $color__white; }
-  }
-
-  &--copyright{
-    @include rem-fallback(padding-top,40);
-    @include rem-fallback(padding-bottom,40);
-    .pure-g{
-      @include rem-fallback(margin-bottom, 0);
-    }
-    font-family: $text__family--sans-serif;
-    @include rem-fallback(font-size,18);
-  }
-
-  &--article,&--page{
-    .pure-g{
-        @include rem-fallback(max-width, 995);
-    }
-
-    background-color: $color__grey--background;
-
-    font-family: 'CooperHewitt-Book';
-    .section--article--content,.section--page--content{
-      letter-spacing:0;
-      background-color: $color__white;
-      .section--article--content-wrapper,.section--page--content-wrapper{
-        @include rem-fallback(padding,55,180,65,180);
-      }
-    }
-    hr{
-      @include rem-fallback(margin-top,10);
-      @include rem-fallback(margin-bottom,10);
-      border: 2px solid #F3F4F8;
-    }
-
-    .blogtags{
-      @include rem-fallback(margin-top,10);
-      @include rem-fallback(margin-bottom,25);
-      a{
-        font-family: 'CooperHewitt-Book';
-        @include rem-fallback(font-size,18);
-        color:#303030;
-
-        &:hover,&:active{
-          color:$color__pink;
-        }
-
-      }
-    }
-
-
-
-    .date{
-      font-family: 'CooperHewitt-Book';
-      @include rem-fallback(font-size,18);
-      color: rgba(48,48,48,0.5);
-    }
-
-    h1,h2,h3,h4,h5,h6{
-      @include rem-fallback(margin,60,0,15,0);
-      text-align: left;
-      font-family: 'CooperHewitt-Book';
-      color: #4A4A4A;
-    }
-    h1{
-      @include rem-fallback(margin,15,0,15,0);
-      @include rem-fallback(font-size,46);
-    }
-
-    h2{
-      @include rem-fallback(font-size,34);
-    }
-    h3{
-      @include rem-fallback(font-size,24);
-    }
-    h4,h5,h6{
-      @include rem-fallback(font-size,18);
-    }
-
-  img{
-    max-width: 100%;
-    height:auto;
-    @include rem-fallback(margin,5,0,20,0);
-  }
-
-  }
-  &--page {
-    h1,h2,h3{
-      text-align: center;
-
-    };
-    img.alignnone{
-      display:block;
-      margin-left:auto;
-      margin-right:auto;
-      //text-align: center;
-    }
-  }
-
-
-
-  &--footer {
-    hr {
-      border: 0;
-      border-bottom: 3px solid #f3f4f8;
-      @include rem-fallback(padding-top, 10);
-      @include rem-fallback(padding-bottom, 10);
-
-    }
-
-    text-align: center;
-
-    .socialMedia {
-      @include rem-fallback(padding-top, 10);
-      @include rem-fallback(padding-bottom, 10);
-      text-align: center;
-      i {
-        @include rem-fallback(font-size, 40);
-        @include rem-fallback(padding, 0);
-
-
-      }
-
-      a {
-        color: $color__grey;
-        @include rem-fallback(margin, 10);
-        &:hover, &:active {
-          color: $color__black;
-        }
-
-      }
-    }
-    .logos {
-      img {
-        display: inline-block;
-        @include rem-fallback(max-height, 84);
-        width: auto;
-        @include rem-fallback(margin, 30);
-      }
-      text-align: center;
-
-    }
-  }
-
-
 }
-
-.feature {
-
-  //TODO: responsive
-  height: 442px;
-  max-height: 442px;
-
-  overflow: hidden;
-  background-color: $color__white;
-
-  //allows the __image to be absolutely positioned within parent
-  position: relative;
-  @include rem-fallback(margin, 0, 5);
-
-  &__meta {
-    @include rem-fallback(font-size, 14);
-    @include rem-fallback(padding, 30);
-    color: $color__grey--mid;
-    a {
-      color: $color__pink;
-      &:hover, &:active {
-        text-decoration: underline;
-      }
-    }
-    .date {
-      @include rem-fallback(padding-right, 8);
-    }
-  }
-
-  &__description {
-    display: block;
-    color: $color__grey--title;
-    @include rem-fallback(font-size, 24);
-    @include rem-fallback(padding, 0, 30);
-    &:hover, &:active {
-      color: $color__pink;
-    }
-  }
-
-  &__image {
-    position: absolute;
-    bottom: 0;
-  }
-
-}
-
-
-footer {
-
-  text-align: center;
-
-}
-
-
-
-
-#owl-demo{
-  display:none !important;
-}
-
-.owl-theme .owl-page.active{
-  span{
-    background: $color__pink;
-  }
-}
-
 
 @media only screen and (max-width: 1023px) {
-
-  .blog-large.home{
-    .item:nth-of-type(1n+3) {
-      display:none;
+  .section{
+    .pure-g {
+      @include rem-fallback(padding-left, 70);
+      @include rem-fallback(padding-right, 70);
     }
   }
 }
+
 
 @media only screen and (max-width: 767px) {
 
-
-
-
   .section {
-    &--wide {
+    .pure-g {
       @include rem-fallback(padding-left, 30);
       @include rem-fallback(padding-right, 30);
     }
 
-    &--filter {
-      #filter-menu{
-        .post-tags{
-          columns: 1;
-          -webkit-columns: 1;
-          -moz-columns: 1;
-        }
-      }
-
-    }
-
-  &--article,&--page{
-    @include rem-fallback(padding-top,50);
-    .section--article--content .section--article--content-wrapper,.section--page--content .section--page--content-wrapper{
-      @include rem-fallback(padding,50,60,100,60);
+    &--wide {
+      @include rem-fallback(padding-left, 30);
+      @include rem-fallback(padding-right, 30);
     }
   }
-
-
-    &--events {
-      .event {
-        .event__meta, .event__content, .event__right {
-          display: block;
-          width: 100%;
-
-          h4{
-            @include rem-fallback(margin,10,0,5,0);
-          }
-
-
-
-        }
-        .event__right{
-          @include rem-fallback(padding-top,30);
-        }
-      }
-
-    }
-
-
-  }
-
-
-
-
-
-
-
 }
 
-@media only screen and (max-width: 567px) {
-
-  .blog-large{
-    display:none;
-  }
-  #owl-demo{
-    display:block !important;
-  }
-
-
-
-
-  .section {
-
-    &--article {
-      @include rem-fallback(padding, 0);
-    }
-      &--page {
-        @include rem-fallback(padding, 4,0,0,0);
-      }
-
-    &--events--city-filter{
-      @include rem-fallback(margin-top, 4);
-      @include rem-fallback(margin-bottom, 25);
-    }
-
-    &--article,&--page{
-
-      .section--article--content .section--article--content-wrapper,.section--page--content .section--page--content-wrapper{
-        @include rem-fallback(padding,25,30,50,30);
-      }
-      .date{
-        @include rem-fallback(font-size,15);
-      }
-      h1,h2,h3,h4,h5,h6{
-        @include rem-fallback(margin,30,0,10,0);
-      }
-
-      h1{
-        @include rem-fallback(font-size,30);
-      }
-
-      .blogtags{
-        @include rem-fallback(margin-top,10);
-        @include rem-fallback(margin-bottom,10);
-        a{
-
-          @include rem-fallback(font-size,15);
-
-
-        }
-      }
-      h2{
-        @include rem-fallback(font-size,24);
-      }
-      h3{
-        @include rem-fallback(font-size,18);
-      }
-      h4,h5,h6{
-        @include rem-fallback(font-size,17);
-      }
-    p{
-      @include rem-fallback(font-size,17);
-      @include rem-fallback(line-height,24);
-    }
-
-
-    }
-
-
-
-  }
-
-}
-
-
-
-
-
-
-
-#filter-menu-button.active::after {
-  content:"";
-  display:inline-block;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: none;
-  border-bottom: 7px solid #7E7E7E;
-  @include rem-fallback(margin,4,9,4,9);
-}
-
-//#filter-arrow
-
-#filter-menu-button::after{ //down
-  content:"";
-  display:inline-block;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: none;
-  border-top: 7px solid #7E7E7E;
-  @include rem-fallback(margin,4,9,4,9);
-}
-
-
+@import 'fonts','header','button','filter-menu','blog','events','article-page','signup-box','city','footer';
 

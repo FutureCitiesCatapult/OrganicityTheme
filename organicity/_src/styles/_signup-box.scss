@@ -1,0 +1,44 @@
+.section{
+  &--signup {
+    text-align: center;
+    p {
+      text-align: center;
+    }
+    .pure-form{
+      @include rem-fallback(padding-left,0);
+      @include rem-fallback(padding-right,0);
+    }
+    form {
+//      text-align: center;
+
+      input[type='email']{
+        width:100%;
+        background:transparent;
+        box-shadow: none;
+        border-radius:0px;
+        @include rem-fallback(padding,15,15,10,15);
+        border:2px solid $color__white;
+        color:$color__white;
+        font-family: $text__family--sans-serif--light;
+        @include rem-fallback(font-size,18);
+      }
+
+      button{
+        width:100%;
+        padding:0;
+        @include rem-fallback(padding-top,15);
+        @include rem-fallback(padding-bottom,10);
+
+        &:hover, &:active{
+          border: 2px solid $color__black;
+        }
+      }
+    }
+
+    color: $color__white;
+    background-color: $color__pink;
+    h3, p {
+      color: $color__white;
+    }
+  }
+}
