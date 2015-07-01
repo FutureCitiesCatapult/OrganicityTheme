@@ -11,20 +11,36 @@
     <div class="section section--footer">
         <div class="pure-g">
             <div class="pure-u-1-4"></div>
-            <div class="pure-u-1-2">
+            <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-2">
 
                 <h3>Follow us</h3>
 
-                <div class="socialMedia">
+<!--                <div class="socialMedia">-->
+<!--                    <div class="socialMedia-wrapper">-->
 
-                    <a href="<?php echo get_option('organicity_url_facebook'); ?>"><i class="icon-facebook-squared"></i></a>
-                    <a href="<?php echo get_option('organicity_url_twitter'); ?>"><i class="icon-twitter"></i></a>
+                <div class="pure-g socialMedia">
+                    <div class="pure-u-1-3 pure-u-md-1-6">
+                        <a href="<?php echo get_option('organicity_url_facebook'); ?>"><i class="icon-facebook-squared"></i></a>
+                    </div>
+                    <div class="pure-u-1-3 pure-u-md-1-6">
+                        <a href="<?php echo get_option('organicity_url_twitter'); ?>"><i class="icon-twitter"></i></a>
+                    </div>
+                    <div class="pure-u-1-3 pure-u-md-1-6">
                     <a href="<?php echo get_option('organicity_url_slideshare'); ?>"><i class="icon-slideshare"></i></a>
+                    </div>
+                    <div class="pure-u-1-3 pure-u-md-1-6">
                     <a href="<?php echo get_option('organicity_url_linkedin'); ?>"><i class="icon-linkedin-squared"></i></a>
+                    </div>
+                    <div class="pure-u-1-3 pure-u-md-1-6">
                     <a href="<?php echo get_option('organicity_url_instagram'); ?>"><i class="icon-instagramm"></i></a>
+                    </div>
+                    <div class="pure-u-1-3 pure-u-md-1-6">
                     <a href="<?php echo get_option('organicity_url_youtube'); ?>"><i class="icon-youtube-play"></i></a>
-                </div>
+                    </div>
 
+<!--                    </div>-->
+<!--                </div>-->
+</div>
                 <hr/>
                 <div class="logos">
                     <img

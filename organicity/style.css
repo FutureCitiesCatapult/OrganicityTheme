@@ -262,7 +262,9 @@ body {
 
 hr {
   border: 0;
-  border-bottom: 3px solid #f3f4f8; }
+  border-bottom: 3px solid #f3f4f8;
+  margin-bottom:  30px;
+  margin-bottom:  3rem; }
 
 .section {
   overflow: hidden;
@@ -590,6 +592,8 @@ header {
   font-size:  1.8rem;
   padding:  15px 40px 10px 40px;
   padding:  1.5rem 4rem 1rem 4rem; }
+  .button:active, button:active {
+    outline: none; }
   .button:hover, .button:active, button:hover, button:active {
     background-color: #ffffff;
     color: #EF4070; }
@@ -1011,6 +1015,16 @@ header {
   .section--signup h3, .section--signup p {
     color: #ffffff; }
 
+@media only screen and (max-width: 480px) {
+  .pure-form button[type=submit] {
+    margin:  0;
+    margin:  0; }
+
+  .section--signup form button {
+    font-size:  15px;
+    font-size:  1.5rem;
+    line-height:  24px;
+    line-height:  2.4rem; } }
 .section--jumbo {
   background-color: #F3F4F8; }
   .section--jumbo img {
@@ -1030,20 +1044,19 @@ header {
     padding-top:  10px;
     padding-top:  1rem;
     padding-bottom:  10px;
-    padding-bottom:  1rem;
-    text-align: center; }
+    padding-bottom:  1rem; }
     .section--footer .socialMedia i {
       font-size:  40px;
-      font-size:  4rem;
-      padding:  0;
-      padding:  0; }
+      font-size:  4rem; }
     .section--footer .socialMedia a {
       color: #5D5D5D;
-      margin:  10px;
-      margin:  1rem; }
+      margin:  0;
+      margin:  0; }
       .section--footer .socialMedia a:hover, .section--footer .socialMedia a:active {
         color: #191115; }
   .section--footer .logos {
+    margin-top:  30px;
+    margin-top:  3rem;
     text-align: center; }
     .section--footer .logos img {
       display: inline-block;
@@ -1070,5 +1083,19 @@ header {
 
 footer {
   text-align: center; }
+
+@media only screen and (max-width: 767px) {
+  .section--footer h3 {
+    font-size:  28px;
+    font-size:  2.8rem; }
+  .section .pure-u-1-3 {
+    padding-bottom:  30px;
+    padding-bottom:  3rem; }
+  .section .socialMedia i {
+    font-size:  60px;
+    font-size:  6rem; }
+  .section .logos img {
+    max-height:  120px;
+    max-height:  12rem; } }
 
 /*# sourceMappingURL=style.css.map */

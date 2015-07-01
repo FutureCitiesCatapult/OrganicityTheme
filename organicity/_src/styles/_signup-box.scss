@@ -42,3 +42,19 @@
     }
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .pure-form button[type=submit]{
+    @include rem-fallback(margin,0);
+  }
+  .section{
+    &--signup {
+      form{
+        button{
+          @include rem-fallback(font-size,15);
+          @include rem-fallback(line-height,24);
+        }
+      }
+    }
+  }
+}
