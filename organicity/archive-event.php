@@ -29,6 +29,9 @@ $posts_query = new WP_Query( $query_args );
     </div>
 
 
+<!--    <div id="filter-menu">--><?php //city_filter() ?><!--</div>-->
+
+
     <div class="section section--events--city-filter">
         <div class="pure-g">
             <div class="pure-u-1-1 pure-u-md-1-4">
@@ -36,27 +39,29 @@ $posts_query = new WP_Query( $query_args );
                     <a href="">All</a>
                 </div>
             </div>
-            <div class="pure-u-1-1 pure-u-md-1-4">
-                <div class="city-filter-tab">
-                    <a href="">Aarhus</a>
-                </div>
-            </div>
-            <div class="pure-u-1-1 pure-u-md-1-4">
-                <div class="city-filter-tab">
-                    <a href="">London</a>
-                </div>
-            </div>
-            <div class="pure-u-1-1 pure-u-md-1-4">
-                <div class="city-filter-tab">
-                    <a href="">Santander</a>
-                </div>
-            </div>
+            <?php city_filter() ?>
+<!--            <div class="pure-u-1-1 pure-u-md-1-4">-->
+<!--                <div class="city-filter-tab">-->
+<!--                    <a href="">Aarhus</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="pure-u-1-1 pure-u-md-1-4">-->
+<!--                <div class="city-filter-tab">-->
+<!--                    <a href="">London</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="pure-u-1-1 pure-u-md-1-4">-->
+<!--                <div class="city-filter-tab">-->
+<!--                    <a href="">Santander</a>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 
 
+
     <div class="section section--events">
-        <div class="pure-g">
+        <div class="pure-g tagged-events">
             <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
                 <!-- TODO: work on responsive breakdown of article 4->2->1 -->

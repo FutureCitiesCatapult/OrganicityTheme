@@ -384,6 +384,24 @@ function tags_filter() {
     <?php endif;
 }
 
+function city_filter() {
+    $tax = 'city';
+    $terms = get_terms( $tax );
+    $count = count( $terms );
+
+    if ( $count > 0 ): ?>
+            <?php
+            foreach ( $terms as $term ) {
+                $term_link = get_term_link( $term, $tax );
+
+                echo '<div class="pure-u-1-1 pure-u-md-1-4"><div class="city-filter-tab"><a href="' . '" class="city-filter" title="' . $term->slug . '">' . $term->name . '</a></div></div> ';
+                //echo '<div class="pure-u-1-1 pure-u-md-1-4"><div class="city-filter-tab"><a href="' .  $term_link . '" class="city-filter" title="' . $term->slug . '">' . $term->name . '</a></div></div> ';
+
+            } ?>
+    <?php endif;
+}
+
+
 function ajax_filter_posts_scripts() {
     // Enqueue script
 //    wp_register_script('afp_script', get_template_directory_uri() . '/js/ajax-filter-post.js', false, null, false);
@@ -403,33 +421,70 @@ add_action('wp_enqueue_scripts', 'ajax_filter_posts_scripts', 100);
 
 
 // Script for getting posts
-function ajax_filter_get_posts( $taxonomy ) {
+function ajax_filter_get_posts() {
+
+    $event_template = false;
+
 
     // Verify nonce
     if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
         die('Permission denied');
 
-    $taxonomy = $_POST['taxonomy'];
+
+
+    if($_POST['postType']){
+        $postType = $_POST['postType'];
+    }else{
+        $postType = 'post';
+    }
 
     // WP Query
     $args = array(
-        'tag' => $taxonomy,
-        'post_type' => 'post',
+        'post_type' => $postType,// 'post',
         'posts_per_page' => 10,
     );
 
-    // If taxonomy is not set, remove key from array and get all posts
-    if( !$taxonomy ) {
-        unset( $args['tag'] );
+
+    if($_POST['taxonomy']){
+        $args['tag'] = $_POST['taxonomy'];
+
+    }else if($_POST['city']){
+    $event_template = true;
+        $args['city'] = $_POST['city'];
+//        // WP Query
+//        $args = array(
+//            //'tag' => $taxonomy,
+//            'city' => $taxonomy,
+//            'post_type' => $postType,// 'post',
+//            'posts_per_page' => 10,
+//        );
     }
+//
+//
+//    ?><!--  <h2>TEST --><?php //echo $taxonomy . $postType ?><!--</h2>  --><?php
+//
+//
+//    // WP Query
+//    $args = array(
+//        //'tag' => $taxonomy,
+//        'city' => $taxonomy,
+//        'post_type' => $postType,// 'post',
+//        'posts_per_page' => 10,
+//    );
+//
+//    // If taxonomy is not set, remove key from array and get all posts
+//    if( !$taxonomy ) {
+//        unset( $args['tag'] );
+//    }
 
     $query = new WP_Query( $args );
 
-    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 
+
+    if(!$event_template):?>
         <!--        <h2><a href="--><?php //the_permalink(); ?><!--">--><?php //the_title(); ?><!--</a></h2>-->
         <!--        --><?php //the_excerpt(); ?>
-
         <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3">
             <div class="feature">
                 <div class="feature__meta">
@@ -471,7 +526,30 @@ function ajax_filter_get_posts( $taxonomy ) {
             </div>
         </div>
 
+    <?php else: ?>
+        <div class="pure-u-1-1">
+            <div class="event">
+                <div class="event__meta">
+                    <span class="date"><?php echo date("d.m.Y", strtotime(rwmb_meta('organicity_event_date'))); ?></span>
 
+                </div>
+                <div class="event__content">
+
+                    <h4><?php the_title(); ?></h4>
+
+                    <h5><?php echo rwmb_meta('organicity_event_location')?></h5>
+
+
+                    <?php the_content(__('Read more'));?>
+                </div>
+                <div class="event__right">
+                    <a class="button button--external " href="<?php echo rwmb_meta('organicity_event_url'); ?>" target="_blank">
+                        Event Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 
     <?php endwhile; ?>
     <?php else: ?>
