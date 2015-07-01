@@ -168,7 +168,6 @@ get_header(); ?>
         <h3><?php echo rwmb_meta('organicity_homepage_signup_section_title'); ?></h3>
         <?php echo rwmb_meta('organicity_homepage_signup_section_content'); ?>
         <form class="pure-form pure-g">
-<!--          <fieldset>-->
             <div class="pure-u-2-3 pure-u-md-3-4">
             <input class="" type="email" placeholder="<?php echo rwmb_meta('organicity_homepage_signup_field_placeholder_text'); ?>">
             </div>
@@ -178,7 +177,6 @@ get_header(); ?>
               <?php echo rwmb_meta('organicity_homepage_signup_button_text'); ?>
             </button>
                 </div>
-<!--          </fieldset>-->
         </form>
       </div>
       <div class="pure-u-1-4"></div>

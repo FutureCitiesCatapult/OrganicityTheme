@@ -920,6 +920,34 @@ header {
     height: auto;
     margin:  5px 0 20px 0;
     margin:  0.5rem 0 2rem 0; }
+  .section--article .share-buttons, .section--page .share-buttons {
+    font-family: "CooperHewitt-Book", "Verdana", "Arial", sans-serif;
+    font-size:  24px;
+    font-size:  2.4rem;
+    line-height:  46px;
+    line-height:  4.6rem;
+    color: #EF4070;
+    margin-top:  25px;
+    margin-top:  2.5rem; }
+    .section--article .share-buttons .social-facebook, .section--page .share-buttons .social-facebook {
+      background-color: #3B5998; }
+    .section--article .share-buttons .social-twitter, .section--page .share-buttons .social-twitter {
+      background-color: #55acee; }
+    .section--article .share-buttons .social-gplus, .section--page .share-buttons .social-gplus {
+      background-color: #dd4b39; }
+    .section--article .share-buttons .social-linkedin, .section--page .share-buttons .social-linkedin {
+      background-color: #0077b5; }
+    .section--article .share-buttons .social-facebook, .section--article .share-buttons .social-twitter, .section--article .share-buttons .social-gplus, .section--article .share-buttons .social-linkedin, .section--page .share-buttons .social-facebook, .section--page .share-buttons .social-twitter, .section--page .share-buttons .social-gplus, .section--page .share-buttons .social-linkedin {
+      border-radius:  25px;
+      border-radius:  2.5rem;
+      padding:  12px 6px 10px 6px;
+      padding:  1.2rem 0.6rem 1rem 0.6rem;
+      margin-left:  10px;
+      margin-left:  1rem; }
+      .section--article .share-buttons .social-facebook:hover, .section--article .share-buttons .social-facebook:active, .section--article .share-buttons .social-twitter:hover, .section--article .share-buttons .social-twitter:active, .section--article .share-buttons .social-gplus:hover, .section--article .share-buttons .social-gplus:active, .section--article .share-buttons .social-linkedin:hover, .section--article .share-buttons .social-linkedin:active, .section--page .share-buttons .social-facebook:hover, .section--page .share-buttons .social-facebook:active, .section--page .share-buttons .social-twitter:hover, .section--page .share-buttons .social-twitter:active, .section--page .share-buttons .social-gplus:hover, .section--page .share-buttons .social-gplus:active, .section--page .share-buttons .social-linkedin:hover, .section--page .share-buttons .social-linkedin:active {
+        background-color: #EF4070; }
+    .section--article .share-buttons i, .section--page .share-buttons i {
+      color: #ffffff; }
 .section--page h1, .section--page h2, .section--page h3 {
   text-align: center; }
 .section--page img.alignnone {
@@ -927,7 +955,7 @@ header {
   margin-left: auto;
   margin-right: auto; }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1023px) {
   .section--article, .section--page {
     padding-top:  50px;
     padding-top:  5rem; }

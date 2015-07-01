@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdd9e6e8-a069-4ae0-a4c3-613fc0fffd9f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/_src/styles/_button.scss" afterPath="$PROJECT_DIR$/organicity/_src/styles/_button.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/_src/styles/_footer.scss" afterPath="$PROJECT_DIR$/organicity/_src/styles/_footer.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/_src/styles/_signup-box.scss" afterPath="$PROJECT_DIR$/organicity/_src/styles/_signup-box.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/footer.php" afterPath="$PROJECT_DIR$/organicity/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/js/organicity.js" afterPath="$PROJECT_DIR$/organicity/js/organicity.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/js/organicity.min.js" afterPath="$PROJECT_DIR$/organicity/js/organicity.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/_src/styles/organicity.scss" afterPath="$PROJECT_DIR$/organicity/_src/styles/organicity.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/_src/styles/_article-page.scss" afterPath="$PROJECT_DIR$/organicity/_src/styles/_article-page.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/front-page.php" afterPath="$PROJECT_DIR$/organicity/front-page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/single.php" afterPath="$PROJECT_DIR$/organicity/single.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/style.css.map" afterPath="$PROJECT_DIR$/organicity/style.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/style.css" afterPath="$PROJECT_DIR$/organicity/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/style.min.css" afterPath="$PROJECT_DIR$/organicity/style.min.css" />
@@ -34,24 +30,24 @@
     <favorites_list name="organicity-theme" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.33982202">
+    <splitter split-orientation="horizontal" split-proportion="0.56623137">
       <split-first>
         <leaf>
-          <file leaf-file-name="organicity.scss" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/organicity.scss">
+          <file leaf-file-name="single.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/organicity/single.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7324955" vertical-offset="374" max-vertical-offset="2125">
-                  <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+                <state vertical-scroll-proportion="-29.423077" vertical-offset="34" max-vertical-offset="2074">
+                  <caret line="47" column="134" selection-start-line="47" selection-start-column="134" selection-end-line="47" selection-end-column="134" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_footer.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_footer.scss">
+          <file leaf-file-name="_socialmedia.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_socialmedia.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="1904">
-                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                <state vertical-scroll-proportion="-37.115383" vertical-offset="89" max-vertical-offset="1156">
+                  <caret line="62" column="22" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -60,80 +56,18 @@
           <file leaf-file-name="_signup-box.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_signup-box.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.3076923" vertical-offset="518" max-vertical-offset="1105">
-                  <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+                <state vertical-scroll-proportion="-11.115385" vertical-offset="187" max-vertical-offset="1105">
+                  <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/footer.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.076923" vertical-offset="4" max-vertical-offset="1173">
-                  <caret line="13" column="63" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
-                  <folding>
-                    <marker date="1435750223000" expanded="true" signature="372:1768" placeholder="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_events.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_events.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-16.73077" vertical-offset="1282" max-vertical-offset="2499">
-                  <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="archive-event.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/archive-event.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-30.26923" vertical-offset="1049" max-vertical-offset="2108">
-                  <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_article-page.scss" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="_article-page.scss" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_article-page.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-34.26923" vertical-offset="1880" max-vertical-offset="2992">
-                  <caret line="163" column="8" selection-start-line="163" selection-start-column="8" selection-end-line="163" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_city.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_city.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="255">
-                  <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_fonts.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_fonts.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1139">
-                  <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_button.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_button.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="816">
-                  <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+                <state vertical-scroll-proportion="0.32052484" vertical-offset="1885" max-vertical-offset="3621">
+                  <caret line="131" column="39" selection-start-line="131" selection-start-column="39" selection-end-line="131" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
@@ -153,54 +87,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="loop.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/loop.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-31.384615" vertical-offset="0" max-vertical-offset="1020">
-                  <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_socialmedia.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_socialmedia.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="1156">
-                  <caret line="19" column="2" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_signup-box.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_signup-box.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="1105">
-                  <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-                  <folding>
-                    <marker date="1435757312000" expanded="true" signature="8:962" placeholder="{...}" />
-                    <marker date="1435757312000" expanded="true" signature="54:87" placeholder="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="_mixins.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_mixins.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="850">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/footer.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-20.884615" vertical-offset="86" max-vertical-offset="1173">
-                  <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -219,8 +110,8 @@
           <file leaf-file-name="_blog.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_blog.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-27.192308" vertical-offset="789" max-vertical-offset="1853">
-                  <caret line="88" column="29" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1853">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -229,18 +120,28 @@
           <file leaf-file-name="front-page.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/organicity/front-page.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-18.807692" vertical-offset="2690" max-vertical-offset="3332">
-                  <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+                <state vertical-scroll-proportion="-15.538462" vertical-offset="2248" max-vertical-offset="3298">
+                  <caret line="156" column="12" selection-start-line="156" selection-start-column="12" selection-end-line="156" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="organicity.scss" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="organicity.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/organicity/_src/styles/organicity.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.3406408" vertical-offset="1532" max-vertical-offset="2125">
-                  <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="43" />
+                <state vertical-scroll-proportion="-15.615385" vertical-offset="1532" max-vertical-offset="2125">
+                  <caret line="114" column="3" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/organicity/footer.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.25711575" vertical-offset="86" max-vertical-offset="1173">
+                  <caret line="26" column="20" selection-start-line="25" selection-start-column="24" selection-end-line="26" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -278,16 +179,13 @@
         <option value="$PROJECT_DIR$/organicity/home.php" />
         <option value="$PROJECT_DIR$/organicity/index.php" />
         <option value="$PROJECT_DIR$/organicity/page.php" />
-        <option value="$PROJECT_DIR$/organicity/single.php" />
         <option value="$PROJECT_DIR$/organicity/taxonomy-city.php" />
         <option value="$PROJECT_DIR$/organicity/loop.php" />
-        <option value="$PROJECT_DIR$/organicity/front-page.php" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_filter-menu.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_feature-card.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_events.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_city.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_colours.scss" />
-        <option value="$PROJECT_DIR$/organicity/_src/styles/_article-page.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_variables.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_fonts.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_blog.scss" />
@@ -298,6 +196,9 @@
         <option value="$PROJECT_DIR$/organicity/_src/styles/_button.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_footer.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/organicity.scss" />
+        <option value="$PROJECT_DIR$/organicity/front-page.php" />
+        <option value="$PROJECT_DIR$/organicity/single.php" />
+        <option value="$PROJECT_DIR$/organicity/_src/styles/_article-page.scss" />
       </list>
     </option>
   </component>
@@ -311,10 +212,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1013" />
-    <option name="y" value="418" />
-    <option name="width" value="2065" />
-    <option name="height" value="878" />
+    <option name="x" value="1305" />
+    <option name="y" value="58" />
+    <option name="width" value="2411" />
+    <option name="height" value="1329" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -848,22 +749,22 @@
       <workItem from="1434704299118" duration="27112000" />
       <workItem from="1434972583237" duration="40611000" />
       <workItem from="1435242560904" duration="9464000" />
-      <workItem from="1435656329275" duration="17011000" />
+      <workItem from="1435656329275" duration="20675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212624000" />
+    <option name="totallyTimeSpent" value="216288000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1013" y="418" width="2065" height="878" extended-state="6" />
+    <frame x="1305" y="58" width="2411" height="1329" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1475827" sideWeight="0.49963477" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.093775265" sideWeight="0.49963477" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -878,7 +779,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.111220956" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09497678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1072,13 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/single.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="1870">
-          <caret line="11" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="104" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/organicity/owl.carousel.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1309">
@@ -1202,46 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_city.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="255">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_socialmedia.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="1156">
-          <caret line="19" column="2" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_article-page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.26923" vertical-offset="1880" max-vertical-offset="2992">
-          <caret line="163" column="8" selection-start-line="163" selection-start-column="8" selection-end-line="163" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.576923" vertical-offset="716" max-vertical-offset="1836">
-          <caret line="69" column="21" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_fonts.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1139">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_events.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.73077" vertical-offset="1282" max-vertical-offset="2499">
@@ -1266,36 +1120,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/front-page.php">
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_footer.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.807692" vertical-offset="2690" max-vertical-offset="3332">
-          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="1904">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_blog.scss">
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_city.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.192308" vertical-offset="789" max-vertical-offset="1853">
-          <caret line="88" column="29" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.22077923" vertical-offset="0" max-vertical-offset="616">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/footer.php">
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_fonts.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.076923" vertical-offset="4" max-vertical-offset="1173">
-          <caret line="13" column="63" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
-          <folding>
-            <marker date="1435750223000" expanded="true" signature="372:1768" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_signup-box.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3076923" vertical-offset="518" max-vertical-offset="1105">
-          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.44155845" vertical-offset="0" max-vertical-offset="1139">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1308,18 +1152,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_footer.scss">
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/organicity.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="1904">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.615385" vertical-offset="1532" max-vertical-offset="2125">
+          <caret line="114" column="3" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/organicity.scss">
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_blog.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7324955" vertical-offset="374" max-vertical-offset="2125">
-          <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1853">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.576923" vertical-offset="716" max-vertical-offset="1836">
+          <caret line="69" column="21" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_signup-box.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385" vertical-offset="187" max-vertical-offset="1105">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/front-page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.538462" vertical-offset="2248" max-vertical-offset="3298">
+          <caret line="156" column="12" selection-start-line="156" selection-start-column="12" selection-end-line="156" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_socialmedia.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-37.115383" vertical-offset="89" max-vertical-offset="1156">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/single.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.423077" vertical-offset="34" max-vertical-offset="2074">
+          <caret line="47" column="134" selection-start-line="47" selection-start-column="134" selection-end-line="47" selection-end-column="134" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25711575" vertical-offset="86" max-vertical-offset="1173">
+          <caret line="26" column="20" selection-start-line="25" selection-start-column="24" selection-end-line="26" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_article-page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32052484" vertical-offset="1885" max-vertical-offset="3621">
+          <caret line="131" column="39" selection-start-line="131" selection-start-column="39" selection-end-line="131" selection-end-column="39" />
           <folding />
         </state>
       </provider>
