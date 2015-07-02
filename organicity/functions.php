@@ -95,13 +95,54 @@ function register_event_posttype() {
 }
 add_action('init', 'register_event_posttype');
 
+//function register_city_posttype() {
+//    $labels = array(
+//        'name' => 'Cities',
+//        'singular_name' => 'City',//,
+//        'menu_name'           => __('City', 'organicity'),
+//        'parent_item'          => null,
+//         'parent_item_colon'   => __('Parent City:', 'organicity'),
+//         'all_items'           => __('All Cities', 'organicity'),
+//         'view_item'           => __('View City', 'organicity'),
+//         'add_new_item'        => __('Add New City', 'organicity'),
+//         'add_new'             => __('Add City', 'organicity'),
+//         'edit_item'           => __('Edit City', 'organicity'),
+//         'update_item'         => __('Update City', 'organicity'),
+//         'search_items'        => __('Search Cities', 'organicity'),
+//         'not_found'           => __('No Cities found.', 'organicity')
+//    );
+//    $args = array(
+//        'labels'        => $labels,
+//        'public'        => true,
+//        'has_archive'   => true,
+//        'rewrite'       => null,//array('slug' => __('cities', 'organicity'), 'with_front'  => false),
+//        'menu_icon'     => 'dashicons-calendar-alt',
+//        'menu_position' => 6,
+//        'supports'      => array('title', 'editor', 'thumbnail')
+//    );
+//    register_post_type('city', $args);
+//}
+//add_action('init', 'register_city_posttype');
+
+
 /*
  * Register a custom taxonomy for the cities
  */
 function register_city_taxonomy() {
     $labels = array(
         'name' => 'Cities',
-        'singular_name' => 'City'
+        'singular_name' => 'City',//,
+        'menu_name'           => __('City', 'organicity'),
+        //'parent_item'          => null,
+       // 'parent_item_colon'   => __('Parent City:', 'organicity'),
+       // 'all_items'           => __('All Cities', 'organicity'),
+       // 'view_item'           => __('View City', 'organicity'),
+       // 'add_new_item'        => __('Add New City', 'organicity'),
+       // 'add_new'             => __('Add City', 'organicity'),
+       // 'edit_item'           => __('Edit City', 'organicity'),
+       // 'update_item'         => __('Update City', 'organicity'),
+       // 'search_items'        => __('Search Cities', 'organicity'),
+       // 'not_found'           => __('No Cities found.', 'organicity')
     );
     $rewrite = array(
         'slug' => 'cities',
@@ -110,11 +151,16 @@ function register_city_taxonomy() {
     $args = array(
         'labels'            => $labels,
         'hierarchical'      => false,
-        'public'            => false,
+        'public'            => true, // false, //true,
+        'show_in_nav_menus' => true,
         'show_admin_column' => true,
-        'rewrite'           => $rewrite
+        'rewrite'           => $rewrite,
+        'show_ui' => true,
+        'has_archive'   => true,
+        //'menu_position' => 6,
+        //'menu_icon'     => 'dashicons-calendar-alt',
     );
-    register_taxonomy('city', array('event', 'post'), $args);
+    register_taxonomy('city', array('event', 'post'), $args); //array('event', 'post'), $args);
 }
 add_action('init', 'register_city_taxonomy');
 
@@ -137,6 +183,68 @@ function populate_city_terms() {
 
 }
 add_action('init', 'populate_city_terms');
+
+
+
+
+// Add term page
+function pippin_taxonomy_add_new_meta_field() {
+    // this will add the custom meta field to the add new term page
+    ?>
+    <div class="form-field">
+        <label for="term_meta[custom_term_meta]"><?php _e( 'Example meta field', 'organicity' ); ?></label>
+        <input type="text" name="term_meta[custom_term_meta]" id="term_meta[custom_term_meta]" value="">
+        <p class="description"><?php _e( 'Enter a value for this field','organicity' ); ?></p>
+    </div>
+<?php
+}
+add_action( 'city_add_form_fields', 'pippin_taxonomy_add_new_meta_field', 10, 2 );
+
+
+
+
+
+
+// Edit term page
+function pippin_taxonomy_edit_meta_field($term) {
+
+    // put the term ID into a variable
+    $t_id = $term->term_id;
+
+    // retrieve the existing value(s) for this meta field. This returns an array
+    $term_meta = get_option( "taxonomy_$t_id" ); ?>
+    <tr class="form-field">
+        <th scope="row" valign="top"><label for="term_meta[custom_term_meta]"><?php _e( 'Example meta field', 'organicity' ); ?></label></th>
+        <td>
+            <input type="text" name="term_meta[custom_term_meta]" id="term_meta[custom_term_meta]" value="<?php echo esc_attr( $term_meta['custom_term_meta'] ) ? esc_attr( $term_meta['custom_term_meta'] ) : ''; ?>">
+            <p class="description"><?php _e( 'Enter a value for this field','organicity' ); ?></p>
+        </td>
+    </tr>
+<?php
+}
+add_action( 'city_edit_form_fields', 'pippin_taxonomy_edit_meta_field', 10, 2 );
+
+
+
+// Save extra taxonomy fields callback function.
+function save_taxonomy_custom_meta( $term_id ) {
+    if ( isset( $_POST['term_meta'] ) ) {
+        $t_id = $term_id;
+        $term_meta = get_option( "taxonomy_$t_id" );
+        $cat_keys = array_keys( $_POST['term_meta'] );
+        foreach ( $cat_keys as $key ) {
+            if ( isset ( $_POST['term_meta'][$key] ) ) {
+                $term_meta[$key] = $_POST['term_meta'][$key];
+            }
+        }
+        // Save the option array.
+        update_option( "taxonomy_$t_id", $term_meta );
+    }
+}
+add_action( 'edited_city', 'save_taxonomy_custom_meta', 10, 2 );
+add_action( 'create_city', 'save_taxonomy_custom_meta', 10, 2 );
+
+
 
 /*
  * add social media settings menu to admin
@@ -217,6 +325,40 @@ function register_meta_boxes($meta_boxes) {
             )
         )
     );
+
+//    /*
+//     * Fields for the Event posttype
+//     */
+//    $meta_boxes[] = array(
+//        'title'   => 'City details',
+//        'pages'   => 'city',
+//        'fields'  => array(
+//            array(
+//                'name'        => 'City Description',
+//                'id'          => $prefix . 'city_description',
+//                'type'        => 'text',
+//                'size'        => 50
+//            ),array(
+//                'name'        => 'City Test Field',
+//                'id'          => $prefix . 'city_testfield',
+//                'type'        => 'text',
+//                'size'        => 50
+//            )    //,
+////            array(
+////                'name'        => 'Event date',
+////                'id'          => $prefix . 'event_date',
+////                'type'        => 'date',
+////                'js_options'  => array(
+////                    'dateFormat' => 'dd-mm-yy'
+////                )
+////            ),
+////            array(
+////                'name'        => 'Event URL',
+////                'id'          => $prefix . 'event_url',
+////                'type'        => 'url'
+////            )
+//        )
+//    );
 
     /*
      * Fields for the Event posttype

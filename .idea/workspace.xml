@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdd9e6e8-a069-4ae0-a4c3-613fc0fffd9f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/archive-event.php" afterPath="$PROJECT_DIR$/organicity/archive-event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/_src/styles/_city.scss" afterPath="$PROJECT_DIR$/organicity/_src/styles/_city.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/functions.php" afterPath="$PROJECT_DIR$/organicity/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/_src/js/organicity.js" afterPath="$PROJECT_DIR$/organicity/_src/js/organicity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/header.php" afterPath="$PROJECT_DIR$/organicity/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/js/organicity.js" afterPath="$PROJECT_DIR$/organicity/js/organicity.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/js/organicity.min.js" afterPath="$PROJECT_DIR$/organicity/js/organicity.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/style.css.map" afterPath="$PROJECT_DIR$/organicity/style.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/style.css" afterPath="$PROJECT_DIR$/organicity/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/style.min.css" afterPath="$PROJECT_DIR$/organicity/style.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organicity/taxonomy-city.php" afterPath="$PROJECT_DIR$/organicity/taxonomy-city.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="organicity-theme.iws" />
@@ -29,21 +33,99 @@
     <favorites_list name="organicity-theme" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.618267">
+    <splitter split-orientation="horizontal" split-proportion="0.5522648">
       <split-first>
         <leaf>
-          <file leaf-file-name="functions.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="functions.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/organicity/functions.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7282717" vertical-offset="8604" max-vertical-offset="9656">
-                  <caret line="549" column="18" selection-start-line="549" selection-start-column="18" selection-end-line="549" selection-end-column="18" />
+                <state vertical-scroll-proportion="-8.826923" vertical-offset="2448" max-vertical-offset="12070">
+                  <caret line="171" column="20" selection-start-line="171" selection-start-column="19" selection-end-line="171" selection-end-column="20" />
                   <folding>
-                    <marker date="1435770655000" expanded="true" signature="15528:15661" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="15562:15661" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="15606:15661" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="15712:15867" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="17217:17275" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="10200:10331" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="10296:10331" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="17735:17876" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="21181:21314" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="21215:21314" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="21259:21314" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="21365:21520" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="22870:22928" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="23063:23222" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="23095:23222" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="23137:23222" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="23328:23427" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="23588:23672" placeholder="..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="header.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/organicity/header.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.56268805" vertical-offset="714" max-vertical-offset="1819">
+                  <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="page.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/organicity/page.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-23.884615" vertical-offset="42" max-vertical-offset="765">
+                  <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="organicity.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/organicity.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-21.576923" vertical-offset="323" max-vertical-offset="2125">
+                  <caret line="52" column="2" selection-start-line="52" selection-start-column="2" selection-end-line="53" selection-end-column="44" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_city.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_city.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-21.576923" vertical-offset="51" max-vertical-offset="1156">
+                  <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="loop.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/organicity/loop.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="1020">
+                  <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="single-event.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/organicity/single-event.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-49.03846" vertical-offset="0" max-vertical-offset="1581">
+                  <caret line="75" column="38" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="archive-event.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/organicity/archive-event.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-11.115385" vertical-offset="714" max-vertical-offset="2193">
+                  <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -55,28 +137,8 @@
           <file leaf-file-name="home.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/organicity/home.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.1538463" vertical-offset="767" max-vertical-offset="1768">
-                  <caret line="67" column="77" selection-start-line="67" selection-start-column="72" selection-end-line="67" selection-end-column="77" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="organicity.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/organicity/_src/styles/organicity.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-15.615385" vertical-offset="1532" max-vertical-offset="2125">
-                  <caret line="114" column="3" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="archive-event.php" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/organicity/archive-event.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5628043" vertical-offset="918" max-vertical-offset="2193">
-                  <caret line="88" column="22" selection-start-line="67" selection-start-column="15" selection-end-line="88" selection-end-column="22" />
+                <state vertical-scroll-proportion="-21.576923" vertical-offset="85" max-vertical-offset="1768">
+                  <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
                   <folding />
                 </state>
               </provider>
@@ -85,7 +147,7 @@
           <file leaf-file-name="organicity.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/organicity/_src/js/organicity.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-28.884615" vertical-offset="2921" max-vertical-offset="4131">
+                <state vertical-scroll-proportion="0.0" vertical-offset="3757" max-vertical-offset="4216">
                   <caret line="221" column="16" selection-start-line="221" selection-start-column="16" selection-end-line="221" selection-end-column="16" />
                   <folding />
                 </state>
@@ -95,17 +157,30 @@
           <file leaf-file-name="functions.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/organicity/functions.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-6.4038463" vertical-offset="806" max-vertical-offset="9656">
+                <state vertical-scroll-proportion="0.0" vertical-offset="806" max-vertical-offset="12070">
                   <caret line="67" column="40" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="40" />
                   <folding>
-                    <marker date="1435770655000" expanded="true" signature="14160:14193" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="14844:14994" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="15097:15137" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="15528:15661" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="15562:15661" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="15606:15661" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="15712:15867" placeholder="..." />
-                    <marker date="1435770655000" expanded="true" signature="17217:17275" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="19813:19846" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="20497:20647" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="20750:20790" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="21181:21314" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="21215:21314" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="21259:21314" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="21365:21520" placeholder="..." />
+                    <marker date="1435862880000" expanded="true" signature="22870:22928" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="taxonomy-city.php" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/organicity/taxonomy-city.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.16666667" vertical-offset="0" max-vertical-offset="2261">
+                  <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+                  <folding>
+                    <element signature="e#6#186#0#PHP" expanded="true" />
+                    <element signature="e#692#725#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -129,7 +204,6 @@
         <option value="$PROJECT_DIR$/organicity/_src/styles/_socialmedia.scss" />
         <option value="$PROJECT_DIR$/organicity/event.php" />
         <option value="$PROJECT_DIR$/organicity/_src/js/ajax-filter-post.js" />
-        <option value="$PROJECT_DIR$/organicity/header.php" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_gallery.scss" />
         <option value="$PROJECT_DIR$/organicity/js/organicity.js" />
         <option value="$PROJECT_DIR$/organicity/js/ajax-filter-post.js" />
@@ -141,12 +215,10 @@
         <option value="$PROJECT_DIR$/organicity/home.php" />
         <option value="$PROJECT_DIR$/organicity/index.php" />
         <option value="$PROJECT_DIR$/organicity/page.php" />
-        <option value="$PROJECT_DIR$/organicity/taxonomy-city.php" />
         <option value="$PROJECT_DIR$/organicity/loop.php" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_filter-menu.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_feature-card.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_events.scss" />
-        <option value="$PROJECT_DIR$/organicity/_src/styles/_city.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_colours.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_variables.scss" />
         <option value="$PROJECT_DIR$/organicity/_src/styles/_fonts.scss" />
@@ -162,7 +234,10 @@
         <option value="$PROJECT_DIR$/organicity/_src/styles/_article-page.scss" />
         <option value="$PROJECT_DIR$/organicity/archive-event.php" />
         <option value="$PROJECT_DIR$/organicity/_src/js/organicity.js" />
+        <option value="$PROJECT_DIR$/organicity/_src/styles/_city.scss" />
         <option value="$PROJECT_DIR$/organicity/functions.php" />
+        <option value="$PROJECT_DIR$/organicity/taxonomy-city.php" />
+        <option value="$PROJECT_DIR$/organicity/header.php" />
       </list>
     </option>
   </component>
@@ -176,10 +251,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="56" />
-    <option name="y" value="122" />
-    <option name="width" value="2402" />
-    <option name="height" value="1302" />
+    <option name="x" value="154" />
+    <option name="y" value="72" />
+    <option name="width" value="1989" />
+    <option name="height" value="1293" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -207,8 +282,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -287,6 +360,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -537,6 +612,10 @@
       <option name="usbDebugPort" value="7936" />
       <method />
     </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -556,10 +635,6 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -717,22 +792,23 @@
       <workItem from="1434704299118" duration="27112000" />
       <workItem from="1434972583237" duration="40611000" />
       <workItem from="1435242560904" duration="9464000" />
-      <workItem from="1435656329275" duration="27524000" />
+      <workItem from="1435656329275" duration="27831000" />
+      <workItem from="1435826936293" duration="15494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223137000" />
+    <option name="totallyTimeSpent" value="238938000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="56" y="122" width="2402" height="1302" extended-state="6" />
-    <editor active="false" />
+    <frame x="154" y="72" width="1989" height="1293" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09586777" sideWeight="0.49963477" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0964256" sideWeight="0.49963477" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -747,7 +823,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.095338985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1155624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -758,10 +834,10 @@
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35496184" sideWeight="0.50036526" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35496184" sideWeight="0.50036526" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294271" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -808,6 +884,28 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/organicity/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8604" max-vertical-offset="9656">
+          <caret line="540" column="0" selection-start-line="540" selection-start-column="0" selection-end-line="540" selection-end-column="0" />
+          <folding>
+            <marker date="1435862880000" expanded="true" signature="10200:10331" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="10296:10331" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="17735:17876" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="21181:21314" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="21215:21314" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="21259:21314" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="21365:21520" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="22870:22928" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="23063:23222" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="23095:23222" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="23137:23222" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="23328:23427" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="23588:23672" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/organicity/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="4947">
@@ -927,13 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.884615" vertical-offset="889" max-vertical-offset="1768">
-          <caret line="98" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/organicity/owl.carousel.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1309">
@@ -966,19 +1057,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27265438" vertical-offset="0" max-vertical-offset="1247">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/organicity/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2968254" vertical-offset="0" max-vertical-offset="1260">
           <caret line="22" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,22 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/taxonomy-city.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-40.26923" vertical-offset="330" max-vertical-offset="1700">
-          <caret line="81" column="42" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/loop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.384615" vertical-offset="0" max-vertical-offset="1020">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_filter-menu.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="1955">
@@ -1049,26 +1115,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/single-event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.0" vertical-offset="495" max-vertical-offset="1581">
-          <caret line="75" column="38" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_footer.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="1904">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_city.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22077923" vertical-offset="0" max-vertical-offset="616">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1085,14 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="816">
           <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/organicity.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.615385" vertical-offset="1532" max-vertical-offset="2125">
-          <caret line="114" column="3" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1125,7 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.538462" vertical-offset="2248" max-vertical-offset="3298">
           <caret line="156" column="12" selection-start-line="156" selection-start-column="12" selection-end-line="156" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1141,7 +1182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-29.423077" vertical-offset="34" max-vertical-offset="2074">
           <caret line="47" column="134" selection-start-line="47" selection-start-column="134" selection-end-line="47" selection-end-column="134" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1157,45 +1197,111 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.076923" vertical-offset="86" max-vertical-offset="1173">
           <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/_src/js/organicity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3757" max-vertical-offset="4216">
+          <caret line="221" column="16" selection-start-line="221" selection-start-column="16" selection-end-line="221" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/organicity.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.576923" vertical-offset="323" max-vertical-offset="2125">
+          <caret line="52" column="2" selection-start-line="52" selection-start-column="2" selection-end-line="53" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.884615" vertical-offset="42" max-vertical-offset="765">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/_src/styles/_city.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.576923" vertical-offset="51" max-vertical-offset="1156">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/loop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="1020">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/single-event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-49.03846" vertical-offset="0" max-vertical-offset="1581">
+          <caret line="75" column="38" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/organicity/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1538463" vertical-offset="767" max-vertical-offset="1768">
-          <caret line="67" column="77" selection-start-line="67" selection-start-column="72" selection-end-line="67" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organicity/_src/js/organicity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.884615" vertical-offset="2921" max-vertical-offset="4131">
-          <caret line="221" column="16" selection-start-line="221" selection-start-column="16" selection-end-line="221" selection-end-column="16" />
+        <state vertical-scroll-proportion="-21.576923" vertical-offset="85" max-vertical-offset="1768">
+          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/organicity/archive-event.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5628043" vertical-offset="918" max-vertical-offset="2193">
-          <caret line="88" column="22" selection-start-line="67" selection-start-column="15" selection-end-line="88" selection-end-column="22" />
+        <state vertical-scroll-proportion="-11.115385" vertical-offset="714" max-vertical-offset="2193">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/organicity/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7282717" vertical-offset="8604" max-vertical-offset="9656">
-          <caret line="549" column="18" selection-start-line="549" selection-start-column="18" selection-end-line="549" selection-end-column="18" />
+        <state vertical-scroll-proportion="-8.826923" vertical-offset="2448" max-vertical-offset="12070">
+          <caret line="171" column="20" selection-start-line="171" selection-start-column="19" selection-end-line="171" selection-end-column="20" />
           <folding>
-            <marker date="1435770655000" expanded="true" signature="15528:15661" placeholder="..." />
-            <marker date="1435770655000" expanded="true" signature="15562:15661" placeholder="..." />
-            <marker date="1435770655000" expanded="true" signature="15606:15661" placeholder="..." />
-            <marker date="1435770655000" expanded="true" signature="15712:15867" placeholder="..." />
-            <marker date="1435770655000" expanded="true" signature="17217:17275" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="10200:10331" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="10296:10331" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="17735:17876" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="21181:21314" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="21215:21314" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="21259:21314" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="21365:21520" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="22870:22928" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="23063:23222" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="23095:23222" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="23137:23222" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="23328:23427" placeholder="..." />
+            <marker date="1435862880000" expanded="true" signature="23588:23672" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/taxonomy-city.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16666667" vertical-offset="0" max-vertical-offset="2261">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding>
+            <element signature="e#6#186#0#PHP" expanded="true" />
+            <element signature="e#692#725#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organicity/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56268805" vertical-offset="714" max-vertical-offset="1819">
+          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

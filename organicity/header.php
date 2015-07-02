@@ -78,6 +78,9 @@ $header_class = $is_home ? 'home' : '';
 
     </div>
 
+    <?php if(is_tax( 'city' )):?>
+    <h1>CITY PAGE</h1>
+    <?php endif; ?>
 
     <?php if ($is_home) : ?>
         <div class=" title">
