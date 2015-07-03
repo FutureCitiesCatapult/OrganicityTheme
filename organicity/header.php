@@ -60,16 +60,17 @@ if(is_tax( 'city' )){
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <!-- this will become the main page header include -->
-<header role="banner" class="<?php echo $header_class; ?>  <?php if($city_page):?> cityheader<?php endif; ?>">
+<header role="banner" class="<?php echo $header_class; ?> cityheader">
+<?php //if($city_page):?><!-- cityheader--><?php //endif; ?><!--">-->
 
     <div class="header-bar">
-        <?php if($city_page):?>
+<!--        --><?php //if($city_page):?>
         <div class="menu-cities">
             <ul>
             <?php city_homepage_filter($city_slug) ?>
             </ul>
         </div>
-        <?php endif; ?>
+<!--        --><?php //endif; ?>
 
         <a href="/" title="<?php _e('Organicity - link to homepage', 'organicity'); ?>">
             <span class="offscreen"><?php echo get_bloginfo('title'); ?></span>
@@ -85,11 +86,11 @@ if(is_tax( 'city' )){
                 <a href="#menuExpand"><span> toggle menu</span></a>
             </div>
             <div class="menu">
-                <?php if($city_page):?>
+<!--                --><?php //if($city_page):?>
                     <ul id="hiddenCities">
                         <?php city_homepage_filter($city_slug) ?>
                     </ul>
-                <?php endif; ?>
+<!--                --><?php //endif; ?>
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 
             </div>

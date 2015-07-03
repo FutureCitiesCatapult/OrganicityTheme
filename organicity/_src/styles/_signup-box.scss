@@ -8,31 +8,50 @@
       @include rem-fallback(padding-left,0);
       @include rem-fallback(padding-right,0);
     }
+
+    #mc_embed_signup_scroll{
+      width:100%;
+    }
+
     form {
 //      text-align: center;
 
+       #mc-field-group{
+         width:100%;
+       }
       input[type='email']{
-        width:100%;
+        width:75%;
         background:transparent;
         box-shadow: none;
         border-radius:0px;
-        @include rem-fallback(padding,15,15,10,15);
+        @include rem-fallback(padding,15,0,10,0);
         border:2px solid $color__white;
         color:$color__white;
         font-family: $text__family--sans-serif--light;
         @include rem-fallback(font-size,18);
+        float:left;
       }
 
-      button{
+      .submit-button{
+        float:left;
+        width:120px;
+      }
+      .button{
         width:100%;
         padding:0;
         @include rem-fallback(padding-top,15);
         @include rem-fallback(padding-bottom,10);
-
+        float:left;
         &:hover, &:active{
           border: 2px solid $color__black;
         }
       }
+
+
+//      *{
+//        display:inline-block;
+//      }
+
     }
 
     color: $color__white;
@@ -43,18 +62,43 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .pure-form button[type=submit]{
-    @include rem-fallback(margin,0);
-  }
-  .section{
+
+@media only screen and (max-width: 600px) {
+
+  .section {
     &--signup {
-      form{
-        button{
-          @include rem-fallback(font-size,15);
-          @include rem-fallback(line-height,24);
+      .submit-button {
+        //  float:left;
+        width: 80px;
+        #mc-embedded-subscribe {
+          @include rem-fallback(font-size, 15);
+          @include rem-fallback(line-height, 24);
+        }
+      }
+
+      form {
+        input[type='email'] {
+          width: 65%;
         }
       }
     }
   }
+
+}
+
+@media only screen and (max-width: 480px) {
+  #mc-embedded-subscribe{
+    @include rem-fallback(margin,0);
+    @include rem-fallback(font-size,15);
+    @include rem-fallback(line-height,24);
+  }
+//  .section{
+//    &--signup {
+//      form{
+//        button{
+//
+//        }
+//      }
+//    }
+//  }
 }

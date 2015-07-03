@@ -452,12 +452,6 @@ header {
       padding-top:  6.5rem;
       padding-bottom:  145px;
       padding-bottom:  14.5rem; }
-    header.home .menu-wrapper {
-      padding-top:  45px;
-      padding-top:  4.5rem; }
-    header.home img.logo {
-      width:  223px;
-      width:  22.3rem; }
     header.home h2 {
       text-transform: uppercase;
       margin: 0 auto;
@@ -487,12 +481,18 @@ header {
     padding:  0;
     padding:  0; }
   header.home img.logo {
-    padding:  45px 0 0 45px;
-    padding:  4.5rem 0 0 4.5rem; }
+    padding:  15px 0 0 0;
+    padding:  1.5rem 0 0 0; }
   header.home .menu-header-container {
     padding-top:  45px;
-    padding-top:  4.5rem; } }
+    padding-top:  4.5rem; }
+  header.home .menu-cities {
+    padding-top:  30px;
+    padding-top:  3rem; } }
 @media only screen and (max-width: 767px) {
+  header.home img.logo {
+    padding-left:  45px;
+    padding-left:  4.5rem; }
   header.cityheader img.logo {
     width:  126px;
     width:  12.6rem;
@@ -566,10 +566,6 @@ header {
   header .menuIcon {
     margin-right:  20px;
     margin-right:  2rem; }
-  header.home img.logo {
-    position: absolute;
-    padding:  15px 0 0 40px;
-    padding:  1.5rem 0 0 4rem; }
   header.home .title {
     padding:  100px 40px 200px 40px;
     padding:  10rem 4rem 20rem 4rem; }
@@ -627,13 +623,6 @@ header {
   header img.logo {
     padding-left:  30px;
     padding-left:  3rem; }
-  header.home img.logo {
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    padding:  40px 0 0 0;
-    padding:  4rem 0 0 0; }
   header.home .title {
     padding:  115px 40px 100px 40px;
     padding:  11.5rem 4rem 10rem 4rem; }
@@ -1077,36 +1066,53 @@ header {
     padding-left:  0;
     padding-right:  0;
     padding-right:  0; }
+  .section--signup #mc_embed_signup_scroll {
+    width: 100%; }
+  .section--signup form #mc-field-group {
+    width: 100%; }
   .section--signup form input[type='email'] {
-    width: 100%;
+    width: 75%;
     background: transparent;
     box-shadow: none;
     border-radius: 0px;
-    padding:  15px 15px 10px 15px;
-    padding:  1.5rem 1.5rem 1rem 1.5rem;
+    padding:  15px 0 10px 0;
+    padding:  1.5rem 0 1rem 0;
     border: 2px solid #ffffff;
     color: #ffffff;
     font-family: "CooperHewitt-Light", "Verdana", "Arial", sans-serif;
     font-size:  18px;
-    font-size:  1.8rem; }
-  .section--signup form button {
+    font-size:  1.8rem;
+    float: left; }
+  .section--signup form .submit-button {
+    float: left;
+    width: 120px; }
+  .section--signup form .button {
     width: 100%;
     padding: 0;
     padding-top:  15px;
     padding-top:  1.5rem;
     padding-bottom:  10px;
-    padding-bottom:  1rem; }
-    .section--signup form button:hover, .section--signup form button:active {
+    padding-bottom:  1rem;
+    float: left; }
+    .section--signup form .button:hover, .section--signup form .button:active {
       border: 2px solid #191115; }
   .section--signup h3, .section--signup p {
     color: #ffffff; }
 
+@media only screen and (max-width: 600px) {
+  .section--signup .submit-button {
+    width: 80px; }
+    .section--signup .submit-button #mc-embedded-subscribe {
+      font-size:  15px;
+      font-size:  1.5rem;
+      line-height:  24px;
+      line-height:  2.4rem; }
+  .section--signup form input[type='email'] {
+    width: 65%; } }
 @media only screen and (max-width: 480px) {
-  .pure-form button[type=submit] {
+  #mc-embedded-subscribe {
     margin:  0;
-    margin:  0; }
-
-  .section--signup form button {
+    margin:  0;
     font-size:  15px;
     font-size:  1.5rem;
     line-height:  24px;

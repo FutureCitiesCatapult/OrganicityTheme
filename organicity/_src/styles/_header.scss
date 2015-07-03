@@ -121,14 +121,14 @@ header {
       @include rem-fallback(padding-top, 65);
       @include rem-fallback(padding-bottom, 145);
     }
-    .menu-wrapper{
-      @include rem-fallback(padding-top, 45);
-    }
+//    .menu-wrapper{
+//      @include rem-fallback(padding-top, 45);
+//    }
     background: url('images/site_header_desktop.jpg') center;
     background-size: cover;
-    img.logo {
-      @include rem-fallback(width, 223);
-    }
+//    img.logo {
+//      @include rem-fallback(width, 223);
+//    }
     @include rem-fallback(padding-bottom, 45);
     h2 {
       text-transform: uppercase;
@@ -163,10 +163,13 @@ header {
         @include rem-fallback(padding,0);
       }
       img.logo {
-        @include rem-fallback(padding,45,0,0,45);
+        @include rem-fallback(padding,15,0,0,0);
       }
       .menu-header-container{
         @include rem-fallback(padding-top,45);
+      }
+      .menu-cities{
+        @include rem-fallback(padding-top,30);
       }
     }
   }
@@ -176,7 +179,14 @@ header {
 @media only screen and (max-width: 767px) {
   header {
 
-
+//    img.logo {
+//      @include rem-fallback(padding-left,45);
+//    }
+    &.home {
+      img.logo {
+        @include rem-fallback(padding-left,45);
+      }
+    }
 
     &.cityheader{
       img.logo {
@@ -304,10 +314,10 @@ padding-bottom:30px;
     }
 
     &.home {
-      img.logo {
-        position: absolute;
-        @include rem-fallback(padding,15,0,0,40);
-      }
+//      img.logo {
+//        position: absolute;
+//        @include rem-fallback(padding,15,0,0,40);
+//      }
 
       .title{
         @include rem-fallback(padding,100,40,200,40);
@@ -399,14 +409,14 @@ padding-bottom:30px;
     }
 
     &.home {
-      img.logo {
-
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        @include rem-fallback(padding, 40, 0, 0, 0);
-      }
+//      img.logo {
+//
+//        top: 0;
+//        left: 0;
+//        right: 0;
+//        margin: 0 auto;
+//        @include rem-fallback(padding, 40, 0, 0, 0);
+//      }
       .title{
         @include rem-fallback(padding,115,40,100,40);
         .button{
