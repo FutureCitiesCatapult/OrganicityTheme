@@ -8,6 +8,13 @@
 $is_home = is_front_page();
 $header_class = $is_home ? 'home' : '';
 
+$city_page = false;
+$city_slug = '';
+if(is_tax( 'city' )){
+    $city_page = true;
+    $city_slug = get_queried_object()->slug;
+};
+
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -53,10 +60,16 @@ $header_class = $is_home ? 'home' : '';
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <!-- this will become the main page header include -->
-<header role="banner" class="<?php echo $header_class; ?>">
-
+<header role="banner" class="<?php echo $header_class; ?>  <?php if($city_page):?> cityheader<?php endif; ?>">
 
     <div class="header-bar">
+        <?php if($city_page):?>
+        <div class="menu-cities">
+            <ul>
+            <?php city_homepage_filter($city_slug) ?>
+            </ul>
+        </div>
+        <?php endif; ?>
 
         <a href="/" title="<?php _e('Organicity - link to homepage', 'organicity'); ?>">
             <span class="offscreen"><?php echo get_bloginfo('title'); ?></span>
@@ -72,15 +85,17 @@ $header_class = $is_home ? 'home' : '';
                 <a href="#menuExpand"><span> toggle menu</span></a>
             </div>
             <div class="menu">
+                <?php if($city_page):?>
+                    <ul id="hiddenCities">
+                        <?php city_homepage_filter($city_slug) ?>
+                    </ul>
+                <?php endif; ?>
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+
             </div>
         </div>
 
     </div>
-
-    <?php if(is_tax( 'city' )):?>
-    <h1>CITY PAGE</h1>
-    <?php endif; ?>
 
     <?php if ($is_home) : ?>
         <div class=" title">

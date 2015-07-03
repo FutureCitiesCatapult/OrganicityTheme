@@ -544,6 +544,29 @@ function city_filter() {
 }
 
 
+function city_homepage_filter($currentcity) {
+    $tax = 'city';
+    $terms = get_terms( $tax );
+    $count = count( $terms );
+
+    if ( $count > 0 ): ?>
+        <?php
+        foreach ( $terms as $term ) {
+            $term_link = get_term_link( $term, $tax );
+            echo '<li><a href="'. home_url('cities').'/'.$term->slug.'"';
+            if($currentcity == $term->slug){
+                echo 'class="active"';
+            };
+            echo '>'.$term->name .'</a></li>';
+            //echo '<div class="pure-u-1-1 pure-u-md-1-4"><div class="city-filter-tab"><a href="' . '" class="city-filter" title="' . $term->slug . '">' . $term->name . '</a></div></div> ';
+
+        } ?>
+    <?php endif;
+}
+
+
+
+
 function ajax_filter_posts_scripts() {
     // Enqueue script
 //    wp_register_script('afp_script', get_template_directory_uri() . '/js/ajax-filter-post.js', false, null, false);

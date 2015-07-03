@@ -55,7 +55,8 @@ $queried_object = get_queried_object();
             <div class="pure-u-1-8"></div>
             <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-6-8 section--page--content">
                 <div class="section--page--content-wrapper">
-                    <p><?php echo $queried_object->description;?></p>
+                    <?php echo $queried_object->description;?>
+
 <!--                    --><?php //if (have_posts()) : while (have_posts()) : the_post(); ?>
 <!--                        --><?php //the_content(); ?>
 <!--                    --><?php //endwhile; endif; ?>
@@ -68,8 +69,9 @@ $queried_object = get_queried_object();
 
 
 
-    <div class="section section--events">
+    <div class="section section--events section--city-subtitle">
         <h2><?php echo $city_name; _e(' Events', 'organicity' ); ?></h2>
+
         <div class="pure-g">
             <?php if (have_posts()): while (have_posts()) : the_post();
                 if ( 'event' == get_post_type() ):?>
@@ -112,7 +114,7 @@ $queried_object = get_queried_object();
 
 
 
-    <div class="section section--blog section--wide">
+    <div class="section section--blog section--wide section--city-subtitle">
         <h2><?php _e('Blog', 'organicity' ); ?></h2>
         <div class="pure-g tagged-posts">
 
