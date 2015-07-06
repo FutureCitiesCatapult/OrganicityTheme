@@ -760,11 +760,14 @@ header {
     font-size:  2.4rem;
     padding:  0 30px;
     padding:  0 3rem; }
-    .feature__description:hover, .feature__description:active {
-      color: #EF4070; }
   .feature__image {
     position: absolute;
     bottom: 0; }
+  .feature__wrapper {
+    display: block;
+    padding-bottom: 312px; }
+    .feature__wrapper:hover .feature__description, .feature__wrapper:active .feature__description {
+      color: #EF4070; }
 
 .section--blog {
   min-height:  200px;

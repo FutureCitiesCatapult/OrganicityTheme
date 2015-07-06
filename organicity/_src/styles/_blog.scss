@@ -28,20 +28,31 @@
     }
   }
 
+
+
   &__description {
     display: block;
     color: $color__grey--title;
     @include rem-fallback(font-size, 24);
     @include rem-fallback(padding, 0, 30);
-    &:hover, &:active {
-      color: $color__pink;
-    }
+
   }
 
   &__image {
     position: absolute;
     bottom: 0;
   }
+  &__wrapper{
+    display:block;
+    padding-bottom: 312px;
+    &:hover, &:active {
+    .feature__description{
+
+        color: $color__pink;
+      }
+    }
+  }
+
 
 }
 

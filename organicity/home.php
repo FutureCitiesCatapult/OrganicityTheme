@@ -65,11 +65,15 @@ get_header(); ?>
               ?>
             </span>
                         </div>
-                        <a class="feature__description" href="<?php the_permalink(); ?>">
-                            <?php the_title(); ?>
-                        </a>
-                        <a class="feature__image" href="<?php the_permalink(); ?>">
-                            <?php the_post_thumbnail(null, array('class' => 'pure-img')); ?>
+                        <a class="feature__wrapper" href="<?php the_permalink(); ?>">
+                            <div class="feature__description">
+                                <!--                <div class="feature__description__wrapper">-->
+                                <?php the_title(); ?>
+                                <!--                    </div>-->
+                            </div>
+                            <div class="feature__image">
+                                <?php the_post_thumbnail(null, array('class' => 'pure-img')); ?>
+                            </div>
                         </a>
                     </div>
                 </div>
