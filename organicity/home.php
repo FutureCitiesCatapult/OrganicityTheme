@@ -17,17 +17,18 @@ get_header(); ?>
             <div class="pure-u-1-4"></div>
         </div>
     </div>
-    <div class="section section--filter">
+    <div class="section section--filter section--wide">
         <div class="pure-g">
             <div class="pure-u-1-4"></div>
             <div class="pure-u-1-2">
                 <button href="" id="filter-menu-button"><?php _e( 'Filter', 'organicity' ); ?></button>
 
-                <div id="filter-menu"><?php tags_filter() ?></div>
+
 
             </div>
             <div class="pure-u-1-4"></div>
         </div>
+        <div id="filter-menu"><?php tags_filter() ?></div>
     </div>
 
     <div class="section section--blog section--wide">
