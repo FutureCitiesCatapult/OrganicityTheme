@@ -75,6 +75,20 @@
       @include rem-fallback(margin,5,0,20,0);
     }
 
+    ul{
+      list-style-type: none;
+      padding:0px;
+      margin:0px;
+    }
+    ul li{
+      background-image: url(images/square.gif);
+      background-repeat: no-repeat;
+      background-position: 0px 12px; //center;
+      @include rem-fallback(padding-left,30);
+    }
+
+
+
     .share-buttons{
       font-family: $text__family--sans-serif;
       @include rem-fallback(font-size,24);

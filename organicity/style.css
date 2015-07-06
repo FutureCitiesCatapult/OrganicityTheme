@@ -995,6 +995,16 @@ header {
     height: auto;
     margin:  5px 0 20px 0;
     margin:  0.5rem 0 2rem 0; }
+  .section--article ul, .section--page ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px; }
+  .section--article ul li, .section--page ul li {
+    background-image: url(images/square.gif);
+    background-repeat: no-repeat;
+    background-position: 0px 12px;
+    padding-left:  30px;
+    padding-left:  3rem; }
   .section--article .share-buttons, .section--page .share-buttons {
     font-family: "CooperHewitt-Book", "Verdana", "Arial", sans-serif;
     font-size:  24px;
