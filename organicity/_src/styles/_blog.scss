@@ -38,10 +38,8 @@
 
   }
 
-  &__image {
-    position: absolute;
-    bottom: 0;
-  }
+
+
   &__wrapper{
     display:block;
     padding-bottom: 312px;
@@ -53,8 +51,51 @@
     }
   }
 
+//  &__image-wrapper{
+//
+//  }
+  &__image {
+    position: absolute;
+    bottom: 0;
+    max-height:150px;
+    overflow:hidden;
+
+  img{
+    display:block;
+    max-width: 100%;
+    height:auto !important;
+    width: auto\9;
+    -ms-interpolation-mode:bicubic;
+
+
+  }
+
+
+  }
+
+  .flip {
+    -webkit-transform: rotate(180deg);
+    -moz-transform:    rotate(180deg);
+    -ms-transform:     rotate(180deg);
+    -o-transform:      rotate(180deg);
+    transform:         rotate(180deg);
+    /* needed? not sure */
+    zoom: 1;
+  }
+
+  img.flip {
+    /* if native or declared width of img.scale
+       is less than div.crop-height, this will
+       flipped img left */
+
+    /* add clearfix if needed */
+  }
+
+
 
 }
+
+
 
 .section{
   //TODO: responsive - remove 4th article (:last-child) < large

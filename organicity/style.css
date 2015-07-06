@@ -764,14 +764,35 @@ header {
     font-size:  2.4rem;
     padding:  0 30px;
     padding:  0 3rem; }
-  .feature__image {
-    position: absolute;
-    bottom: 0; }
   .feature__wrapper {
     display: block;
     padding-bottom: 312px; }
     .feature__wrapper:hover .feature__description, .feature__wrapper:active .feature__description {
       color: #EF4070; }
+  .feature__image {
+    position: absolute;
+    bottom: 0;
+    max-height: 150px;
+    overflow: hidden; }
+    .feature__image img {
+      display: block;
+      max-width: 100%;
+      height: auto !important;
+      width: auto\9;
+      -ms-interpolation-mode: bicubic; }
+  .feature .flip {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    /* needed? not sure */
+    zoom: 1; }
+  .feature img.flip {
+    /* if native or declared width of img.scale
+       is less than div.crop-height, this will
+       flipped img left */
+    /* add clearfix if needed */ }
 
 .section--blog {
   min-height:  200px;

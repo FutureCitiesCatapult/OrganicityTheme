@@ -43,8 +43,8 @@ if (have_posts()): while (have_posts()) : the_post();
                     <?php the_title(); ?>
                     <!--                    </div>-->
                 </div>
-                <div class="feature__image">
-                    <?php the_post_thumbnail(null, array('class' => 'pure-img')); ?>
+                <div class="feature__image flip">
+                    <?php the_post_thumbnail(null, array('class' => 'flip')); ?>
                 </div>
             </a>
         </div>
