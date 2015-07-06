@@ -21,19 +21,20 @@ if (have_posts()): while (have_posts()) : the_post();
               if (has_term(null, 'city')) {
                   $first_term = wp_get_post_terms($post->ID, array('city'))[0];
                   if ($first_term): ?>
-                      <a href="<?php echo get_term_link($first_term); ?>">
+                      <a class="icon-location" href="<?php echo get_term_link($first_term); ?>">
                           <?php echo $first_term->name; ?>
                       </a>
                   <?php endif;
 
-              } elseif (has_term(null, 'post_tag')) {
-                  $first_term = wp_get_post_terms($post->ID, array('post_tag'))[0];
-                  if ($first_term) : ?>
-                      <a href="" class="tax-filter" title="<?php echo $first_term->slug; ?>">
-                          <?php echo $first_term->name; ?>
-                      </a>
-                  <?php endif;
               }
+//              elseif (has_term(null, 'post_tag')) {
+//                  $first_term = wp_get_post_terms($post->ID, array('post_tag'))[0];
+//                  if ($first_term) : ?>
+<!--                      <a href="" class="tax-filter" title="--><?php //echo $first_term->slug; ?><!--">-->
+<!--                          --><?php //echo $first_term->name; ?>
+<!--                      </a>-->
+<!--                  --><?php //endif;
+//              }
               ?>
             </span>
             </div>

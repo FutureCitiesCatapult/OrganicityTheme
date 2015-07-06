@@ -693,15 +693,17 @@ header {
         text-transform: uppercase;
         padding:  15px 30px 10px 30px;
         padding:  1.5rem 3rem 1rem 3rem;
-        margin:  5px;
-        margin:  0.5rem;
+        margin:  7px;
+        margin:  0.7rem;
         border: 1px solid #D0D0D0; }
         .section--filter #filter-menu .post-tags a:hover {
           color: #191115;
           border: 1px solid #191115; }
         .section--filter #filter-menu .post-tags a.highlight {
           color: #EF4070;
-          border: 1px solid #EF4070; }
+          border: 3px solid #EF4070;
+          margin:  5px;
+          margin:  0.5rem; }
   .section--filter #filter-menu.active {
     transition-delay: 0s;
     max-height: 1000px;
@@ -732,10 +734,10 @@ header {
   margin:  0.4rem 0.9rem 0.4rem 0.9rem; }
 
 @media only screen and (max-width: 767px) {
-  .section--filter #filter-menu .post-tags {
-    columns: 1;
-    -webkit-columns: 1;
-    -moz-columns: 1; } }
+  .section--filter #filter-menu .post-tags a {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 80%; } }
 .feature {
   height: 442px;
   max-height: 442px;
@@ -793,6 +795,20 @@ header {
        is less than div.crop-height, this will
        flipped img left */
     /* add clearfix if needed */ }
+
+.icon-location, .icon-tags {
+  background-repeat: no-repeat;
+  padding-left: 18px;
+  /* width of the image plus a little extra padding */ }
+
+.icon-location {
+  padding-left: 15px;
+  background-image: url("images/pin.png") !important;
+  background-size: 10px 15px; }
+
+.icon-tags {
+  background-image: url("images/tag.png") !important;
+  background-size: 15px 15px; }
 
 .section--blog {
   min-height:  200px;
@@ -941,18 +957,23 @@ header {
   .section--article .pure-g, .section--page .pure-g {
     max-width:  995px;
     max-width:  99.5rem; }
-  .section--article .section--article--content, .section--article .section--page--content, .section--page .section--article--content, .section--page .section--page--content {
-    letter-spacing: 0;
-    background-color: #ffffff; }
-    .section--article .section--article--content .section--article--content-wrapper, .section--article .section--article--content .section--page--content-wrapper, .section--article .section--page--content .section--article--content-wrapper, .section--article .section--page--content .section--page--content-wrapper, .section--page .section--article--content .section--article--content-wrapper, .section--page .section--article--content .section--page--content-wrapper, .section--page .section--page--content .section--article--content-wrapper, .section--page .section--page--content .section--page--content-wrapper {
-      padding:  55px 180px 65px 180px;
-      padding:  5.5rem 18rem 6.5rem 18rem; }
   .section--article hr, .section--page hr {
     margin-top:  10px;
     margin-top:  1rem;
     margin-bottom:  10px;
     margin-bottom:  1rem;
     border: 2px solid #F3F4F8; }
+  .section--article .section--article--content, .section--article .section--page--content, .section--page .section--article--content, .section--page .section--page--content {
+    letter-spacing: 0;
+    background-color: #ffffff; }
+    .section--article .section--article--content .section--article--content-wrapper, .section--article .section--article--content .section--page--content-wrapper, .section--article .section--page--content .section--article--content-wrapper, .section--article .section--page--content .section--page--content-wrapper, .section--page .section--article--content .section--article--content-wrapper, .section--page .section--article--content .section--page--content-wrapper, .section--page .section--page--content .section--article--content-wrapper, .section--page .section--page--content .section--page--content-wrapper {
+      padding:  55px 180px 65px 180px;
+      padding:  5.5rem 18rem 6.5rem 18rem; }
+    .section--article .section--article--content .section--page--content-wrapper hr, .section--article .section--page--content .section--page--content-wrapper hr, .section--page .section--article--content .section--page--content-wrapper hr, .section--page .section--page--content .section--page--content-wrapper hr {
+      margin-top:  70px;
+      margin-top:  7rem;
+      margin-bottom:  70px;
+      margin-bottom:  7rem; }
   .section--article .blogtags, .section--page .blogtags {
     margin-top:  10px;
     margin-top:  1rem;
@@ -982,11 +1003,18 @@ header {
     font-size:  46px;
     font-size:  4.6rem; }
   .section--article h2, .section--page h2 {
+    margin:  65px 0 15px 0;
+    margin:  6.5rem 0 1.5rem 0;
     font-size:  34px;
     font-size:  3.4rem; }
   .section--article h3, .section--page h3 {
+    margin:  30px 0 15px 0;
+    margin:  3rem 0 1.5rem 0;
     font-size:  24px;
     font-size:  2.4rem; }
+  .section--article .section--page--content .section--page--content-wrapper h3, .section--page .section--page--content .section--page--content-wrapper h3 {
+    margin:  30px 0 45px 0;
+    margin:  3rem 0 4.5rem 0; }
   .section--article h4, .section--article h5, .section--article h6, .section--page h4, .section--page h5, .section--page h6 {
     font-size:  18px;
     font-size:  1.8rem; }

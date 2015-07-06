@@ -8,20 +8,29 @@
 
     font-family: 'CooperHewitt-Book';
 
+    hr{
+      @include rem-fallback(margin-top,10);
+      @include rem-fallback(margin-bottom,10);
+      border: 2px solid #F3F4F8;
+    }
+
     .section--article--content,.section--page--content{
       letter-spacing:0;
       background-color: $color__white;
 
       .section--article--content-wrapper,.section--page--content-wrapper{
         @include rem-fallback(padding,55,180,65,180);
+
+      }
+      .section--page--content-wrapper{
+        hr{
+          @include rem-fallback(margin-top,70);
+          @include rem-fallback(margin-bottom,70);
+        }
       }
     }
 
-    hr{
-      @include rem-fallback(margin-top,10);
-      @include rem-fallback(margin-bottom,10);
-      border: 2px solid #F3F4F8;
-    }
+
 
     .blogtags{
       @include rem-fallback(margin-top,10);
@@ -58,12 +67,21 @@
     }
 
     h2{
+      @include rem-fallback(margin,65,0,15,0);
       @include rem-fallback(font-size,34);
     }
 
     h3{
-      @include rem-fallback(font-size,24);
+       @include rem-fallback(margin,30,0,15,0);
+       @include rem-fallback(font-size,24);
+     }
+
+    .section--page--content .section--page--content-wrapper{
+      h3 {
+        @include rem-fallback(margin, 30, 0, 45, 0);
+      }
     }
+
 
     h4,h5,h6{
       @include rem-fallback(font-size,18);

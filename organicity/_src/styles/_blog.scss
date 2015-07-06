@@ -96,6 +96,24 @@
 }
 
 
+.icon-location,.icon-tags{
+  background-repeat: no-repeat;
+  padding-left: 18px;  /* width of the image plus a little extra padding */
+  //display: iblock;  /* may not need this, but I've found I do */
+}
+.icon-location{
+  padding-left: 15px;
+  background-image: url("images/pin.png") !important;
+  background-size: 10px 15px;
+ // width: 10px;
+ // height: 16px;
+}
+.icon-tags{
+  background-image: url("images/tag.png") !important;
+  background-size: 15px 15px;
+}
+
+
 
 .section{
   //TODO: responsive - remove 4th article (:last-child) < large

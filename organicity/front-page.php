@@ -31,7 +31,9 @@ get_header(); ?>
 
         <!-- the loop -->
       <div class="owl-carousel owl-theme" id="owl-demo">
-            <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+            <?php while ( $posts_query->have_posts() ) : $posts_query->the_post();
+                $first_term = false;
+                ?>
                 <!-- TODO: work on responsive breakdown of article 4->2->1 -->
 
 
@@ -46,12 +48,10 @@ get_header(); ?>
                   */
                   if (has_term(null, 'city')) {
                       $first_term = wp_get_post_terms($post->ID, array('city'))[0];
-                  } elseif (has_term(null, 'post_tag')) {
-                      $first_term = wp_get_post_terms($post->ID, array('post_tag'))[0];
                   }
                   ?>
                     <?php if ($first_term) : ?>
-                        <a href="<?php echo get_term_link($first_term); ?>">
+                        <a class="icon-location" href="<?php echo get_term_link($first_term); ?>">
                             <?php echo $first_term->name; ?>
                         </a>
                     <?php endif; ?>
@@ -76,7 +76,9 @@ get_header(); ?>
         <?php wp_reset_postdata(); ?>
         <!-- the loop -->
         <div class="blog-large home">
-        <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+        <?php while ( $posts_query->have_posts() ) : $posts_query->the_post();
+            $first_term = false;
+            ?>
           <!-- TODO: work on responsive breakdown of article 4->2->1 -->
 
 
@@ -92,12 +94,10 @@ get_header(); ?>
                     */
                     if (has_term(null, 'city')) {
                       $first_term = wp_get_post_terms($post->ID, array('city'))[0];
-                    } elseif (has_term(null, 'post_tag')) {
-                      $first_term = wp_get_post_terms($post->ID, array('post_tag'))[0];
                     }
                   ?>
                   <?php if ($first_term) : ?>
-                    <a href="<?php echo get_term_link($first_term); ?>">
+                    <a class="icon-location" href="<?php echo get_term_link($first_term); ?>">
                       <?php echo $first_term->name; ?>
                     </a>
                   <?php endif; ?>

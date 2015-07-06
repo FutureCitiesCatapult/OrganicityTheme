@@ -21,15 +21,20 @@ get_header();
                             <span class="date"><?php the_time('j M Y'); ?></span>
                             <h1><?php the_title(); ?></h1>
                             <hr/>
+
                             <p class="blogtags">
                                 <?php if (has_term(null, 'city')) {
+                                    echo "<a class='icon-location'>";
+
                                     $city_terms = wp_get_post_terms($post->ID, array('city'));
                                 }
+
                                 if ($city_terms) :
                                     foreach( $city_terms as $thisslug ):?>
                                         <?php echo $thisslug->slug . ', ';?>
                                     <?php endforeach; ?>
                                 <?php endif;
+                                echo "<a class='icon-tags'>";
                                 the_tags('',', '); ?> </p>
 
                             <?php
