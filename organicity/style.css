@@ -474,9 +474,6 @@ header {
     padding-left:  0;
     padding-right:  0;
     padding-right:  0; }
-  header img.logo {
-    padding-left:  45px;
-    padding-left:  4.5rem; }
   header.home .header-bar {
     padding:  0;
     padding:  0; }
@@ -490,6 +487,9 @@ header {
     padding-top:  30px;
     padding-top:  3rem; } }
 @media only screen and (max-width: 767px) {
+  header img.logo {
+    padding-left:  45px;
+    padding-left:  4.5rem; }
   header.home img.logo {
     padding-left:  45px;
     padding-left:  4.5rem; }
