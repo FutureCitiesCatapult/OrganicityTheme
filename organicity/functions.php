@@ -378,7 +378,7 @@ function register_meta_boxes($meta_boxes) {
                 'id'          => $prefix . 'event_date',
                 'type'        => 'date',
                 'js_options'  => array(
-                    'dateFormat' => 'dd-mm-yy'
+                    'dateFormat' => 'YYYY-MM-DD' //'dd-mm-yy'
                 )
             ),
             array(
@@ -537,8 +537,6 @@ function city_filter() {
                 $term_link = get_term_link( $term, $tax );
 
                 echo '<div class="pure-u-1-1 pure-u-md-1-4"><div class="city-filter-tab"><a href="' . '" class="city-filter" title="' . $term->slug . '">' . $term->name . '</a></div></div> ';
-                //echo '<div class="pure-u-1-1 pure-u-md-1-4"><div class="city-filter-tab"><a href="' .  $term_link . '" class="city-filter" title="' . $term->slug . '">' . $term->name . '</a></div></div> ';
-
             } ?>
     <?php endif;
 }
@@ -648,48 +646,9 @@ function ajax_filter_get_posts() {
 
 
     if(!$event_template):?>
-        <!--        <h2><a href="--><?php //the_permalink(); ?><!--">--><?php //the_title(); ?><!--</a></h2>-->
-        <!--        --><?php //the_excerpt(); ?>
+
         <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3">
-            <div class="feature">
-                <div class="feature__meta">
-                    <span class="date"><?php the_time('j M Y'); ?></span>
-            <span class="tags">
-              <?php
-              /*
-              * Pluck one city or regular tag for the current post
-              */
-              if (has_term(null, 'city')) {
-                  $first_term = wp_get_post_terms($query->post->ID, array('city'))[0];
-                  if ($first_term): ?>
-                      <a class="icon-location" href="<?php echo get_term_link($first_term); ?>">
-                          <?php echo $first_term->name; ?>
-                      </a>
-                  <?php endif;
-              }
-//              elseif (has_term(null, 'post_tag')) {
-//                  $first_term = wp_get_post_terms($query->post->ID, array('post_tag'))[0];
-//                  if ($first_term) : ?>
-<!--                      <a href="" class="tax-filter" title="--><?php //echo $first_term->slug; ?><!--">-->
-<!--                          --><?php //echo $first_term->name; ?>
-<!--                      </a>-->
-<!--                  --><?php //endif;
-//              }
-              ?>
-                <!--                --><?php //if ($first_term) : ?>
-                <!--                    <a href="--><?php //echo get_term_link($first_term); ?><!--">-->
-<!--                        --><?php //echo $first_term->name; ?>
-                <!--                    </a>-->
-<!--                --><?php //endif; ?>
-            </span>
-                </div>
-                <a class="feature__description" href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                </a>
-                <a class="feature__image" href="<?php the_permalink(); ?>">
-                    <?php the_post_thumbnail(null, array('class' => 'pure-img')); ?>
-                </a>
-            </div>
+            <?php get_template_part('partials/blogcard'); ?>
         </div>
 
     <?php else: ?>

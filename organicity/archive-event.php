@@ -9,11 +9,43 @@ get_header(); ?>
 
 <?php
 
+//$query_args = array(
+//    'post_type'      => 'event',
+//    'posts_per_page' => 4
+//);
+//$posts_query = new WP_Query( $query_args );
+
+
 $query_args = array(
-    'post_type'      => 'post',
-    'posts_per_page' => 4
+    //'post_type'      => 'post',
+    //'posts_per_page' => 3,
+   // 'orderby' => 'title',
+    //'order' => 'DESC'
+    //,
+    'post_type'      => 'event',
+    'posts_per_page' => 10,
+    //'orderby' => 'title',
+
+    'meta_key' => 'organicity_event_date',
+    'orderby' => 'meta_value_num',
+    'order' => ASC,
+    'meta_query' => array(
+        array(
+            'key' => 'organicity_event_date',
+            //'value' => date("YYYYMMDD"),
+            'type' => 'DATE'
+        )
+    ),
+
+    //'orderby' => 'meta_value', //rwmb_meta('organicity_event_date'),
+    //'meta_type' => 'date',
+     //DESC, //,
+
+
 );
+//remove_all_filters('posts_orderby');
 $posts_query = new WP_Query( $query_args );
+echo var_dump($posts_query->request);
 
 ?>
 
@@ -29,32 +61,14 @@ $posts_query = new WP_Query( $query_args );
     </div>
 
 
-<!--    <div id="filter-menu">--><?php //city_filter() ?><!--</div>-->
-
-
     <div class="section section--events--city-filter">
         <div class="pure-g">
             <div class="pure-u-1-1 pure-u-md-1-4">
                 <div class="city-filter-tab">
-                    <a href="">All</a>
+                    <a href=""><?php _e('All','organicity'); ?></a>
                 </div>
             </div>
             <?php city_filter() ?>
-<!--            <div class="pure-u-1-1 pure-u-md-1-4">-->
-<!--                <div class="city-filter-tab">-->
-<!--                    <a href="">Aarhus</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="pure-u-1-1 pure-u-md-1-4">-->
-<!--                <div class="city-filter-tab">-->
-<!--                    <a href="">London</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="pure-u-1-1 pure-u-md-1-4">-->
-<!--                <div class="city-filter-tab">-->
-<!--                    <a href="">Santander</a>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
     </div>
 
@@ -62,7 +76,9 @@ $posts_query = new WP_Query( $query_args );
 
     <div class="section section--events">
         <div class="pure-g tagged-events">
-            <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+<!--            --><?php //if ( $posts_query->have_posts() ) : ?>
+
+            <?php if ($posts_query->have_posts()): while ($posts_query->have_posts()) : $posts_query->the_post(); ?>
 
                 <!-- TODO: work on responsive breakdown of article 4->2->1 -->
                 <div class="pure-u-1-1">
@@ -93,31 +109,7 @@ $posts_query = new WP_Query( $query_args );
         </div>
     </div>
 
-    <?php
-    $frontpage_id = get_option('page_on_front');
-
-    if (rwmb_meta('organicity_homepage_signup_section_visible',[],$frontpage_id)) : ?>
-        <div class="section section--signup">
-            <div class="pure-g">
-                <div class="pure-u-1-4"></div>
-                <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-2">
-                    <h3><?php echo rwmb_meta('organicity_homepage_signup_section_title',[],$frontpage_id); ?></h3>
-                    <?php echo rwmb_meta('organicity_homepage_signup_section_content',[],$frontpage_id); ?>
-                    <form class="pure-form pure-g">
-                        <div class="pure-u-2-3 pure-u-md-3-4">
-                            <input class="" type="email" placeholder="<?php echo rwmb_meta('organicity_homepage_signup_field_placeholder_text',[],$frontpage_id); ?>">
-                        </div>
-                        <div class="pure-u-1-3 pure-u-md-1-4">
-                            <button type="submit" class="button button--bordered button--internal">
-                                <?php echo rwmb_meta('organicity_homepage_signup_button_text',[],$frontpage_id); ?>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <div class="pure-u-1-4"></div>
-            </div>
-        </div>
-    <?php endif; ?>
+    <?php get_template_part('partials/signup'); ?>
 
 </main>
 <?php get_footer(); ?>

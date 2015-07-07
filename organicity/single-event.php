@@ -24,6 +24,7 @@ get_header(); ?>
                                 <?php echo rwmb_meta('organicity_event_location')?>
                             </p>
                             <hr/>
+
                             <?php
                             if(has_post_thumbnail()){
                                 the_post_thumbnail( 'instance-name' );
@@ -54,34 +55,7 @@ get_header(); ?>
             </div>
         </div>
 
-
-        <?php
-        $frontpage_id = get_option('page_on_front');
-
-        if (rwmb_meta('organicity_homepage_signup_section_visible',[],$frontpage_id)) : ?>
-            <div class="section section--signup">
-                <div class="pure-g">
-                    <div class="pure-u-1-4"></div>
-                    <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-2">
-                        <h3><?php echo rwmb_meta('organicity_homepage_signup_section_title',[],$frontpage_id); ?></h3>
-                        <?php echo rwmb_meta('organicity_homepage_signup_section_content',[],$frontpage_id); ?>
-                        <form class="pure-form pure-g">
-                            <div class="pure-u-2-3 pure-u-md-3-4">
-                                <input class="" type="email" placeholder="<?php echo rwmb_meta('organicity_homepage_signup_field_placeholder_text',[],$frontpage_id); ?>">
-                                </div>
-                            <div class="pure-u-1-3 pure-u-md-1-4">
-                                <button type="submit" class="button button--bordered button--internal">
-                                    <?php echo rwmb_meta('organicity_homepage_signup_button_text',[],$frontpage_id); ?>
-                                </button>
-                                </div>
-
-                        </form>
-                    </div>
-                    <div class="pure-u-1-4"></div>
-                </div>
-            </div>
-        <?php endif; ?>
-
+        <?php get_template_part('partials/signup'); ?>
 
 
     </main>

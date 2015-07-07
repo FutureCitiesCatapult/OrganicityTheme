@@ -15,9 +15,6 @@
 
                 <h3>Follow us</h3>
 
-<!--                <div class="socialMedia">-->
-<!--                    <div class="socialMedia-wrapper">-->
-
                 <div class="pure-g socialMedia">
                     <div class="pure-u-1-3 pure-u-md-1-6">
                         <a href="<?php echo get_option('organicity_url_facebook'); ?>"><i class="icon-facebook-squared"></i></a>
@@ -38,8 +35,6 @@
                     <a href="<?php echo get_option('organicity_url_youtube'); ?>"><i class="icon-youtube-play"></i></a>
                     </div>
 
-<!--                    </div>-->
-<!--                </div>-->
 </div>
                 <hr/>
                 <div class="logos">

@@ -24,16 +24,23 @@ get_header();
 
                             <p class="blogtags">
                                 <?php if (has_term(null, 'city')) {
-                                    echo "<a class='icon-location'>";
+                                    echo "<div class='icon-location'>";
 
                                     $city_terms = wp_get_post_terms($post->ID, array('city'));
                                 }
 
-                                if ($city_terms) :
-                                    foreach( $city_terms as $thisslug ):?>
-                                        <?php echo $thisslug->slug . ', ';?>
-                                    <?php endforeach; ?>
-                                <?php endif;
+                                if ($city_terms) {
+                                    $city_count = 1;
+                                    $max_city = sizeof($city_terms);
+                                       foreach ($city_terms as $thisslug) {
+                                           if($city_count == $max_city){
+                                               echo $thisslug->slug ;
+                                           }else {
+                                               echo $thisslug->slug . ', ';
+                                           }
+                                           $city_count = $city_count +1;
+                                    }
+                                }
                                 echo "<a class='icon-tags'>";
                                 the_tags('',', '); ?> </p>
 
@@ -72,50 +79,29 @@ get_header();
             </div>
         </div>
 
-<!--        <div class="section">-->
-<!--            <div class="pure-g">-->
-<!--                <div class="pure-u-1-4"></div>-->
-<!--                <div class="pure-u-1-2"></div>-->
-<!--                <div class="pure-u-1-4"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--        <div class="section">-->
-<!--            <div class="pure-g">-->
-<!--                <div class="pure-u-1-4"></div>-->
-<!--                <div class="pure-u-1-2"></div>-->
-<!--                <div class="pure-u-1-4"></div>-->
-<!--            </div>-->
-<!--        </div>-->
 
 
-        <?php
-        $frontpage_id = get_option('page_on_front');
 
-        if (rwmb_meta('organicity_homepage_signup_section_visible',[],$frontpage_id)) : ?>
-            <div class="section section--signup">
-                <div class="pure-g">
-                    <div class="pure-u-1-4"></div>
-                    <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-2">
-                        <h3><?php echo rwmb_meta('organicity_homepage_signup_section_title',[],$frontpage_id); ?></h3>
-                        <?php echo rwmb_meta('organicity_homepage_signup_section_content',[],$frontpage_id); ?>
-                        <form class="pure-form pure-g">
-                            <div class="pure-u-2-3 pure-u-md-3-4">
-                                <input class="" type="email" placeholder="<?php echo rwmb_meta('organicity_homepage_signup_field_placeholder_text',[],$frontpage_id); ?>">
+<?php //TO DO - CHANGE THE QUERY TO PULL IN 3 RELATED BLOG POSTS OR EVENTS ?>
+        <?php if (have_posts()):?>
+            <div class="section section--blog section--wide">
+                <h2><?php _e('Related', 'organicity' ); ?></h2>
+                <div class="pure-g tagged-posts">
 
-                                </div>
-                            <div class="pure-u-1-3 pure-u-md-1-4">
-                            <button type="submit" class="button button--bordered button--internal">
-                                    <?php echo rwmb_meta('organicity_homepage_signup_button_text',[],$frontpage_id); ?>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="pure-u-1-4"></div>
+                    <?php while (have_posts()) : the_post(); ?>
+                        <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3">
+                            <?php get_template_part('partials/blogcard'); ?>
+                        </div>
+                    <?php endwhile; ?>
                 </div>
+
             </div>
         <?php endif; ?>
 
+
+
+
+        <?php get_template_part('partials/signup'); ?>
 
 
     </main>
