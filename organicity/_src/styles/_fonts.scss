@@ -41,7 +41,7 @@ p {
 @media only screen and (max-width: 767px) {
   p{
     @include rem-fallback(font-size, 17);
-    @include rem-fallback(line-height, 24);
+    @include rem-fallback(line-height, 26);
   }
 }
 
@@ -55,7 +55,7 @@ p {
 
   }
   p{
-    @include rem-fallback(font-size, 16);
+    @include rem-fallback(font-size, 17);
 
   }
 

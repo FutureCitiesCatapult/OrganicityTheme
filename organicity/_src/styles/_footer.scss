@@ -91,7 +91,7 @@ footer {
     }
     .socialMedia{
       i {
-        @include rem-fallback(font-size, 60);
+        @include rem-fallback(font-size, 50);
       }
     }
 

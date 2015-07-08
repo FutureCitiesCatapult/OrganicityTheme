@@ -103,6 +103,9 @@ hr {
 @media only screen and (max-width: 767px) {
 
   .section {
+
+      @include rem-fallback(padding-top, 40);
+      @include rem-fallback(padding-bottom, 40);
     .pure-g {
       @include rem-fallback(padding-left, 30);
       @include rem-fallback(padding-right, 30);

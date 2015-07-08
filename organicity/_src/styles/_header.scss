@@ -348,8 +348,8 @@ padding-bottom:30px;
 
 
       h2 {
-        @include rem-fallback(font-size,60);
-        @include rem-fallback(line-height, 70);
+        @include rem-fallback(font-size,40);
+        @include rem-fallback(line-height, 50);
       }
 
       .menuIcon {
