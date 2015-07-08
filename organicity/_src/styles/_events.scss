@@ -82,14 +82,24 @@
       background-color: $color__white;
       text-align: center;
       font-family: $text__family--sans-serif--light;
-      color:rgba(74,74,74,0.8);
+
       @include rem-fallback(font-size,24);
       @include rem-fallback(padding-top,30);
       @include rem-fallback(padding-bottom,30);
       @include rem-fallback(margin,0,4,4,0);
 
+
+
       a{
-        &:hover,&:active{
+        color:rgba(74,74,74,0.8);
+
+        &:hover,&:active,&.highlight{
+          color:$color__pink;
+        }
+      }
+
+      &.highlight{
+        a{
           color:$color__pink;
         }
       }
@@ -125,8 +135,12 @@
       }
     }
   }
-}
 
+  &--events--city-filter{
+
+  }
+
+}
 }
 
 

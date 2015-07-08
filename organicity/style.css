@@ -916,7 +916,6 @@ header {
     background-color: #ffffff;
     text-align: center;
     font-family: "CooperHewitt-Light", "Verdana", "Arial", sans-serif;
-    color: rgba(74, 74, 74, 0.8);
     font-size:  24px;
     font-size:  2.4rem;
     padding-top:  30px;
@@ -925,7 +924,11 @@ header {
     padding-bottom:  3rem;
     margin:  0 4px 4px 0;
     margin:  0 0.4rem 0.4rem 0; }
-    .section--events--city-filter .city-filter-tab a:hover, .section--events--city-filter .city-filter-tab a:active {
+    .section--events--city-filter .city-filter-tab a {
+      color: rgba(74, 74, 74, 0.8); }
+      .section--events--city-filter .city-filter-tab a:hover, .section--events--city-filter .city-filter-tab a:active, .section--events--city-filter .city-filter-tab a.highlight {
+        color: #EF4070; }
+    .section--events--city-filter .city-filter-tab.highlight a {
       color: #EF4070; }
 .section--findevents {
   background-color: #F3F4F8; }

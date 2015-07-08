@@ -378,7 +378,7 @@ function register_meta_boxes($meta_boxes) {
                 'id'          => $prefix . 'event_date',
                 'type'        => 'date',
                 'js_options'  => array(
-                    'dateFormat' => 'YYYY-MM-DD' //'dd-mm-yy'
+                    'dateFormat' => 'yy-mm-dd' //'dd-mm-yy'
                 )
             ),
             array(
@@ -601,6 +601,8 @@ function ajax_filter_get_posts() {
         $postType = 'post';
     }
 
+
+
     // WP Query
     $args = array(
         'post_type' => $postType,// 'post',
@@ -614,6 +616,7 @@ function ajax_filter_get_posts() {
     }else if($_POST['city']){
     $event_template = true;
         $args['city'] = $_POST['city'];
+
 //        // WP Query
 //        $args = array(
 //            //'tag' => $taxonomy,
@@ -622,6 +625,19 @@ function ajax_filter_get_posts() {
 //            'posts_per_page' => 10,
 //        );
     }
+
+
+    if($POST['eventFilter']){
+        $args['meta_key'] = 'organicity_event_date';
+        $args['orderby'] = 'meta_value_num';
+        $args['order'] = DESC;
+
+    }
+
+
+
+
+
 //
 //
 //    ?><!--  <h2>TEST --><?php //echo $taxonomy . $postType ?><!--</h2>  --><?php

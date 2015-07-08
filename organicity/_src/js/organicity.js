@@ -7,6 +7,8 @@
 /*! Organicity - v0.1.0 - 2015-06-23
  * http://www.organicity.eu
  * Copyright (c) 2015 Future Cities Catapult */
+
+
 jQuery(document).ready(function($) {
 
 // settings for the carousel on the home page
@@ -176,7 +178,11 @@ jQuery(document).ready(function($) {
 
 
         var tagClicked = $(this).attr('title');
-        $(this).toggleClass('highlight');
+        $(".city-filter-tab").removeClass('highlight');
+        $(".city-filter").removeClass('highlight');
+        if(!$(this).hasClass('highlight')){
+            $(this).addClass('highlight');
+        }
 
         selected_taxonomy = "";
 

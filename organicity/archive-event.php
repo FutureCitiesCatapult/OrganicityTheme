@@ -17,36 +17,14 @@ get_header(); ?>
 
 
 $query_args = array(
-    //'post_type'      => 'post',
-    //'posts_per_page' => 3,
-   // 'orderby' => 'title',
-    //'order' => 'DESC'
-    //,
     'post_type'      => 'event',
-    'posts_per_page' => 10,
-    //'orderby' => 'title',
-
+   // 'posts_per_page' => 10,
     'meta_key' => 'organicity_event_date',
     'orderby' => 'meta_value_num',
-    'order' => ASC,
-    'meta_query' => array(
-        array(
-            'key' => 'organicity_event_date',
-            //'value' => date("YYYYMMDD"),
-            'type' => 'DATE'
-        )
-    ),
-
-    //'orderby' => 'meta_value', //rwmb_meta('organicity_event_date'),
-    //'meta_type' => 'date',
-     //DESC, //,
-
+    'order' => DESC,
 
 );
-//remove_all_filters('posts_orderby');
 $posts_query = new WP_Query( $query_args );
-echo var_dump($posts_query->request);
-
 ?>
 
 <main role="main">
@@ -64,7 +42,7 @@ echo var_dump($posts_query->request);
     <div class="section section--events--city-filter">
         <div class="pure-g">
             <div class="pure-u-1-1 pure-u-md-1-4">
-                <div class="city-filter-tab">
+                <div class="city-filter-tab highlight">
                     <a href=""><?php _e('All','organicity'); ?></a>
                 </div>
             </div>
