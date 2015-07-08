@@ -743,7 +743,9 @@ header {
   .section--filter #filter-menu .post-tags a {
     margin-left: 0px;
     margin-right: 0px;
-    width: 80%; } }
+    width: 80%;
+    padding:  15px 20px 15px 20px;
+    padding:  1.5rem 2rem 1.5rem 2rem; } }
 .feature {
   height: 442px;
   max-height: 442px;
@@ -908,7 +910,13 @@ header {
       float: left; }
       .section--events .event .event__right .button {
         font-size:  11px;
-        font-size:  1.1rem; }
+        font-size:  1.1rem;
+        padding:  10px 30px 10px 40px;
+        padding:  1rem 3rem 1rem 4rem;
+        background-repeat: no-repeat;
+        background-image: url("images/externallink.png") !important;
+        background-size: 15px 15px;
+        background-position: 15px center; }
 .section--events--city-filter {
   padding-bottom:  0;
   padding-bottom:  0;
