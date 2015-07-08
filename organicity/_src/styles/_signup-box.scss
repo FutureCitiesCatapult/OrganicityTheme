@@ -76,7 +76,13 @@
         }
       }
 
+
       form {
+
+      .submit-button{
+        width: 90px;
+      }
+
         input[type='email'] {
           width: 65%;
         }

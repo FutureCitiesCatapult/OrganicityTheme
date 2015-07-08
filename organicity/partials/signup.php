@@ -27,6 +27,7 @@ if (rwmb_meta('organicity_homepage_signup_section_visible',[],$frontpage_id)) : 
                             </div>
                             <div class="clear submit-button">
                                 <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button  button--bordered button--internal">
+<!--                                <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="button  button--bordered button--internal button--arrow">-->
                             </div>
                         </div>
 

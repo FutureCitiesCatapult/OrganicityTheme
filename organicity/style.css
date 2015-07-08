@@ -1279,6 +1279,8 @@ header {
       font-size:  1.5rem;
       line-height:  24px;
       line-height:  2.4rem; }
+  .section--signup form .submit-button {
+    width: 90px; }
   .section--signup form input[type='email'] {
     width: 65%; } }
 @media only screen and (max-width: 480px) {
