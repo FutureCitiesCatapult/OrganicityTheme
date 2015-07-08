@@ -72,6 +72,10 @@
     @include rem-fallback(padding-bottom,0);
     background-color: $color__grey--background;
 
+    #city-filter-menu-button{
+      display:none;
+    }
+
 
     .pure-g{
       @include rem-fallback(margin-bottom,0);
@@ -121,6 +125,8 @@
       @include rem-fallback(padding-left,0);
       @include rem-fallback(padding-right,0);
     }
+    @include rem-fallback(padding-top,40);
+
     .event {
       .event__meta, .event__content, .event__right {
         display: block;
@@ -137,7 +143,111 @@
   }
 
   &--events--city-filter{
+    background-color: $color__white;
 
+    border-top: 2px solid #F3F4F8;
+    text-align: center;
+
+    @include rem-fallback(padding-top,25);
+    @include rem-fallback(padding-bottom,10);
+
+
+    #city-filter-menu-button{
+      display:inline-block;
+      border:none;
+      background:transparent;
+      @include rem-fallback(font-size,18);
+      font-family: $text__family--sans-serif--medium;
+      color:#7E7E7E;
+      text-transform: uppercase;
+      &:hover{
+        color: $color__black;
+      }
+    }
+    #city-filter-menu-button:focus{
+      outline:0;
+    }
+
+
+    #city-filter-menu-button.active::after {
+      content:"";
+      display:inline-block;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: none;
+      border-bottom: 7px solid #7E7E7E;
+      @include rem-fallback(margin,4,9,4,9);
+    }
+
+    #city-filter-menu-button::after{ //down
+      content:"";
+      display:inline-block;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: none;
+      border-top: 7px solid #7E7E7E;
+      @include rem-fallback(margin,4,9,4,9);
+    }
+
+    #events--city-menu{
+      max-height:0;
+      overflow: hidden;
+      transition: max-height 0.15s ease-out;
+    }
+    #events--city-menu.active{
+       transition-delay:0s;
+       max-height:1000px;
+       transition: max-height 0.25s ease-in;
+     }
+
+
+    .city-filter-tab{
+      width:100%;
+      margin:0px;
+      @include rem-fallback(padding-top,7);
+      @include rem-fallback(padding-bottom,7);
+
+
+      a {
+        display: inline-block;
+        @include rem-fallback(font-size, 18);
+        font-family: $text__family--sans-serif--medium;
+        color: #7E7E7E;
+        text-transform: uppercase;
+        @include rem-fallback(padding, 15,30,10,30);
+        @include rem-fallback(margin,7,0,7,0);
+
+        border: 1px solid #D0D0D0;
+//        margin:0px; // !important;
+//        margin-right:0px;
+        width:80%;
+
+        &:hover{
+          color:$color__black;
+          border: 1px solid $color__black;
+        }
+        &.highlight{
+          color:$color__pink;
+          border: 3px solid $color__pink;
+          @include rem-fallback(margin,4,0,4,0);
+          //@include rem-fallback(margin,5);
+        }
+      }
+      &.highlight{
+        a {
+          color: $color__pink;
+          border: 3px solid $color__pink;
+          @include rem-fallback(margin,4,0,4,0);
+          //@include rem-fallback(padding, 12,27,7,27);
+         // @include rem-fallback(margin, 5);
+        }
+      }
+
+    }
   }
 
 }

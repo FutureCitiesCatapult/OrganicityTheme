@@ -80,6 +80,25 @@ jQuery(document).ready(function($) {
     });
 
 
+    $("#city-filter-menu-button").click(function(e) {
+        $("#city-filter-menu-button").html($("#city-filter-menu-button").html() == 'Filter' ? 'Close':'Filter');
+
+        // if currently open, upon clicking the filter/reset it removes all the highlights
+       // if($("#city-filter-menu").hasClass("active")){
+
+           // get_blog_posts(e);
+           // $(".tax-filter").removeClass("highlight");
+
+        //}
+        $("#events--city-menu").toggleClass("active");
+        $("#city-filter-menu-button").toggleClass("active");
+//        opencloseFilterMenu(event);
+
+    });
+
+
+
+
 
 
 

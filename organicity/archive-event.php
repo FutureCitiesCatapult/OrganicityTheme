@@ -39,11 +39,22 @@ $posts_query = new WP_Query( $query_args );
     </div>
 
 
+
+
+
     <div class="section section--events--city-filter">
         <div class="pure-g">
+            <div class="pure-u-1-4"></div>
+            <div class="pure-u-1-2">
+                <button href="" id="city-filter-menu-button"><?php _e( 'Filter', 'organicity' ); ?></button>
+            </div>
+            <div class="pure-u-1-4"></div>
+        </div>
+
+        <div class="pure-g" id="events--city-menu">
             <div class="pure-u-1-1 pure-u-md-1-4">
                 <div class="city-filter-tab highlight">
-                    <a href=""><?php _e('All','organicity'); ?></a>
+                    <a href="" class="city-filter" title="all"><?php _e('All','organicity'); ?></a>
                 </div>
             </div>
             <?php city_filter() ?>

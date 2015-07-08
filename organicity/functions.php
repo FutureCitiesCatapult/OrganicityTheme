@@ -589,6 +589,7 @@ function ajax_filter_get_posts() {
     $event_template = false;
 
 
+
     // Verify nonce
     if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
         die('Permission denied');
@@ -615,8 +616,11 @@ function ajax_filter_get_posts() {
 
     }else if($_POST['city']){
     $event_template = true;
-        $args['city'] = $_POST['city'];
-
+        if($_POST['city'] == 'all'){
+            $args['city'] = "";
+        }else {
+            $args['city'] = $_POST['city'];
+        }
 //        // WP Query
 //        $args = array(
 //            //'tag' => $taxonomy,
