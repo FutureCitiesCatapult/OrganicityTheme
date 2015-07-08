@@ -546,25 +546,25 @@ header {
         color: #ffffff; }
   header .menuIcon {
     display: inline-block; }
-  header .menuOpen ul {
+  header .menuOpen {
     padding-bottom:  45px;
     padding-bottom:  4.5rem; }
-  header .menuOpen li {
-    padding:  25px 0 25px 0;
-    padding:  2.5rem 0 2.5rem 0; }
-    header .menuOpen li a {
-      font-size:  32px;
-      font-size:  3.2rem;
-      font-family: 'CooperHewitt-Book';
-      display: block;
-      border-bottom: none;
-      padding:  0;
-      padding:  0; }
-  header .menuOpen li.current-menu-item a {
-    border-bottom: none; }
-  header.cityheader .menuOpen {
-    padding-top:  45px;
-    padding-top:  4.5rem; }
+    header .menuOpen ul {
+      padding-bottom:  45px;
+      padding-bottom:  4.5rem; }
+    header .menuOpen li {
+      padding:  25px 0 25px 0;
+      padding:  2.5rem 0 2.5rem 0; }
+      header .menuOpen li a {
+        font-size:  32px;
+        font-size:  3.2rem;
+        font-family: 'CooperHewitt-Book';
+        display: block;
+        border-bottom: none;
+        padding:  0;
+        padding:  0; }
+    header .menuOpen li.current-menu-item a {
+      border-bottom: none; }
   header .header-bar {
     padding-bottom:  15px;
     padding-bottom:  1.5rem; }
@@ -623,14 +623,15 @@ header {
 
 @media only screen and (max-width: 767px) {
   .menu-header-container {
-    float: none; } }
+    float: none;
+    padding-top: 0px !important; } }
 @media only screen and (max-width: 567px) {
   header img.logo {
     padding-left:  30px;
     padding-left:  3rem; }
   header.home .title {
-    padding:  115px 40px 100px 40px;
-    padding:  11.5rem 4rem 10rem 4rem; }
+    padding:  65px 40px 100px 40px;
+    padding:  6.5rem 4rem 10rem 4rem; }
     header.home .title .button {
       display: block; } }
 .button, button {

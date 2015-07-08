@@ -87,12 +87,12 @@ if(is_tax( 'city' )){
             </div>
             <div class="menu">
 <!--                --><?php //if($city_page):?>
-                    <ul id="hiddenCities">
-                        <?php city_homepage_filter($city_slug) ?>
-                    </ul>
+
 <!--                --><?php //endif; ?>
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-
+                <ul id="hiddenCities">
+                    <?php city_homepage_filter($city_slug) ?>
+                </ul>
             </div>
         </div>
 

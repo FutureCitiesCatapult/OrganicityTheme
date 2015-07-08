@@ -283,6 +283,7 @@ padding-bottom:30px;
     }
 
     .menuOpen{
+      @include rem-fallback(padding-bottom, 45);
       ul{
         @include rem-fallback(padding-bottom, 45);
         //@include rem-fallback(padding-top, 45);
@@ -304,7 +305,7 @@ padding-bottom:30px;
     }
 
     &.cityheader .menuOpen{
-      @include rem-fallback(padding-top, 45);
+     // @include rem-fallback(padding-top, 45);
     }
 
     .header-bar {
@@ -402,6 +403,7 @@ padding-bottom:30px;
 @media only screen and (max-width: 767px) {
   .menu-header-container {
     float: none;
+    padding-top: 0px !important;
   }
 }
 
@@ -422,7 +424,7 @@ padding-bottom:30px;
 //        @include rem-fallback(padding, 40, 0, 0, 0);
 //      }
       .title{
-        @include rem-fallback(padding,115,40,100,40);
+        @include rem-fallback(padding,65,40,100,40);
         .button{
           display:block;
         }
