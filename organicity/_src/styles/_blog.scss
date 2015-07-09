@@ -96,6 +96,8 @@
 }
 
 
+
+
 .icon-location,.icon-tags{
   background-repeat: no-repeat;
   padding-left: 18px;  /* width of the image plus a little extra padding */
@@ -124,7 +126,7 @@
       @include rem-fallback(padding-right, 0);
     }
 
-    @include rem-fallback(min-height,200);
+    //@include rem-fallback(min-height,491);
 
     background-color: $color__grey--background;
 
@@ -138,6 +140,12 @@
         @include rem-fallback(padding-bottom, 20);
       }
     }
+
+    .tagged-posts-wrapper{
+      @include rem-fallback(min-height,500);
+//      content:" ";
+    }
+
   }
 }
 

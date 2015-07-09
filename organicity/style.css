@@ -819,8 +819,6 @@ header {
   background-size: 15px 15px; }
 
 .section--blog {
-  min-height:  200px;
-  min-height:  20rem;
   background-color: #F3F4F8; }
   .section--blog .pure-g {
     padding-left:  0;
@@ -836,6 +834,9 @@ header {
     .section--blog .feature .feature__meta {
       padding-bottom:  20px;
       padding-bottom:  2rem; }
+  .section--blog .tagged-posts-wrapper {
+    min-height:  500px;
+    min-height:  50rem; }
 
 #owl-demo {
   display: none !important; }
@@ -1085,6 +1086,9 @@ header {
     margin-top:  1rem;
     margin-bottom:  25px;
     margin-bottom:  2.5rem; }
+    .section--article .blogtags .icon-location, .section--article .blogtags .icon-tags, .section--page .blogtags .icon-location, .section--page .blogtags .icon-tags {
+      margin-right:  15px;
+      margin-right:  1.5rem; }
     .section--article .blogtags a, .section--page .blogtags a {
       font-family: 'CooperHewitt-Book';
       font-size:  18px;
@@ -1311,7 +1315,12 @@ header {
       bottom: 0;
       right: 0; }
 .section--city {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  padding-top:  0;
+  padding-top:  0; }
+.section--city-subtitle {
+  padding-top:  60px;
+  padding-top:  6rem; }
 
 .section--footer {
   text-align: center; }

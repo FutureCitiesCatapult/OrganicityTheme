@@ -35,7 +35,9 @@
     .blogtags{
       @include rem-fallback(margin-top,10);
       @include rem-fallback(margin-bottom,25);
-
+      .icon-location,.icon-tags{
+        @include rem-fallback(margin-right,15);
+      }
       a{
         font-family: 'CooperHewitt-Book';
         @include rem-fallback(font-size,18);

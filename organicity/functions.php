@@ -510,7 +510,7 @@ add_filter('rwmb_meta_boxes', 'register_meta_boxes');
 
 
 
-function tags_filter() {
+function tags_filter( $tag_query ) {
     $tax = 'post_tag';
     $terms = get_terms( $tax );
     $count = count( $terms );
@@ -520,7 +520,10 @@ function tags_filter() {
             <?php
             foreach ( $terms as $term ) {
                 $term_link = get_term_link( $term, $tax );
-                echo '<a href="' . $term_link . '" class="tax-filter" title="' . $term->slug . '">' . $term->name . '</a> ';
+
+                echo '<a href="' . $term_link . '" class="tax-filter ';
+                if($tag_query == $term->slug){ echo 'highlight';}
+                echo '" title="' . $term->slug . '">' . $term->name . '</a> ';
             } ?>
         </div>
     <?php endif;
@@ -607,7 +610,7 @@ function ajax_filter_get_posts() {
     // WP Query
     $args = array(
         'post_type' => $postType,// 'post',
-        'posts_per_page' => 10,
+        //'posts_per_page' => 10,
     );
 
 

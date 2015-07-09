@@ -24,25 +24,37 @@ get_header();
 
                             <p class="blogtags">
                                 <?php if (has_term(null, 'city')) {
-                                    echo "<div class='icon-location'>";
-
                                     $city_terms = wp_get_post_terms($post->ID, array('city'));
                                 }
-
                                 if ($city_terms) {
-                                    $city_count = 1;
-                                    $max_city = sizeof($city_terms);
+                                    echo "<span class='icon-location'>";
+                                    $city_count = 0;
                                        foreach ($city_terms as $thisslug) {
-                                           if($city_count == $max_city){
-                                               echo $thisslug->slug ;
-                                           }else {
-                                               echo $thisslug->slug . ', ';
-                                           }
+                                           echo '<a href="' . get_site_url() . '/cities/' . $thisslug->slug . '">';
+                                           if($city_count >0){ echo ', ';}
+                                           echo $thisslug->name . '</a>';
                                            $city_count = $city_count +1;
                                     }
+                                    echo "</span>";
                                 }
-                                echo "<a class='icon-tags'>";
-                                the_tags('',', '); ?> </p>
+
+
+                                //the_tags('',', ');
+
+                                $posttags = get_the_tags();
+                                if ($posttags) {
+                                    echo "<span class='icon-tags'>";
+                                    $postcount = 0;
+                                    foreach($posttags as $tag) {
+                                        echo '<a href="' . get_site_url() . '/blog/?tag=' . $tag->slug . '">';
+                                        if($postcount > 0){ echo ', ';}
+                                        echo $tag->name . '</a>';
+                                        $postcount = $postcount + 1;
+                                    }
+                                    echo "</span>";
+                                }
+                                ?>
+                            </p>
 
                             <?php
                             if(has_post_thumbnail()){
@@ -82,21 +94,21 @@ get_header();
 
 
 
-<?php //TO DO - CHANGE THE QUERY TO PULL IN 3 RELATED BLOG POSTS OR EVENTS ?>
-        <?php if (have_posts()):?>
-            <div class="section section--blog section--wide">
-                <h2><?php _e('Related', 'organicity' ); ?></h2>
-                <div class="pure-g tagged-posts">
-
-                    <?php while (have_posts()) : the_post(); ?>
-                        <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3">
-                            <?php get_template_part('partials/blogcard'); ?>
-                        </div>
-                    <?php endwhile; ?>
-                </div>
-
-            </div>
-        <?php endif; ?>
+<?php ////TO DO - CHANGE THE QUERY TO PULL IN 3 RELATED BLOG POSTS OR EVENTS ?>
+<!--        --><?php //if (have_posts()):?>
+<!--            <div class="section section--blog section--wide">-->
+<!--                <h2>--><?php //_e('Related', 'organicity' ); ?><!--</h2>-->
+<!--                <div class="pure-g tagged-posts">-->
+<!---->
+<!--                    --><?php //while (have_posts()) : the_post(); ?>
+<!--                        <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3">-->
+<!--                            --><?php //get_template_part('partials/blogcard'); ?>
+<!--                        </div>-->
+<!--                    --><?php //endwhile; ?>
+<!--                </div>-->
+<!---->
+<!--            </div>-->
+<!--        --><?php //endif; ?>
 
 
 

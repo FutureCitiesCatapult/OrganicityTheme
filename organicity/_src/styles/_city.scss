@@ -60,12 +60,11 @@
 
   &--city{
     background-color: $color__white;
+    @include rem-fallback(padding-top,0);
   }
 
   &--city-subtitle{
-    h2{
-
-    }
+    @include rem-fallback(padding-top,60);
   }
 
 }
