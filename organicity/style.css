@@ -1093,9 +1093,9 @@ header {
       font-family: 'CooperHewitt-Book';
       font-size:  18px;
       font-size:  1.8rem;
-      color: #303030; }
+      color: #EF4070; }
       .section--article .blogtags a:hover, .section--article .blogtags a:active, .section--page .blogtags a:hover, .section--page .blogtags a:active {
-        color: #EF4070; }
+        color: #303030; }
   .section--article .date, .section--page .date {
     font-family: 'CooperHewitt-Book';
     font-size:  18px;

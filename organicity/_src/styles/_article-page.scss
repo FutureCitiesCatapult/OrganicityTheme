@@ -41,10 +41,11 @@
       a{
         font-family: 'CooperHewitt-Book';
         @include rem-fallback(font-size,18);
-        color:#303030;
+        color:$color__pink;
 
         &:hover,&:active{
-          color:$color__pink;
+
+          color:#303030;
         }
 
       }
