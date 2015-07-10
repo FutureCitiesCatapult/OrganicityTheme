@@ -786,7 +786,8 @@ header {
     overflow: hidden; }
     .feature__image img {
       display: block;
-      width: inherit;
+      width: auto\9;
+      width: 100%;
       max-width: 100%;
       height: auto !important;
       -ms-interpolation-mode: bicubic; }
@@ -837,6 +838,8 @@ header {
   .section--blog .tagged-posts-wrapper {
     min-height:  500px;
     min-height:  50rem; }
+.section .blog-large.home {
+  width: 100%; }
 
 #owl-demo {
   display: none !important; }

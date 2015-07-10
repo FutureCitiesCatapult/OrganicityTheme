@@ -62,11 +62,11 @@
 
   img{
     display:block;
-    width:inherit;
+    width: auto\9;
+    width:100%;
     max-width: 100%;
     height:auto !important;
 
-//    width: auto\9;
     -ms-interpolation-mode:bicubic;
 
 
@@ -148,6 +148,9 @@
 //      content:" ";
     }
 
+  }
+  .blog-large.home{
+    width:100%;
   }
 }
 
