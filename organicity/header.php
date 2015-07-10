@@ -44,9 +44,9 @@ if(is_tax( 'city' )){
     <meta itemprop="image" content="http://www.organicity.eu/social_image.png">
 
     <!-- Standard Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
     <!-- For iPhone: -->
-    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/apple-touch-icon-precomposed.png">
 
     <!-- TypeKit - Freight Text -->
     <script src="//use.typekit.net/buo5xqw.js"></script>
