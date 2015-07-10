@@ -786,9 +786,9 @@ header {
     overflow: hidden; }
     .feature__image img {
       display: block;
+      width: inherit;
       max-width: 100%;
       height: auto !important;
-      width: auto\9;
       -ms-interpolation-mode: bicubic; }
   .feature .flip {
     -webkit-transform: rotate(180deg);
