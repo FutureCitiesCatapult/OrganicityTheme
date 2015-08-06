@@ -26,7 +26,7 @@
                     <?php the_title(); ?>
                 </div>
                 <div class="feature__image flip">
-                    <?php the_post_thumbnail(null, array('class' => 'flip')); ?>
+                    <?php the_post_thumbnail(array(400,400), array('class' => 'flip')); ?>
                 </div>
             </a>
         </div>
