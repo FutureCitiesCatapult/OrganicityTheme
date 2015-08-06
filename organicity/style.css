@@ -792,13 +792,7 @@ header {
       height: auto !important;
       -ms-interpolation-mode: bicubic; }
   .feature .flip {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-    /* needed? not sure */
-    zoom: 1; }
+    /* needed? not sure */ }
   .feature img.flip {
     /* if native or declared width of img.scale
        is less than div.crop-height, this will
