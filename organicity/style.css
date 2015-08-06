@@ -782,7 +782,7 @@ header {
   .feature__image {
     position: absolute;
     bottom: 0;
-    max-height: 150px;
+    max-height: 200px;
     overflow: hidden; }
     .feature__image img {
       display: block;
