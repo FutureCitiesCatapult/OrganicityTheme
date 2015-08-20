@@ -61,16 +61,13 @@ if(is_tax( 'city' )){
 <![endif]-->
 <!-- this will become the main page header include -->
 <header role="banner" class="<?php echo $header_class; ?> cityheader">
-<?php //if($city_page):?><!-- cityheader--><?php //endif; ?><!--">-->
 
     <div class="header-bar">
-<!--        --><?php //if($city_page):?>
         <div class="menu-cities">
             <ul>
             <?php city_homepage_filter($city_slug) ?>
             </ul>
         </div>
-<!--        --><?php //endif; ?>
 
         <a href="/" title="<?php _e('Organicity - link to homepage', 'organicity'); ?>">
             <span class="offscreen"><?php echo get_bloginfo('title'); ?></span>
@@ -86,9 +83,7 @@ if(is_tax( 'city' )){
                 <a href="#menuExpand"><span> toggle menu</span></a>
             </div>
             <div class="menu">
-<!--                --><?php //if($city_page):?>
 
-<!--                --><?php //endif; ?>
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
                 <ul id="hiddenCities">
                     <?php city_homepage_filter($city_slug) ?>

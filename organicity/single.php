@@ -39,7 +39,7 @@ get_header();
                                 }
 
 
-                                //the_tags('',', ');
+
 
                                 $posttags = get_the_tags();
                                 if ($posttags) {
@@ -90,25 +90,6 @@ get_header();
                 <div class="pure-u-1-8"></div>
             </div>
         </div>
-
-
-
-
-<?php ////TO DO - CHANGE THE QUERY TO PULL IN 3 RELATED BLOG POSTS OR EVENTS ?>
-<!--        --><?php //if (have_posts()):?>
-<!--            <div class="section section--blog section--wide">-->
-<!--                <h2>--><?php //_e('Related', 'organicity' ); ?><!--</h2>-->
-<!--                <div class="pure-g tagged-posts">-->
-<!---->
-<!--                    --><?php //while (have_posts()) : the_post(); ?>
-<!--                        <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3">-->
-<!--                            --><?php //get_template_part('partials/blogcard'); ?>
-<!--                        </div>-->
-<!--                    --><?php //endwhile; ?>
-<!--                </div>-->
-<!---->
-<!--            </div>-->
-<!--        --><?php //endif; ?>
 
 
 

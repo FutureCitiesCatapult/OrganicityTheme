@@ -9,16 +9,10 @@ get_header(); ?>
 
 <?php
 
-//$query_args = array(
-//    'post_type'      => 'event',
-//    'posts_per_page' => 4
-//);
-//$posts_query = new WP_Query( $query_args );
 
 
 $query_args = array(
     'post_type'      => 'event',
-   // 'posts_per_page' => 10,
     'meta_key' => 'organicity_event_date',
     'orderby' => 'meta_value_num',
     'order' => DESC,
@@ -65,11 +59,11 @@ $posts_query = new WP_Query( $query_args );
 
     <div class="section section--events">
         <div class="pure-g tagged-events">
-<!--            --><?php //if ( $posts_query->have_posts() ) : ?>
+
 
             <?php if ($posts_query->have_posts()): while ($posts_query->have_posts()) : $posts_query->the_post(); ?>
 
-                <!-- TODO: work on responsive breakdown of article 4->2->1 -->
+
                 <div class="pure-u-1-1">
                     <div class="event">
                         <div class="event__meta">

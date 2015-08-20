@@ -73,9 +73,7 @@
     </div>
     <div class="section section--copyright">
         <div class="pure-g">
-<!--            <div class="pure-u-1-4"></div>-->
             <div class="pure-u-1-1">&copy; Organicity 2015</div>
-<!--            <div class="pure-u-1-4"></div>-->
         </div>
     </div>
 </footer>

@@ -14,7 +14,7 @@
 define( 'ORGANICITY_VERSION', '0.1.0' );
 
 //TODO: set false for production
-define( 'SCRIPT_DEBUG', true );
+define( 'SCRIPT_DEBUG', false );
 
 
 
@@ -100,54 +100,14 @@ function register_event_posttype() {
 }
 add_action('init', 'register_event_posttype');
 
-//function register_city_posttype() {
-//    $labels = array(
-//        'name' => 'Cities',
-//        'singular_name' => 'City',//,
-//        'menu_name'           => __('City', 'organicity'),
-//        'parent_item'          => null,
-//         'parent_item_colon'   => __('Parent City:', 'organicity'),
-//         'all_items'           => __('All Cities', 'organicity'),
-//         'view_item'           => __('View City', 'organicity'),
-//         'add_new_item'        => __('Add New City', 'organicity'),
-//         'add_new'             => __('Add City', 'organicity'),
-//         'edit_item'           => __('Edit City', 'organicity'),
-//         'update_item'         => __('Update City', 'organicity'),
-//         'search_items'        => __('Search Cities', 'organicity'),
-//         'not_found'           => __('No Cities found.', 'organicity')
-//    );
-//    $args = array(
-//        'labels'        => $labels,
-//        'public'        => true,
-//        'has_archive'   => true,
-//        'rewrite'       => null,//array('slug' => __('cities', 'organicity'), 'with_front'  => false),
-//        'menu_icon'     => 'dashicons-calendar-alt',
-//        'menu_position' => 6,
-//        'supports'      => array('title', 'editor', 'thumbnail')
-//    );
-//    register_post_type('city', $args);
-//}
-//add_action('init', 'register_city_posttype');
-
-
 /*
  * Register a custom taxonomy for the cities
  */
 function register_city_taxonomy() {
     $labels = array(
         'name' => 'Cities',
-        'singular_name' => 'City',//,
+        'singular_name' => 'City',
         'menu_name'           => __('City', 'organicity'),
-        //'parent_item'          => null,
-       // 'parent_item_colon'   => __('Parent City:', 'organicity'),
-       // 'all_items'           => __('All Cities', 'organicity'),
-       // 'view_item'           => __('View City', 'organicity'),
-       // 'add_new_item'        => __('Add New City', 'organicity'),
-       // 'add_new'             => __('Add City', 'organicity'),
-       // 'edit_item'           => __('Edit City', 'organicity'),
-       // 'update_item'         => __('Update City', 'organicity'),
-       // 'search_items'        => __('Search Cities', 'organicity'),
-       // 'not_found'           => __('No Cities found.', 'organicity')
     );
     $rewrite = array(
         'slug' => 'cities',
@@ -156,16 +116,15 @@ function register_city_taxonomy() {
     $args = array(
         'labels'            => $labels,
         'hierarchical'      => false,
-        'public'            => true, // false, //true,
+        'public'            => true,
         'show_in_nav_menus' => true,
         'show_admin_column' => true,
         'rewrite'           => $rewrite,
         'show_ui' => true,
         'has_archive'   => true,
-        //'menu_position' => 6,
-        //'menu_icon'     => 'dashicons-calendar-alt',
+
     );
-    register_taxonomy('city', array('event', 'post'), $args); //array('event', 'post'), $args);
+    register_taxonomy('city', array('event', 'post'), $args);
 }
 add_action('init', 'register_city_taxonomy');
 
@@ -331,39 +290,6 @@ function register_meta_boxes($meta_boxes) {
         )
     );
 
-//    /*
-//     * Fields for the Event posttype
-//     */
-//    $meta_boxes[] = array(
-//        'title'   => 'City details',
-//        'pages'   => 'city',
-//        'fields'  => array(
-//            array(
-//                'name'        => 'City Description',
-//                'id'          => $prefix . 'city_description',
-//                'type'        => 'text',
-//                'size'        => 50
-//            ),array(
-//                'name'        => 'City Test Field',
-//                'id'          => $prefix . 'city_testfield',
-//                'type'        => 'text',
-//                'size'        => 50
-//            )    //,
-////            array(
-////                'name'        => 'Event date',
-////                'id'          => $prefix . 'event_date',
-////                'type'        => 'date',
-////                'js_options'  => array(
-////                    'dateFormat' => 'dd-mm-yy'
-////                )
-////            ),
-////            array(
-////                'name'        => 'Event URL',
-////                'id'          => $prefix . 'event_url',
-////                'type'        => 'url'
-////            )
-//        )
-//    );
 
     /*
      * Fields for the Event posttype
@@ -575,13 +501,6 @@ function city_homepage_filter($currentcity) {
 
 function ajax_filter_posts_scripts() {
     // Enqueue script
-//    wp_register_script('afp_script', get_template_directory_uri() . '/js/ajax-filter-post.js', false, null, false);
-//    wp_enqueue_script('afp_script');
-
-    //wp_enqueue_script( 'afp_script', get_template_directory_uri() . "/js/ajax-filter-post{$postfix}.js", array('jquery'), ORGANICITY_VERSION, true );
-
-
-    // wp_localize_script( 'afp_script', 'afp_vars', array(
     wp_localize_script( 'organicity', 'afp_vars', array(
             'afp_nonce' => wp_create_nonce( 'afp_nonce' ), // Create nonce which we later will use to verify AJAX request
             'afp_ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -614,8 +533,7 @@ function ajax_filter_get_posts() {
 
     // WP Query
     $args = array(
-        'post_type' => $postType,// 'post',
-        //'posts_per_page' => 10,
+        'post_type' => $postType,
     );
 
 
@@ -629,13 +547,6 @@ function ajax_filter_get_posts() {
         }else {
             $args['city'] = $_POST['city'];
         }
-//        // WP Query
-//        $args = array(
-//            //'tag' => $taxonomy,
-//            'city' => $taxonomy,
-//            'post_type' => $postType,// 'post',
-//            'posts_per_page' => 10,
-//        );
     }
 
 
@@ -648,25 +559,6 @@ function ajax_filter_get_posts() {
 
 
 
-
-
-//
-//
-//    ?><!--  <h2>TEST --><?php //echo $taxonomy . $postType ?><!--</h2>  --><?php
-//
-//
-//    // WP Query
-//    $args = array(
-//        //'tag' => $taxonomy,
-//        'city' => $taxonomy,
-//        'post_type' => $postType,// 'post',
-//        'posts_per_page' => 10,
-//    );
-//
-//    // If taxonomy is not set, remove key from array and get all posts
-//    if( !$taxonomy ) {
-//        unset( $args['tag'] );
-//    }
 
     $query = new WP_Query( $args );
 

@@ -11,23 +11,17 @@ get_header();
 
 $query_args = array(
     'post_type'      => 'post',
-    //'posts_per_page' => 3,
-    //'meta_key' => 'organicity_event_date',
-    //'orderby' => 'meta_value_num',
-    //'order' => DESC,
-
 );
 
 
 
 $tag_query = get_query_var('tag');
-//echo $tag_query . "YO";
 $tag_present = false;
 if(get_query_var('tag')) {
     $query_args['tag'] = get_query_var('tag');
     $tag_present = true;
 }
-//if()
+
 
 $posts_query = new WP_Query( $query_args );
 
@@ -75,7 +69,7 @@ $posts_query = new WP_Query( $query_args );
             <div class="pure-u-1-3 pure-u-lg-1-4"></div>
             <!-- link to blog -->
             <div class="pure-u-1-1 pure-u-md-1-3 pure-u-lg-1-2">
-<!--                <a class="button button--full button--external" href="--><?php //echo get_permalink(get_option('page_for_posts')); ?><!--">--><?php //_e('Show more', 'organicity'); ?><!--</a>-->
+
             </div>
             <div class="pure-u-1-3 pure-u-lg-1-4"></div>
 
