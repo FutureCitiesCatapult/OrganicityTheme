@@ -16,6 +16,8 @@ define( 'ORGANICITY_VERSION', '0.1.0' );
 //TODO: set false for production
 define( 'SCRIPT_DEBUG', true );
 
+
+
 /**
  * Makes Organicity available for translation.
  */
@@ -30,7 +32,7 @@ add_action( 'after_setup_theme', 'organicity_setup' );
 function add_post_thumbnail_support() {
     add_theme_support('post-thumbnails');
     set_post_thumbnail_size( 450, 250, true );
-    add_image_size( 'instance-name', 700, 400 );
+    add_image_size( 'instance-name', 700, 400);
 
 }
 add_filter('init', 'add_post_thumbnail_support');

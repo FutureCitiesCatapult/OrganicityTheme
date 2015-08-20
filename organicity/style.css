@@ -1332,7 +1332,11 @@ header {
     padding-top:  10px;
     padding-top:  1rem;
     padding-bottom:  10px;
-    padding-bottom:  1rem; }
+    padding-bottom:  1rem;
+    text-align: center; }
+    .section--footer .socialMedia .socialMediaIcon {
+      display: block !important;
+      margin: 0 auto !important; }
     .section--footer .socialMedia i {
       font-size:  40px;
       font-size:  4rem; }
