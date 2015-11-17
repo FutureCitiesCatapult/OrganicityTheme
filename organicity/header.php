@@ -49,8 +49,9 @@ if(is_tax( 'city' )){
     <link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/apple-touch-icon-precomposed.png">
 
     <!-- TypeKit - Freight Text -->
-    <script src="//use.typekit.net/buo5xqw.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
+
+    <script src="https://use.typekit.net/kxq0jjz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <!-- WP head -->
     <?php wp_head(); ?>
 </head>
