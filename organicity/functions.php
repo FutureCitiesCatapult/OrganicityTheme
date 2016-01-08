@@ -129,6 +129,36 @@ function register_city_taxonomy() {
 add_action('init', 'register_city_taxonomy');
 
 /*
+ * Register a custom post type for FAQs
+ */
+function register_faq_posttype() {
+    $labels = array(
+        'name'                => __('FAQs', 'organicity'),
+        'singular_name'       => __('FAQ', 'organicity'),
+        'menu_name'           => __('FAQs', 'organicity'),
+        'parent_item_colon'   => __('Parent FAQ:', 'organicity'),
+        'all_items'           => __('All FAQs', 'organicity'),
+        'view_item'           => __('View FAQ', 'organicity'),
+        'add_new_item'        => __('Add New FAQ', 'organicity'),
+        'add_new'             => __('Add FAQ', 'organicity'),
+        'edit_item'           => __('Edit FAQ', 'organicity'),
+        'update_item'         => __('Update FAQ', 'organicity'),
+        'search_items'        => __('Search FAQs', 'organicity'),
+        'not_found'           => __('No FAQs found.', 'organicity')
+    );
+    $args = array(
+        'labels'        => $labels,
+        'public'        => true,
+        'has_archive'   => false,
+        'menu_icon'     => 'dashicons-info',
+        'menu_position' => 6,
+        'supports'      => array('title', 'editor')
+    );
+    register_post_type('faq', $args);
+}
+add_action('init', 'register_faq_posttype');
+
+/*
  * Pre-populate the Organicity cities
  */
 function populate_city_terms() {
