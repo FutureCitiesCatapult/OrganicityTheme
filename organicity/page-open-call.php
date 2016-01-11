@@ -19,9 +19,9 @@ get_header(); ?>
                         <a class="button button--external button-pair__button">Apply now</a>
                     </div>
                     <div class="pure-u-1-1 pure-u-sm-1-2 button-pair__right">
-                        <a class="button button--external button-pair__button">
+                        <a class="button button--external button-pair__button l-button-icon">
                             View instructions
-                            <span class="x-download-icon"></span>
+                            <span class="icon icon-download"></span>
                         </a>
                     </div>
                 </div>
