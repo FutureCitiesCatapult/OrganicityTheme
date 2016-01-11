@@ -67,11 +67,11 @@ get_header(); ?>
     </div>
 
     <div class="section section--helpdesk">
-        <div class="section-helpdesk__content">
-            <h3 class="section-helpdesk__title">Need a helping hand?</h3>
-            <p class="section-helpdesk__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <div class="section-helpdesk__actions">
-                <a class="section-helpdesk__button button button--bordered">Contact the helpdesk</a>
+        <div class="helpdesk__content">
+            <h3 class="helpdesk__heading">Need a helping hand?</h3>
+            <p class="helpdesk__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="helpdesk__actions">
+                <a class="helpdesk__button button button--bordered">Contact the helpdesk</a>
             </div>
         </div>
     </div>
