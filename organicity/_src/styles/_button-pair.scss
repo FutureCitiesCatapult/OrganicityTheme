@@ -17,7 +17,7 @@
 
     @media only screen and (max-width: 567px) {
         padding-left: 0;
-        padding-top: 5px;
+        @include rem-fallback(padding-top, 5);
     }
 }
 
