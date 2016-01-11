@@ -29,7 +29,7 @@ h3 {
   @include rem-fallback(font-size, 34);
 }
 
-p {
+main p, main li {
   color: $color__grey;
   font-family: $text__family--serif;
   @include rem-fallback(font-size, $text__small);
