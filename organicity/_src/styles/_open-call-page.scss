@@ -1,3 +1,29 @@
 .open-call-cta {
     padding: 84px 0;
 }
+
+.section--helpdesk {
+    color: $color__white;
+    background-color: $color__pink;
+    padding: 84px 0;
+}
+
+.section-helpdesk__content {
+    @include rem-fallback(max-width,500);
+    margin: 0 auto;
+    text-align: center;
+}
+
+ .section-helpdesk__title {
+     color: inherit;
+     margin: 0 0 24px;
+ }
+
+ .section-helpdesk__detail {
+     color: inherit;
+     margin: 0 0 36px;
+ }
+
+.section-helpdesk__button {
+    display: inline-block;
+}

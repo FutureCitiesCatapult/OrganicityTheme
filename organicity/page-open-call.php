@@ -66,15 +66,12 @@ get_header(); ?>
         </div>
     </div>
 
-    <div class="section section--page">
-        <div class="pure-g">
-            <div class="pure-u-1-8"></div>
-            <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-6-8 section--page--content">
-                <div class="section--page--content-wrapper">
-                    <h3>Need a helping hand?</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a>Contact the helpdesk</a>
-                </div>
+    <div class="section section--helpdesk">
+        <div class="section-helpdesk__content">
+            <h3 class="section-helpdesk__title">Need a helping hand?</h3>
+            <p class="section-helpdesk__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="section-helpdesk__actions">
+                <a class="section-helpdesk__button button button--bordered">Contact the helpdesk</a>
             </div>
         </div>
     </div>
