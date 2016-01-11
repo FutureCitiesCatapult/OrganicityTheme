@@ -19,6 +19,8 @@ $posts_query = new WP_Query( $query_args );
 
 <main role="main">
 
+    <?php get_template_part('partials/callout'); ?>
+
     <div class="section section--blog section--wide">
         <h2><?php _e( 'Blog', 'organicity' ); ?></h2>
 
