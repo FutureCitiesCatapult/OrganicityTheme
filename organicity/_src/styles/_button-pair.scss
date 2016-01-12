@@ -1,27 +1,27 @@
 .button-pair__left, .button-pair__right {
-    display: block;
+  display: block;
 }
 
 .button-pair__left {
-    box-sizing: border-box;
-    padding-right: 5px;
+  box-sizing: border-box;
+  padding-right: 5px;
 
-    @media only screen and (max-width: 567px) {
-        padding-right: 0;
-    }
+  @media only screen and (max-width: 567px) {
+    padding-right: 0;
+  }
 }
 
 .button-pair__right {
-    box-sizing: border-box;
-    padding-left: 5px;
+  box-sizing: border-box;
+  padding-left: 5px;
 
-    @media only screen and (max-width: 567px) {
-        padding-left: 0;
-        @include rem-fallback(padding-top, 5);
-    }
+  @media only screen and (max-width: 567px) {
+    padding-left: 0;
+    @include rem-fallback(padding-top, 5);
+  }
 }
 
 .button-pair__button {
-    display: block;
-    @include rem-fallback(padding, 15, 10, 10, 10);
+  display: block;
+  @include rem-fallback(padding, 15, 10, 10, 10);
 }

@@ -1,22 +1,22 @@
 .callout {
-    text-align: center;
-    @include rem-fallback(padding-top, 72);
-    @include rem-fallback(padding-bottom, 60);
+  text-align: center;
+  @include rem-fallback(padding-top, 72);
+  @include rem-fallback(padding-bottom, 60);
 }
 
 .callout__heading {
-    margin: 0;
-    @include rem-fallback(margin-bottom, 6);
-    @include rem-fallback(font-size, $text__mlarge);
+  margin: 0;
+  @include rem-fallback(margin-bottom, 6);
+  @include rem-fallback(font-size, $text__mlarge);
 }
 
 .callout__detail {
-    margin: 0;
-    @include rem-fallback(margin-bottom, 60);
-    font-family: $text__family--sans-serif;
-    @include rem-fallback(font-size, $text__msmall);
+  margin: 0;
+  @include rem-fallback(margin-bottom, 60);
+  font-family: $text__family--sans-serif;
+  @include rem-fallback(font-size, $text__msmall);
 }
 
 .callout__button {
-   display: inline-block;
+  display: inline-block;
 }

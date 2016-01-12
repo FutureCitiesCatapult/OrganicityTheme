@@ -1,31 +1,31 @@
 .open-call-cta {
-    @include rem-fallback(padding, 84, 0);
+  @include rem-fallback(padding, 84, 0);
 }
 
 .section--helpdesk {
-    color: $color__white;
-    background-color: $color__pink;
-    @include rem-fallback(padding, 84, 0);
+  color: $color__white;
+  background-color: $color__pink;
+  @include rem-fallback(padding, 84, 0);
 }
 
 .helpdesk__content {
-    @include rem-fallback(max-width, 500);
-    margin: 0 auto;
-    text-align: center;
+  @include rem-fallback(max-width, 500);
+  margin: 0 auto;
+  text-align: center;
 }
 
- .helpdesk__heading {
-     color: inherit;
-     margin: 0;
-     @include rem-fallback(margin-bottom, 24);
- }
+.helpdesk__heading {
+   color: inherit;
+   margin: 0;
+   @include rem-fallback(margin-bottom, 24);
+}
 
- .helpdesk__detail {
-     color: inherit;
-     margin: 0;
-     @include rem-fallback(margin-bottom, 36);
- }
+.helpdesk__detail {
+  color: inherit;
+  margin: 0;
+  @include rem-fallback(margin-bottom, 36);
+}
 
 .helpdesk__button {
-    display: inline-block;
+  display: inline-block;
 }

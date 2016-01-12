@@ -1,34 +1,34 @@
 .section--faqs {
-    background-color: $color__grey--background;
-    padding-top: 0;
-    @include rem-fallback(padding-bottom, 240);
+  background-color: $color__grey--background;
+  padding-top: 0;
+  @include rem-fallback(padding-bottom, 240);
 
-    .pure-g{
-      @include rem-fallback(max-width, 995);
-    }
+  .pure-g{
+    @include rem-fallback(max-width, 995);
+  }
 }
 
 .faq-group__heading {
-    color: $color__grey--title;
-    @include rem-fallback(margin-top, 84);
-    @include rem-fallback(margin-bottom, 72);
+  color: $color__grey--title;
+  @include rem-fallback(margin-top, 84);
+  @include rem-fallback(margin-bottom, 72);
 }
 
 .faq {
-    background: $color__white;
-    @include rem-fallback(padding, 24);
-    @include rem-fallback(margin-bottom, 4);
-    border-radius: 12px;
+  background: $color__white;
+  @include rem-fallback(padding, 24);
+  @include rem-fallback(margin-bottom, 4);
+  border-radius: 12px;
 }
 
 .faq__question {
-    color: $color__pink;
-    margin: 0;
-    @include rem-fallback(margin-bottom, 48);
-    @include rem-fallback(font-size, $text__small);
+  color: $color__pink;
+  margin: 0;
+  @include rem-fallback(margin-bottom, 48);
+  @include rem-fallback(font-size, $text__small);
 }
 
 .faq__answer {
-    @include rem-fallback(padding, 0, 180);
-    @include rem-fallback(font-size, $text__small);
+  @include rem-fallback(padding, 0, 180);
+  @include rem-fallback(font-size, $text__small);
 }

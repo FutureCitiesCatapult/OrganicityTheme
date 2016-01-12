@@ -1,17 +1,17 @@
 .rich-title {
-    @include rem-fallback(padding-top, 72);
-    @include rem-fallback(padding-bottom, 48);
+  @include rem-fallback(padding-top, 72);
+  @include rem-fallback(padding-bottom, 48);
 }
 
 .rich-title__heading {
-    margin: 0;
-    @include rem-fallback(font-size, $text__mlarge);
+  margin: 0;
+  @include rem-fallback(font-size, $text__mlarge);
 }
 
 .rich-title__detail {
-    text-align: center;
+  text-align: center;
 }
 
 .rich-title__actions {
-    text-align: center;
+  text-align: center;
 }
