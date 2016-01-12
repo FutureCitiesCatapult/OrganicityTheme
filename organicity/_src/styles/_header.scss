@@ -81,10 +81,6 @@ header {
       @include rem-fallback(margin-bottom, 35);
     }
   }
-
-  #hiddenCities{
-    display:none;
-  }
 }
 
 @media only screen and (max-width: 1023px) {
@@ -105,9 +101,6 @@ header {
       }
       .menu-header-container{
         @include rem-fallback(padding-top,45);
-      }
-      .menu-cities{
-        @include rem-fallback(padding-top,30);
       }
     }
   }
@@ -173,23 +166,6 @@ header {
               color: $color__white;
             }
           }
-        }
-      }
-    }
-
-    #hiddenCities{
-      display:block;
-      padding-bottom:30px;
-
-      ul li{
-        border-top:none;
-        background-color: rgba(255, 255, 255, 0.3);
-      }
-      li a.active {
-        width:100%;
-        background-color: rgba(255,255,255,0.3);// $color__white;
-        &:hover, &:active {
-          color: $color__white;
         }
       }
     }
