@@ -1,20 +1,14 @@
 
 header {
   background-color: $color__pink;
-  // .header-bar{
-  //   background-color: $color__pink;
-  // }
-  //display:inline-block;
 
   .header-bar{
-   // @include rem-fallback(padding,15,90,90,90);
     @include rem-fallback(padding,15,90,75,90);
   }
 
   //site logo
   img.logo {
     @include rem-fallback(width, 126);
-    //@include rem-fallback(width, 102);
     float:left;
   }
 
@@ -32,7 +26,6 @@ header {
         float: left;
         list-style: none;
         padding:0px;
-        //padding: 0 0 0 5px;
         margin: 0;
       }
     }
@@ -55,19 +48,8 @@ header {
 
   .menu-cities {
     float:left;
-//    ul {
-//      padding:0;
-//      margin:0;
-//      li {
-//        display: inline-block;
-//        float: left;
-//        list-style: none;
-//        padding: 0 0 0 5px;
-//        margin: 0;
-//      }
-//    }
     @include rem-fallback(margin, 0, 0, 0, 0);
-   @include rem-fallback(padding-top,10);
+    @include rem-fallback(padding-top,10);
     ul {
       list-style: none;
       letter-spacing: 0px;
@@ -101,9 +83,6 @@ header {
   &.cityheader{
     img.logo {
       @include rem-fallback(width, 126);
-      //float:left;
-      //margin:auto;
-      //float:none;
 
       position:absolute;
       left:50%;
@@ -123,14 +102,8 @@ header {
       @include rem-fallback(padding-top, 65);
       @include rem-fallback(padding-bottom, 145);
     }
-//    .menu-wrapper{
-//      @include rem-fallback(padding-top, 45);
-//    }
     background: url('images/site_header_desktop.jpg') center;
     background-size: cover;
-//    img.logo {
-//      @include rem-fallback(width, 223);
-//    }
     @include rem-fallback(padding-bottom, 45);
     h2 {
       text-transform: uppercase;
@@ -169,7 +142,6 @@ header {
         @include rem-fallback(padding-top,45);
       }
       .menu-cities{
-        //@include rem-fallback(padding-top,15);
         @include rem-fallback(padding-top,30);
       }
     }
@@ -179,10 +151,6 @@ header {
 
 @media only screen and (max-width: 767px) {
   header {
-
-//    img.logo {
-//      @include rem-fallback(padding-left,45);
-//    }
     img.logo {
       @include rem-fallback(padding-left,45);
     }
@@ -251,31 +219,19 @@ header {
 
     #hiddenCities{
       display:block;
-padding-bottom:30px;
+      padding-bottom:30px;
+
       ul li{
         border-top:none;
         background-color: rgba(255, 255, 255, 0.3);
       }
-//      ul {
-//        background-color: rgba(255, 255, 255, 0.3);
-//      }
-//      li {
-//        //width:100%;
-//        background-color: rgba(255,255,255,0.3);
-//      }
       li a.active {
         width:100%;
         background-color: rgba(255,255,255,0.3);// $color__white;
-        //border-bottom: 2px solid $color__white;
         &:hover, &:active {
           color: $color__white;
         }
       }
-//      ul {
-//        li {
-//          background:#FFFFFF; //EF4070;
-//        }
-//      }
     }
 
     .menuIcon {
@@ -286,7 +242,6 @@ padding-bottom:30px;
       @include rem-fallback(padding-bottom, 45);
       ul{
         @include rem-fallback(padding-bottom, 45);
-        //@include rem-fallback(padding-top, 45);
       }
       li{
         @include rem-fallback(padding, 25,0,25,0);
@@ -304,10 +259,6 @@ padding-bottom:30px;
       }
     }
 
-    &.cityheader .menuOpen{
-     // @include rem-fallback(padding-top, 45);
-    }
-
     .header-bar {
       @include rem-fallback(padding-bottom, 15);
     }
@@ -319,11 +270,6 @@ padding-bottom:30px;
     }
 
     &.home {
-//      img.logo {
-//        position: absolute;
-//        @include rem-fallback(padding,15,0,0,40);
-//      }
-
       .title{
         @include rem-fallback(padding,100,40,200,40);
       }
@@ -415,14 +361,6 @@ padding-bottom:30px;
     }
 
     &.home {
-//      img.logo {
-//
-//        top: 0;
-//        left: 0;
-//        right: 0;
-//        margin: 0 auto;
-//        @include rem-fallback(padding, 40, 0, 0, 0);
-//      }
       .title{
         @include rem-fallback(padding,65,40,100,40);
         .button{
