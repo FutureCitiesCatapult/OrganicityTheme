@@ -46,48 +46,13 @@ header {
   }
 
 
-  .menu-cities {
-    float:left;
-    @include rem-fallback(margin, 0, 0, 0, 0);
-    @include rem-fallback(padding-top,10);
-    ul {
-      list-style: none;
-      letter-spacing: 0px;
-    }
-    li {
-      display: inline-block;
-      padding:5px;
-    }
-    li a {
-      color: $color__white;
-      font-family: $text__family--sans-serif--medium;
-      text-decoration: none;
-      padding:1px;
-      @include rem-fallback(margin-right, 20);
-      @include rem-fallback(font-size, $text__small);
-
-      &:hover, &:active {
-        color: $color__black;
-      }
-    }
-    li a.active {
-      border-bottom: 2px solid $color__white;
-      &:hover, &:active {
-        color: $color__white;
-      }
-    }
+  .menu__cities {
+    float: right;
   }
-
-
 
   &.cityheader{
     img.logo {
       @include rem-fallback(width, 126);
-
-      position:absolute;
-      left:50%;
-      margin-left:-63px;
-
     }
   }
 
@@ -136,7 +101,7 @@ header {
         @include rem-fallback(padding,0);
       }
       img.logo {
-        @include rem-fallback(padding,15,0,0,0);
+        @include rem-fallback(padding,15,0,0,15);
       }
       .menu-header-container{
         @include rem-fallback(padding-top,45);
@@ -173,11 +138,6 @@ header {
 
       }
     }
-
-    .menu-cities{
-      display:none;
-    }
-
 
     .menu-wrapper{
       background-color: $color__pink;
@@ -312,10 +272,13 @@ header {
 
 
 
+.menu {
+  float: right;
+}
 
 //NOTE: this element is created by wp_nav_menu()
 .menu-header-container {
-  float: right;
+  display: inline-block;
   @include rem-fallback(margin, 0, 0, 0, 0);
 
   ul {
@@ -346,10 +309,41 @@ header {
   }
 }
 
+.menu__cities {
+  li {
+    position: relative;
+
+    a {
+      font-family: $text__family--sans-serif--light;
+    }
+
+    &:first-child {
+      @include rem-fallback(padding-left, 20);
+    }
+
+    &:first-child:before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      left: 0;
+      top: -2px;
+      width: 0;
+      height: 23px;
+      border-left: 2px solid white;
+    }
+  }
+}
+
 @media only screen and (max-width: 767px) {
-  .menu-header-container {
+  .menu-header-container, header .menu__cities {
     float: none;
     padding-top: 0px !important;
+  }
+
+  .menu__cities li:first-child {
+    padding-left: 0;
+
+    &:before { display: none; }
   }
 }
 

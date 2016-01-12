@@ -64,12 +64,6 @@ if(is_tax( 'city' )){
 <header role="banner" class="<?php echo $header_class; ?> cityheader">
 
     <div class="header-bar">
-        <div class="menu-cities">
-            <ul>
-            <?php city_homepage_filter($city_slug) ?>
-            </ul>
-        </div>
-
         <a href="/" title="<?php _e('Organicity - link to homepage', 'organicity'); ?>">
             <span class="offscreen"><?php echo get_bloginfo('title'); ?></span>
             <img
@@ -84,11 +78,13 @@ if(is_tax( 'city' )){
                 <a href="#menuExpand"><span> toggle menu</span></a>
             </div>
             <div class="menu">
-
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-                <ul id="hiddenCities">
-                    <?php city_homepage_filter($city_slug) ?>
-                </ul>
+
+                <div class="menu__cities menu-header-container">
+                    <ul class="menu">
+                        <?php city_homepage_filter($city_slug) ?>
+                    </ul>
+                </div>
             </div>
         </div>
 
