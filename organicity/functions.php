@@ -129,6 +129,29 @@ function register_city_taxonomy() {
 add_action('init', 'register_city_taxonomy');
 
 /*
+ * Register a custom taxonomy for the FAQ groups
+ */
+function register_faq_taxonomy() {
+    $labels = array(
+        'name'          => 'FAQ Groups',
+        'singular_name' => 'FAQ Group',
+        'menu_name'     => __('FAQ Groups', 'organicity'),
+    );
+    $args = array(
+        'labels'            => $labels,
+        'hierarchical'      => false,
+        'public'            => false,
+        'show_in_nav_menus' => false,
+        'show_admin_column' => true,
+        'rewrite'           => false,
+        'has_archive'       => false,
+        'show_ui'           => true
+    );
+    register_taxonomy('faq_group', array('faq'), $args);
+}
+add_action('init', 'register_faq_taxonomy');
+
+/*
  * Register a custom post type for FAQs
  */
 function register_faq_posttype() {
@@ -148,11 +171,16 @@ function register_faq_posttype() {
     );
     $args = array(
         'labels'        => $labels,
-        'public'        => true,
-        'has_archive'   => false,
+        'publicly_queriable' => true,
+        'show_ui' => true,
+        'exclude_from_search' => true,
+        'show_in_nav_menus' => false,
+        'has_archive' => false,
+        'rewrite' => false,
         'menu_icon'     => 'dashicons-info',
         'menu_position' => 6,
-        'supports'      => array('title', 'editor')
+        'supports'      => array('title', 'editor'),
+        'taxonomies'    => ['faq_group']
     );
     register_post_type('faq', $args);
 }
