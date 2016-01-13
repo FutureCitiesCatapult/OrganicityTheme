@@ -91,6 +91,9 @@ header {
       @include rem-fallback(padding-right,0);
     }
 
+    img.logo {
+      @include rem-fallback(padding,0,0,0,15);
+    }
 
     &.home {
       .header-bar{
