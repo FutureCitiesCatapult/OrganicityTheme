@@ -20,12 +20,19 @@
   border-radius: 12px;
 }
 
-.faq__question {
+.faq__header {
   @include rem-fallback(padding, 24, 24, 12, 24);
-  margin: 0;
+  cursor: pointer;
+}
+
+.faq__question {
+  display: inline-block;
   color: $color__pink;
   @include rem-fallback(font-size, $text__small);
-  cursor: pointer;
+  margin: 0;
+
+  max-width: 90%;
+  max-width: calc(100% - 30px);
 }
 
 .faq__answer {
@@ -39,6 +46,13 @@
   width: 24px;
   height: 24px;
   float: right;
+  padding: 0;
+  border: 0;
+  outline-width: 0;
+
+  &:active, &:focus {
+    outline-width: 4px;
+  }
 
   &:before, &:after {
     content: '';
@@ -73,3 +87,11 @@
     }
   }
 }
+
+.faq__content {
+  outline: 0;
+}
+
+.is-open .sr-open { display: none; }
+.sr-close { display: none; }
+.is-open .sr-close { display: inline; }

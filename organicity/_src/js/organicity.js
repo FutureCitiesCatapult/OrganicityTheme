@@ -254,11 +254,22 @@ jQuery(document).ready(function($) {
     $('.city-filter').click(get_event_posts);
 
     $('.js-faq').each(function(i, faqElement) {
-        $(faqElement).find('.js-faq-content').hide();
+        var $faqElement = $(faqElement),
+            $faqButton = $faqElement.find('.js-faq-button'),
+            $faqContent = $faqElement.find('.js-faq-content');
+        $faqElement.removeClass('is-open');
+        $faqContent.hide();
+        $faqButton.attr('aria-expanded', 'false');
 
-        $(faqElement).on('click', '.js-faq-expand-handle', function() {
-            $(faqElement).toggleClass('is-open');
-            $(faqElement).find('.js-faq-content').slideToggle();
+        $faqElement.on('click', '.js-faq-expand-handle', function() {
+            $faqElement.toggleClass('is-open');
+            $faqContent.slideToggle();
+            if ($faqButton.attr('aria-expanded') == 'true') {
+                $faqButton.attr('aria-expanded', 'false')
+            } else {
+                $faqButton.attr('aria-expanded', 'true')
+                $faqContent.focus();
+            }
         });
     });
 });
