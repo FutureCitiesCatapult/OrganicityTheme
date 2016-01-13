@@ -17,6 +17,14 @@ define( 'ORGANICITY_VERSION', '0.1.0' );
 define( 'SCRIPT_DEBUG', false );
 
 
+function get_id_by_slug($page_slug) {
+    $page = get_page_by_path($page_slug);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
+}
 
 /**
  * Makes Organicity available for translation.
@@ -406,9 +414,6 @@ function register_meta_boxes($meta_boxes) {
         )
     );
 
-    /*
-     * Homepage specific features
-     */
     $homepage_callout_fields = array(
         'title'   => 'Header callout link',
         'pages'   => 'page',
@@ -514,6 +519,83 @@ function register_meta_boxes($meta_boxes) {
         $meta_boxes[] = $homepage_event_fields;
         $meta_boxes[] = $homepage_signup_fields;
     }
+
+    /*
+     * Open call page specific features
+     */
+
+     $open_call_id = get_id_by_slug('open-call');
+
+     if ($post_id == $open_call_id) {
+         $meta_boxes[] = array(
+             'title'   => 'Open Call Header',
+             'pages'   => 'page',
+             'fields'  => array(
+                 array(
+                     'name'  => 'Heading',
+                     'id'    => $prefix . 'open_call_heading',
+                     'type'  => 'textarea',
+                     'size'  => 100
+                 ),
+                 array(
+                     'name'  => 'Short description',
+                     'id'    => $prefix . 'open_call_short_description',
+                     'type'  => 'textarea',
+                     'size'  => 300
+                 ),
+                 array(
+                     'name'  => 'Apply button title',
+                     'id'    => $prefix . 'open_call_apply_button_text',
+                     'type'  => 'text',
+                     'size'  => 30
+                 ),
+                 array(
+                     'name'  => 'Apply button link',
+                     'id'    => $prefix . 'open_call_apply_button_href',
+                     'type'  => 'url',
+                     'size'  => 30
+                 ),
+                 array(
+                     'name'  => 'Download button title',
+                     'id'    => $prefix . 'open_call_download_button_text',
+                     'type'  => 'text',
+                     'size'  => 30
+                 ),
+                 array(
+                     'name'  => 'Download button link',
+                     'id'    => $prefix . 'open_call_download_button_href',
+                     'type'  => 'file_input'
+                 )
+             )
+         );
+
+         $meta_boxes[] = array(
+             'title'   => 'Helpdesk',
+             'pages'   => 'page',
+             'fields'  => array(
+                 array(
+                     'name'  => 'Helpdesk title',
+                     'id'    => $prefix . 'open_call_helpdesk_title',
+                     'type'  => 'text'
+                 ),
+                 array(
+                     'name'  => 'Helpdesk description',
+                     'id'    => $prefix . 'open_call_helpdesk_description',
+                     'type'  => 'textarea'
+                 ),
+                 array(
+                     'name'  => 'Helpdesk button text',
+                     'id'    => $prefix . 'open_call_helpdesk_button_text',
+                     'type'  => 'text'
+                 ),
+                 array(
+                     'name'  => 'Helpdesk button link',
+                     'id'    => $prefix . 'open_call_helpdesk_button_href',
+                     'type'  => 'url'
+                 )
+             )
+         );
+     }
 
     return $meta_boxes;
 }
