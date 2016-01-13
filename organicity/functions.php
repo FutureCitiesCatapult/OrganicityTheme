@@ -381,7 +381,7 @@ function register_meta_boxes($meta_boxes) {
     /*
      * Homepage specific features
      */
-    $homepage_header_fields = array(
+    $homepage_anchor_fields = array(
         'title'   => 'Header anchor link',
         'pages'   => 'page',
         'fields'  => array(
@@ -402,6 +402,33 @@ function register_meta_boxes($meta_boxes) {
                 'id'    => $prefix . 'header_anchor_link_visible',
                 'type'  => 'checkbox',
                 'std'   => 1
+            )
+        )
+    );
+
+    /*
+     * Homepage specific features
+     */
+    $homepage_callout_fields = array(
+        'title'   => 'Header callout link',
+        'pages'   => 'page',
+        'fields'  => array(
+            array(
+                'name'  => 'Link text',
+                'id'    => $prefix . 'header_callout_link_text',
+                'type'  => 'text',
+                'size'  => 50
+            ),
+            array(
+                'name'  => 'Link destination',
+                'id'    => $prefix . 'header_callout_link_href',
+                'type'  => 'text'
+            ),
+            array(
+                'name'  => 'Visible',
+                'id'    => $prefix . 'header_callout_link_visible',
+                'type'  => 'checkbox',
+                'std'   => 0
             )
         )
     );
@@ -482,12 +509,11 @@ function register_meta_boxes($meta_boxes) {
     $frontpage_id = get_option('page_on_front');
 
     if ($post_id == $frontpage_id) {
-        $meta_boxes[] = $homepage_header_fields;
+        $meta_boxes[] = $homepage_anchor_fields;
+        $meta_boxes[] = $homepage_callout_fields;
         $meta_boxes[] = $homepage_event_fields;
         $meta_boxes[] = $homepage_signup_fields;
     }
-
-    // $meta_boxes[] = $homepage_signup_fields;
 
     return $meta_boxes;
 }

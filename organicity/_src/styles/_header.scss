@@ -80,6 +80,11 @@ header {
       @include rem-fallback(line-height, 70);
       @include rem-fallback(margin-bottom, 35);
     }
+
+    .title__actions {
+      @include rem-fallback(max-width, 550);
+      margin: 0 auto;
+    }
   }
 }
 

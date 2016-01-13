@@ -15,6 +15,8 @@ if(is_tax( 'city' )){
     $city_slug = get_queried_object()->slug;
 };
 
+$show_both_buttons = rwmb_meta('organicity_header_anchor_link_visible') && rwmb_meta('organicity_header_callout_link_visible');
+
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -91,17 +93,30 @@ if(is_tax( 'city' )){
     </div>
 
     <?php if ($is_home) : ?>
-        <div class=" title">
+        <div class="title">
             <h2><?php echo get_bloginfo('description'); ?></h2>
-            <?php if (rwmb_meta('organicity_header_anchor_link_visible')) : ?>
-                <a
-                    class="button button--bordered"
-                    href="#main"
-                    title="<?php echo rwmb_meta('organicity_header_anchor_link_title'); ?>"
-                    >
-                    <?php echo rwmb_meta('organicity_header_anchor_link_text'); ?>
-                </a>
-            <?php endif; ?>
+            <div class="title__actions button-pair pure-g">
+                <?php if (rwmb_meta('organicity_header_anchor_link_visible')) : ?>
+                    <div class="pure-u-1-1 <?= $show_both_buttons ? 'pure-u-sm-1-2' : '' ?> button-pair__left">
+                        <a
+                            class="button button--bordered <?= $show_both_buttons ? 'button-pair__button' : '' ?>"
+                            href="#main"
+                            title="<?php echo rwmb_meta('organicity_header_anchor_link_title'); ?>"
+                            >
+                            <?php echo rwmb_meta('organicity_header_anchor_link_text'); ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
+                <?php if (rwmb_meta('organicity_header_callout_link_visible')) : ?>
+                    <div class="pure-u-1-1 <?= $show_both_buttons ? 'pure-u-sm-1-2' : '' ?> button-pair__right">
+                        <a
+                            class="button button--bordered <?= $show_both_buttons ? 'button-pair__button' : '' ?>"
+                            href="<?php echo rwmb_meta('organicity_header_callout_link_href'); ?>">
+                            <?php echo rwmb_meta('organicity_header_callout_link_text'); ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
     <?php endif; ?>
 
