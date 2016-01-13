@@ -8,18 +8,24 @@ module.exports = function( grunt ) {
 	grunt.initConfig( {
 		pkg: grunt.file.readJSON( 'package.json' ),
 		concat: {
-			options: {
-				stripBanners: true,
-				banner: '/*! <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-					' * <%= pkg.homepage %>\n' +
-					' * Copyright (c) <%= grunt.template.today("yyyy") %> Future Cities Catapult' +
-					' */\n'
-			},
 			organicity: {
+				options: {
+					stripBanners: true,
+					banner: '/*! <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+						' * <%= pkg.homepage %>\n' +
+						' * Copyright (c) <%= grunt.template.today("yyyy") %> Future Cities Catapult' +
+						' */\n'
+				},
 				src: [
-					'<%= pkg.src %>/js/organicity.js'
+					'<%= pkg.src %>/js/organicity.js',
 				],
 				dest: '<%= pkg.dist %>/js/organicity.js'
+			},
+			carousel: {
+				src: [
+					'<%= pkg.src %>/js/owl.carousel.js',
+				],
+				dest: '<%= pkg.dist %>/js/owl.carousel.js'
 			}
 
 		},
@@ -42,9 +48,9 @@ module.exports = function( grunt ) {
 			}
 		},
 		uglify: {
-			all: {
+			organicity: {
 				files: {
-					'<%= pkg.dist %>/js/organicity.min.js': ['<%= pkg.dist %>/js/organicity.js']
+					'<%= pkg.dist %>/js/organicity.min.js': ['<%= pkg.dist %>/js/organicity.js'],
 				},
 				options: {
 					banner: '/*! <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -53,6 +59,16 @@ module.exports = function( grunt ) {
 						' */\n',
 					mangle: {
 						except: ['jQuery']
+					}
+				}
+			},
+			carousel: {
+				files: {
+					'<%= pkg.dist %>/js/owl.carousel.min.js': ['<%= pkg.dist %>/js/owl.carousel.js'],
+				},
+				options: {
+					preserveComments: function(_, comment) {
+						return comment.value.indexOf('Copyright') !== -1;
 					}
 				}
 			}

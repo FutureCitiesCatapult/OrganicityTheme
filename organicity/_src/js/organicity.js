@@ -1,14 +1,3 @@
-/**
- * Organicity
- * http://www.organicity.eu
- *
- * Copyright (c) 2015 Future Cities Catapult
- */
-/*! Organicity - v0.1.0 - 2015-06-23
- * http://www.organicity.eu
- * Copyright (c) 2015 Future Cities Catapult */
-
-
 jQuery(document).ready(function($) {
 
 // settings for the carousel on the home page
