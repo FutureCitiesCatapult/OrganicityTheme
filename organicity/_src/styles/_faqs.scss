@@ -21,7 +21,7 @@
 }
 
 .faq__header {
-  @include rem-fallback(padding, 24, 24, 12, 24);
+  @include rem-fallback(padding, 22, 24, 14, 24);
   cursor: pointer;
 }
 
