@@ -16,19 +16,60 @@
 
 .faq {
   background: $color__white;
-  @include rem-fallback(padding, 24);
   @include rem-fallback(margin-bottom, 4);
   border-radius: 12px;
 }
 
 .faq__question {
-  color: $color__pink;
+  @include rem-fallback(padding, 24, 24, 12, 24);
   margin: 0;
-  @include rem-fallback(margin-bottom, 48);
+  color: $color__pink;
   @include rem-fallback(font-size, $text__small);
+  cursor: pointer;
 }
 
 .faq__answer {
-  @include rem-fallback(padding, 0, 180);
+  @include rem-fallback(margin-top, 36);
+  @include rem-fallback(padding, 0, 180, 24, 180);
   @include rem-fallback(font-size, $text__small);
+}
+
+.faq__toggle-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  float: right;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 4px;
+    width: 18px;
+    height: 5px;
+    background-color: $color__pink;
+    transition: all 0.2s;
+  }
+
+  &:before {
+    left: -2px;
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    left: 7px;
+    transform: rotate(-45deg);
+  }
+
+  .faq.is-open & {
+    &:before {
+      left: 0;
+      width: 24px;
+    }
+
+    &:after {
+      left: 0;
+      width: 24px;
+    }
+  }
 }

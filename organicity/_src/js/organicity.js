@@ -264,5 +264,12 @@ jQuery(document).ready(function($) {
     $('.tax-filter').click(get_blog_posts);
     $('.city-filter').click(get_event_posts);
 
+    $('.js-faq').each(function(i, faqElement) {
+        $(faqElement).find('.js-faq-content').hide();
 
+        $(faqElement).on('click', '.js-faq-expand-handle', function() {
+            $(faqElement).toggleClass('is-open');
+            $(faqElement).find('.js-faq-content').slideToggle();
+        });
+    });
 });
