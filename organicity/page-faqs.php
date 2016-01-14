@@ -38,7 +38,6 @@ $cargs = array(
                             'post_type'         => 'faq',
                             'post_status'       => 'publish',
                             'posts_per_page'    => -1,
-                            'orderby'           => 'title',
                             'tax_query' => array(
                                 array(
                                     'taxonomy'  => 'faq_group',
