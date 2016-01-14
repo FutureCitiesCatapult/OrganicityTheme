@@ -39,6 +39,10 @@
   @include rem-fallback(margin-top, 36);
   @include rem-fallback(padding, 0, 180, 24, 180);
   @include rem-fallback(font-size, $text__small);
+
+  @media only screen and (max-width: 1023px) {
+    @include rem-fallback(padding, 0, 24, 24, 24);
+  }
 }
 
 .faq__toggle-icon {
