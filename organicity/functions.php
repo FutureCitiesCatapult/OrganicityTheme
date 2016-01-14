@@ -389,8 +389,8 @@ function register_meta_boxes($meta_boxes) {
     /*
      * Homepage specific features
      */
-    $homepage_anchor_fields = array(
-        'title'   => 'Header anchor link',
+    $homepage_button_fields = array(
+        'title'   => 'Header buttons',
         'pages'   => 'page',
         'fields'  => array(
             array(
@@ -410,28 +410,55 @@ function register_meta_boxes($meta_boxes) {
                 'id'    => $prefix . 'header_anchor_link_visible',
                 'type'  => 'checkbox',
                 'std'   => 1
-            )
-        )
-    );
-
-    $homepage_callout_fields = array(
-        'title'   => 'Header callout link',
-        'pages'   => 'page',
-        'fields'  => array(
+            ),
             array(
                 'name'  => 'Link text',
-                'id'    => $prefix . 'header_callout_link_text',
+                'id'    => $prefix . 'header_apply_link_text',
                 'type'  => 'text',
                 'size'  => 50
             ),
             array(
                 'name'  => 'Link destination',
-                'id'    => $prefix . 'header_callout_link_href',
+                'id'    => $prefix . 'header_apply_link_href',
                 'type'  => 'text'
             ),
             array(
                 'name'  => 'Visible',
-                'id'    => $prefix . 'header_callout_link_visible',
+                'id'    => $prefix . 'header_apply_link_visible',
+                'type'  => 'checkbox',
+                'std'   => 0
+            )
+        )
+    );
+
+    $homepage_callout_fields = array(
+        'title'   => 'Call-out banner',
+        'pages'   => 'page',
+        'fields'  => array(
+            array(
+                'name'  => 'Heading',
+                'id'    => $prefix . 'callout_heading',
+                'type'  => 'text'
+            ),
+            array(
+                'name'  => 'Description',
+                'id'    => $prefix . 'callout_description',
+                'type'  => 'text'
+            ),
+            array(
+                'name'  => 'Button text',
+                'id'    => $prefix . 'callout_button_text',
+                'type'  => 'text',
+                'size'  => 50
+            ),
+            array(
+                'name'  => 'Button destination',
+                'id'    => $prefix . 'callout_button_href',
+                'type'  => 'text'
+            ),
+            array(
+                'name'  => 'Visible',
+                'id'    => $prefix . 'callout_visible',
                 'type'  => 'checkbox',
                 'std'   => 0
             )
@@ -515,6 +542,7 @@ function register_meta_boxes($meta_boxes) {
 
     if ($post_id == $frontpage_id) {
         $meta_boxes[] = $homepage_anchor_fields;
+        $meta_boxes[] = $homepage_button_fields;
         $meta_boxes[] = $homepage_callout_fields;
         $meta_boxes[] = $homepage_event_fields;
         $meta_boxes[] = $homepage_signup_fields;
