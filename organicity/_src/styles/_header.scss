@@ -97,7 +97,7 @@ header {
     }
 
     img.logo {
-      @include rem-fallback(padding,0,0,0,15);
+      @include rem-fallback(padding,0,0,0,45);
     }
 
     &.home {
@@ -105,24 +105,10 @@ header {
         @include rem-fallback(padding,0);
       }
       img.logo {
-        @include rem-fallback(padding,15,0,0,15);
+        @include rem-fallback(padding,15,0,0,45);
       }
       .menu-header-container{
         @include rem-fallback(padding-top,45);
-      }
-    }
-  }
-}
-
-
-@media only screen and (max-width: 767px) {
-  header {
-    img.logo {
-      @include rem-fallback(padding-left,45);
-    }
-    &.home {
-      img.logo {
-        @include rem-fallback(padding-left,45);
       }
     }
 
@@ -134,17 +120,16 @@ header {
         position:relative;
         left:0%;
         margin-left:auto;
-
-
-
       }
+    }
+
+    .menu-header-container, .menu__cities {
+      display: block;
     }
 
     .menu-wrapper{
       background-color: $color__pink;
     }
-
-
 
     .menu {
       max-height: 0;
@@ -183,7 +168,6 @@ header {
     }
 
     .menuOpen{
-      @include rem-fallback(padding-bottom, 45);
       ul{
         @include rem-fallback(padding-bottom, 45);
       }
@@ -318,7 +302,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1023px) {
   .menu-header-container, header .menu__cities {
     float: none;
     padding-top: 0px !important;
