@@ -178,17 +178,18 @@ function register_faq_posttype() {
         'not_found'           => __('No FAQs found.', 'organicity')
     );
     $args = array(
-        'labels'        => $labels,
-        'publicly_queriable' => true,
-        'show_ui' => true,
+        'labels'              => $labels,
+        'publicly_queriable'  => true,
+        'show_ui'             => true,
         'exclude_from_search' => true,
-        'show_in_nav_menus' => false,
-        'has_archive' => false,
-        'rewrite' => false,
-        'menu_icon'     => 'dashicons-info',
-        'menu_position' => 6,
-        'supports'      => array('title', 'editor'),
-        'taxonomies'    => ['faq_group']
+        'show_in_nav_menus'   => false,
+        'has_archive'         => true,
+        'rewrite'             => array('slug' => __('faqs', 'organicity'), 'with_front'  => false),
+        'public'              => true,
+        'menu_icon'           => 'dashicons-info',
+        'menu_position'       => 6,
+        'supports'            => array('title', 'editor'),
+        'taxonomies'          => ['faq_group']
     );
     register_post_type('faq', $args);
 }

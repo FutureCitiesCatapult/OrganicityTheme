@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * The FAQs template file
  *
  * @package Organicity
  * @since 0.1.0
