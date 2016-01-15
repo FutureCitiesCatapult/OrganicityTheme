@@ -195,6 +195,37 @@ function register_faq_posttype() {
 add_action('init', 'register_faq_posttype');
 
 /*
+ * Register a custom post type for Tools
+ */
+function register_tool_posttype() {
+    $labels = array(
+        'name'                => __('Tools', 'organicity'),
+        'singular_name'       => __('Tool', 'organicity'),
+        'menu_name'           => __('Tools', 'organicity'),
+        'parent_item_colon'   => __('Parent Tool:', 'organicity'),
+        'all_items'           => __('All Tools', 'organicity'),
+        'view_item'           => __('View Tool', 'organicity'),
+        'add_new_item'        => __('Add New Tool', 'organicity'),
+        'add_new'             => __('Add Tool', 'organicity'),
+        'edit_item'           => __('Edit Tool', 'organicity'),
+        'update_item'         => __('Update Tool', 'organicity'),
+        'search_items'        => __('Search Tools', 'organicity'),
+        'not_found'           => __('No Tools found.', 'organicity')
+    );
+    $args = array(
+        'labels'        => $labels,
+        'public'        => true,
+        'has_archive'   => true,
+        'rewrite'       => array('slug' => __('tools', 'organicity'), 'with_front'  => false),
+        'menu_icon'     => 'dashicons-hammer',
+        'menu_position' => 7,
+        'supports'      => array('title', 'editor')
+    );
+    register_post_type('tool', $args);
+}
+add_action('init', 'register_tool_posttype');
+
+/*
  * Pre-populate the Organicity cities
  */
 function populate_city_terms() {
@@ -382,6 +413,50 @@ function register_meta_boxes($meta_boxes) {
                 'name'        => 'Event URL',
                 'id'          => $prefix . 'event_url',
                 'type'        => 'url'
+            )
+        )
+    );
+
+
+    /*
+     * Fields for the Tool posttype
+     */
+    $meta_boxes[] = array(
+        'title'   => 'Tool details',
+        'pages'   => 'tool',
+        'fields'  => array(
+            array(
+                'name'        => 'Short label',
+                'id'          => $prefix . 'tool_label',
+                'type'        => 'text'
+            ),
+            array(
+                'name'        => 'Short description',
+                'id'          => $prefix . 'tool_short_description',
+                'type'        => 'textarea'
+            ),
+            array(
+                'name'        => 'Link to tool',
+                'id'          => $prefix . 'tool_link_href',
+                'type'        => 'url'
+            ),
+            array(
+                'name'        => 'Big graphic',
+                'id'          => $prefix . 'tool_graphic_big',
+                'type'        => 'media',
+                'max_file_uploads' => 1
+            ),
+            array(
+                'name'        => 'Small graphic outline',
+                'id'          => $prefix . 'tool_graphic_small_outline',
+                'type'        => 'media',
+                'max_file_uploads' => 1
+            ),
+            array(
+                'name'        => 'Small graphic filled',
+                'id'          => $prefix . 'tool_graphic_small_filled',
+                'type'        => 'media',
+                'max_file_uploads' => 1
             )
         )
     );
