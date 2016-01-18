@@ -59,10 +59,14 @@ $posts_query = new WP_Query( $query_args );
                         <div class="finished-tool__actions button-pair">
                             <div class="pure-g">
                                 <div class="button-pair__left pure-u-1-2">
-                                    <a href="#" class="button button-pair__button button--external">ß Open tool</a>
+                                    <a href="<?= rwmb_meta('organicity_tool_link_href') ?>" class="button button-pair__button button--external" target="_blank">
+                                        <span class="icon-external"></span>
+                                        Open tool
+                                        <span class="offscreen">(opens in new tab)</span>
+                                    </a>
                                 </div>
                                 <div class="button-pair__right pure-u-1-2">
-                                    <a href="#" class="button button-pair__button button--external">View demo</a>
+                                    <a href="<?php the_permalink() ?>" class="button button-pair__button button--external">View details</a>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +96,7 @@ $posts_query = new WP_Query( $query_args );
                             <?= rwmb_meta('organicity_tool_short_description') ?>
                         </div>
                         <div class="preview-tool__actions">
-                            <a href="#" class="button button--external button--small">Find out more</a>
+                            <a href="<?php the_permalink() ?>" class="button button--external button--small">Find out more</a>
                         </div>
                     </div>
                 <?php endwhile; ?>
