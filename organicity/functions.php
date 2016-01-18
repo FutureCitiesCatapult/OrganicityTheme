@@ -14,7 +14,7 @@
 define( 'ORGANICITY_VERSION', '0.1.0' );
 
 //TODO: set false for production
-define( 'SCRIPT_DEBUG', false );
+define( 'SCRIPT_DEBUG', true );
 
 
 function get_id_by_slug($page_slug) {
@@ -434,12 +434,18 @@ function register_meta_boxes($meta_boxes) {
             array(
                 'name'        => 'Short description',
                 'id'          => $prefix . 'tool_short_description',
-                'type'        => 'textarea'
+                'type'        => 'wysiwyg',
+                'options' => array('textarea_rows' => 8)
             ),
             array(
                 'name'        => 'Link to tool',
                 'id'          => $prefix . 'tool_link_href',
                 'type'        => 'url'
+            ),
+            array(
+                'name'        => 'Show as full-width section?',
+                'id'          => $prefix . 'tool_is_full_width',
+                'type'        => 'checkbox'
             ),
             array(
                 'name'        => 'Big graphic',

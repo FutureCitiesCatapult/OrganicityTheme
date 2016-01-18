@@ -1,0 +1,32 @@
+.tools-page__coming-soon {
+  text-align: center;
+  @include rem-fallback(padding-top, 60);
+  @include rem-fallback(max-width, 995);
+  margin: 0 auto;
+}
+
+.tools-page__coming-soon-title {
+  color: $color__grey--title;
+  @include rem-fallback(font-size, $text__mlarge);
+}
+
+.tools-page__coming-soon-body {
+  @include rem-fallback(padding-bottom, 48);
+  @include rem-fallback(max-width, 640);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tools-page__previews {
+  @include rem-fallback(max-width, 995);
+  @include rem-fallback(padding-top, 48);
+  @include rem-fallback(padding-bottom, 120);
+  margin: 0 auto;
+  opacity: 1;
+
+  &:after { // clearfix
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
