@@ -35,6 +35,29 @@ function organicity_setup() {
 add_action( 'after_setup_theme', 'organicity_setup' );
 
 /*
+ * Add theme customizer setting.
+ */
+
+function organicity_customize_register($wp_customize) {
+    $wp_customize->add_setting('events_coming_soon_text', array(
+        'default'     => '',
+        'transport'   => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        'events_coming_soon_text',
+        array(
+            'label' => 'Events Coming-soon text',
+            'section' => 'title_tagline',
+            'type' => 'textarea'
+        )
+    ));
+}
+
+add_action('customize_register', 'organicity_customize_register');
+
+/*
  * Add theme support for Feature Image/Post thumbnails
  */
 function add_post_thumbnail_support() {

@@ -57,7 +57,7 @@ $posts_query = new WP_Query( $query_args );
                 <?php _e( 'Coming soon', 'organicity' ); ?>
             </h3>
             <p class="tools-page__coming-soon-body">
-                Somehow this content must be made editable. Somehow this content must be made editable. Somehow this content must be made editable.
+                <?= get_theme_mod('events_coming_soon_text', ''); ?>
             </p>
             <hr>
         </div>
