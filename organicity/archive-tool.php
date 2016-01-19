@@ -48,31 +48,7 @@ $posts_query = new WP_Query( $query_args );
         <div>
             <?php while ($posts_query->have_posts()) : $posts_query->the_post(); ?>
                 <?php if (!rwmb_meta('organicity_tool_is_full_width')) { continue; } ?>
-                <div class="finished-tool__background">
-                    <div id="tool_<?php the_id() ?>" class="section finished-tool">
-                        <div class="finished-tool__graphic-wrapper">
-                            <img class="finished-tool__graphic" src="<?= wp_get_attachment_url(rwmb_meta('organicity_tool_graphic_big')) ?>" alt="" />
-                        </div>
-                        <h2 class="finished-tool__heading"><?php the_title() ?></h2>
-                        <div class="finished-tool__description">
-                            <?= rwmb_meta('organicity_tool_short_description') ?>
-                        </div>
-                        <div class="finished-tool__actions button-pair">
-                            <div class="pure-g">
-                                <div class="pure-u-1-1 pure-u-sm-1-2 button-pair__left">
-                                    <a href="<?= rwmb_meta('organicity_tool_link_href') ?>" class="button button-pair__button button--external" target="_blank">
-                                        <span class="icon-external"></span>
-                                        Open tool
-                                        <span class="offscreen">(opens in new tab)</span>
-                                    </a>
-                                </div>
-                                <div class="pure-u-1-1 pure-u-sm-1-2 button-pair__right">
-                                    <a href="<?php the_permalink() ?>" class="button button-pair__button button--external">View details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php get_template_part('partials/finished-tool'); ?>
             <?php endwhile; ?>
         </div>
 
@@ -91,20 +67,7 @@ $posts_query = new WP_Query( $query_args );
             <div>
                 <?php while ($posts_query->have_posts()) : $posts_query->the_post(); ?>
                     <?php if (rwmb_meta('organicity_tool_is_full_width')) { continue; } ?>
-                    <div class="preview-tool__background">
-                        <div id="tool_<?php the_id() ?>" class="preview-tool">
-                            <div class="preview-tool__graphic-wrapper">
-                                <img class="preview-tool__graphic" src="<?= wp_get_attachment_url(rwmb_meta('organicity_tool_graphic_big')) ?>" alt="" />
-                            </div>
-                            <h3 class="preview-tool__heading"><?php the_title() ?></h2>
-                            <div class="preview-tool__description">
-                                <?= rwmb_meta('organicity_tool_short_description') ?>
-                            </div>
-                            <div class="preview-tool__actions">
-                                <a href="<?php the_permalink() ?>" class="button button--external preview-tool__action">Find out more</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php get_template_part('partials/preview-tool'); ?>
                 <?php endwhile; ?>
             </div>
         </div>
