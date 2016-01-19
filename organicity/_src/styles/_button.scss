@@ -39,13 +39,6 @@
       color: $color__white;
     }
   }
-
-  &--small {
-    font-family: $text__family--sans-serif;
-    @include rem-fallback(font-size, $text__xxsmall);
-    @include rem-fallback(padding, 15, 20, 10, 20);
-  }
-
 }
 
 .l-button-icon {

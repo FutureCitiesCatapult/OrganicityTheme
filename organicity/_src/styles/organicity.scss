@@ -120,4 +120,10 @@ hr {
   }
 }
 
+.hidden-sm {
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
 @import 'fonts','header','button','filter-menu','blog','events','article-page','open-call-page','rich-title','button-pair','callout','signup-box','faqs','tools-page','tools-list','finished-tool','preview-tool','city','footer';

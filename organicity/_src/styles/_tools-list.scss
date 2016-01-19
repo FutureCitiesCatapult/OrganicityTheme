@@ -6,6 +6,10 @@
   @media only screen and (max-width: 1023px) {
     @include rem-fallback(max-width, 650);
   }
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
 }
 
 .tools-list__tool {

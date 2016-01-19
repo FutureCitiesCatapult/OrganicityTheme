@@ -3,6 +3,11 @@
   @include rem-fallback(padding-top, 60);
   @include rem-fallback(max-width, 995);
   margin: 0 auto;
+
+  @media only screen and (max-width: 767px) {
+    @include rem-fallback(padding-left, 30);
+    @include rem-fallback(padding-right, 30);
+  }
 }
 
 .tools-page__coming-soon-title {
@@ -28,5 +33,15 @@
     content: "";
     display: table;
     clear: both;
+  }
+
+  @media only screen and (max-width: 767px) {
+    @include rem-fallback(padding-top, 0);
+  }
+}
+
+.section--title--tools-page {
+  @media only screen and (max-width: 767px) {
+    padding-bottom: 0;
   }
 }

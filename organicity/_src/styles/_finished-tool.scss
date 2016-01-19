@@ -1,55 +1,93 @@
+@mixin odd-tool {
+  .finished-tool__background:nth-child(odd) & {
+    @content;
+  }
+}
+
+@mixin even-tool {
+  .finished-tool__background:nth-child(even) & {
+    @content;
+  }
+}
+
+.finished-tool__background {
+  &:nth-child(odd) {
+    background: $color__grey--background;
+  }
+}
+
 .finished-tool {
   @include rem-fallback(max-width, 995);
   margin: 0 auto;
-  @include rem-fallback(padding-top, 120);
-  @include rem-fallback(padding-bottom, 120);
+  @include rem-fallback(padding, 120, 0, 120, 0);
+
+  @media only screen and (max-width: 1023px) {
+    @include rem-fallback(padding-left, 30);
+    @include rem-fallback(padding-right, 30);
+  }
+
+  @media only screen and (max-width: 767px) {
+    @include rem-fallback(padding, 48, 30, 48, 30);
+  }
 }
 
 .finished-tool__heading {
   @include rem-fallback(font-size, $text__mlarge);
   margin-top: 0;
   width: 50%;
+  @include odd-tool  { text-align: left; }
+  @include even-tool { float: right; text-align: right; }
+
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    @include odd-tool  { text-align: center; }
+    @include even-tool { text-align: center; }
+  }
 }
 
 .finished-tool__description {
   width: 50%;
+  @include odd-tool  { text-align: left; }
+  @include even-tool { float: right; text-align: right; }
+
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    @include odd-tool  { text-align: center; }
+    @include even-tool { text-align: center; }
+  }
 }
 
 .finished-tool__graphic-wrapper {
   width: 50%;
-  float: right;
   @include rem-fallback(margin-top, 24);
   text-align: center;
+
+  @include odd-tool  { float: right; }
+  @include even-tool { float: left; }
+
+  img { max-width: 100%; }
+
+  @media only screen and (max-width: 767px) {
+    width: 50%;
+    float: none;
+    margin: 0 auto;
+    @include rem-fallback(margin-bottom, 24);
+
+    @include odd-tool  { float: none; }
+    @include even-tool { float: none; }
+  }
 }
 
 .finished-tool__actions {
   width: 50%;
   margin-left: 0;
-}
+  @include odd-tool  { text-align: left; }
+  @include even-tool { float: right; text-align: right; }
 
-.finished-tool__background {
-  &:nth-child(odd) {
-    background: $color__grey--background;
+  @media only screen and (max-width: 767px) {
+    width: 100%;
 
-    .finished-tool__heading, .finished-tool__actions, .finished-tool__description {
-      text-align: left;
-    }
-
-    .finished-tool__graphic-wrapper {
-      float: right;
-    }
-  }
-
-  &:nth-child(even) {
-    background: $color__white;
-
-    .finished-tool__heading, .finished-tool__actions, .finished-tool__description {
-      text-align: right;
-      float: right;
-    }
-
-    .finished-tool__graphic-wrapper {
-      float: left;
-    }
+    @include odd-tool  { text-align: center; }
+    @include even-tool { text-align: center; }
   }
 }
