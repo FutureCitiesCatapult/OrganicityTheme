@@ -7,6 +7,13 @@ jQuery(document).ready(function($) {
         singleItem:true
     });
 
+    $("#tool-image-carousel").owlCarousel({
+        slideSpeed: 300,
+        paginationSpeed: 400,
+        singleItem: true,
+        autoHeight: true
+    });
+
 
 
 // scrolls the page to hot links within that page
@@ -271,5 +278,14 @@ jQuery(document).ready(function($) {
                 $faqContent.focus();
             }
         });
+    });
+
+    $('[data-preserve-iframe-aspect-ratio] iframe').each(function(i, iframe) {
+        var $iframe = $(iframe),
+            naturalHeight = $iframe.prop('height'),
+            naturalWidth = $iframe.prop('width'),
+            currentWidth = $iframe.outerWidth();
+            newHeight = naturalHeight * (currentWidth/naturalWidth);
+        $iframe.css({height: newHeight});
     });
 });

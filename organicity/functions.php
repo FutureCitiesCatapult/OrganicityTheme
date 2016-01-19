@@ -446,7 +446,15 @@ function register_meta_boxes($meta_boxes) {
                 'name'        => 'Show as full-width section?',
                 'id'          => $prefix . 'tool_is_full_width',
                 'type'        => 'checkbox'
-            ),
+            )
+        )
+    );
+
+    $meta_boxes[] = array(
+        'title'    => 'Tool graphics',
+        'pages'    => 'tool',
+        'priority' => 'low',
+        'fields'   => array(
             array(
                 'name'        => 'Big graphic',
                 'id'          => $prefix . 'tool_graphic_big',
@@ -464,6 +472,25 @@ function register_meta_boxes($meta_boxes) {
                 'id'          => $prefix . 'tool_graphic_small_filled',
                 'type'        => 'media',
                 'max_file_uploads' => 1
+            )
+        )
+    );
+
+
+    $meta_boxes[] = array(
+        'title'    => 'Tool content',
+        'pages'    => 'tool',
+        'priority' => 'high',
+        'fields'   => array(
+            array(
+                'name'        => 'Video (optional)',
+                'id'          => $prefix . 'tool_video',
+                'type'        => 'oembed'
+            ),
+            array(
+                'name'        => 'Images',
+                'id'          => $prefix . 'tool_images',
+                'type'        => 'media'
             )
         )
     );
