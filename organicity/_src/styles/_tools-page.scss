@@ -28,14 +28,16 @@
   margin: 0 auto;
   opacity: 1;
 
+  @media only screen and (max-width: 767px) {
+    @include rem-fallback(padding-top, 0);
+  }
+}
+
+.tools-page__preview-row {
   &:after { // clearfix
     content: "";
     display: table;
     clear: both;
-  }
-
-  @media only screen and (max-width: 767px) {
-    @include rem-fallback(padding-top, 0);
   }
 }
 

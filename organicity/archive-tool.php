@@ -63,9 +63,10 @@ $posts_query = new WP_Query( $query_args );
         </div>
 
         <div class="tools-page__previews">
-            <!-- this classless div is here to let us track nth-child -->
-            <div>
+            <div class="tools-page__preview-row">
                 <?php while ($posts_query->have_posts()) : $posts_query->the_post(); ?>
+                    <?= ($posts_query->current_post % 3 == 0) ?
+                        '</div><div class="tools-page__preview-row">' : '' ?>
                     <?php if (rwmb_meta('organicity_tool_is_full_width')) { continue; } ?>
                     <?php get_template_part('partials/preview-tool'); ?>
                 <?php endwhile; ?>

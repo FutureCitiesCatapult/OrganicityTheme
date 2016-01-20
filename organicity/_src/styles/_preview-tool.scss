@@ -1,6 +1,15 @@
 .preview-tool__background {
   @media only screen and (max-width: 767px) {
-    &:nth-child(even) {
+    // Since we have wrapping divs to make >3 preview tools work properly (i.e.
+    // if they are of different heights), we need to alternate which alternate
+    // rows are given background colors.
+    // So: [odd, even, odd], [odd, even, odd]
+    //     [www, gggg, www], [ggg, wwww, ggg]
+    .tools-page__preview-row:nth-child(odd) &:nth-child(even) {
+      background: $color__grey--background;
+    }
+
+    .tools-page__preview-row:nth-child(even) &:nth-child(odd) {
       background: $color__grey--background;
     }
   }
