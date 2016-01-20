@@ -10,7 +10,7 @@
   box-sizing: border-box;
   float: left;
   width: percentage(1/3);
-  @include rem-fallback(padding, 0, 30, 48, 30);
+  @include rem-fallback(padding, 48, 30, 48, 30);
   text-align: center;
 
   @media only screen and (max-width: 767px) {

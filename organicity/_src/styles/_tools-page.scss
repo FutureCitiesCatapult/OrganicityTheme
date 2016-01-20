@@ -24,7 +24,6 @@
 
 .tools-page__previews {
   @include rem-fallback(max-width, 995);
-  @include rem-fallback(padding-top, 48);
   @include rem-fallback(padding-bottom, 120);
   margin: 0 auto;
   opacity: 1;
