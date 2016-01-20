@@ -261,7 +261,8 @@ jQuery(document).ready(function($) {
     $('.city-filter').click(get_event_posts);
 
     $('.js-faq').each(function(i, faqElement) {
-        var $faqElement = $(faqElement),
+        var toggling = false,
+            $faqElement = $(faqElement),
             $faqButton = $faqElement.find('.js-faq-button'),
             $faqContent = $faqElement.find('.js-faq-content');
         $faqElement.removeClass('is-open');
@@ -269,8 +270,10 @@ jQuery(document).ready(function($) {
         $faqButton.attr('aria-expanded', 'false');
 
         $faqElement.on('click', '.js-faq-expand-handle', function() {
+            if (toggling) { return; }
+            toggling = true;
+            $faqContent.slideToggle(400, function() { toggling = false; });
             $faqElement.toggleClass('is-open');
-            $faqContent.slideToggle();
             if ($faqButton.attr('aria-expanded') == 'true') {
                 $faqButton.attr('aria-expanded', 'false')
             } else {
