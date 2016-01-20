@@ -511,7 +511,7 @@ function register_meta_boxes($meta_boxes) {
                 'type'        => 'oembed'
             ),
             array(
-                'name'        => 'Images',
+                'name'        => 'Images (optional)',
                 'id'          => $prefix . 'tool_images',
                 'type'        => 'media'
             )

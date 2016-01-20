@@ -18,14 +18,15 @@ get_header();
                             <div class="tool-page">
                                 <h1><?php the_title(); ?></h1>
                                 <hr class="tool-page__divider">
+                                <div class="tool-page__video" data-preserve-iframe-aspect-ratio>
+                                    <?= wp_oembed_get(rwmb_meta('organicity_tool_video')) ?>
+                                </div>
                                 <div class="owl-carousel owl-theme tool-page__carousel" id="tool-image-carousel">
                                     <?php foreach (rwmb_meta('organicity_tool_images', 'type=image') as $image) : ?>
                                         <img class="tool-page__image" src="<?= $image['full_url'] ?>">
                                     <?php endforeach; ?>
                                 </div>
-                                <div class="tool-page__video" data-preserve-iframe-aspect-ratio>
-                                    <?= wp_oembed_get(rwmb_meta('organicity_tool_video')) ?>
-                                </div>
+                                
                                 <?php the_content(); ?>
 
                                 <a href="<?= get_post_type_archive_link('tool') ?>" class="button button--full button--external">
