@@ -1,6 +1,6 @@
 .tool-page__video {
   @include rem-fallback(margin-bottom, 36);
-  
+
   embed, iframe, video {
     width: 100%;
   }
@@ -14,4 +14,12 @@
 
 .tool-page__carousel {
   @include rem-fallback(margin-bottom, 36);
+}
+
+.tool-page__image {
+  // another specificity hack
+  .owl-item & {
+    display: block;
+    margin: 0 auto;
+  }
 }
