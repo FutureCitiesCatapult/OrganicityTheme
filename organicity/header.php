@@ -59,7 +59,7 @@ $show_both_buttons = rwmb_meta('organicity_header_anchor_link_visible') && rwmb_
 </head>
 
 <body>
-<!--[if lt IE 7]>
+<!--[if lte IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <!-- this will become the main page header include -->
