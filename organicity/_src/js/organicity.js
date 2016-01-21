@@ -1,6 +1,10 @@
+// Add useragent attribute to html tag to let us css browser sniff
+var doc = document.documentElement;
+doc.setAttribute('data-useragent', navigator.userAgent);
+
 jQuery(document).ready(function($) {
 
-// settings for the carousel on the home page
+    // settings for the carousel on the home page
     $("#owl-demo").owlCarousel({
         slideSpeed : 300,
         paginationSpeed : 400,

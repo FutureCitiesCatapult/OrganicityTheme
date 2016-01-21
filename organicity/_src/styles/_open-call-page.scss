@@ -27,5 +27,13 @@
 }
 
 .helpdesk__button {
-  display: inline-block;
+  // weird bug where if this element renders offscreen (i.e. you're not looking
+  // at it) in IE10, it collapses all the text. Doesn't happen in IE9 or IE11 so
+  // we'll just hack around it.
+  // Even worse: simply overriding the property doesn't seem to fix the issue,
+  // we need to not touch it in the first place. Hence the `:not()` selector.
+  // See organicity.js for where this data-useragent comes from.
+  html:not([data-useragent*='MSIE 10.0']) & {
+    display: inline-block;
+  }
 }
