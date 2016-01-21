@@ -71,12 +71,14 @@
 
   &:before {
     left: -2px;
-    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
   }
 
   &:after {
     left: 7px;
-    transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
   }
 
   .faq.is-open & {
