@@ -20,7 +20,7 @@
   }
 
   h2 {
-    @include rem-fallback(margin, 65, 0, 15, 0);
+    @include rem-fallback(margin, 78, 0, 36, 0);
     @include rem-fallback(font-size, 34);
 
     &:first-child {
@@ -41,6 +41,15 @@
     }
   }
 
+  h4 {
+    @include rem-fallback(margin-top, 18);
+    @include rem-fallback(margin-bottom, 36);
+    font-family: $text__family--sans-serif;
+    text-align: left;
+    color: $color__pink;
+    @include rem-fallback(font-size, 18);
+  }
+
    h4, h5, h6 {
     @include rem-fallback(font-size, 18);
 
@@ -50,8 +59,18 @@
    }
 
   hr {
-    @include rem-fallback(margin-top, 70);
-    @include rem-fallback(margin-bottom, 70);
+    @include rem-fallback(margin-top, 10);
+    @include rem-fallback(margin-bottom, 10);
+  }
+
+  p, li {
+    @include rem-fallback(margin-top, 18);
+    @include rem-fallback(margin-bottom, 36);
+
+    @media only screen and (max-width: 567px) {
+      @include rem-fallback(font-size, 17);
+      @include rem-fallback(line-height, 24);
+    }
   }
 
   img {
@@ -71,13 +90,6 @@
     background-repeat: no-repeat;
     background-position: 0px 12px; //center;
     @include rem-fallback(padding-left,30);
-  }
-
-  p {
-    @media only screen and (max-width: 567px) {
-      @include rem-fallback(font-size, 17);
-      @include rem-fallback(line-height, 24);
-    }
   }
 
   .section--page & {
