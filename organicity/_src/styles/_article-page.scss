@@ -17,20 +17,11 @@
     .section--article--content,.section--page--content{
       letter-spacing:0;
       background-color: $color__white;
-
-      .section--article--content-wrapper,.section--page--content-wrapper{
-        @include rem-fallback(padding,55,180,65,180);
-
-      }
-      .section--page--content-wrapper{
-        hr{
-          @include rem-fallback(margin-top,70);
-          @include rem-fallback(margin-bottom,70);
-        }
-      }
     }
 
-
+    .section--article--content-wrapper,.section--page--content-wrapper{
+      @include rem-fallback(padding,55,180,65,180);
+    }
 
     .blogtags{
       @include rem-fallback(margin-top,10);
@@ -57,63 +48,6 @@
       color: rgba(48,48,48,0.5);
     }
 
-    h1,h2,h3,h4,h5,h6{
-      @include rem-fallback(margin,60,0,15,0);
-      text-align: left;
-      font-family: 'CooperHewitt-Book';
-      color: #4A4A4A;
-    }
-
-    h1{
-      @include rem-fallback(margin,15,0,15,0);
-      @include rem-fallback(font-size,46);
-    }
-
-    h2{
-      @include rem-fallback(margin,65,0,15,0);
-      @include rem-fallback(font-size,34);
-
-      &:first-child {
-       margin-top: 1em;
-      }
-    }
-
-    h3{
-       @include rem-fallback(margin,30,0,15,0);
-       @include rem-fallback(font-size,24);
-     }
-
-    .section--page--content .section--page--content-wrapper{
-      h3 {
-        @include rem-fallback(margin, 30, 0, 45, 0);
-      }
-    }
-
-
-    h4,h5,h6{
-      @include rem-fallback(font-size,18);
-    }
-
-    img{
-      max-width: 100%;
-      height:auto;
-      @include rem-fallback(margin,5,0,20,0);
-    }
-
-    ul{
-      list-style-type: none;
-      padding:0px;
-      margin:0px;
-    }
-    ul li{
-      background-image: url(images/square.gif);
-      background-repeat: no-repeat;
-      background-position: 0px 12px; //center;
-      @include rem-fallback(padding-left,30);
-    }
-
-
-
     .share-buttons{
       font-family: $text__family--sans-serif;
       @include rem-fallback(font-size,24);
@@ -121,17 +55,18 @@
       color:$color__pink;
       @include rem-fallback(margin-top,25);
 
-
-
       .social-facebook{
         background-color: #3B5998;
       }
+
       .social-twitter{
         background-color: #55acee;
       }
+
       .social-gplus{
         background-color: #dd4b39;
       }
+
       .social-linkedin{
         background-color: #0077b5;
       }
@@ -148,22 +83,6 @@
       i{
         color:$color__white;
       }
-
-    }
-
-  }
-
-  &--page {
-    h1,h2,h3{
-      text-align: center;
-
-    }
-
-    img.alignnone{
-      display:block;
-      margin-left:auto;
-      margin-right:auto;
-      //text-align: center;
     }
   }
 }
@@ -186,12 +105,7 @@
 
 }
 
-
-
-
-
 @media only screen and (max-width: 567px) {
-
   .section {
     &--article {
       @include rem-fallback(padding, 0);
@@ -209,13 +123,6 @@
       .date{
         @include rem-fallback(font-size,15);
       }
-      h1,h2,h3,h4,h5,h6{
-        @include rem-fallback(margin,30,0,10,0);
-      }
-
-      h1{
-        @include rem-fallback(font-size,30);
-      }
 
       .blogtags{
         @include rem-fallback(margin-top,10);
@@ -223,23 +130,6 @@
         a{
           @include rem-fallback(font-size,15);
         }
-      }
-
-      h2{
-        @include rem-fallback(font-size,24);
-      }
-
-      h3{
-        @include rem-fallback(font-size,18);
-      }
-
-      h4,h5,h6{
-        @include rem-fallback(font-size,17);
-      }
-
-      p{
-        @include rem-fallback(font-size,17);
-        @include rem-fallback(line-height,24);
       }
     }
   }

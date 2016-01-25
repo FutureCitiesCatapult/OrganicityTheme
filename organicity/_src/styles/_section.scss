@@ -1,0 +1,48 @@
+.section {
+  overflow: hidden;
+  @include rem-fallback(padding-top, 60);
+  @include rem-fallback(padding-bottom, 60);
+
+  .pure-g {
+    @include rem-fallback(margin, 0, auto, 20, auto);
+    @include rem-fallback(max-width, 1200); //995);
+    @include rem-fallback(padding, 60 0);
+
+    @media only screen and (max-width: 1023px) {
+      @include rem-fallback(padding-left, 70);
+      @include rem-fallback(padding-right, 70);
+    }
+
+    @media only screen and (max-width: 767px) {
+      @include rem-fallback(padding-left, 30);
+      @include rem-fallback(padding-right, 30);
+    }
+  }
+
+  &--wide {
+    @include rem-fallback(padding-left, 70);
+    @include rem-fallback(padding-right, 70);
+
+    .pure-g {
+      margin: auto;
+      @include rem-fallback(margin-top,0);
+      @include rem-fallback(margin-bottom,20);
+      @include rem-fallback(max-width, 1310);
+    }
+
+    @media only screen and (max-width: 767px) {
+      @include rem-fallback(padding-left, 30);
+      @include rem-fallback(padding-right, 30);
+    }
+  }
+
+  &--title {
+    @include rem-fallback(padding-top,20);
+    @include rem-fallback(padding-bottom,0);
+  }
+
+  @media only screen and (max-width: 767px) {
+    @include rem-fallback(padding-top, 40);
+    @include rem-fallback(padding-bottom, 40);
+  }
+}

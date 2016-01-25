@@ -41,7 +41,7 @@ $queried_object = get_queried_object();
         <div class="pure-g">
             <div class="pure-u-1-8"></div>
             <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-6-8 section--page--content">
-                <div class="section--page--content-wrapper">
+                <div class="section--page--content-wrapper l-body-typography">
                     <?php echo $queried_object->description;?>
                 </div>
             </div>

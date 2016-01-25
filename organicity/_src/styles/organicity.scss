@@ -42,82 +42,10 @@ body {
   height: 100%;
 }
 
-
 hr {
   border: 0;
   border-bottom: 3px solid #f3f4f8;
   @include rem-fallback(margin-bottom,30);
-}
-
-.section {
-
-  overflow: hidden;
-  @include rem-fallback(padding-top, 60);
-  @include rem-fallback(padding-bottom, 60);
-
-  .pure-g {
-    @include rem-fallback(margin, 0, auto, 20, auto);
-    @include rem-fallback(max-width, 1200); //995);
-    @include rem-fallback(padding, 60 0);
-  }
-}
-
-
-
-.section{
-
-  &--wide {
-    //    .pure-g {
-    //      @include rem-fallback(padding-left, 0);
-    //      @include rem-fallback(padding-right, 0);
-    //    }
-    @include rem-fallback(padding-left, 70);
-    @include rem-fallback(padding-right, 70);
-
-    .pure-g {
-      margin: auto;
-      @include rem-fallback(margin-top,0);
-      @include rem-fallback(margin-bottom,20);
-
-      //TODO: responsive
-      @include rem-fallback(max-width, 1310);
-      // @include rem-fallback(padding, 60, 0);
-    }
-  }
-
-  &--title {
-    @include rem-fallback(padding-top,20);
-    @include rem-fallback(padding-bottom,0);
-  }
-
-}
-
-@media only screen and (max-width: 1023px) {
-  .section{
-    .pure-g {
-      @include rem-fallback(padding-left, 70);
-      @include rem-fallback(padding-right, 70);
-    }
-  }
-}
-
-
-@media only screen and (max-width: 767px) {
-
-  .section {
-
-      @include rem-fallback(padding-top, 40);
-      @include rem-fallback(padding-bottom, 40);
-    .pure-g {
-      @include rem-fallback(padding-left, 30);
-      @include rem-fallback(padding-right, 30);
-    }
-
-    &--wide {
-      @include rem-fallback(padding-left, 30);
-      @include rem-fallback(padding-right, 30);
-    }
-  }
 }
 
 .hidden-sm {
@@ -136,4 +64,4 @@ hr {
   color: $color__grey;
 }
 
-@import 'fonts','header','button','filter-menu','blog','events','article-page','open-call-page','rich-title','button-pair','callout','signup-box','faqs','tools-page','tools-list','finished-tool','preview-tool','tool-page','city','footer';
+@import 'fonts','header','section','button','filter-menu','blog','events','article-page','body-typography','open-call-page','rich-title','button-pair','callout','signup-box','faqs','tools-page','tools-list','finished-tool','preview-tool','tool-page','city','footer';

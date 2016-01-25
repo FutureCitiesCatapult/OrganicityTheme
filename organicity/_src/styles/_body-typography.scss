@@ -1,0 +1,94 @@
+.l-body-typography {
+  h1, h2, h3, h4, h5, h6 {
+    @include rem-fallback(margin, 60, 0, 15, 0);
+    text-align: left;
+    font-family: 'CooperHewitt-Book';
+    color: #4A4A4A;
+
+    @media only screen and (max-width: 567px) {
+      @include rem-fallback(margin,30,0,10,0);
+    }
+  }
+
+  h1 {
+    @include rem-fallback(margin, 15, 0, 15, 0);
+    @include rem-fallback(font-size, 46);
+
+    @media only screen and (max-width: 567px) {
+      @include rem-fallback(font-size, 30);
+    }
+  }
+
+  h2 {
+    @include rem-fallback(margin, 65, 0, 15, 0);
+    @include rem-fallback(font-size, 34);
+
+    &:first-child {
+     margin-top: 1em;
+    }
+
+    @media only screen and (max-width: 567px) {
+      @include rem-fallback(font-size, 24);
+    }
+  }
+
+  h3 {
+    @include rem-fallback(margin, 30, 0, 15, 0);
+    @include rem-fallback(font-size, 24);
+
+    @media only screen and (max-width: 567px) {
+      @include rem-fallback(font-size, 18);
+    }
+  }
+
+   h4, h5, h6 {
+    @include rem-fallback(font-size, 18);
+
+    @media only screen and (max-width: 567px) {
+      @include rem-fallback(font-size, 17);
+    }
+   }
+
+  hr {
+    @include rem-fallback(margin-top, 70);
+    @include rem-fallback(margin-bottom, 70);
+  }
+
+  img {
+    max-width: 100%;
+    height:auto;
+    @include rem-fallback(margin, 5, 0, 20, 0);
+  }
+
+  ul {
+    list-style-type: none;
+    padding:0px;
+    margin:0px;
+  }
+
+  ul li {
+    background-image: url(images/square.gif);
+    background-repeat: no-repeat;
+    background-position: 0px 12px; //center;
+    @include rem-fallback(padding-left,30);
+  }
+
+  p {
+    @media only screen and (max-width: 567px) {
+      @include rem-fallback(font-size, 17);
+      @include rem-fallback(line-height, 24);
+    }
+  }
+
+  .section--page & {
+    h1, h2, h3 {
+      text-align: center;
+    }
+
+    img.alignnone {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
