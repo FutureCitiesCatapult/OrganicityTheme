@@ -14,7 +14,7 @@
 define( 'ORGANICITY_VERSION', '0.1.0' );
 
 //TODO: set false for production
-define( 'SCRIPT_DEBUG', true );
+define( 'SCRIPT_DEBUG', false );
 
 
 function get_id_by_slug($page_slug) {
