@@ -67,6 +67,9 @@
                         />
                 </div>
 
+                <p class="eu-disclosure">
+                    <?php _e("This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198", 'organicity') ?>
+                </p>
             </div>
             <div class="pure-u-1-4"></div>
         </div>

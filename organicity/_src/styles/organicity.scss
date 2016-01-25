@@ -126,4 +126,14 @@ hr {
   }
 }
 
+.eu-disclosure {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: $text__family--sans-serif;
+  @include rem-fallback(font-size, 12);
+  line-height: 1.5;
+  color: $color__grey;
+}
+
 @import 'fonts','header','button','filter-menu','blog','events','article-page','open-call-page','rich-title','button-pair','callout','signup-box','faqs','tools-page','tools-list','finished-tool','preview-tool','tool-page','city','footer';
