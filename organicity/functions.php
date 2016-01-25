@@ -13,14 +13,20 @@
  */
 define( 'ORGANICITY_VERSION', '0.1.0' );
 
-//TODO: set false for production
-define( 'SCRIPT_DEBUG', false );
-
-
 function get_id_by_slug($page_slug) {
     $page = get_page_by_path($page_slug);
     if ($page) {
         return $page->ID;
+    } else {
+        return null;
+    }
+}
+
+function get_current_post_id() {
+    if (array_key_exists('post', $_GET)) {
+        return $_GET['post'];
+    } elseif (array_key_exists('post_ID', $_POST)) {
+        return $_POST['post_ID'];
     } else {
         return null;
     }
@@ -669,7 +675,7 @@ function register_meta_boxes($meta_boxes) {
     /*
      * only show if editing homepage
      */
-    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+    $post_id = get_current_post_id();
     $frontpage_id = get_option('page_on_front');
 
     if ($post_id == $frontpage_id) {

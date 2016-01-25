@@ -15,7 +15,7 @@ $query_args = array(
     'post_type'      => 'event',
     'meta_key' => 'organicity_event_date',
     'orderby' => 'meta_value_num',
-    'order' => DESC,
+    'order' => 'DESC',
 
 );
 $posts_query = new WP_Query( $query_args );
