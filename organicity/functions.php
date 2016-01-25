@@ -868,10 +868,10 @@ function ajax_filter_get_posts() {
     );
 
 
-    if($_POST['taxonomy']){
+    if(array_key_exists('taxonomy', $_POST) && $_POST['taxonomy']){
         $args['tag'] = $_POST['taxonomy'];
 
-    }else if($_POST['city']){
+    }else if(array_key_exists('city', $_POST) && $_POST['city']){
     $event_template = true;
         if($_POST['city'] == 'all'){
             $args['city'] = "";
@@ -881,7 +881,7 @@ function ajax_filter_get_posts() {
     }
 
 
-    if($POST['eventFilter']){
+    if(array_key_exists('eventFilter', $_POST) && $_POST['eventFilter']){
         $args['meta_key'] = 'organicity_event_date';
         $args['orderby'] = 'meta_value_num';
         $args['order'] = DESC;
