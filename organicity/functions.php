@@ -673,7 +673,6 @@ function register_meta_boxes($meta_boxes) {
     $frontpage_id = get_option('page_on_front');
 
     if ($post_id == $frontpage_id) {
-        $meta_boxes[] = $homepage_anchor_fields;
         $meta_boxes[] = $homepage_button_fields;
         $meta_boxes[] = $homepage_callout_fields;
         $meta_boxes[] = $homepage_event_fields;
