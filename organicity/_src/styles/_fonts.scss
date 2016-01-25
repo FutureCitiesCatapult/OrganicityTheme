@@ -19,7 +19,7 @@ h2 {
   font-family: $text__family--sans-serif;
   color: $color__pink;
   @include rem-fallback(font-size, $text__large);
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 h3 {

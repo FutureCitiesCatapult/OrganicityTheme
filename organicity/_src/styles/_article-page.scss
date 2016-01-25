@@ -72,6 +72,10 @@
     h2{
       @include rem-fallback(margin,65,0,15,0);
       @include rem-fallback(font-size,34);
+
+      &:first-child {
+       margin-top: 1em;
+      }
     }
 
     h3{
