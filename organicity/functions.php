@@ -526,36 +526,36 @@ function register_meta_boxes($meta_boxes) {
         'pages'   => 'page',
         'fields'  => array(
             array(
-                'name'  => 'Link text',
+                'name'  => 'Internal link text',
                 'id'    => $prefix . 'header_anchor_link_text',
                 'type'  => 'text',
                 'size'  => 50
             ),
             array(
-                'name'  => 'Link title attribute',
+                'name'  => 'Internal link title attribute',
                 'id'    => $prefix . 'header_anchor_link_title',
                 'type'  => 'text',
                 'size'  => 50
             ),
             array(
-                'name'  => 'Visible',
+                'name'  => 'Internal link visible?',
                 'id'    => $prefix . 'header_anchor_link_visible',
                 'type'  => 'checkbox',
                 'std'   => 1
             ),
             array(
-                'name'  => 'Link text',
+                'name'  => 'External link text',
                 'id'    => $prefix . 'header_apply_link_text',
                 'type'  => 'text',
                 'size'  => 50
             ),
             array(
-                'name'  => 'Link destination',
+                'name'  => 'External link destination',
                 'id'    => $prefix . 'header_apply_link_href',
                 'type'  => 'text'
             ),
             array(
-                'name'  => 'Visible',
+                'name'  => 'External link visible?',
                 'id'    => $prefix . 'header_apply_link_visible',
                 'type'  => 'checkbox',
                 'std'   => 0
