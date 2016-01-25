@@ -9,6 +9,8 @@
 }
 
 .helpdesk__content {
+  @include rem-fallback(padding-left, 30);
+  @include rem-fallback(padding-right, 30);
   @include rem-fallback(max-width, 500);
   margin: 0 auto;
   text-align: center;
