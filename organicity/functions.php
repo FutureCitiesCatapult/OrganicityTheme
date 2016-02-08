@@ -854,7 +854,7 @@ function ajax_filter_get_posts() {
 
 
 
-    if($_POST['postType']){
+    if(array_key_exists('postType', $_POST) && $_POST['postType']){
         $postType = $_POST['postType'];
     }else{
         $postType = 'post';
@@ -865,6 +865,7 @@ function ajax_filter_get_posts() {
     // WP Query
     $args = array(
         'post_type' => $postType,
+        'posts_per_page' => -1
     );
 
 
