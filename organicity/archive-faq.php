@@ -9,11 +9,12 @@ get_header(); ?>
 
 <?php
 $cargs = array(
-        'child_of'      => 0,
-        'orderby'       => 'name',
-        'order'         => 'ASC',
-        'hide_empty'    => 1,
-        'taxonomy'      => 'faq_group', //change this to any taxonomy
+        'child_of'       => 0,
+        'orderby'        => 'name',
+        'order'          => 'ASC',
+        'hide_empty'     => 1,
+        'taxonomy'       => 'faq_group', //change this to any taxonomy
+        'posts_per_page' => -1
     );
 ?>
 

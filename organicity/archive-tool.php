@@ -13,6 +13,7 @@ get_header(); ?>
 
 $query_args = array(
     'post_type'      => 'tool',
+    'posts_per_page' => -1
 );
 $posts_query = new WP_Query( $query_args );
 ?>

@@ -11,6 +11,7 @@ get_header();
 
 $query_args = array(
     'post_type'      => 'post',
+    'posts_per_page' => -1
 );
 
 
