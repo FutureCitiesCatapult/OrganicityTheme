@@ -34,7 +34,7 @@ $posts_query = new WP_Query( $query_args );
             <div class="pure-u-1-8"></div>
             <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-6-8 section--page--content">
                 <div class="section--page--content-wrapper section--tools-description__content-wrapper l-body-typography">
-                    <?= get_theme_mod('tools_description_text', ''); ?>
+                    <?= wpautop(get_theme_mod('tools_description_text', '')); ?>
                 </div>
             </div>
             <div class="pure-u-1-8">
@@ -67,9 +67,9 @@ $posts_query = new WP_Query( $query_args );
             <h2 class="tools-page__coming-soon-title">
                 <?php _e( 'Coming soon', 'organicity' ); ?>
             </h3>
-            <p class="tools-page__coming-soon-body">
-                <?= get_theme_mod('tools_coming_soon_text', ''); ?>
-            </p>
+            <div class="tools-page__coming-soon-body">
+                <?= wpautop(get_theme_mod('tools_coming_soon_text', '')); ?>
+            </div>
             <hr>
         </div>
 
