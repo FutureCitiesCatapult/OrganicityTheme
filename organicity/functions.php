@@ -45,16 +45,31 @@ add_action( 'after_setup_theme', 'organicity_setup' );
  */
 
 function organicity_customize_register($wp_customize) {
-    $wp_customize->add_setting('events_coming_soon_text', array(
+    $wp_customize->add_setting('tools_description_text', array(
         'default'     => '',
         'transport'   => 'refresh',
     ));
 
     $wp_customize->add_control(new WP_Customize_Control(
         $wp_customize,
-        'events_coming_soon_text',
+        'tools_description_text',
         array(
-            'label' => 'Events Coming-soon text',
+            'label' => 'Tools page description text',
+            'section' => 'title_tagline',
+            'type' => 'textarea'
+        )
+    ));
+
+    $wp_customize->add_setting('tools_coming_soon_text', array(
+        'default'     => '',
+        'transport'   => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        'tools_coming_soon_text',
+        array(
+            'label' => 'Tools page coming-soon text',
             'section' => 'title_tagline',
             'type' => 'textarea'
         )

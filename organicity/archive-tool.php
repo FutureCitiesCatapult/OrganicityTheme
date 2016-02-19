@@ -43,6 +43,19 @@ $posts_query = new WP_Query( $query_args );
         <?php endwhile; endif; ?>
     </div>
 
+    <div class="section section--page section--tools-description">
+        <div class="pure-g">
+            <div class="pure-u-1-8"></div>
+            <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-6-8 section--page--content">
+                <div class="section--page--content-wrapper section--tools-description__content-wrapper l-body-typography">
+                    <?= get_theme_mod('tools_description_text', ''); ?>
+                </div>
+            </div>
+            <div class="pure-u-1-8">
+            </div>
+        </div>
+    </div>
+
 
     <?php if ($posts_query->have_posts()) : ?>
         <!-- this classless div is here to let us track nth-child -->
@@ -58,7 +71,7 @@ $posts_query = new WP_Query( $query_args );
                 <?php _e( 'Coming soon', 'organicity' ); ?>
             </h3>
             <p class="tools-page__coming-soon-body">
-                <?= get_theme_mod('events_coming_soon_text', ''); ?>
+                <?= get_theme_mod('tools_coming_soon_text', ''); ?>
             </p>
             <hr>
         </div>
