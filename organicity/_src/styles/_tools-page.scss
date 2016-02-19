@@ -54,5 +54,6 @@
 
   .section--tools-description__content-wrapper {
     @include rem-fallback(padding-top, 0);
+    @include rem-fallback(padding-bottom, 0);
   }
 }
