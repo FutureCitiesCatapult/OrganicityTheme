@@ -19,7 +19,7 @@
 .finished-tool {
   @include rem-fallback(max-width, 995);
   margin: 0 auto;
-  @include rem-fallback(padding, 120, 0, 120, 0);
+  @include rem-fallback(padding, 120, 5, 120, 5);
 
   @media only screen and (max-width: 1023px) {
     @include rem-fallback(padding-left, 30);

@@ -27,7 +27,9 @@ jQuery(document).ready(function($) {
             event.preventDefault();
             $('html, body').animate({
                 scrollTop: target.offset().top
-            }, 1000);
+            }, 1000, 'swing', function() {
+                target.find('[data-internal-scroll-end-focus-target]').focus();
+            });
         }
     });
 

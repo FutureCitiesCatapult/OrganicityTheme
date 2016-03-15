@@ -8,7 +8,9 @@
             <?= rwmb_meta('organicity_tool_short_description') ?>
         </div>
         <div class="preview-tool__actions">
-            <a href="<?php the_permalink() ?>" class="button button--external preview-tool__action">Find out more</a>
+            <a href="<?php the_permalink() ?>" class="button button--external preview-tool__action" data-internal-scroll-end-focus-target>
+                Find out more
+            </a>
         </div>
     </div>
 </div>
