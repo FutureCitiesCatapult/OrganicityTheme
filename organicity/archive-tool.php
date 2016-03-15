@@ -75,8 +75,12 @@ $posts_query = new WP_Query( $query_args );
 
         <div class="tools-page__previews">
             <div class="tools-page__preview-row">
+                <?php /* We use our own counter as we can't rely on WP's post_number
+                         reflecting the post's number in the list — because we're filtering
+                         out tools with organicity_tool_is_full_width set */
+                      $i = 0; ?>
                 <?php while ($posts_query->have_posts()) : $posts_query->the_post(); ?>
-                    <?= ($posts_query->current_post % 3 == 0) ?
+                    <?= ($i++ % 3 == 0) ?
                         '</div><div class="tools-page__preview-row">' : '' ?>
                     <?php if (rwmb_meta('organicity_tool_is_full_width')) { continue; } ?>
                     <?php get_template_part('partials/preview-tool'); ?>
