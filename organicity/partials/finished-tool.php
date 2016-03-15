@@ -10,7 +10,7 @@
         <div class="finished-tool__actions button-pair">
             <div class="pure-g">
                 <div class="pure-u-1-1 pure-u-sm-1-2 button-pair__left">
-                    <a href="<?= rwmb_meta('organicity_tool_link_href') ?>" class="button button-pair__button button--external" target="_blank" data-internal-scroll-end-focus-target>
+                    <a href="<?= rwmb_meta('organicity_tool_link_href') ?>" class="button button-pair__button button--external" target="_blank" data-internal-scroll-focus-target>
                         <span class="icon-external"></span>
                         Open tool
                         <span class="offscreen">(opens in new tab)</span>

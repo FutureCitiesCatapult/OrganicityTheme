@@ -28,7 +28,11 @@ jQuery(document).ready(function($) {
             $('html, body').animate({
                 scrollTop: target.offset().top
             }, 1000, 'swing', function() {
-                target.find('[data-internal-scroll-end-focus-target]').focus();
+                if (target.is('[data-internal-scroll-focus-target]')) {
+                    target.focus();
+                } else {
+                    target.find('[data-internal-scroll-focus-target]').focus();
+                }
             });
         }
     });

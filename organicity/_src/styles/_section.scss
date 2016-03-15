@@ -45,4 +45,11 @@
     @include rem-fallback(padding-top, 40);
     @include rem-fallback(padding-bottom, 40);
   }
+
+  &--main {
+    // We need to link to the main section, and thereby focus it for screen
+    // readers — but having a bit outline isn't really necessary and doesn't
+    // look good. So we disable the outline here.
+    outline: 0;
+  }
 }
