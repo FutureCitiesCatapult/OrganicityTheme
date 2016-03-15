@@ -21,3 +21,20 @@
   display: block;
   @include rem-fallback(padding, 15, 10, 10, 10);
 }
+
+.button-pair__single {
+  // This is a hack for when we need a button that looks the same as one half
+  // of a pair — but is actually on its own. Terrible hack I know.
+  width: 50%;
+  display: inline-block;
+
+  @media only screen and (max-width: 567px) {
+    width: 100%;
+  }
+
+  .button-pair__button {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+  }
+}
