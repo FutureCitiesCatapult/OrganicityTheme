@@ -31,27 +31,32 @@
   }
 }
 
-.finished-tool__heading {
-  @include rem-fallback(font-size, $text__mlarge);
-  margin-top: 0;
+.finished-tool__detail {
   width: 50%;
+
   @include odd-tool  { text-align: left; }
   @include even-tool { float: right; text-align: right; }
 
   @media only screen and (max-width: 767px) {
     width: 100%;
+  }
+}
+
+.finished-tool__heading {
+  @include rem-fallback(font-size, $text__mlarge);
+  margin-top: 0;
+
+  @include odd-tool  { text-align: left; }
+  @include even-tool { text-align: right; }
+
+  @media only screen and (max-width: 767px) {
     @include odd-tool  { text-align: center; }
     @include even-tool { text-align: center; }
   }
 }
 
 .finished-tool__description {
-  width: 50%;
-  @include odd-tool  { text-align: left; }
-  @include even-tool { float: right; text-align: right; }
-
   @media only screen and (max-width: 767px) {
-    width: 100%;
     @include odd-tool  { text-align: center; }
     @include even-tool { text-align: center; }
   }
@@ -79,14 +84,8 @@
 }
 
 .finished-tool__actions {
-  width: 50%;
   margin-left: 0;
-  @include odd-tool  { text-align: left; }
-  @include even-tool { float: right; text-align: right; }
-
   @media only screen and (max-width: 767px) {
-    width: 100%;
-
     @include odd-tool  { text-align: center; }
     @include even-tool { text-align: center; }
   }
