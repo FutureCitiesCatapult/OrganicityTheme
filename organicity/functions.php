@@ -704,9 +704,7 @@ function register_meta_boxes($meta_boxes) {
      * Open call page specific features
      */
 
-     $open_call_id = get_id_by_slug('open-call');
-
-     if ($post_id == $open_call_id) {
+     if (get_page_template_slug($post_id) == 'page_open-call.php') {
          $meta_boxes[] = array(
              'title'   => 'Open Call Header',
              'pages'   => 'page',

@@ -1,6 +1,6 @@
 <?php
 /**
- * The open call template file
+ * Template Name: Open Call Page
  *
  * @package Organicity
  * @since 0.1.0
