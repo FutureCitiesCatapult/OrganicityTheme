@@ -28,6 +28,20 @@
       .socialMediaIcon{
         display:block !important;
         margin: 0 auto !important;
+
+        &:hover{
+          -webkit-filter: brightness(0.4);
+             -moz-filter: brightness(0.4);
+              -ms-filter: brightness(0.4);
+               -o-filter: brightness(0.4);
+                  filter: brightness(0.4);
+        }
+      }
+
+      .socialMediaIconLabel {
+        @include rem-fallback(font-size, 12);
+        @include rem-fallback(margin-top, 6);
+        font-family: $text__family--sans-serif--medium;
       }
 
       i {

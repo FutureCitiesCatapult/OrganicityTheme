@@ -17,47 +17,52 @@
 
                 <div class="pure-g socialMedia">
 
-
-                    <?php if (get_option('organicity_url_facebook') !== ""):?>
+                    <?php if (get_option('organicity_url_facebook')):?>
                     <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
-                        <a href="<?php echo get_option('organicity_url_facebook'); ?>"><i class="icon-facebook-squared"></i></a>
+                        <a href="<?php echo get_option('organicity_url_facebook'); ?>">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/icon-facebook.png" alt="">
+                            <div class="offscreen">Facebook</div>
+                        </a>
                     </div>
                     <?php endif;?>
 
-
-                    <?php if (get_option('organicity_url_twitter') !== ""):?>
+                    <?php if (get_option('organicity_url_facebook_london')):?>
                     <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
-                        <a href="<?php echo get_option('organicity_url_twitter'); ?>"><i class="icon-twitter"></i></a>
+                        <a href="<?php echo get_option('organicity_url_facebook_london'); ?>">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/icon-facebook.png" alt="">
+                            <div class="socialMediaIconLabel"><span class="offscreen">Facebook</span> London</div>
+                        </a>
                     </div>
                     <?php endif;?>
 
-                    <?php if (get_option('organicity_url_slideshare') !== ""):?>
+                    <?php if (get_option('organicity_url_facebook_santander')):?>
                     <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
-                    <a href="<?php echo get_option('organicity_url_slideshare'); ?>"><i class="icon-slideshare"></i></a>
+                        <a href="<?php echo get_option('organicity_url_facebook_santander'); ?>">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/icon-facebook.png" alt="">
+                            <div class="socialMediaIconLabel"><span class="offscreen">Facebook</span> Santander</div>
+                        </a>
                     </div>
                     <?php endif;?>
 
-                    <?php if (get_option('organicity_url_linkedin') !== ""):?>
+                    <?php if (get_option('organicity_url_facebook_aarhus')):?>
                     <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
-                    <a href="<?php echo get_option('organicity_url_linkedin'); ?>"><i class="icon-linkedin-squared"></i></a>
+                        <a href="<?php echo get_option('organicity_url_facebook_aarhus'); ?>">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/icon-facebook.png" alt="">
+                            <div class="socialMediaIconLabel"><span class="offscreen">Facebook</span> Aarhus</div>
+                        </a>
                     </div>
                     <?php endif;?>
 
-                    <?php if (get_option('organicity_url_instagram') !== ""):?>
+                    <?php if (get_option('organicity_url_twitter')):?>
                     <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
-                    <a href="<?php echo get_option('organicity_url_instagram'); ?>"><i class="icon-instagramm"></i></a>
+                        <a  href="<?php echo get_option('organicity_url_twitter'); ?>">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/icon-twitter.png" alt="">
+                            <div class="offscreen">Twitter</div>
+                        </a>
                     </div>
                     <?php endif;?>
 
-                    <?php if (get_option('organicity_url_youtube') !== ""):?>
-                    <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
-                    <a href="<?php echo get_option('organicity_url_youtube'); ?>"><i class="icon-youtube-play"></i></a>
-                    </div>
-                    <?php endif;?>
-
-
-
-</div>
+                </div>
                 <hr/>
                 <div class="logos">
                     <img

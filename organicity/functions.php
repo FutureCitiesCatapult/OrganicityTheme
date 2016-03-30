@@ -356,12 +356,11 @@ add_action( 'create_city', 'save_taxonomy_custom_meta', 10, 2 );
  * add social media settings menu to admin
  */
 $social_media_sites = array(
-    'organicity_url_facebook'    => 'Facebook',
-    'organicity_url_twitter'     => 'Twitter',
-    'organicity_url_slideshare'  => 'SlideShare',
-    'organicity_url_linkedin'    => 'LinkedIn',
-    'organicity_url_instagram'   => 'Instagram',
-    'organicity_url_youtube'     => 'YouTube'
+    'organicity_url_facebook'           => 'Facebook',
+    'organicity_url_facebook_london'    => 'Facebook London',
+    'organicity_url_facebook_santander' => 'Facebook Santander',
+    'organicity_url_facebook_aarhus'    => 'Facebook Aarhus',
+    'organicity_url_twitter'            => 'Twitter',
 );
 
 function add_organicity_social_menu() {
