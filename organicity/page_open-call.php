@@ -40,6 +40,25 @@ get_header(); ?>
         </div>
     </div>
 
+    <?php if (rwmb_meta('organicity_open_call_languages_visible')): ?>
+        <div class="section language-selector">
+            <div class="pure-g">
+                <div class="pure-u-1-4"></div>
+                <div class="pure-u-1-1 pure-u-lg-1-2">
+                    <a href="<?= get_page_link(rwmb_meta('organicity_open_call_language_1_link')) ?>" class="language-selector__link <?= is_page(rwmb_meta('organicity_open_call_language_1_link')) ? 'is-active' : '' ?>">
+                        <?= rwmb_meta('organicity_open_call_language_1_name') ?>
+                    </a>
+                    <a href="<?= get_page_link(rwmb_meta('organicity_open_call_language_2_link')) ?>" class="language-selector__link <?= is_page(rwmb_meta('organicity_open_call_language_2_link')) ? 'is-active' : '' ?>">
+                        <?= rwmb_meta('organicity_open_call_language_2_name') ?>
+                    </a>
+                    <a href="<?= get_page_link(rwmb_meta('organicity_open_call_language_3_link')) ?>" class="language-selector__link <?= is_page(rwmb_meta('organicity_open_call_language_3_link')) ? 'is-active' : '' ?>">
+                        <?= rwmb_meta('organicity_open_call_language_3_name') ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
     <div class="section section--page">
         <div class="pure-g">
             <div class="pure-u-1-8"></div>

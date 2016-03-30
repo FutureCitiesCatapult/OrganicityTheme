@@ -1,6 +1,6 @@
 .rich-title {
   @include rem-fallback(padding-top, 72);
-  @include rem-fallback(padding-bottom, 48);
+  @include rem-fallback(padding-bottom, 36);
 }
 
 .rich-title__heading {

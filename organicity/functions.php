@@ -748,6 +748,51 @@ function register_meta_boxes($meta_boxes) {
          );
 
          $meta_boxes[] = array(
+             'title' => 'Alternative Languages',
+             'pages' => 'page',
+             'fields' => array(
+                 array(
+                     'name'  => 'Show section',
+                     'id'    => $prefix . 'open_call_languages_visible',
+                     'type'  => 'checkbox'
+                 ),
+                 array(
+                     'name' => 'Language 1 name',
+                     'id'   => $prefix . 'open_call_language_1_name',
+                     'type' => 'text'
+                 ),
+                 array(
+                     'name' => 'Link to page 1',
+                     'id'   => $prefix . 'open_call_language_1_link',
+                     'type' => 'post',
+                     'post_type' => 'page'
+                 ),
+                 array(
+                     'name' => 'Language 2 name',
+                     'id'   => $prefix . 'open_call_language_2_name',
+                     'type' => 'text'
+                 ),
+                 array(
+                     'name' => 'Link to page 2',
+                     'id'   => $prefix . 'open_call_language_2_link',
+                     'type' => 'post',
+                     'post_type' => 'page'
+                 ),
+                 array(
+                     'name' => 'Language 3 name',
+                     'id'   => $prefix . 'open_call_language_3_name',
+                     'type' => 'text'
+                 ),
+                 array(
+                     'name' => 'Link to page 3',
+                     'id'   => $prefix . 'open_call_language_3_link',
+                     'type' => 'post',
+                     'post_type' => 'page'
+                 ),
+             )
+         );
+
+         $meta_boxes[] = array(
              'title'   => 'Helpdesk',
              'pages'   => 'page',
              'fields'  => array(
