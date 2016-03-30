@@ -26,6 +26,15 @@
                     </div>
                     <?php endif;?>
 
+                    <?php if (get_option('organicity_url_facebook_aarhus')):?>
+                        <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
+                            <a href="<?php echo get_option('organicity_url_facebook_aarhus'); ?>">
+                                <img src="<?php bloginfo('template_directory'); ?>/images/icon-facebook.png" alt="">
+                                <div class="socialMediaIconLabel"><span class="offscreen">Facebook</span> Aarhus</div>
+                            </a>
+                        </div>
+                    <?php endif;?>
+
                     <?php if (get_option('organicity_url_facebook_london')):?>
                     <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
                         <a href="<?php echo get_option('organicity_url_facebook_london'); ?>">
@@ -40,15 +49,6 @@
                         <a href="<?php echo get_option('organicity_url_facebook_santander'); ?>">
                             <img src="<?php bloginfo('template_directory'); ?>/images/icon-facebook.png" alt="">
                             <div class="socialMediaIconLabel"><span class="offscreen">Facebook</span> Santander</div>
-                        </a>
-                    </div>
-                    <?php endif;?>
-
-                    <?php if (get_option('organicity_url_facebook_aarhus')):?>
-                    <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
-                        <a href="<?php echo get_option('organicity_url_facebook_aarhus'); ?>">
-                            <img src="<?php bloginfo('template_directory'); ?>/images/icon-facebook.png" alt="">
-                            <div class="socialMediaIconLabel"><span class="offscreen">Facebook</span> Aarhus</div>
                         </a>
                     </div>
                     <?php endif;?>
