@@ -46,12 +46,15 @@ get_header(); ?>
                 <div class="pure-u-1-4"></div>
                 <div class="pure-u-1-1 pure-u-lg-1-2">
                     <a href="<?= get_page_link(rwmb_meta('organicity_open_call_language_1_link')) ?>" class="language-selector__link <?= is_page(rwmb_meta('organicity_open_call_language_1_link')) ? 'is-active' : '' ?>">
+                        <span class="offscreen">Read this page in</span>
                         <?= rwmb_meta('organicity_open_call_language_1_name') ?>
                     </a>
                     <a href="<?= get_page_link(rwmb_meta('organicity_open_call_language_2_link')) ?>" class="language-selector__link <?= is_page(rwmb_meta('organicity_open_call_language_2_link')) ? 'is-active' : '' ?>">
+                        <span class="offscreen">Read this page in</span>
                         <?= rwmb_meta('organicity_open_call_language_2_name') ?>
                     </a>
                     <a href="<?= get_page_link(rwmb_meta('organicity_open_call_language_3_link')) ?>" class="language-selector__link <?= is_page(rwmb_meta('organicity_open_call_language_3_link')) ? 'is-active' : '' ?>">
+                        <span class="offscreen">Read this page in</span>
                         <?= rwmb_meta('organicity_open_call_language_3_name') ?>
                     </a>
                 </div>
