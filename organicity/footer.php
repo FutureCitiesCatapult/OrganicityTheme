@@ -21,7 +21,7 @@
                     <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
                         <a href="<?php echo get_option('organicity_url_facebook'); ?>">
                             <img src="<?php bloginfo('template_directory'); ?>/images/icon-facebook.png" alt="">
-                            <div class="offscreen">Facebook</div>
+                            <div class="socialMediaIconLabel"><span class="offscreen">Facebook</span> Global</div>
                         </a>
                     </div>
                     <?php endif;?>
@@ -57,7 +57,7 @@
                     <div class="pure-u-1-3 pure-u-md-1-6 socialMediaIcon">
                         <a  href="<?php echo get_option('organicity_url_twitter'); ?>">
                             <img src="<?php bloginfo('template_directory'); ?>/images/icon-twitter.png" alt="">
-                            <div class="offscreen">Twitter</div>
+                            <div class="socialMediaIconLabel">Twitter</div>
                         </a>
                     </div>
                     <?php endif;?>
