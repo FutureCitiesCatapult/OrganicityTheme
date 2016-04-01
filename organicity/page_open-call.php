@@ -69,9 +69,21 @@ get_header(); ?>
                 <div class="section--page--content-wrapper l-body-typography">
                     <?php the_content(); ?>
                     <div class="open-call-cta">
-                        <a href="<?= rwmb_meta('organicity_open_call_apply_button_href') ?>" class="button button--external button--full">
-                            <?= rwmb_meta('organicity_open_call_apply_button_text') ?>
-                        </a>
+                        <div class="pure-g button-pair">
+                            <div class="pure-u-1-1 pure-u-sm-1-2 button-pair__left">
+                                <a href="<?= rwmb_meta('organicity_open_call_apply_button_href') ?>" class="button button--external button-pair__button">
+                                    <?= rwmb_meta('organicity_open_call_apply_button_text') ?>
+                                </a>
+                            </div>
+                            <div class="pure-u-1-1 pure-u-sm-1-2 button-pair__right">
+                                <a href="<?= rwmb_meta('organicity_open_call_download_button_href') ?>" class="button button--external button-pair__button l-button-icon">
+                                    <?= rwmb_meta('organicity_open_call_download_button_text') ?>
+                                    <span class="icon icon-download">
+                                        <span class="offscreen">(PDF)</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
