@@ -12,6 +12,11 @@
 
 a {
   text-decoration: none;
+
+  // Remove visited link style from body copy links
+  p &:visited {
+    color: rgb(0, 0, 238);
+  }
 }
 
 h2 {
