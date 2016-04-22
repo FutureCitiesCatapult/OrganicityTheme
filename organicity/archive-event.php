@@ -95,7 +95,10 @@ $posts_query = new WP_Query( $query_args );
                     </div>
                 </div>
 
-            <?php endwhile; endif; ?>
+            <?php endwhile; ?>
+            <?php else: ?>
+                <h2>No events upcoming</h2>
+            <?php endif; ?>
             <!-- end of the loop -->
         </div>
     </div>

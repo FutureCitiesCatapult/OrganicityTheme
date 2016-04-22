@@ -992,7 +992,7 @@ function ajax_filter_get_posts() {
 
     <?php endwhile; ?>
     <?php else: ?>
-        <h2>No posts found</h2>
+        <h2>No <?= $postType == 'event' ? 'events upcoming' : 'posts found' ?></h2>
     <?php endif;
 
     die();
