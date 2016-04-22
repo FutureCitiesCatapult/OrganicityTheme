@@ -938,15 +938,12 @@ function ajax_filter_get_posts() {
         }
     }
 
-
-    if(array_key_exists('eventFilter', $_POST) && $_POST['eventFilter']){
+    if($postType == 'event') {
+        $args['post_status'] = 'publish';
         $args['meta_key'] = 'organicity_event_date';
         $args['orderby'] = 'meta_value_num';
-        $args['order'] = DESC;
-
+        $args['order'] = 'DESC';
     }
-
-
 
 
     $query = new WP_Query( $args );
