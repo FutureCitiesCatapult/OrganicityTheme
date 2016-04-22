@@ -11,7 +11,7 @@
  * @package Organicity
  * @since 0.1.0
  */
-define( 'ORGANICITY_VERSION', '0.1.9' );
+define( 'ORGANICITY_VERSION', '0.1.10' );
 
 function get_id_by_slug($page_slug) {
     $page = get_page_by_path($page_slug);
