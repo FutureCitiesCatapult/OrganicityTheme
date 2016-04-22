@@ -15,7 +15,15 @@ $query_args = array(
     'post_type'      => 'event',
     'meta_key' => 'organicity_event_date',
     'orderby' => 'meta_value_num',
-    'order' => 'DESC',
+    'order' => 'ASC',
+    'meta_query' => array(
+        array(
+            'key' => 'organicity_event_date',
+            'value' => date("Y-m-d", strtotime("yesterday")),
+            'compare' => '>=',
+            'type' => 'DATE'
+        )
+    ),
     'posts_per_page' => -1
 );
 $posts_query = new WP_Query( $query_args );
