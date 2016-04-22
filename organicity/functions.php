@@ -941,16 +941,9 @@ function ajax_filter_get_posts() {
     if($postType == 'event') {
         $args['post_status'] = 'publish';
         $args['meta_key'] = 'organicity_event_date';
-        $args['orderby'] = 'meta_value_num';
-        $args['meta_query'] = array(
-            array(
-                'key' => 'organicity_event_date',
-                'value' => date("Y-m-d", strtotime("yesterday")),
-                'compare' => '>=',
-                'type' => 'DATE'
-            )
-        );
-        $args['order'] = 'ASC';
+        $args['meta_type'] = 'DATE';
+        $args['orderby'] = 'meta_value';
+        $args['order'] = 'DESC';
     }
 
 
