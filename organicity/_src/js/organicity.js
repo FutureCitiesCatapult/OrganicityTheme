@@ -244,24 +244,24 @@ jQuery(document).ready(function($) {
 
 
 
-        // After user click on tag, fade out list of posts
-        $('.tagged-events').fadeOut();
-
-        data = {
-            action: 'filter_posts', // function to execute
-            afp_nonce: afp_vars.afp_nonce, // wp_nonce
-            city: selected_taxonomy, // selected tag
-            postType: 'event'
-        };
-
-        $.post( afp_vars.afp_ajax_url, data, function(response) {
-
-            if( response ) {
-                // Display posts on page
-                $('.tagged-events').html( response );
-                // Restore div visibility
-                $('.tagged-events').fadeIn();
+        // After user click on tag, fade out list of posts, keeping the
+        // height static to avoid the footer jumping in awkwardly
+        $('.tagged-events').animate({opacity: 0}, 400, 'swing', function() {
+            var data = {
+                action: 'filter_posts', // function to execute
+                afp_nonce: afp_vars.afp_nonce, // wp_nonce
+                city: selected_taxonomy, // selected tag
+                postType: 'event'
             };
+
+            $.post( afp_vars.afp_ajax_url, data, function(response) {
+                if( response ) {
+                    // Display posts on page
+                    $('.tagged-events').html( response );
+                    // Restore div visibility and re-set height to auto again
+                    $('.tagged-events').animate({opacity: 1}, 400, 'swing');
+                };
+            });
         });
     }
 
