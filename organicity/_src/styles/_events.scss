@@ -31,6 +31,9 @@
         display:inline-block;
         width:60%;
         float:left;
+        box-sizing: border-box;
+        padding-right: 1em;
+
         h4{
           color:#4A4A4A;
           @include rem-fallback(font-size,24);
@@ -267,4 +270,3 @@
     }
   }
 }
-
