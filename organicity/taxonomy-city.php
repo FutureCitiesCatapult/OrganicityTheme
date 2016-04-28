@@ -56,34 +56,7 @@ $queried_object = get_queried_object();
         <h2><?php echo $city_name; _e(' Events', 'organicity' ); ?></h2>
 
         <div class="pure-g">
-            <?php if (have_posts()): while (have_posts()) : the_post();
-                if ( 'event' == get_post_type() ):?>
-
-                    <div class="pure-u-1-1">
-                        <div class="event">
-                            <div class="event__meta">
-                                <span class="date"><?php echo date("d.m.Y", strtotime(rwmb_meta('organicity_event_date'))); ?></span>
-
-                            </div>
-                            <div class="event__content">
-
-                                <h4><?php the_title(); ?></h4>
-
-                                <h5><?php echo rwmb_meta('organicity_event_location')?></h5>
-
-
-                                <?php the_content(__('Read more'));?>
-                            </div>
-                            <div class="event__right">
-                                <a class="button " href="<?php echo rwmb_meta('organicity_event_url'); ?>" target="_blank">
-                                    Event Details
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif?>
-            <?php endwhile; endif; ?>
-            <!-- end of the loop -->
+            <?php render_events($city_name); ?>
         </div>
     </div>
 

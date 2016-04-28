@@ -900,16 +900,9 @@ add_action('wp_enqueue_scripts', 'ajax_filter_posts_scripts', 100);
 
 // Script for getting posts
 function ajax_filter_get_posts() {
-
-    $event_template = false;
-
-
-
     // Verify nonce
     if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
         die('Permission denied');
-
-
 
     if(array_key_exists('postType', $_POST) && $_POST['postType']){
         $postType = $_POST['postType'];
@@ -917,7 +910,18 @@ function ajax_filter_get_posts() {
         $postType = 'post';
     }
 
+    if($postType == 'event') {
+        if(array_key_exists('city', $_POST) && $_POST['city']) {
+            if($_POST['city'] == 'all'){
+                $city = "";
+            }else {
+                $city = $_POST['city'];
+            }
+        }
 
+        render_events($city);
+        die();
+    }
 
     // WP Query
     $args = array(
@@ -925,70 +929,77 @@ function ajax_filter_get_posts() {
         'posts_per_page' => -1
     );
 
-
     if(array_key_exists('taxonomy', $_POST) && $_POST['taxonomy']){
         $args['tag'] = $_POST['taxonomy'];
-
-    }else if(array_key_exists('city', $_POST) && $_POST['city']){
-    $event_template = true;
-        if($_POST['city'] == 'all'){
-            $args['city'] = "";
-        }else {
-            $args['city'] = $_POST['city'];
-        }
     }
-
-    if($postType == 'event') {
-        $args['post_status'] = 'publish';
-        $args['meta_key'] = 'organicity_event_date';
-        $args['meta_type'] = 'DATE';
-        $args['orderby'] = 'meta_value';
-        $args['order'] = 'DESC';
-    }
-
 
     $query = new WP_Query( $args );
 
-    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
-
-
-    if(!$event_template):?>
+    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
         <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3">
             <?php get_template_part('partials/blogcard'); ?>
         </div>
-
-    <?php else: ?>
-        <div class="pure-u-1-1">
-            <div class="event">
-                <div class="event__meta">
-                    <span class="date"><?php echo date("d.m.Y", strtotime(rwmb_meta('organicity_event_date'))); ?></span>
-
-                </div>
-                <div class="event__content">
-
-                    <h4><?php the_title(); ?></h4>
-
-                    <h5><?php echo rwmb_meta('organicity_event_location')?></h5>
-
-
-                    <?php the_content(__('Read more'));?>
-                </div>
-                <div class="event__right">
-                    <a class="button button--external " href="<?php echo rwmb_meta('organicity_event_url'); ?>" target="_blank">
-                        Event Details
-                    </a>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
-
-    <?php endwhile; ?>
-    <?php else: ?>
-        <h2>No <?= $postType == 'event' ? 'events upcoming' : 'posts found' ?></h2>
+    <?php endwhile;
+    else: ?>
+        <h2>No posts found</h2>
     <?php endif;
 
     die();
+}
+
+function render_events($city="") {
+    // First. render events from today to the distant future
+    $args = array(
+        'post_type' => 'event',
+        'posts_per_page' => -1,
+        'city' => $city,
+        'post_status' => 'publish',
+        'meta_key' => 'organicity_event_date',
+        'orderby' => 'meta_value',
+        'order' => 'ASC',
+        'meta_type' => 'DATE',
+        'meta_query' => array(
+            array(
+                'key' => 'organicity_event_date',
+                'value' => date("Y-m-d", strtotime("yesterday")),
+                'compare' => '>=',
+                'type' => 'DATE'
+            )
+        )
+    );
+
+    $query = new WP_Query( $args );
+    while ( $query->have_posts() ) {
+        $query->the_post();
+        get_template_part('partials/event');
+    }
+
+    // Next, render events from yesterday to the distant past
+    $args = array(
+        'post_type' => 'event',
+        'posts_per_page' => -1,
+        'city' => $city,
+        'post_status' => 'publish',
+        'meta_key' => 'organicity_event_date',
+        'orderby' => 'meta_value',
+        'order' => 'DESC',
+        'meta_type' => 'DATE',
+        'meta_query' => array(
+            array(
+                'key' => 'organicity_event_date',
+                'value' => date("Y-m-d", strtotime("yesterday")),
+                'compare' => '<',
+                'type' => 'DATE'
+            )
+        )
+    );
+
+    $query = new WP_Query( $args );
+    while ( $query->have_posts() ) {
+        $query->the_post();
+        get_template_part('partials/event');
+    }
 }
 
 add_action('wp_ajax_filter_posts', 'ajax_filter_get_posts');
