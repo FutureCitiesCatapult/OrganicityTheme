@@ -125,9 +125,11 @@
 }
 
 .section--events__time-heading {
+  display: block;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   text-transform: uppercase;
+  text-align: left;
   letter-spacing: -1px;
   @include rem-fallback(font-size, 24);
 

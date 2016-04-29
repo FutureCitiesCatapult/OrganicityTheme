@@ -43,8 +43,7 @@ get_header(); ?>
     <?php if (rwmb_meta('organicity_open_call_languages_visible')): ?>
         <div class="section language-selector">
             <div class="pure-g">
-                <div class="pure-u-1-4"></div>
-                <div class="pure-u-1-1 pure-u-lg-1-2">
+                <div class="pure-u-1-1">
                     <a href="<?= get_page_link(rwmb_meta('organicity_open_call_language_1_link')) ?>" class="language-selector__link <?= is_page(rwmb_meta('organicity_open_call_language_1_link')) ? 'is-active' : '' ?>">
                         <span class="offscreen">Read this page in</span>
                         <?= rwmb_meta('organicity_open_call_language_1_name') ?>
