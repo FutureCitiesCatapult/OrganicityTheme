@@ -970,6 +970,7 @@ function render_events($city="") {
     );
 
     $query = new WP_Query( $args );
+    if ( $query->have_posts() ) { ?><h3 class="section--events__time-heading">Next events</h3><?php }
     while ( $query->have_posts() ) {
         $query->the_post();
         get_template_part('partials/event');
@@ -996,6 +997,7 @@ function render_events($city="") {
     );
 
     $query = new WP_Query( $args );
+    if ( $query->have_posts() ) { ?><h3 class="section--events__time-heading">Past events</h3><?php }
     while ( $query->have_posts() ) {
         $query->the_post();
         get_template_part('partials/event');

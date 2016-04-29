@@ -124,6 +124,21 @@
 
 }
 
+.section--events__time-heading {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  @include rem-fallback(font-size, 24);
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 
 @media only screen and (max-width: 767px) {
@@ -133,7 +148,7 @@
       @include rem-fallback(padding-left,0);
       @include rem-fallback(padding-right,0);
     }
-    @include rem-fallback(padding-top,40);
+    @include rem-fallback(padding-top, 0);
 
     .event {
       .event__meta, .event__content, .event__right {
