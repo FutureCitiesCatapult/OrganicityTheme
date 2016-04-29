@@ -38,7 +38,7 @@ jQuery(document).ready(function($) {
 
 
     // Opens the hamburger menu
-    $("a[href=#menuExpand]").click(function(e) {
+    $('a[href="#menuExpand"]').click(function(e) {
         $(".menu").toggleClass("menuOpen");
         $(".menu-wrapper").toggleClass("active");
         e.preventDefault();
