@@ -948,7 +948,7 @@ function ajax_filter_get_posts() {
     die();
 }
 
-function render_events($city="") {
+function render_events($city="", $events_counter=-1) {
     // First. render events from today to the distant future
     $args = array(
         'post_type' => 'event',
@@ -974,6 +974,10 @@ function render_events($city="") {
     while ( $query->have_posts() ) {
         $query->the_post();
         get_template_part('partials/event');
+
+        // We use $events_counter because we are doing two queries, so we can't just use `posts_per_page`
+        $events_counter--;
+        if ($events_counter == 0) { return; }
     }
 
     // Next, render events from yesterday to the distant past
@@ -1001,6 +1005,8 @@ function render_events($city="") {
     while ( $query->have_posts() ) {
         $query->the_post();
         get_template_part('partials/event');
+        $events_counter--;
+        if ($events_counter == 0) { return; }
     }
 }
 

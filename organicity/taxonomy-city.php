@@ -56,7 +56,7 @@ $queried_object = get_queried_object();
         <h2><?php echo $city_name; _e(' Events', 'organicity' ); ?></h2>
 
         <div class="pure-g">
-            <?php render_events($city_name); ?>
+            <?php render_events($city_name, get_option('posts_per_page')); ?>
         </div>
     </div>
 
