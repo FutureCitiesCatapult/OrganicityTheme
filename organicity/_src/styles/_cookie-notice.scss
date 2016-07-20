@@ -1,0 +1,48 @@
+.cookie-notice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  text-align: center;
+  background: rgba(63,63,63,.88);
+
+
+  @media only screen and (max-width: 567px) {
+    @include rem-fallback(padding, 12);
+  }
+}
+
+.cookie-notice__text {
+  display: inline-block;
+  text-align: left;
+  @include rem-fallback(font-size, 12);
+  @include rem-fallback(margin, 12, 0);
+
+  @media only screen and (max-width: 567px) {
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+.cookie-notice__button {
+  font-size: 12px;
+  vertical-align: top;
+  @include rem-fallback(padding, 8, 20, 5, 20);
+  @include rem-fallback(margin-top, 11);
+  @include rem-fallback(margin-left, 15);
+
+  &:hover {
+    color: rgba(85,85,85,1);
+  }
+
+  @media only screen and (max-width: 567px) {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.cookie-notice__link {
+  color: inherit;
+  text-decoration: underline;
+}

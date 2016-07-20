@@ -218,4 +218,13 @@ jQuery(document).ready(function($) {
             newHeight = naturalHeight * (currentWidth/naturalWidth);
         $iframe.css({height: newHeight});
     });
+
+    if (window.localStorage.getItem('cookies-notice-dismissed')) {
+        $('.js-cookie-notice').hide();
+    }
+
+    $('.js-dismiss-cookie-notice').click(function() {
+        $('.js-cookie-notice').fadeOut();
+        window.localStorage.setItem('cookies-notice-dismissed', true);
+    });
 });

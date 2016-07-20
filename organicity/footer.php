@@ -86,6 +86,16 @@
     </div>
 </footer>
 <?php wp_footer(); ?>
+
+<div class="cookie-notice js-cookie-notice">
+    <div class="cookie-notice__text">
+        OrganiCity uses cookies to give you an enhanced experience.
+        <br />
+        Read more about it in our <a class="cookie-notice__link" href="/cookies-privacy-policy/">privacy policy</a>.
+    </div>
+    <button class="cookie-notice__button button button--bordered js-dismiss-cookie-notice">Dismiss</button>
+</div>
+
 <script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>
